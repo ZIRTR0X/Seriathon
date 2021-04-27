@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="image\logo\logo_accueil_temp.png" />
     <None Remove="image\logo\seriathon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="image\logo\logo_accueil_temp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="image\logo\seriathon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
