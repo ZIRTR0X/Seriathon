@@ -1,0 +1,28 @@
+﻿<Window x:Class="Sérieathon.Seriathon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sérieathon"
+        mc:Ignorable="d"
+        Title="Seriathon" Height="450" Width="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Left" Width="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="image/logo/seriathon.png"/>
+            <Button Grid.Row="1" Content="Accueil" Height="20" Width="70" VerticalAlignment="Bottom"/>
+            <Button Grid.Row="2" Content="Marathon" Height="20" Width="80" VerticalAlignment="Bottom"/>
+            <Button Grid.Row="3" Content="Profil" Height="20" Width="60" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid DockPanel.Dock="Right" Background="DarkCyan">
+            <Image Source="image/logo/logo_accueil_temp.png"/>
+        </Grid>
+    </DockPanel>
+</Window>

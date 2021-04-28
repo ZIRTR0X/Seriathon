@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Sérieathon"
         mc:Ignorable="d"
         Title="Accueil" Height="450" Width="800">
-    <DockPanel>
+    <DockPanel Background="Black">
 
         <Grid DockPanel.Dock="Top" Background="red" Height="43">
             <Grid.ColumnDefinitions>
