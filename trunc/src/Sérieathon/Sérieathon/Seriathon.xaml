@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Sérieathon"
         mc:Ignorable="d"
         Title="Seriathon" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="styleTextBlockGlobal">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+    </Window.Resources>
+    
     <DockPanel>
         <Grid DockPanel.Dock="Left" Width="100">
             <Grid.RowDefinitions>

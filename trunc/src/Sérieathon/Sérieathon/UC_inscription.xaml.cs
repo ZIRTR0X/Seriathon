@@ -14,22 +14,13 @@ using System.Windows.Shapes;
 namespace Sérieathon
 {
     /// <summary>
-    /// Interaction logic for UC_connexion.xaml
+    /// Interaction logic for UC_inscription.xaml
     /// </summary>
-    public partial class UC_connexion : UserControl
+    public partial class UC_inscription : UserControl
     {
-        public UC_connexion()
+        public UC_inscription()
         {
             InitializeComponent();
-        }
-
-        private void Validation_click(object sender, RoutedEventArgs e)
-        {
-            Seriathon main_window = new Seriathon();
-            main_window.Show();
-
-            // close déprécié, a modifier par un manager
-            // (App.Current as App).Accueil.Close();
         }
     }
 }

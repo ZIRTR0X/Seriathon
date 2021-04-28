@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Sérieathon.UC_inscription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sérieathon"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--User control a mettre en place ici pour le futur-->
+        <TextBlock Text="Bienvenue!" Background="White" TextAlignment="Center"
+                   VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
+        <TextBlock Grid.Row="1" Text="Pseudo" Background="White" VerticalAlignment="Bottom"
+                   Margin="20 0 0 0"/>
+        <TextBox Grid.Row="2" Background="White" Margin="30 0 0 0"/>
+        <TextBlock Grid.Row="3" Text="Mot de passe" Background="White" VerticalAlignment="Bottom"
+                   Margin="20 0 0 0"/>
+        <PasswordBox Grid.Row="4" Background="DarkCyan" Margin="30 0 0 0"/>
+        <TextBlock Grid.Row="5" Text="Re-saisissez le mot de passe" Background="White"
+                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
+        <PasswordBox Grid.Row="6" Background="DarkCyan" Margin="30 0 0 0"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Adresse Mail" Background="White"
+                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Background="DarkCyan" Margin="30 0 0 0"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Date de naissance" Background="White"
+                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
+        <WrapPanel Grid.Row="4" Grid.Column="1" Background="DarkSalmon">
+            
+        </WrapPanel>
+    </Grid>
+</UserControl>
