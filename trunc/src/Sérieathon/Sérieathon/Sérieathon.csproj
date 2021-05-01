@@ -9,6 +9,13 @@
   <ItemGroup>
     <None Remove="image\logo\logo_accueil_temp.png" />
     <None Remove="image\logo\seriathon.png" />
+    <None Remove="image\logo\seriathon_ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\logo\seriathon_ico.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +25,10 @@
     <Resource Include="image\logo\seriathon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UC\main_window\NewFolder\" />
   </ItemGroup>
 
 </Project>

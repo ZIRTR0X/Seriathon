@@ -7,36 +7,42 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Seriathon.xaml.cs">
+    <Compile Update="Info.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC_accueil.xaml.cs">
+    <Compile Update="UC\basic_element\UC_TextBox_Form.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Accueil.xaml.cs">
+    <Compile Update="UC\UC_accueil.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC_connexion.xaml.cs">
+    <Compile Update="UC\login_window\UC_connexion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC_inscription.xaml.cs">
+    <Compile Update="UC\login_window\UC_inscription.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\UC_Menu_Nav.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Seriathon.xaml">
+    <Page Update="Info.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC_accueil.xaml">
+    <Page Update="UC\basic_element\UC_TextBox_Form.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Accueil.xaml">
+    <Page Update="UC\UC_accueil.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC_connexion.xaml">
+    <Page Update="UC\login_window\UC_connexion.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC_inscription.xaml">
+    <Page Update="UC\login_window\UC_inscription.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\UC_Menu_Nav.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sérieathon"
+             xmlns:basicElement="clr-namespace:Sérieathon.UC.basic_element"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -15,18 +16,17 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <!--User control a mettre en place ici pour le futur-->
-        <TextBlock Text="Bienvenue!" Background="White" TextAlignment="Center"
-                   VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
-        <TextBlock Grid.Row="1" Text="Pseudo" Background="White" VerticalAlignment="Bottom"
-                   Margin="20 0 0 0"/>
+        <basicElement:UC_TextBox_Form Grid.ColumnSpan="3" Message="Bienvenue"/>
+        <basicElement:UC_TextBox_Form Grid.Row="1" Message="Pseudo" Margin="20 0 0 0"/>
         <TextBox Grid.Row="2" Background="White" Margin="30 0 0 0"/>
         <TextBlock Grid.Row="3" Text="Mot de passe" Background="White" VerticalAlignment="Bottom"
                    Margin="20 0 0 0"/>
@@ -40,7 +40,34 @@
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Date de naissance" Background="White"
                    VerticalAlignment="Bottom" Margin="20 0 0 0"/>
         <WrapPanel Grid.Row="4" Grid.Column="1" Background="DarkSalmon">
-            
+            <TextBox Text="Jour" Height="30" Width="50"/>
+            <ComboBox Margin="20 10 20 0" MaxDropDownHeight="70">
+                <TextBlock Text="Janvier"/>
+                <TextBlock Text="Février"/>
+                <TextBlock Text="Mars"/>
+                <TextBlock Text="Avril"/>
+                <TextBlock Text="Mai"/>
+                <TextBlock Text="Juin"/>
+                <TextBlock Text="Juillet"/>
+                <TextBlock Text="Aout"/>
+                <TextBlock Text="Septembre"/>
+                <TextBlock Text="Octobre"/>
+                <TextBlock Text="Novembre"/>
+                <TextBlock Text="Décembre"/>
+            </ComboBox>
+            <TextBox Text="Année" Height="30" Width="50"/>
         </WrapPanel>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Genre" Background="White"
+                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
+        <WrapPanel Grid.Row="6" Grid.Column="1" Background="DarkCyan">
+            <ComboBox>
+                <TextBlock Text="Homme"/>
+                <TextBlock Text="Femme"/>
+                <TextBlock Text="Autre"/>
+            </ComboBox>
+        </WrapPanel>
+
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="Valider" Width="70" Height="30"/>
+
     </Grid>
 </UserControl>

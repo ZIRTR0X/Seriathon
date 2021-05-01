@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Sérieathon
 {
     /// <summary>
-    /// Interaction logic for UC_inscription.xaml
+    /// Interaction logic for UC_Menu_Nav.xaml
     /// </summary>
-    public partial class UC_inscription : UserControl
+    public partial class UC_Menu_Nav : UserControl
     {
-        public UC_inscription()
+        public UC_Menu_Nav()
         {
             InitializeComponent();
         }

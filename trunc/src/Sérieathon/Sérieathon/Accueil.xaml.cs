@@ -24,7 +24,7 @@ namespace Sérieathon
 
         private void Inscription_click(object sender, RoutedEventArgs e)
         {
-            accueil_content_control.Content = new UC_accueil();
+            accueil_content_control.Content = new UC_inscription();
 
             Button button = sender as Button;
             button.Background = Brushes.Gray;
