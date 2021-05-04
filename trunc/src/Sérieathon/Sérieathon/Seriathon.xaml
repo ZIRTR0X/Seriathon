@@ -25,11 +25,11 @@
 
             <Image Grid.Row="0" Source="image/logo/seriathon.png"/>
             <Button Grid.Row="1" Content="Accueil" Height="20" Width="70" VerticalAlignment="Bottom"/>
-            <Button Grid.Row="2" Content="Marathon" Height="20" Width="80" VerticalAlignment="Bottom"/>
+            <Button Grid.Row="2" Content="Marathon" Click="Marathon_Click" Height="20" Width="80" VerticalAlignment="Bottom"/>
             <Button Grid.Row="3" Content="Profil" Height="20" Width="60" VerticalAlignment="Bottom"/>
         </Grid>
-        <Grid DockPanel.Dock="Right" Background="DarkCyan">
-            <Image Source="image/logo/logo_accueil_temp.png"/>
-        </Grid>
+        <ContentControl x:Name="content_control_page_accueil">
+            <local:UC_accueil/>
+        </ContentControl>
     </DockPanel>
 </Window>

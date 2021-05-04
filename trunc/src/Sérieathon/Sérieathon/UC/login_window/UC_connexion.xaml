@@ -34,6 +34,6 @@
         <PasswordBox x:Name="password_textbox" Grid.Row="4" Grid.Column="1"/>
 
         <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Content="Valider"
-                Width="60" Height="30" Click="Validation_click"/>
+                Width="60" Height="30" Click="Validation_connexion_click"/>
     </Grid>
 </UserControl>

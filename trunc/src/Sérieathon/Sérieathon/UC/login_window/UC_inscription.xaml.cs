@@ -27,5 +27,12 @@ namespace Sérieathon
         {
 
         }
+        private void Validation_inscription_click(object sender, RoutedEventArgs e)
+        {
+            Seriathon main_window = new Seriathon();
+            main_window.Show();
+
+            (App.Current as App).MainWindow.Close();
+        }
     }
 }

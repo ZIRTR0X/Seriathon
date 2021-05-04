@@ -21,5 +21,19 @@ namespace Sérieathon
         {
             InitializeComponent();
         }
+        private void Marathon_Click(object sender, RoutedEventArgs e)
+        {
+            content_control_page_accueil.Content = new UC_NouveauMarathon1_5();
+        }
+        private void Suivant_NM1(object sender, RoutedEventArgs e)
+        {
+            content_control_page_accueil.Content = new UC_NouveauMarathon2_5();
+        }
+        private void Retour_NM1(object sender, RoutedEventArgs e)
+        {
+            content_control_page_accueil.Content = new UC_accueil();
+        }
     }
+
+    
 }

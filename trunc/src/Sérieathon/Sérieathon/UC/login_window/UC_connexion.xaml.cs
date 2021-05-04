@@ -28,7 +28,7 @@ namespace Sérieathon
         /// </summary>
         /// <param name="sender"></param> Objet envoyant l'évènement, normalement de classe Button, originellement x:Name Validation_button
         /// <param name="e"></param>
-        private void Validation_click(object sender, RoutedEventArgs e)
+        private void Validation_connexion_click(object sender, RoutedEventArgs e)
         {
             Seriathon main_window = new Seriathon();
             main_window.Show();

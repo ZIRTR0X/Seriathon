@@ -67,7 +67,7 @@
             </ComboBox>
         </WrapPanel>
 
-        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="Valider" Width="70" Height="30"/>
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Click="Validation_inscription_click" Content="Valider" Width="70" Height="30"/>
 
     </Grid>
 </UserControl>
