@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Sérieathon.UC.main_window.Marathon.marathon_windows
 {
     /// <summary>
-    /// Logique d'interaction pour UC_Marathon_Episode.xaml
+    /// Logique d'interaction pour UC_Marathon_Jour.xaml
     /// </summary>
-    public partial class UC_Marathon_Episode : UserControl
+    public partial class UC_Marathon_Jour : UserControl
     {
-        public UC_Marathon_Episode()
+        public UC_Marathon_Jour()
         {
             InitializeComponent();
         }

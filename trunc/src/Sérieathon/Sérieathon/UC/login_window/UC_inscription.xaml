@@ -39,6 +39,7 @@
         <TextBox Grid.Row="2" Grid.Column="1" Background="DarkCyan" Margin="30 0 0 0"/>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Date de naissance" Background="White"
                    VerticalAlignment="Bottom" Margin="20 0 0 0"/>
+        
         <WrapPanel Grid.Row="4" Grid.Column="1" Background="DarkSalmon">
             <TextBox Text="Jour" Height="30" Width="50"/>
             <ComboBox Margin="20 10 20 0" MaxDropDownHeight="70">
@@ -57,6 +58,8 @@
             </ComboBox>
             <TextBox Text="Année" Height="30" Width="50"/>
         </WrapPanel>
+        <Calendar/>
+
         <TextBlock Grid.Row="5" Grid.Column="1" Text="Genre" Background="White"
                    VerticalAlignment="Bottom" Margin="20 0 0 0"/>
         <WrapPanel Grid.Row="6" Grid.Column="1" Background="DarkCyan">

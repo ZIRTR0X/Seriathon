@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Sérieathon.UC_Marathon"
+﻿<UserControl x:Class="Sérieathon.UC.main_window.Marathon.marathon_windows.UC_Marathon"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Sérieathon"
+             xmlns:local="clr-namespace:Sérieathon.UC.main_window.Marathon.marathon_windows"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <ScrollViewer>
@@ -20,9 +20,11 @@
                 <TextBlock Text="Marathon " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
                 <Button Grid.Column="1" Height="20" Width="70" Content="Supprimer"/>
             </Grid>
-            <ContentControl>
+            <WrapPanel Orientation="Vertical">
                 <local:UC_Marathon_Jour/>
-            </ContentControl>
+                <local:UC_Marathon_Jour/>
+            </WrapPanel>
+            
         </DockPanel>
     </ScrollViewer>
 </UserControl>

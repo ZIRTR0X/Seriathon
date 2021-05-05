@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon.UC.main_window.Marathon.marathon_windows
+namespace Sérieathon.UC.main_window.Marathon.Profile
 {
     /// <summary>
-    /// Logique d'interaction pour UC_Marathon_Episode.xaml
+    /// Logique d'interaction pour UC_Profile_Vue.xaml
     /// </summary>
-    public partial class UC_Marathon_Episode : UserControl
+    public partial class UC_Profile_Vue : UserControl
     {
-        public UC_Marathon_Episode()
+        public UC_Profile_Vue()
         {
             InitializeComponent();
         }

@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sérieathon.UC.main_window.Marathon.marathon_windows;
 
 namespace Sérieathon
 {
@@ -23,17 +24,18 @@ namespace Sérieathon
         }
         private void Marathon_Click(object sender, RoutedEventArgs e)
         {
-            content_control_page_accueil.Content = new UC_NouveauMarathon1_5();
+            content_control_page_accueil.Content = new UC_Marathon();
         }
-        private void Suivant_NM1(object sender, RoutedEventArgs e)
-        {
-            content_control_page_accueil.Content = new UC_NouveauMarathon2_5();
-        }
-        private void Retour_NM1(object sender, RoutedEventArgs e)
+        private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             content_control_page_accueil.Content = new UC_accueil();
         }
-    }
 
-    
+
+        private void Profil_Click(object sender, RoutedEventArgs e)
+        {
+            content_control_page_accueil.Content = new UC.main_window.Marathon.Profile.UC_Profile();
+        }
+
+    }
 }

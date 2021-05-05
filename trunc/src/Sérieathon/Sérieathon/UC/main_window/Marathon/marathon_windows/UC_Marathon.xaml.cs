@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.UC.main_window.Marathon.marathon_windows
 {
     /// <summary>
     /// Logique d'interaction pour UC_Marathon.xaml
@@ -21,6 +21,11 @@ namespace Sérieathon
         public UC_Marathon()
         {
             InitializeComponent();
+        }
+
+        private void UC_Marathon_Jour_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

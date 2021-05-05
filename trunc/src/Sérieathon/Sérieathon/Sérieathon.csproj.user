@@ -13,6 +13,21 @@
     <Compile Update="UC\basic_element\UC_TextBox_Form.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile_Statistique.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile_Vue.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC\UC_accueil.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +46,21 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\basic_element\UC_TextBox_Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\Profile\UC_Profile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\Profile\UC_Profile_Statistique.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\Profile\UC_Profile_Vue.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\UC_accueil.xaml">

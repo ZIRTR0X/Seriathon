@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="image\affiche\DemonSlayer.jpeg" />
     <None Remove="image\logo\logo_accueil_temp.png" />
     <None Remove="image\logo\seriathon.png" />
     <None Remove="image\logo\seriathon_ico.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="image\affiche\DemonSlayer.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="image\logo\seriathon_ico.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -29,6 +33,12 @@
 
   <ItemGroup>
     <Folder Include="UC\main_window\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
 
 </Project>
