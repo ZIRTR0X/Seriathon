@@ -22,20 +22,7 @@ namespace Sérieathon
         {
             InitializeComponent();
         }
-        private void Marathon_Click(object sender, RoutedEventArgs e)
-        {
-            content_control_page_accueil.Content = new UC_Marathon();
-        }
-        private void Accueil_Click(object sender, RoutedEventArgs e)
-        {
-            content_control_page_accueil.Content = new UC_accueil();
-        }
-
-
-        private void Profil_Click(object sender, RoutedEventArgs e)
-        {
-            content_control_page_accueil.Content = new UC.main_window.Marathon.Profile.UC_Profile();
-        }
+        
 
     }
 }

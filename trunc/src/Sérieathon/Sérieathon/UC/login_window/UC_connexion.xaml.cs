@@ -36,5 +36,16 @@ namespace Sérieathon
             (App.Current as App).MainWindow.Close();
 
         }
+        
+        //private void View_Password_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Image_View_Password.Source = BitmapImage(new Uri(@"/image/visibility.png"));
+
+        //}
+        private void View_Password_Click(object sender, RoutedEventArgs e)
+        {
+            Image_View_Password.Source = new BitmapImage(new Uri("/image/visibility.png", UriKind.RelativeOrAbsolute));
+        }
+
     }
 }

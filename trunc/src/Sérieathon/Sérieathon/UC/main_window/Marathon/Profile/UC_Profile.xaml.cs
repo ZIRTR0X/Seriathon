@@ -22,5 +22,6 @@ namespace Sérieathon.UC.main_window.Marathon.Profile
         {
             InitializeComponent();
         }
+
     }
 }

@@ -19,7 +19,7 @@
             <Button Grid.Column="2" Content="Statistiques" Height="20" Width="70"/>
         </Grid>
         <ContentControl>
-
+            <local:UC_Profile_Statistique/>
         </ContentControl>
     </DockPanel>
 </UserControl>

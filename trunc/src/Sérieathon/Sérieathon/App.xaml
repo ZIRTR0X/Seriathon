@@ -4,6 +4,22 @@
              xmlns:local="clr-namespace:Sérieathon"
              StartupUri="Accueil.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="DefaultFontFamily">Comic Sans MS</FontFamily>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ColorBlackFontFamily">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#36393F"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2F3136"/>
+        </Style>
+        
+
+
     </Application.Resources>
 </Application>
