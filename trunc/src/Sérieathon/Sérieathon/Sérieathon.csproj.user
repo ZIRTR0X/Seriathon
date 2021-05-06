@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Info.xaml.cs">
+    <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC\basic_element\UC_TextBox_Form.xaml.cs">
@@ -42,7 +42,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Info.xaml">
+    <Page Update="Information_Vues\Suppression_confirmation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\basic_element\UC_TextBox_Form.xaml">

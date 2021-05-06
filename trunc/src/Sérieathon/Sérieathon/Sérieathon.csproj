@@ -37,10 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UC\main_window\NewFolder\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Page>
