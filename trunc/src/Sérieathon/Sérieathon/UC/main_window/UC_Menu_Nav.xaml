@@ -17,8 +17,17 @@
         </Grid.RowDefinitions>
 
         <Image Grid.Row="0" Source="/image/logo/logo_accueil_petit.png"/>
-        <Button Grid.Row="1" Content="Accueil" Height="20" Width="70" VerticalAlignment="Bottom"/>
-        <Button Grid.Row="2" Content="Marathon" Height="20" Width="80" VerticalAlignment="Bottom"/>
-        <Button Grid.Row="3" Content="Profil" Height="20" Width="60" VerticalAlignment="Bottom"/>
+        <Button Grid.Row="1" x:Name="accueil_button" Height="30" Width="70"
+                VerticalAlignment="Bottom">
+            <Label Content="_Accueil" Target="accueil_button"/>
+        </Button>
+        <Button Grid.Row="2" x:Name="marathon_button" Height="30" Width="80"
+                VerticalAlignment="Bottom">
+            <Label Content="_Marathon" Target="marathon_button"/>
+        </Button>
+        <Button Grid.Row="3" x:Name="profil_button" Height="30" Width="60"
+                VerticalAlignment="Bottom">
+            <Label Content="_Profil" Target="profil_button"/>
+        </Button>
     </Grid>
 </UserControl>

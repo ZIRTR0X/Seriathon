@@ -18,7 +18,10 @@
         <Style TargetType="Button">
             <Setter Property="Background" Value="#2F3136"/>
         </Style>
-        
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        </Style>
 
 
     </Application.Resources>
