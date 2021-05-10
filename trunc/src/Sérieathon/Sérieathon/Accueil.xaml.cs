@@ -27,7 +27,6 @@ namespace Sérieathon
             accueil_content_control.Content = new UC_inscription();
 
             Button button = sender as Button;
-            button.Background = Brushes.Gray;
             button.IsEnabled = false;
 
             // Connexion_button.Background = Brushes.LightGray; 
@@ -41,7 +40,6 @@ namespace Sérieathon
 
             // cast intelligent, null si cast non réussi sinon bouton
             Button button = sender as Button;
-            button.Background = Brushes.Gray;
             button.IsEnabled = false;
 
             // Inscription_button.Background = Brushes.LightGray;
