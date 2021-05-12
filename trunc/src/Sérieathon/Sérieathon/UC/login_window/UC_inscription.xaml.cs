@@ -23,10 +23,7 @@ namespace Sérieathon
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+ 
         private void Validation_inscription_click(object sender, RoutedEventArgs e)
         {
             Seriathon main_window = new Seriathon();
@@ -34,5 +31,7 @@ namespace Sérieathon
 
             (App.Current as App).MainWindow.Close();
         }
+
+       
     }
 }

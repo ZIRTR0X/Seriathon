@@ -3,74 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Sérieathon"
+             xmlns:local="clr-namespace:Sérieathon.UC.basic_element"
              xmlns:basicElement="clr-namespace:Sérieathon.UC.basic_element"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <!--User control a mettre en place ici pour le futur-->
-        <basicElement:UC_TextBox_Form Grid.ColumnSpan="3" Message="Bienvenue"/>
-        <basicElement:UC_TextBox_Form Grid.Row="1" Message="Pseudo" Margin="20 0 0 0"/>
-        <TextBox Grid.Row="2" Background="White" Margin="30 0 0 0"/>
-        <TextBlock Grid.Row="3" Text="Mot de passe" Background="White" VerticalAlignment="Bottom"
-                   Margin="20 0 0 0"/>
-        <PasswordBox Grid.Row="4" Background="DarkCyan" Margin="30 0 0 0"/>
-        <TextBlock Grid.Row="5" Text="Re-saisissez le mot de passe" Background="White"
-                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
-        <PasswordBox Grid.Row="6" Background="DarkCyan" Margin="30 0 0 0"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Adresse Mail" Background="White"
-                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Background="DarkCyan" Margin="30 0 0 0"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Date de naissance" Background="White"
-                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
-        
-        <WrapPanel Grid.Row="4" Grid.Column="1" Background="DarkSalmon">
-            <TextBox Text="Jour" Height="30" Width="50"/>
-            <ComboBox Margin="20 10 20 0" MaxDropDownHeight="70">
-                <TextBlock Text="Janvier"/>
-                <TextBlock Text="Février"/>
-                <TextBlock Text="Mars"/>
-                <TextBlock Text="Avril"/>
-                <TextBlock Text="Mai"/>
-                <TextBlock Text="Juin"/>
-                <TextBlock Text="Juillet"/>
-                <TextBlock Text="Aout"/>
-                <TextBlock Text="Septembre"/>
-                <TextBlock Text="Octobre"/>
-                <TextBlock Text="Novembre"/>
-                <TextBlock Text="Décembre"/>
-            </ComboBox>
-            <TextBox Text="Année" Height="30" Width="50"/>
-        </WrapPanel>
-        <Calendar/>
-
-        <TextBlock Grid.Row="5" Grid.Column="1" Text="Genre" Background="White"
-                   VerticalAlignment="Bottom" Margin="20 0 0 0"/>
-        <WrapPanel Grid.Row="6" Grid.Column="1" Background="DarkCyan">
-            <ComboBox>
-                <TextBlock Text="Homme"/>
-                <TextBlock Text="Femme"/>
-                <TextBlock Text="Autre"/>
-            </ComboBox>
-        </WrapPanel>
-
-        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Click="Validation_inscription_click" Content="Valider" Width="70" Height="30"/>
-
+        <TextBlock Text="Bienvenue" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="50" Grid.ColumnSpan="2" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Pseudo" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Adresse email" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Mot de passe" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="3" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Âge" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Retaper le mot de passe" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Genre" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="5" Style="{StaticResource FontSize25}"/>
+        <PasswordBox Grid.Row="4" Width="300" Height="25"/>
+        <PasswordBox Grid.Row="6" Width="300" Height="25"/>
+        <TextBox Grid.Row="2" Width="300" Height="25"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="300" Height="25"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" Width="300" Height="25">
+            <ComboBoxItem Content="Homme"/>
+            <ComboBoxItem Content="Femme"/>
+            <ComboBoxItem Content="Autre"/>
+        </ComboBox>
+        <DatePicker Grid.Row="4" Grid.Column="1" Width="300" Height="40"/>
+        <Button Grid.Row="7" Grid.Column="1" Width="100" Height="40" Click="Validation_inscription_click" Style="{StaticResource ButtonValider}">
+            <WrapPanel>
+                <Image Source="../../image/confirm.png" Width="30" HorizontalAlignment="Left"/>
+                <TextBlock Text="    Valider" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </Button>
     </Grid>
 </UserControl>

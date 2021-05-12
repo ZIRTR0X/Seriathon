@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Sérieathon"
         mc:Ignorable="d"
         Title="Accueil" Height="450" Width="800">
-    <DockPanel Background="Black">
+    <DockPanel>
 
-        <Grid DockPanel.Dock="Top" Background="red" Height="43">
+        <Grid DockPanel.Dock="Top" Background="#777c88" Height="55">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="5*"/>
@@ -17,13 +17,14 @@
             </Grid.ColumnDefinitions>
             <Image Grid.Column="0" Source="/image/logo/seriathon.png"/>
             <Button Grid.Column="2" x:Name="Inscription_button" 
-                    Width="60" Height="30" Click="Inscription_click">
+                    Width="75" Height="30" Click="Inscription_click">
                 <Label Content="_Inscription" Target="Inscription_button"/>
             </Button>
             <Button Grid.Column="3" x:Name="Connexion_button"
-                    Width="60" Height="30" Click="Connexion_click">
+                    Width="70" Height="30" Click="Connexion_click">
                 <Label Content="_Connexion" Target="Connexion_button"/>
             </Button>
+
         </Grid>
 
         <ContentControl x:Name="accueil_content_control">

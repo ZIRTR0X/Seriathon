@@ -12,16 +12,51 @@
         <Style TargetType="TextBlock" x:Key="ColorBlackFontFamily">
             <Setter Property="Foreground" Value="Black"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="FontSize25">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        </Style>
         <Style TargetType="Grid">
             <Setter Property="Background" Value="#36393F"/>
         </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#2F3136"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
         </Style>
+        <Style TargetType="Button" x:Key="ButtonValider">
+            <Setter Property="Background" Value="green"/>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonRetour">
+            <Setter Property="Background" Value="red"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="DatePickerTextBox">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="BorderBrush" Value="#777c88"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        
+
+
 
 
     </Application.Resources>

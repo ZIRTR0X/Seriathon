@@ -21,6 +21,9 @@ namespace Sérieathon
         public UC_connexion()
         {
             InitializeComponent();
+
+            Image_View_Password.Source = new BitmapImage(new Uri("../../image/view.png", UriKind.Relative));
+
         }
 
         /// <summary>
@@ -28,6 +31,7 @@ namespace Sérieathon
         /// </summary>
         /// <param name="sender"></param> Objet envoyant l'évènement, normalement de classe Button, originellement x:Name Validation_button
         /// <param name="e"></param>
+
         private void Validation_connexion_click(object sender, RoutedEventArgs e)
         {
             Seriathon main_window = new Seriathon();
@@ -42,10 +46,12 @@ namespace Sérieathon
         //    Image_View_Password.Source = BitmapImage(new Uri(@"/image/visibility.png"));
 
         //}
+        
         private void View_Password_Click(object sender, RoutedEventArgs e)
         {
-            Image_View_Password.Source = new BitmapImage(new Uri("/image/visibility.png", UriKind.RelativeOrAbsolute));
+            Image_View_Password.Source = new BitmapImage(new Uri("../../image/visibility.png", UriKind.Relative));
         }
+        
 
     }
 }

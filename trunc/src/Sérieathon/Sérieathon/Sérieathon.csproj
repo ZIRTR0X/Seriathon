@@ -8,17 +8,31 @@
 
   <ItemGroup>
     <None Remove="image\affiche\DemonSlayer.jpeg" />
+    <None Remove="image\confirm.png" />
+    <None Remove="image\left-arrow.png" />
     <None Remove="image\logo\logo_accueil_grand.png" />
     <None Remove="image\logo\logo_accueil_petit.png" />
     <None Remove="image\logo\logo_accueil_temp.png" />
     <None Remove="image\logo\seriathon.png" />
     <None Remove="image\logo\seriathon_ico.ico" />
+    <None Remove="image\right-arrow.png" />
+    <None Remove="image\view.png" />
+    <None Remove="image\visibility.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="image\affiche\DemonSlayer.jpeg">
+    <Content Include="image\affiche\DemonSlayer.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+    <Content Include="image\confirm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="image\left-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="image\right-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="image\logo\logo_accueil_grand.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -34,6 +48,12 @@
     <Resource Include="image\logo\seriathon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="image\view.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="image\visibility.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

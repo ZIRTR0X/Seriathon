@@ -15,11 +15,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Ellipse Grid.Column="0" Height="50" Width="50" Margin="5" Fill="White"/>
-            <Button Grid.Column="1" Content="Vue" Height="20" Width="70"/>
-            <Button Grid.Column="2" Content="Statistiques" Height="20" Width="70"/>
+            <Button Grid.Column="1" Content="Vue" Height="20" Width="40"/>
+            <Button Grid.Column="2" Content="Statistiques" Height="20" Width="80"/>
         </Grid>
         <ContentControl>
-            <local:UC_Profile_Statistique/>
+            <local:UC_Profile_Vue Loaded="UC_Profile_Vue_Loaded"/>
         </ContentControl>
     </DockPanel>
 </UserControl>
