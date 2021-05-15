@@ -11,7 +11,7 @@ namespace modelisation
         string email;
         int age;
         string genre;
-        LinkedList<ContenuVideoludique> ListCV = new LinkedList<ContenuVideoludique>;
+        LinkedList<ContenuVideoludique> ListCV = new LinkedList<ContenuVideoludique>();
 
         public Utilisateur(string pseudo, string password, string email, int age, string genre) 
         {

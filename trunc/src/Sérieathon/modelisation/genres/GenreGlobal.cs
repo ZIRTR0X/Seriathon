@@ -14,6 +14,9 @@ namespace modelisation.genres
         Action,
         Horreur,
         Romance,
-        Fantastique
+        Fantastique,
+        Policier,
+        ScienceFiction,
+        Aventure
     }
 }

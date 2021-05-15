@@ -7,18 +7,25 @@ namespace modelisation
 {
     class Marathon
     {
-        public int NbJour { get; private set; }
-
-        public int NbHeureParJour { get; private set; }
-
-        public LinkedList<ContenuVideoludique>
+        public int nbJour;
+        public int nbHeureParJour;
+        public LinkedList<ContenuVideoludique> ListMarathon= new LinkedList<ContenuVideoludique>();
 
         public Marathon(int nbJour, int nbHeureParJour)
         {
-            NbJour = nbJour;
-            NbHeureParJour = nbHeureParJour;
+            this.nbJour = nbJour;
+            this.nbHeureParJour = nbHeureParJour;
         }
 
+        public void ajouterAVoir(ContenuVideoludique c)
+        {
+            ListMarathon.AddLast(c);
+        }
+
+        public void enleverAVoir(ContenuVideoludique c)
+        {
+            ListMarathon.Remove(c);
+        }
 
     }
 }
