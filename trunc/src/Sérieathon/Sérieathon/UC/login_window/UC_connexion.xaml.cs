@@ -18,9 +18,14 @@ namespace Sérieathon
     /// </summary>
     public partial class UC_connexion : UserControl
     {
+
+        public bool Visibility_icon { get; private set; }
+
         public UC_connexion()
         {
             InitializeComponent();
+
+            Visibility_icon = false;
 
             Image_View_Password.Source = new BitmapImage(new Uri("../../image/view.png", UriKind.Relative));
 
@@ -47,9 +52,24 @@ namespace Sérieathon
 
         //}
         
+        /// <summary>
+        /// Event de click permettant de changer l'icone de visibilitée d'un oeil visible à un barré
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void View_Password_Click(object sender, RoutedEventArgs e)
         {
-            Image_View_Password.Source = new BitmapImage(new Uri("../../image/visibility.png", UriKind.Relative));
+            
+            if(Visibility_icon)
+            {
+                Image_View_Password.Source = new BitmapImage(new Uri("../../image/view.png", UriKind.Relative));
+                Visibility_icon = false;
+            } else
+            {
+                Image_View_Password.Source = new BitmapImage(new Uri("../../image/visibility.png", UriKind.Relative));
+                Visibility_icon = true; 
+            }
+            
         }
         
 
