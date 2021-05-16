@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+
+using modelisation.content;
+using modelisation.genres;
+
 
 namespace modelisation
 {
@@ -32,16 +37,15 @@ namespace modelisation
             ListCV.Remove(c);
         }
 
+        public IEnumerable<Anime> getListAnimeVu()
+        {
+            return ListCV.Where(c => c.GetType() == Anime);
+        }
+
         public int getNbAnimeVu()
         {
-            int nbAnime = 0;
-            foreach (ContenuVideoludique a in ListCV) {
-                if (a.GetType() == "Anime")
-                {
-                    nbAnime++;
-                }
-            }
-            return nbAnime;
+            return ListCV.Count(c => c.GetType() is Anime)
+
         }
 
         public int getNbSerieVu()
