@@ -6,7 +6,7 @@ using modelisation.usefull_interfaces;
 namespace modelisation.content.episodique
 {
     /// <summary>
-    /// Classe épisode, répertoriant tout ce qu'il y a a savoir sur un épisode d'une série.
+    /// Classe Episode, répertoriant tout ce qu'il y a a savoir sur un épisode d'une série.
     /// </summary>
     public class Episode : IEstDescriptible, IEquatable<Episode>
     {
@@ -19,12 +19,12 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if (String.IsNullOrEmpty(_nom))
+                if (String.IsNullOrEmpty(value))
                 {
-                    Nom = "Nom inconnu";
+                    _nom = "Nom inconnu";
                 } else
                 {
-                    Nom = _nom;
+                    _nom = value;
                 }
             }
         }
@@ -39,12 +39,12 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if(_numEpisode <= 0)
+                if(value <= 0)
                 {
-                    NumEpisode = 0;
+                    _numEpisode = 0;
                 } else
                 {
-                    NumEpisode = _numEpisode;
+                    _numEpisode = value;
                 }
             }
         }
@@ -60,12 +60,12 @@ namespace modelisation.content.episodique
             private set
             {
                 // le premier film de l'histoire est sortit en 1895, "La Sortie de l'usine Lumière à Lyon"! 
-                if (_date.CompareTo(new DateTime(1895, 1, 1)) < 0)
+                if (value.CompareTo(new DateTime(1895, 1, 1)) < 0)
                 {
-                    Date = new DateTime(1895, 1, 1);
+                    _date = new DateTime(1895, 1, 1);
                 } else
                 {
-                    Date = _date;
+                    _date = value;
                 }
             }
         }
@@ -80,12 +80,12 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if(_dureeEpisode.CompareTo(new TimeSpan(0,0,0)) < 0)
+                if(value.CompareTo(new TimeSpan(0,0,0)) < 0)
                 {
-                    DureeEpisode = new TimeSpan(0, 0, 0);
+                    _dureeEpisode = new TimeSpan(0, 0, 0);
                 } else
                 {
-                    DureeEpisode = _dureeEpisode;
+                    _dureeEpisode = value;
                 }
             }
         }

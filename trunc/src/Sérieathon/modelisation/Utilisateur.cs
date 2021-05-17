@@ -63,9 +63,9 @@ namespace modelisation
             return ListCV.Count;
         }
 
-        public int getNbGenreGlobalVu(GenreGlobal g)
+        /*public int getNbGenreGlobalVu(GenreGlobal g)
         {
-            // return ListCV.Where(c => c.Genre);
+            //return ListCV.Where(c => c.Genre);
 
             int nbGenreGlobal = 0;
 
@@ -93,6 +93,6 @@ namespace modelisation
             }
 
             return nbGenreAnime;
-        }
+        }*/
     }
 }

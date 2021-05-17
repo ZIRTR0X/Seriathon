@@ -5,7 +5,10 @@ using System.Text;
 
 namespace modelisation.content.episodique
 {
-    internal class Saison : IEquatable<Saison>
+    /// <summary>
+    /// classe Saison, répertoriant tout ce qu'il y a a savoir sur une saison d'une série
+    /// </summary>
+    public class Saison : IEquatable<Saison>
     {
         /// <summary>
         /// int NumSaison permet de connaitre en quelle position la saison se place dans la série, il ne peut etre négatif
@@ -16,12 +19,12 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if(_numSaison <= 0)
+                if(value <= 0)
                 {
-                    NumSaison = 0;
+                    _numSaison = 0;
                 } else
                 {
-                    NumSaison = _numSaison;
+                    _numSaison = value;
                 }
             }
         }
@@ -36,12 +39,12 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if(_listEpisodes == null)
+                if(value == null)
                 {
-                    ListEpisodes = new LinkedList<Episode>();
+                    _listEpisodes = new LinkedList<Episode>();
                 } else
                 {
-                    ListEpisodes = _listEpisodes;
+                    _listEpisodes = value;
                 }
             }
         }
