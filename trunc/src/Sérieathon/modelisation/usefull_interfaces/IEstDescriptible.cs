@@ -15,6 +15,6 @@ namespace modelisation.usefull_interfaces
         /// Retourne la propriété Description
         /// </summary>
         /// <returns>La description, au format string</returns>
-        string getDescription();
+        string GetDescription();
     }
 }

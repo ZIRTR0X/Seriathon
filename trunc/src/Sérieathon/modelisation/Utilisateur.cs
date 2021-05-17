@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 
 using modelisation.content;
+using modelisation.content.episodique;
 using modelisation.genres;
 
 
@@ -39,39 +40,22 @@ namespace modelisation
 
         public IEnumerable<Anime> getListAnimeVu()
         {
-            return ListCV.Where(c => c.GetType() == Anime);
+            return (IEnumerable<Anime>)ListCV.Where(c => c is Anime);
         }
 
         public int getNbAnimeVu()
         {
-            return ListCV.Count(c => c.GetType() is Anime)
-
+            return ListCV.Count(c => c is Anime);
         }
 
         public int getNbSerieVu()
         {
-            int nbSerie = 0;
-            foreach (ContenuVideoludique a in ListCV)
-            {
-                if (a.GetType() == "Serie")
-                {
-                    nbSerie++;
-                }
-            }
-            return nbSerie;
+            return ListCV.Count(c => c is Serie);
         }
 
         public int getNbFilmVu()
         {
-            int nbFilm = 0;
-            foreach (ContenuVideoludique a in ListCV)
-            {
-                if (a.GetType() == "Film")
-                {
-                    nbFilm++;
-                }
-            }
-            return nbFilm;
+            return ListCV.Count(c => c is Film);
         }
 
         public int getNbContenuVu()
@@ -81,6 +65,8 @@ namespace modelisation
 
         public int getNbGenreGlobalVu(GenreGlobal g)
         {
+            // return ListCV.Where(c => c.Genre);
+
             int nbGenreGlobal = 0;
 
             foreach (ContenuVideoludique a in ListCV)

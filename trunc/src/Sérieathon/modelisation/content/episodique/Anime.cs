@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace modelisation.content
+namespace modelisation.content.episodique
 {
-    class Anime : Serie
+    public class Anime : Serie
     {
     }
 }

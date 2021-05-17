@@ -4,7 +4,7 @@ using System.Text;
 
 namespace modelisation.content.episodique
 {
-    class Serie : ContenuVideoludique
+    public class Serie : ContenuVideoludique
     {
     }
 }
