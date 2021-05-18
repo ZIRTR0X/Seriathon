@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using modelisation.genres;
+using modelisation.langues;
 
 namespace modelisation.content
 {
@@ -15,11 +16,11 @@ namespace modelisation.content
         public GenreGlobal Genre { get; set; }
         private string Description { get; set; }
         private string OuRegarder { get; set; }
-        private string Audio { get; set; }
-        private string SousTitre { get; set; }
+        private Langues Audio { get; set; }
+        private Langues SousTitre { get; set; }
 
 
-        public ContenuVideoludique(string Titre, TimeSpan Duree,string Production, int Date, GenreGlobal Genre, string Description, string OuRegarder, string Audio, string SousTitre)
+        public ContenuVideoludique(string Titre, TimeSpan Duree,string Production, int Date, GenreGlobal Genre, string Description, string OuRegarder, Langues Audio, Langues SousTitre)
         {
             this.Titre = Titre;
             this.Duree = Duree;
