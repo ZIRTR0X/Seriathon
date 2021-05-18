@@ -12,12 +12,12 @@ namespace modelisation
 {
     class Utilisateur
     {
-        string pseudo;
-        string password;
-        string email;
-        int age;
-        string genre;
-        LinkedList<ContenuVideoludique> ListCV = new LinkedList<ContenuVideoludique>();
+        public string pseudo;
+        public string password;
+        public string email;
+        public int age;
+        public string genre;
+        public LinkedList<ContenuVideoludique> ListCV = new LinkedList<ContenuVideoludique>();
 
         public Utilisateur(string pseudo, string password, string email, int age, string genre) 
         {
@@ -38,7 +38,7 @@ namespace modelisation
             ListCV.Remove(c);
         }
 
-        public IEnumerable<Anime> getListAnimeVu()
+        /*public IEnumerable<Anime> getListAnimeVu()
         {
             return (IEnumerable<Anime>)ListCV.Where(c => c is Anime);
         }
@@ -63,7 +63,7 @@ namespace modelisation
             return ListCV.Count;
         }
 
-        /*public int getNbGenreGlobalVu(GenreGlobal g)
+        public int getNbGenreGlobalVu(GenreGlobal g)
         {
             //return ListCV.Where(c => c.Genre);
 
