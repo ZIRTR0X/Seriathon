@@ -8,9 +8,9 @@ namespace modelisation.content
 {
     public class Film : ContenuVideoludique
     {
-        string Acteurs;
-        public Film(string Titre, TimeSpan Duree, string Production, int Date, GenreGlobal Genre, string Description, string OuRegarder, Langues Audio, Langues SousTitre, string Acteurs)
-            :base( Titre,  Duree,  Production,  Date,  Genre,  Description,  OuRegarder,  Audio,  SousTitre)
+        public string Acteurs;
+        public Film(string Titre, TimeSpan Duree, string Production, int Date, GenreGlobal Genre, string Description, string OuRegarder, Langues Audio, Langues SousTitre, string Image, string Acteurs)
+            :base( Titre,  Duree,  Production,  Date,  Genre,  Description,  OuRegarder,  Audio,  SousTitre, Image)
         {
             this.Acteurs = Acteurs;
         }

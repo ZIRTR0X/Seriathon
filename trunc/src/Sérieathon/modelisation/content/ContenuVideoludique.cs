@@ -8,19 +8,20 @@ namespace modelisation.content
 {
     public abstract class ContenuVideoludique
     {
-        private string Titre { get; set; }
-        private TimeSpan Duree { get; set; }
-        private bool Vue { get; set; } = false;
-        private string Production { get; set; }
-        private int Date { get; set; }
+        public string Titre { get; set; }
+        public TimeSpan Duree { get; set; }
+        public bool Vue { get; set; } = false;
+        public string Production { get; set; }
+        public int Date { get; set; }
         public GenreGlobal Genre { get; set; }
-        private string Description { get; set; }
-        private string OuRegarder { get; set; }
-        private Langues Audio { get; set; }
-        private Langues SousTitre { get; set; }
+        public string Description { get; set; }
+        public string OuRegarder { get; set; }
+        public Langues Audio { get; set; }
+        public Langues SousTitre { get; set; }
+        public string Image { get; set; }
 
 
-        public ContenuVideoludique(string Titre, TimeSpan Duree,string Production, int Date, GenreGlobal Genre, string Description, string OuRegarder, Langues Audio, Langues SousTitre)
+        public ContenuVideoludique(string Titre, TimeSpan Duree,string Production, int Date, GenreGlobal Genre, string Description, string OuRegarder, Langues Audio, Langues SousTitre, string Image)
         {
             this.Titre = Titre;
             this.Duree = Duree;
@@ -31,6 +32,7 @@ namespace modelisation.content
             this.OuRegarder = OuRegarder;
             this.Audio = Audio;
             this.SousTitre = SousTitre;
+            this.Image = Image;
         }
 
 
