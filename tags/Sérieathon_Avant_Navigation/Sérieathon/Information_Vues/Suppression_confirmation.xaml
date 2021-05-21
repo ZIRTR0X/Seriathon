@@ -1,0 +1,29 @@
+﻿<Window x:Class="Sérieathon.Information_Vues.Suppression_confirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sérieathon.Information_Vues"
+        mc:Ignorable="d"
+        Title="Suppression_confirmation" Height="450" Width="800">
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Suppression du marathon" Grid.ColumnSpan="2" Background="DarkCyan"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Êtes-vous sûr de vouloir supprimer votre marathon en cours?" Grid.Row="1"
+                   Grid.ColumnSpan="2" Background="DarkCyan" VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+        <Button Content="Oui" Grid.Row="2"  Background="DarkSalmon" Width="30" Height="20" Margin="30"/>
+        <Button Content="Non" Grid.Row="2" Grid.Column="1"  Background="DarkSalmon"
+                Width="30" Height="20" Margin="30"/>
+
+    </Grid>
+</Window>

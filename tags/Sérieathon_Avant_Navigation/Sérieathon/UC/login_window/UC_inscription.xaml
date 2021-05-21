@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Sérieathon.UC_inscription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sérieathon.UC.basic_element"
+             xmlns:basicElement="clr-namespace:Sérieathon.UC.basic_element"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Bienvenue" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="50" Grid.ColumnSpan="2" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Pseudo" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Adresse email" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Mot de passe" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="3" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Âge" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Retaper le mot de passe" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5" Style="{StaticResource FontSize25}"/>
+        <TextBlock Text="Genre" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="5" Style="{StaticResource FontSize25}"/>
+        <PasswordBox Grid.Row="4" Width="300" Height="25"/>
+        <PasswordBox Grid.Row="6" Width="300" Height="25"/>
+        <TextBox Grid.Row="2" Width="300" Height="25"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="300" Height="25"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" Width="300" Height="25">
+            <ComboBoxItem Content="Homme"/>
+            <ComboBoxItem Content="Femme"/>
+            <ComboBoxItem Content="Autre"/>
+        </ComboBox>
+        <DatePicker Grid.Row="4" Grid.Column="1" Width="300" Height="40"/>
+        <Button Grid.Row="7" Grid.Column="1" Width="100" Height="40" Click="Validation_inscription_click" Style="{StaticResource ButtonValider}">
+            <WrapPanel>
+                <Image Source="../../image/confirm.png" Width="30" HorizontalAlignment="Left"/>
+                <TextBlock Text="    Valider" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </Button>
+    </Grid>
+</UserControl>
