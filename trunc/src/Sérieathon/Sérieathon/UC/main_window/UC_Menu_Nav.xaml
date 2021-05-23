@@ -7,23 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
-    <Grid Background="#171717" Width="100">
+    <Grid Background="#171717">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
         <Image Grid.Row="0" Source="/image/logo/logo_accueil_petit.png"/>
-        <Button Grid.Row="1" Click="accueil_button_Click" x:Name="accueil_button" Height="30" Width="70" VerticalAlignment="Bottom">
+        <Button Grid.Row="1" Click="accueil_button_Click" x:Name="accueil_button" Height="40" Width="80" VerticalAlignment="Bottom">
             <Label Content="_Accueil" Target="accueil_button"/>
         </Button>
-        <Button Grid.Row="2" Click="marathon_button_Click" x:Name="marathon_button" Height="30" Width="80" VerticalAlignment="Bottom">
+        <Button Grid.Row="2" Click="marathon_button_Click" x:Name="marathon_button" Height="40" Width="110" VerticalAlignment="Bottom">
             <Label Content="_Marathon" Target="marathon_button"/>
         </Button>
-        <Button Grid.Row="3" Click="profil_button_Click" x:Name="profil_button" Height="30" Width="60" VerticalAlignment="Bottom">
+        <Button Grid.Row="3" Click="profil_button_Click" x:Name="profil_button" Height="40" Width="70" VerticalAlignment="Bottom">
             <Label Content="_Profil" Target="profil_button"/>
         </Button>
     </Grid>

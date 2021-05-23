@@ -26,10 +26,15 @@
         <TextBlock Grid.Column="2" Grid.Row="0" Text="Nouveau marathon" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Grid.Column="2" Grid.Row="1" Text="Quel type de contenue voulez-vous voir ?" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
 
-        <Button Click="Film_Button_Click" Grid.Column="1" Grid.Row="2" Height="20" Width="70" Content="Film"/>
-        <Button Click="Serie_Button_Click" Grid.Column="2" Grid.Row="2" Height="20" Width="70" Content="Série"/>
-        <Button Click="Anime_Button_Click" Grid.Column="3" Grid.Row="2" Height="20" Width="70" Content="Anime"/>
-        <Button Click="NM2_Back_Button_Click" Grid.Column="0" Grid.Row="3" Height="20" Width="70" Content="Retour"/>
+        <Button Click="Film_Button_Click" Grid.Column="1" Grid.Row="2" Height="40" Width="70" Content="Film"/>
+        <Button Click="Serie_Button_Click" Grid.Column="2" Grid.Row="2" Height="40" Width="70" Content="Série"/>
+        <Button Click="Anime_Button_Click" Grid.Column="3" Grid.Row="2" Height="40" Width="70" Content="Anime"/>
+        <Button Click="NM2_Back_Button_Click" Grid.Column="0" Grid.Row="3" Style="{StaticResource ButtonRetour}">
+            <WrapPanel>
+                <Image Source="../../../../image/back_arrow.png" Width="30" HorizontalAlignment="Left"/>
+                <TextBlock Text=" Retour" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </Button>
 
     </Grid>
 </UserControl>

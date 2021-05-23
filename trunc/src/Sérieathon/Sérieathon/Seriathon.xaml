@@ -14,11 +14,22 @@
         </Style>
     </Window.Resources>
 
-    <DockPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <local1:UC_Menu_Nav/>
+        <ContentControl x:Name="content_control_page_accueil" Grid.Column="1"
+                        Content="{Binding EtatCourant, Converter={StaticResource Func2WindowPartConverter}}">
+        </ContentControl>
+    </Grid>
+   
+    <!--<DockPanel>
         <local1:UC_Menu_Nav/>
         <ContentControl x:Name="content_control_page_accueil" 
                         Content="{Binding EtatCourant, Converter={StaticResource Func2WindowPartConverter}}">
-            <!--<local:UC_accueil/>-->
+            --><!--<local:UC_accueil/>--><!--
         </ContentControl>
-    </DockPanel>
+    </DockPanel>-->
 </Window>

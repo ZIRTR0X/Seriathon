@@ -30,5 +30,6 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
         {
             NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON2;
         }
+
     }
 }

@@ -11,6 +11,7 @@
         <FontFamily x:Key="DefaultFontFamily">Comic Sans MS</FontFamily>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
         </Style>
         <Style TargetType="TextBlock" x:Key="ColorBlackFontFamily">
@@ -31,12 +32,19 @@
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
         <Style TargetType="Button" x:Key="ButtonValider">
             <Setter Property="Background" Value="green"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="115"/>
         </Style>
         <Style TargetType="Button" x:Key="ButtonRetour">
             <Setter Property="Background" Value="red"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="110"/>
         </Style>
         <Style TargetType="DatePicker">
             <Setter Property="Background" Value="#777c88"/>
@@ -54,6 +62,10 @@
             <Setter Property="Background" Value="#777c88"/>
             <Setter Property="BorderBrush" Value="#777c88"/>
         </Style>
+        <!--<Style TargetType="ComboBox">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="BorderBrush" Value="#777c88"/>
+        </Style>-->
         <Style TargetType="TextBox">
             <Setter Property="Background" Value="#777c88"/>
             <Setter Property="Foreground" Value="White"/>

@@ -33,10 +33,10 @@
             <Image x:Name="Image_View_Password" Width="15" Height="15" Grid.Column="0"/>
         </Button>
 
-        <Button Grid.Row="5" Grid.Column="2" Width="100" Height="40" Click="Validation_connexion_click" Style="{StaticResource ButtonValider}">
+        <Button Grid.Row="5" Grid.Column="2" Click="Validation_connexion_click" Style="{StaticResource ButtonValider}">
             <WrapPanel>
                 <Image Source="../../image/confirm.png" Width="30" HorizontalAlignment="Left"/>
-                <TextBlock Text="    Valider" VerticalAlignment="Center"/>
+                <TextBlock Text="  Valider" VerticalAlignment="Center"/>
             </WrapPanel>
         </Button>
     </Grid>
