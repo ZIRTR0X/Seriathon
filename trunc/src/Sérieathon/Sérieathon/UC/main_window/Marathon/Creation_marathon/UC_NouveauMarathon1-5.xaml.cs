@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
 {
     /// <summary>
     /// Logique d'interaction pour UC_NouveauMarathon1_5.xaml

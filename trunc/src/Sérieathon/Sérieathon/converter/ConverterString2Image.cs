@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Data;
 
-namespace modelisation.converter
+namespace Sérieathon.converter
 {
     public class ConverterString2Image : IValueConverter
     {
@@ -30,4 +30,3 @@ namespace modelisation.converter
         }
     }
 }
-

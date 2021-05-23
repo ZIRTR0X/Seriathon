@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sérieathon.UC.main_window.Marathon.marathon_windows" 
-             xmlns:conv="clr-namespace:modelisation.converter"
+             xmlns:conv="clr-namespace:Sérieathon.converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>

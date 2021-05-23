@@ -17,10 +17,16 @@ namespace Sérieathon
     {
         public Manager MonManager { get; set; } = new Manager();
         public NavNavBar NavNavBar { get; set; } = new NavNavBar();
+        public NavProfil NavProfil { get; set; } = new NavProfil();
+
+        
+
         public App()
         {
            
         }
+
+        
     }
 }
 

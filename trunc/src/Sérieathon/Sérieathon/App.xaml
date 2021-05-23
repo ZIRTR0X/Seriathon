@@ -6,6 +6,8 @@
              StartupUri="Accueil.xaml">
     <Application.Resources>
         <conv:func2WindowPartConverter x:Key="Func2WindowPartConverter"/>
+        <conv:func2WindowPartConverterProfil x:Key="Func2WindowPartConverterProfil"/>
+        <conv:ConverterString2Image x:Key="converterString2Image"/>
         <FontFamily x:Key="DefaultFontFamily">Comic Sans MS</FontFamily>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>

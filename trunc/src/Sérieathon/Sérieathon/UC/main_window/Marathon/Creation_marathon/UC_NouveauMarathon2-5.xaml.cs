@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
 {
     /// <summary>
     /// Logique d'interaction pour UC_NouveauMarathon2_5.xaml
@@ -27,6 +27,18 @@ namespace Sérieathon
         private void NM2_Back_Button_Click(object sender, RoutedEventArgs e)
         {
             NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON1;
+        }
+        private void Film_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavNavBar.EtatCourant = NavNavBar.Etat.GENREGLOBAL;
+        }
+        private void Serie_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavNavBar.EtatCourant = NavNavBar.Etat.GENREGLOBAL;
+        }
+        private void Anime_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavNavBar.EtatCourant = NavNavBar.Etat.GENREANIME;
         }
     }
     

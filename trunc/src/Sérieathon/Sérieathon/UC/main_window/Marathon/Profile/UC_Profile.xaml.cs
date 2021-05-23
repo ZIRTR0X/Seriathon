@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sérieathon.converter;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,10 +19,21 @@ namespace Sérieathon.UC.main_window.Marathon.Profile
     /// </summary>
     public partial class UC_Profile : UserControl
     {
+        public NavProfil NavProfil => (App.Current as App).NavProfil;
         public UC_Profile()
         {
             InitializeComponent();
+            DataContext = NavProfil;
         }
 
+        private void Profil_Vue_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavProfil.EtatCourant = NavProfil.Etat.VUE;
+        }
+
+        private void Profil_Statistiques_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavProfil.EtatCourant = NavProfil.Etat.STATISTIQUE;
+        }
     }
 }

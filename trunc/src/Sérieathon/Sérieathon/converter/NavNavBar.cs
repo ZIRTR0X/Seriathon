@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using modelisation;
 using Sérieathon.UC.main_window.Marathon.marathon_windows;
 using Sérieathon.UC.main_window.Marathon.Profile;
+using Sérieathon.UC.main_window.Marathon.Creation_marathon;
 
 namespace Sérieathon.converter
 {
@@ -21,9 +22,11 @@ namespace Sérieathon.converter
             PROFIL,
             NEWMARATHON1,
             NEWMARATHON2,
-            NEWMARATHON3,
             NEWMARATHON4,
-            NEWMARATHON5
+            NEWMARATHON5,
+            GENREANIME,
+            GENREGLOBAL,
+            LEMARATHON
         }
 
         public static Dictionary<Etat, Func<UserControl>> FactoryUC = new Dictionary<Etat, Func<UserControl>>
@@ -33,6 +36,11 @@ namespace Sérieathon.converter
             [Etat.PROFIL] = () => new UC_Profile(),
             [Etat.NEWMARATHON2] = () => new UC_NouveauMarathon2_5(),
             [Etat.NEWMARATHON1] = () => new UC_NouveauMarathon1_5(),
+            [Etat.NEWMARATHON4] = () => new UC_NouveauMarathon4_5(),
+            [Etat.NEWMARATHON5] = () => new UC_NouveauMarathon5_5(),
+            [Etat.GENREANIME] = () => new UC_NouveauMarathon3_5_Anime(),
+            [Etat.GENREGLOBAL] = () => new UC_NouveauMarathon3_5_FilmEtSerie(),
+            [Etat.LEMARATHON] = () => new UC_Marathon(),
         };
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -52,56 +60,24 @@ namespace Sérieathon.converter
         }
         private Etat etatCourant;
 
+        public string GenrePrecedent
+        {
+            get => genrePrecedent;
+            set
+            {
+                if (value != genrePrecedent)
+                {
+                    genrePrecedent = value;
+                }
+            }
+        }
+        private string genrePrecedent = "";
+
         public NavNavBar()
         {
             EtatCourant = Etat.ACCUEIL;
         }
 
-        //public const string Uc_accueil = "Accueil";
-        //public const string Uc_marathon = "Marathon";
-        //public const string Uc_profil = "Profil";
-
-
-        //public ReadOnlyDictionary<string, Func<UserControl>> WindowParts { get; private set; }
-
-        //Dictionary<string, Func<UserControl>> windowParts = new Dictionary<string, Func<UserControl>>()
-        //{
-        //    [Uc_accueil] = () => new UC_accueil(),
-        //    [Uc_marathon] = () => new UC_Marathon(),
-        //    [Uc_profil] = () => new UC_Profile(),
-        //};
-
-        //public NavNavBar()
-        //{
-        //    WindowParts = new ReadOnlyDictionary<string, Func<UserControl>>(windowParts);
-        //    SelectedUserControlCreator = WindowParts.First();
-        //}
-
-        //public KeyValuePair<string, Func<UserControl>> SelectedUserControlCreator //faire un func
-        //{
-        //    get => selectedUserControlCreator;
-
-        //    set
-        //    {
-        //        if (selectedUserControlCreator.Equals(value)) return;
-        //        selectedUserControlCreator = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
-        //public KeyValuePair<string, Func<UserControl>> selectedUserControlCreator;
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        //    => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-        //public void NavigateTo(string windowsPartName)
-        //{
-        //    if (WindowParts.ContainsKey(windowsPartName))
-        //    {
-        //        SelectedUserControlCreator = WindowParts.Single(kvp => kvp.Key == windowsPartName);
-        //    }
-        //}
+ 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sérieathon.converter;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,16 +12,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
 {
     /// <summary>
     /// Logique d'interaction pour UC_NouveauMarathon5_5.xaml
     /// </summary>
     public partial class UC_NouveauMarathon5_5 : UserControl
     {
+        public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
         public UC_NouveauMarathon5_5()
         {
             InitializeComponent();
+        }
+
+        private void NM5_Continuer_Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavNavBar.EtatCourant = NavNavBar.Etat.LEMARATHON;
+        }
+
+        private void Nm5_Retour_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON4;
         }
     }
 }
