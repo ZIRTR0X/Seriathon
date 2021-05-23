@@ -17,12 +17,12 @@ namespace modelisation
             this.nbHeureParJour = nbHeureParJour;
         }
 
-        public void ajouterAVoir(ContenuVideoludique c)
+        public void AjouterAVoir(ContenuVideoludique c)
         {
             ListMarathon.AddLast(c);
         }
 
-        public void enleverAVoir(ContenuVideoludique c)
+        public void EnleverAVoir(ContenuVideoludique c)
         {
             ListMarathon.Remove(c);
         }

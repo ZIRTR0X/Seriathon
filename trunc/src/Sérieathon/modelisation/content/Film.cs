@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using modelisation.genres;
 using modelisation.langues;
 
 namespace modelisation.content
 {
-    public class Film : ContenuVideoludique
+    public class Film : ContenuVideoludique, IEquatable<Film>
     {
         /// <summary>
         /// liste des acteurs ayant participé au film, ne pouvant etre null
@@ -53,6 +54,38 @@ namespace modelisation.content
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
             this.Acteurs = acteurs;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is null) return false;
+
+            return ReferenceEquals(obj, this) || (obj is Film fi && Equals(fi));
+        }
+
+        public bool Equals(Film other)
+        {
+            // il faut order les deux listes, pour comparer les éléments de la lise avec les premiers de l'autre liste
+            LinkedList<string> copie_list_acteurs = new LinkedList<string>(other.Acteurs.OrderBy(a => a.GetHashCode()));
+
+            foreach (string a in Acteurs.OrderBy(a => a.GetHashCode()))
+            {
+                if (!a.Equals(copie_list_acteurs.First()))
+                {
+                    return false;
+                }
+                else
+                {
+                    copie_list_acteurs.Remove(a);
+                }
+            }
+
+            return base.Equals(other as ContenuVideoludique) && copie_list_acteurs.Count == 0;
+        }
+
+        public override int GetHashCode()
+        {
+            return Acteurs.Select(a => a.GetHashCode()).Sum() + (base.GetHashCode() * 3);
         }
     }
 }

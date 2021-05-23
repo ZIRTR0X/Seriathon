@@ -28,12 +28,12 @@ namespace modelisation
             this.genre = genre;
         }
 
-        public void ajouterCommeVu(ContenuVideoludique c)
+        public void AjouterCommeVu(ContenuVideoludique c)
         {
             ListCV.AddLast(c);
         }
 
-        public void enleverCommeVu(ContenuVideoludique c)
+        public void EnleverCommeVu(ContenuVideoludique c)
         {
             ListCV.Remove(c);
         }
