@@ -39,7 +39,7 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if(value == null)
+                if(value is null)
                 {
                     _listEpisodes = new LinkedList<Episode>();
                 } else
@@ -49,6 +49,28 @@ namespace modelisation.content.episodique
             }
         }
         private LinkedList<Episode> _listEpisodes;
+
+        /// <summary>
+        /// int NbEpisodes est une propriété calculée retournant le nombre d'épisodes de la liste d'épisode
+        /// </summary>
+        public int NbEpisodes => ListEpisodes.Count;
+
+        /// <summary>
+        /// TimeSpan DureeSaison est une propriété calculée renvoyant la somme des durées de tout les épisodes de la saison
+        /// </summary>
+        // "ListEpisodes.Select(e => e.DureeEpisode.Ticks).Sum()" renvoie la somme (long) de tout les TimeSpan de durée épisode
+        public TimeSpan DureeSaison => new TimeSpan(ListEpisodes.Select(e => e.DureeEpisode.Ticks).Sum());
+
+        /// <summary>
+        /// DateTime DateDebutSaison est une propriété calculée renvoyant la plus petite date de sortie d'épisode de la liste
+        /// </summary>
+        // ListEpisodes.Select(e => e.Date.Ticks).Min() permet de récupérer la date de la liste la plus antérieure
+        public DateTime DateDebutSaison => new DateTime(ListEpisodes.Select(e => e.Date.Ticks).Min());
+
+        /// <summary>
+        /// DateTime DateFinSaison est une propriété calculée renvoyant la plus grande date de sortie d'épisode de la liste
+        /// </summary>
+        public DateTime DateFinSaison => new DateTime(ListEpisodes.Select(e => e.Date.Ticks).Max());
 
         /// <summary>
         /// Constructeur de la classe Saison
@@ -72,41 +94,48 @@ namespace modelisation.content.episodique
         }
 
         /// <summary>
-        /// Permet de récupérer le nombre d'épisode de la série
+        /// Ajoute un épisode à la liste de la saison
         /// </summary>
-        /// <returns>nombre d'épisode de la série</returns>
-        public int GetNbEpisode()
+        /// <param name="e"></param> Episode à ajouter dans la saison
+        /// <returns>bool true si e a bien été ajouté, et false si jamais l'épisode est déjà présent dans la liste de la saison</returns>
+        public bool AjouterEpisode(Episode e)
         {
-            return ListEpisodes.Count;
+            if(ListEpisodes.Contains(e))
+            {
+                return false;
+            } else
+            {
+                ListEpisodes.AddLast(e);
+                return true;
+            }
         }
 
         /// <summary>
-        /// Permet de récupérer la durée totale de la saion, en récupérant les Ticks des TimeSpan de durée de chaque épisode de la liste d'épisodes, les ajoutes, et convertie cette somme de ticks en un TimeSPan
+        /// supprime un episode de la liste de la saison
         /// </summary>
-        /// <returns>durée totale de la saison</returns>
-        public TimeSpan GetDuree()
+        /// <param name="e"></param> Episode a supprimer de la saison
+        /// <returns>bool retournant true si bien supprimé, sinon false si aucune occurence n'est trouvée</returns>
+        public bool SupprimerEpisode(Episode e)
         {
-            // "ListEpisodes.Select(e => e.DureeEpisode.Ticks).Sum()" renvoie la somme (long) de tout les TimeSpan de durée épisode
-            return new TimeSpan(ListEpisodes.Select(e => e.DureeEpisode.Ticks).Sum());
+            return ListEpisodes.Remove(e);
         }
 
         /// <summary>
-        /// Permet de connaitre la date de début de la saison, correspondant à la date de parution d'épisode la plus antérieure de la liste d'épisode
+        /// Recherche un episode de la saison, par son numero d'Episode (retourne le 1er trouvé)
         /// </summary>
-        /// <returns>date de début de la saions</returns>
-        public DateTime GetDateDebut()
+        /// <param name="numeroEpisode"></param> numéro de l'épisode recherché
+        /// <returns>Episode dont le numéro correspond à celui demandé, si aucune occurence n'est trouvée, il renvoit null</returns>
+        public Episode RechercherEpisode(int numeroEpisode)
         {
-            // ListEpisodes.Select(e => e.Date.Ticks).Min() permet de récupérer la date de la liste la plus antérieure
-            return new DateTime(ListEpisodes.Select(e => e.Date.Ticks).Min());
-        }
+            foreach(Episode e in ListEpisodes)
+            {
+                if (e.NumEpisode == numeroEpisode)
+                {
+                    return e;
+                }
+            }
 
-        /// <summary>
-        /// Permet de connaitre la date de fin de la saison, correspondant à la date de parution d'épisode la plus ultérieure de la liste d'épisode
-        /// </summary>
-        /// <returns>date de fin de la saions</returns>
-        public DateTime GetDateFin()
-        {
-            return new DateTime(ListEpisodes.Select(e => e.Date.Ticks).Max());
+            return null;
         }
 
         /// <summary>
@@ -130,10 +159,9 @@ namespace modelisation.content.episodique
         /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null)) return false;
-            if (ReferenceEquals(obj, this)) return true;
-
-            return obj is Saison s && Equals(s);
+            if (obj is null) return false;
+            // equivalent à return ReferenceEquals(obj, this) ? true : obj is Saison s && Equals(s);
+            return ReferenceEquals(obj, this) || (obj is Saison s && Equals(s));
         }
 
         /// <summary>
@@ -145,15 +173,22 @@ namespace modelisation.content.episodique
         {
             if (NumSaison != other.NumSaison) return false;
 
-            foreach(Episode e in ListEpisodes)
+            // il faut order les deux listes, pour comparer les éléments de la lise avec les premiers de l'autre liste
+
+            LinkedList<Episode> copie_list_episode = new LinkedList<Episode>(other.ListEpisodes.OrderBy(e => e.GetHashCode()));
+
+            foreach (Episode e in ListEpisodes.OrderBy(e => e.GetHashCode()))
             {
-                if (!other.ListEpisodes.Contains(e))
+                if (!e.Equals(copie_list_episode.First()))
                 {
                     return false;
+                } else
+                {
+                    copie_list_episode.Remove(e);
                 }
             }
 
-            return true;
+            return copie_list_episode.Count == 0;
         }
 
         /// <summary>

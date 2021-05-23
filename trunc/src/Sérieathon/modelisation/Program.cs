@@ -10,7 +10,7 @@ namespace modelisation
 {
     class Program
     {
-        public void Main(string[] args)
+        /*public void Main(string[] args)
         {
             Initalisation();
         }
@@ -76,8 +76,8 @@ namespace modelisation
                 WriteLine(g);
             }
 
+        
 
-
-        }
+        }*/
     }
 }

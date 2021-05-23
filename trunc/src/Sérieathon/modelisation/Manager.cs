@@ -11,7 +11,7 @@ namespace modelisation
 {
     public class Manager
     {
-        public ReadOnlyCollection<Film> Films { get; set; }
+        /*public ReadOnlyCollection<Film> Films { get; set; }
         List<Film> films = new List<Film>();
 
         public ReadOnlyCollection<ContenuVideoludique> ContenuVideoludiques { get; set; }
@@ -66,6 +66,6 @@ namespace modelisation
         {
             return contenuVideoludique.Remove(f);
         }
-
+        */
     }
 }

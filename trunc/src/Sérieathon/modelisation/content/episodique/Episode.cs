@@ -19,7 +19,7 @@ namespace modelisation.content.episodique
 
             private set
             {
-                if (String.IsNullOrEmpty(value))
+                if (String.IsNullOrWhiteSpace(value))
                 {
                     _nom = "Nom inconnu";
                 } else
@@ -155,10 +155,10 @@ namespace modelisation.content.episodique
         /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null)) return false;
-            if (ReferenceEquals(obj, this)) return true;
+            if (obj is null) return false;
 
-            return obj is Episode ep && Equals(ep); // ep est la variable de stockage du cast de obj en Episode si le test obj is Episode est true
+            return ReferenceEquals(obj, this) || (obj is Episode ep && Equals(ep));
+            // ep est la variable de stockage du cast de obj en Episode si le test obj is Episode est true
         }
 
         /// <summary>
