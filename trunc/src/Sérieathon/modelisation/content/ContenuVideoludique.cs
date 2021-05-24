@@ -119,7 +119,7 @@ namespace modelisation.content
         /// <summary>
         /// LinkedList<GenreGlobal> Genre liste tout les genres auquel appartient l'instance
         /// </summary>
-        public LinkedList<GenreGlobal> Genre
+        public LinkedList<GenreGlobal> Genres
         {
             get => _genre;
 
@@ -225,7 +225,7 @@ namespace modelisation.content
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = "";
-            this.Genre = genres;
+            this.Genres = genres;
             this.Description = "";
             this.OuRegarder = new LinkedList<Uri>();
             this.Audios = new LinkedList<Langues>();
@@ -252,7 +252,7 @@ namespace modelisation.content
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = studioProd;
-            this.Genre = genres;
+            this.Genres = genres;
             this.Description = description;
             this.OuRegarder = new LinkedList<Uri>();
             this.Audios = new LinkedList<Langues>();
@@ -282,7 +282,7 @@ namespace modelisation.content
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = studioProd;
-            this.Genre = genres;
+            this.Genres = genres;
             this.Description = description;
             this.OuRegarder = ouRegarder;
             this.Audios = audios;
@@ -324,23 +324,39 @@ namespace modelisation.content
             if (!StudioProduction.Equals(other.StudioProduction)) return false;
             if (!Description.Equals(other.Description)) return false;
 
-            foreach(Uri u in OuRegarder)
+            LinkedList<GenreGlobal> genres_copies = new LinkedList<GenreGlobal>(other.Genres.OrderBy(g => g.GetHashCode()));
+            foreach (GenreGlobal g in Genres.OrderBy(g => g.GetHashCode()))
             {
-                if (!other.OuRegarder.Contains(u)) return false;
-            }
-
-            foreach(Langues l in Audios)
-            {
-                if (!other.Audios.Contains(l)) return false;
-            }
-
-            foreach(Langues l in SousTitres)
-            {
-                if (!other.SousTitres.Contains(l)) return false;
+                if (!g.Equals(genres_copies.First)) return false;
+                else genres_copies.RemoveFirst();
             }
 
 
-            return !Image.Equals(other.Image);
+            LinkedList<Uri> ouRegarder_copie = new LinkedList<Uri>(other.OuRegarder.OrderBy(u => u.GetHashCode()));
+            foreach (Uri u in OuRegarder.OrderBy(u => u.GetHashCode()))
+            {
+                if (!u.Equals(ouRegarder_copie.First)) return false;
+                else ouRegarder_copie.RemoveFirst();
+            }
+
+
+            LinkedList<Langues> audios_copie = new LinkedList<Langues>(other.Audios.OrderBy(a => a.GetHashCode()));
+            foreach (Langues a in Audios.OrderBy(a => a.GetHashCode())) 
+            {
+                if (a.Equals(audios_copie.First)) return false;
+                else audios_copie.RemoveFirst();
+            }
+
+
+            LinkedList<Langues> sousTitres_copie = new LinkedList<Langues>(other.SousTitres.OrderBy(s => s.GetHashCode()));
+            foreach (Langues s in SousTitres.OrderBy(s => s.GetHashCode()))
+            {
+                if (!s.Equals(sousTitres_copie.First)) return false;
+                else sousTitres_copie.RemoveFirst();
+            }
+
+
+            return genres_copies.Count == 0 && ouRegarder_copie.Count == 0 && audios_copie.Count == 0 && sousTitres_copie.Count == 0 && Image.Equals(other.Image);
         }
 
         /// <summary>
@@ -351,8 +367,8 @@ namespace modelisation.content
         {
             return ((Titre.GetHashCode() * 7) + (Date.GetHashCode() * 3) + (Duree.GetHashCode() * 21)
                 + (Realisateur.GetHashCode() * 31) + (StudioProduction.GetHashCode() * 2) + (Image.GetHashCode() * 3)
-                + (Description.GetHashCode() * 3) + (OuRegarder.Select(u => u.GetHashCode()).Sum() * 2)
-                + (Audios.Select(l => l.GetHashCode()).Sum() * 5) + (SousTitres.Select(l => l.GetHashCode()).Sum() * 2)) * 3;
+                + (Description.GetHashCode() * 3) + (OuRegarder.Sum(u => u.GetHashCode()) * 2)
+                + (Audios.Sum(l => l.GetHashCode()) * 5) + (SousTitres.Sum(l => l.GetHashCode()) * 2)) * 3;
         }
 
     }

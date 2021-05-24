@@ -76,7 +76,7 @@ namespace modelisation.content
                 }
                 else
                 {
-                    copie_list_acteurs.Remove(a);
+                    copie_list_acteurs.RemoveFirst();
                 }
             }
 
@@ -85,7 +85,7 @@ namespace modelisation.content
 
         public override int GetHashCode()
         {
-            return Acteurs.Select(a => a.GetHashCode()).Sum() + (base.GetHashCode() * 3);
+            return Acteurs.Sum(a => a.GetHashCode()) + (base.GetHashCode() * 3);
         }
     }
 }

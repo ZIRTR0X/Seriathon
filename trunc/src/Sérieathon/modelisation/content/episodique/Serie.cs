@@ -29,13 +29,23 @@ namespace modelisation.content.episodique
         }
         private LinkedList<Saison> _listSaisons;
 
-        public Serie(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, Uri image)
+        /// <summary>
+        /// int permet de connaitre le nombre de saisons dans la série
+        /// </summary>
+        public int NbSaisons => ListSaisons.Count;
+
+        /// <summary>
+        /// int permet de connaitre le nombre d'épisode dans la série
+        /// </summary>
+        public int NbEpisode => ListSaisons.Sum(s => s.NbEpisodes);
+
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, Uri image)
             : base(titre, date, duree, realisateur, genres, image)
         {
             this.ListSaisons = new LinkedList<Saison>();
         }
 
-        public Serie(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, Uri image,
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, Uri image,
             LinkedList<Saison> saisons) : base(titre, date, duree, realisateur, genres, image)
         {
             this.ListSaisons = saisons;
@@ -70,6 +80,26 @@ namespace modelisation.content.episodique
             return null;
         }
 
+        /// <summary>
+        /// Ajoute une saison à la liste de la série
+        /// </summary>
+        /// <param name="s"></param> Saison à ajouter dans la série
+        /// <returns>bool true si la saison a bien été ajouté, et false si jamais l'épisode est déjà présent dans la liste de la saison</returns>
+        public bool AjouterSaison(Saison s)
+        {
+            if (ListSaisons.Contains(s)) return false;
+            else
+            {
+                ListSaisons.AddLast(s);
+                return true;
+            }
+        }
+
+        public bool SupprimerSaison(Saison s)
+        {
+            return ListSaisons.Remove(s);
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is null) return false;
@@ -94,12 +124,12 @@ namespace modelisation.content.episodique
                 }
             }
 
-            return base.Equals(other as ContenuVideoludique) && copie_list_saison.Count == 0;
+            return copie_list_saison.Count == 0 && base.Equals(other as ContenuVideoludique);
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode() + (ListSaisons.Select(s => s.GetHashCode()).Sum() * 3);
+            return base.GetHashCode() + (ListSaisons.Sum(s => s.GetHashCode()) * 3);
         }
     }
 }

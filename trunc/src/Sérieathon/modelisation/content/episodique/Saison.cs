@@ -59,18 +59,18 @@ namespace modelisation.content.episodique
         /// TimeSpan DureeSaison est une propriété calculée renvoyant la somme des durées de tout les épisodes de la saison
         /// </summary>
         // "ListEpisodes.Select(e => e.DureeEpisode.Ticks).Sum()" renvoie la somme (long) de tout les TimeSpan de durée épisode
-        public TimeSpan DureeSaison => new TimeSpan(ListEpisodes.Select(e => e.DureeEpisode.Ticks).Sum());
+        public TimeSpan DureeSaison => new TimeSpan(ListEpisodes.Sum(e => e.DureeEpisode.Ticks));
 
         /// <summary>
         /// DateTime DateDebutSaison est une propriété calculée renvoyant la plus petite date de sortie d'épisode de la liste
         /// </summary>
         // ListEpisodes.Select(e => e.Date.Ticks).Min() permet de récupérer la date de la liste la plus antérieure
-        public DateTime DateDebutSaison => new DateTime(ListEpisodes.Select(e => e.Date.Ticks).Min());
+        public DateTime DateDebutSaison => new DateTime(ListEpisodes.Min(e => e.Date.Ticks));
 
         /// <summary>
         /// DateTime DateFinSaison est une propriété calculée renvoyant la plus grande date de sortie d'épisode de la liste
         /// </summary>
-        public DateTime DateFinSaison => new DateTime(ListEpisodes.Select(e => e.Date.Ticks).Max());
+        public DateTime DateFinSaison => new DateTime(ListEpisodes.Max(e => e.Date.Ticks));
 
         /// <summary>
         /// Constructeur de la classe Saison
@@ -97,7 +97,7 @@ namespace modelisation.content.episodique
         /// Ajoute un épisode à la liste de la saison
         /// </summary>
         /// <param name="e"></param> Episode à ajouter dans la saison
-        /// <returns>bool true si e a bien été ajouté, et false si jamais l'épisode est déjà présent dans la liste de la saison</returns>
+        /// <returns>bool true si l'épisode a bien été ajouté, et false si jamais l'épisode est déjà présent dans la liste de la saison</returns>
         public bool AjouterEpisode(Episode e)
         {
             if(ListEpisodes.Contains(e))
@@ -173,7 +173,7 @@ namespace modelisation.content.episodique
         {
             if (NumSaison != other.NumSaison) return false;
 
-            // il faut order les deux listes, pour comparer les éléments de la lise avec les premiers de l'autre liste
+            // il faut order les deux listes, pour comparer les éléments de la liste avec les premiers de l'autre liste
 
             LinkedList<Episode> copie_list_episode = new LinkedList<Episode>(other.ListEpisodes.OrderBy(e => e.GetHashCode()));
 
@@ -198,7 +198,7 @@ namespace modelisation.content.episodique
         public override int GetHashCode()
         {
             int hashCode = NumSaison * 3;
-            return (hashCode + ListEpisodes.Select(e => e.GetHashCode()).Sum()) * 2;
+            return (hashCode + ListEpisodes.Sum(e => e.GetHashCode())) * 2;
         }
     }
 }
