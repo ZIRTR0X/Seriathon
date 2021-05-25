@@ -39,20 +39,20 @@ namespace modelisation.content.episodique
         /// </summary>
         public int NbEpisode => ListSaisons.Sum(s => s.NbEpisodes);
 
-        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, Uri image)
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)
         {
             this.ListSaisons = new LinkedList<Saison>();
         }
 
-        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, Uri image,
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image,
             LinkedList<Saison> saisons) : base(titre, date, duree, realisateur, genres, image)
         {
             this.ListSaisons = saisons;
         }
 
         public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, Uri image)
+            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, string image)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
             this.ListSaisons = new LinkedList<Saison>();
@@ -60,7 +60,7 @@ namespace modelisation.content.episodique
 
         public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
             string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres,
-            Uri image, LinkedList<Saison> saisons)
+            string image, LinkedList<Saison> saisons)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
             this.ListSaisons = saisons;

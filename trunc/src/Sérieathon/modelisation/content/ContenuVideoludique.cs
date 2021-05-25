@@ -206,7 +206,7 @@ namespace modelisation.content
         /// <summary>
         /// Uri Image indique le chemin vers l'illustration du contenu
         /// </summary>
-        public Uri Image { get; set; }
+        public string Image { get; set; }
 
         /// <summary>
         /// Constructeur de la classe ContenuVideoludique
@@ -216,9 +216,9 @@ namespace modelisation.content
         /// <param name="duree"></param> TimeSpan durée du contenu
         /// <param name="realisateur"></param> string Réalisateur du contenu
         /// <param name="genres"></param> LinkedList<GenreGlobal> représentant la liste des genres auquel appartient le contenur
-        /// <param name="image"></param> Uri image d'illustration du contenu
+        /// <param name="image"></param> string image d'illustration du contenu
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur,
-            LinkedList<GenreGlobal> genres, Uri image)
+            LinkedList<GenreGlobal> genres, string image)
         {
             this.Titre = titre;
             this.Date = date;
@@ -243,9 +243,9 @@ namespace modelisation.content
         /// <param name="studioProd"></param> string Studio ayant produit le contenu
         /// <param name="genres"></param> LinkedList<GenreGlobal> représentant la liste des genres auquel appartient le contenur
         /// <param name="description"></param> string présentant un résumé du contenu
-        /// <param name="image"></param> Uri image d'illustration du contenu
+        /// <param name="image"></param> string image d'illustration du contenu
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd,
-            LinkedList<GenreGlobal> genres, string description, Uri image)
+            LinkedList<GenreGlobal> genres, string description, string image)
         {
             this.Titre = titre;
             this.Date = date;
@@ -275,7 +275,7 @@ namespace modelisation.content
         /// <param name="sousTitres"></param> LinkedList<Uri> listant les langues disponibles pour les sous-titres du contenu
         /// <param name="image"></param>
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, Uri image)
+            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, string image)
         {
             this.Titre = titre;
             this.Date = date;

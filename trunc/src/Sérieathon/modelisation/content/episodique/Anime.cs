@@ -29,13 +29,13 @@ namespace modelisation.content.episodique
         }
         private LinkedList<GenreAnime> _genreAnimes;
 
-        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, Uri image)
+        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image)
             :base(titre, date, duree, realisateur, genres, image)
         {
             this.GenreAnimes = new LinkedList<GenreAnime>();
         }
 
-        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, Uri image,
+        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image,
             LinkedList<Saison> saisons, LinkedList<GenreAnime> genreAnimes)
             :base(titre, date, duree, realisateur, genres, image, saisons)
         {
@@ -44,7 +44,7 @@ namespace modelisation.content.episodique
 
         public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
             string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres,
-            Uri image, LinkedList<Saison> saisons, LinkedList<GenreAnime> genreAnimes)
+            string image, LinkedList<Saison> saisons, LinkedList<GenreAnime> genreAnimes)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image, saisons)
         {
             this.GenreAnimes = genreAnimes;

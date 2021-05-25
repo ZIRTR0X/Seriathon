@@ -29,20 +29,20 @@ namespace modelisation.content
         }
         private LinkedList<string> _acteurs;
 
-        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, Uri image)
+        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)
         {
             this.Acteurs = new LinkedList<string>();
         }
 
-        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, Uri image,
+        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, string image,
             LinkedList<string> acteurs) : base(titre, date, duree, realisateur, genres, image)
         {
             this.Acteurs = acteurs;
         }
 
         public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, Uri image)
+            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, string image)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
             this.Acteurs = new LinkedList<string>();
@@ -50,7 +50,7 @@ namespace modelisation.content
 
         public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
             string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres,
-            Uri image, LinkedList<string> acteurs)
+            string image, LinkedList<string> acteurs)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
             this.Acteurs = acteurs;
