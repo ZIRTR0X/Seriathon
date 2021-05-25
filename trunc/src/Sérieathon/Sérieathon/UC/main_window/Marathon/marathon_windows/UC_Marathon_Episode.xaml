@@ -7,10 +7,7 @@
              xmlns:conv="clr-namespace:Sérieathon.converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <conv:ConverterString2Image x:Key="converterString2Image"/>
-    </UserControl.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -117,9 +117,9 @@ namespace modelisation.content
         private string _studioProduction;
 
         /// <summary>
-        /// LinkedList<GenreGlobal> Genre liste tout les genres auquel appartient l'instance
+        /// List<GenreGlobal> Genre liste tout les genres auquel appartient l'instance
         /// </summary>
-        public LinkedList<GenreGlobal> Genres
+        public List<GenreGlobal> Genres
         {
             get => _genre;
 
@@ -127,14 +127,14 @@ namespace modelisation.content
             {
                 if(value is null)
                 {
-                    _genre = new LinkedList<GenreGlobal>();
+                    _genre = new List<GenreGlobal>();
                 } else
                 {
                     _genre = value;
                 }
             }
         }
-        private LinkedList<GenreGlobal> _genre;
+        private List<GenreGlobal> _genre = new List<GenreGlobal>();
 
         /// <summary>
         /// string Description correspond à un résumé du contenu vidéoludique, ne pouvant etre null ou empty
@@ -142,9 +142,9 @@ namespace modelisation.content
         public string Description { get; set; }
 
         /// <summary>
-        /// LinkedLink<Uri> OuRegarder répertorie tout les liens pour aller voir le contenu, ne pouvant être null
+        /// List<Uri> OuRegarder répertorie tout les liens pour aller voir le contenu, ne pouvant être null
         /// </summary>
-        public LinkedList<Uri> OuRegarder
+        public List<Uri> OuRegarder
         {
             get => _ouRegarder;
 
@@ -152,19 +152,19 @@ namespace modelisation.content
             {
                 if(value is null)
                 {
-                    _ouRegarder = new LinkedList<Uri>();
+                    _ouRegarder = new List<Uri>();
                 } else
                 {
                     _ouRegarder = value;
                 }
             }
         }
-        private LinkedList<Uri> _ouRegarder;
+        private List<Uri> _ouRegarder = new List<Uri>();
 
         /// <summary>
-        /// LinkedList<Langues> Audios référence toutes les langues disponibles en audio, ne pouvant etre null
+        /// List<Langues> Audios référence toutes les langues disponibles en audio, ne pouvant etre null
         /// </summary>
-        public LinkedList<Langues> Audios
+        public List<Langues> Audios
         {
             get => _audios;
 
@@ -172,7 +172,7 @@ namespace modelisation.content
             {
                 if (value is null)
                 {
-                    _audios = new LinkedList<Langues>();
+                    _audios = new List<Langues>();
                 }
                 else
                 {
@@ -180,12 +180,12 @@ namespace modelisation.content
                 }
             }
         }
-        private LinkedList<Langues> _audios;
+        private List<Langues> _audios = new List<Langues>();
 
         /// <summary>
-        /// LinkedList<Langues> SousTitres référence toutes les langues disponibles en sous-titres, ne pouvant etre null
+        /// List<Langues> SousTitres référence toutes les langues disponibles en sous-titres, ne pouvant etre null
         /// </summary>
-        public LinkedList<Langues> SousTitres
+        public List<Langues> SousTitres
         {
             get => _sousTitres;
 
@@ -193,7 +193,7 @@ namespace modelisation.content
             {
                 if (value is null)
                 {
-                    _sousTitres = new LinkedList<Langues>();
+                    _sousTitres = new List<Langues>();
                 }
                 else
                 {
@@ -201,7 +201,7 @@ namespace modelisation.content
                 }
             }
         }
-        private LinkedList<Langues> _sousTitres;
+        private List<Langues> _sousTitres = new List<Langues>();
 
         /// <summary>
         /// Uri Image indique le chemin vers l'illustration du contenu
@@ -215,21 +215,21 @@ namespace modelisation.content
         /// <param name="date"></param> DateTime date de sortie du contenu vidéoludique
         /// <param name="duree"></param> TimeSpan durée du contenu
         /// <param name="realisateur"></param> string Réalisateur du contenu
-        /// <param name="genres"></param> LinkedList<GenreGlobal> représentant la liste des genres auquel appartient le contenur
+        /// <param name="genres"></param> List<GenreGlobal> représentant la liste des genres auquel appartient le contenur
         /// <param name="image"></param> string image d'illustration du contenu
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur,
-            LinkedList<GenreGlobal> genres, string image)
+            IEnumerable<GenreGlobal> genres, string image)
         {
             this.Titre = titre;
             this.Date = date;
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = "";
-            this.Genres = genres;
+            this.Genres.AddRange(genres);
             this.Description = "";
-            this.OuRegarder = new LinkedList<Uri>();
-            this.Audios = new LinkedList<Langues>();
-            this.SousTitres = new LinkedList<Langues>();
+            this.OuRegarder = new List<Uri>();
+            this.Audios = new List<Langues>();
+            this.SousTitres = new List<Langues>();
             this.Image = image;
         }
 
@@ -241,22 +241,22 @@ namespace modelisation.content
         /// <param name="duree"></param> TimeSpan durée du contenu
         /// <param name="realisateur"></param> string Réalisateur du contenu
         /// <param name="studioProd"></param> string Studio ayant produit le contenu
-        /// <param name="genres"></param> LinkedList<GenreGlobal> représentant la liste des genres auquel appartient le contenur
+        /// <param name="genres"></param> List<GenreGlobal> représentant la liste des genres auquel appartient le contenur
         /// <param name="description"></param> string présentant un résumé du contenu
         /// <param name="image"></param> string image d'illustration du contenu
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd,
-            LinkedList<GenreGlobal> genres, string description, string image)
+            IEnumerable<GenreGlobal> genres, string description, string image)
         {
             this.Titre = titre;
             this.Date = date;
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = studioProd;
-            this.Genres = genres;
+            this.Genres.AddRange(genres);
             this.Description = description;
-            this.OuRegarder = new LinkedList<Uri>();
-            this.Audios = new LinkedList<Langues>();
-            this.SousTitres = new LinkedList<Langues>();
+            this.OuRegarder = new List<Uri>();
+            this.Audios = new List<Langues>();
+            this.SousTitres = new List<Langues>();
             this.Image = image;
         }
 
@@ -268,25 +268,25 @@ namespace modelisation.content
         /// <param name="duree"></param> TimeSpan durée du contenu
         /// <param name="realisateur"></param> string Réalisateur du contenu
         /// <param name="studioProd"></param> string Studio ayant produit le contenu
-        /// <param name="genres"></param> LinkedList<GenreGlobal> représentant la liste des genres auquel appartient le contenur
+        /// <param name="genres"></param> List<GenreGlobal> représentant la liste des genres auquel appartient le contenur
         /// <param name="description"></param> string présentant un résumé du contenu
-        /// <param name="ouRegarder"></param> LinkedList<Uri> listant les sites où l'on peut regarder ce contenu
-        /// <param name="audios"></param> LinkedList<Uri> listant les langues disponibles pour l'audio du contenu
-        /// <param name="sousTitres"></param> LinkedList<Uri> listant les langues disponibles pour les sous-titres du contenu
+        /// <param name="ouRegarder"></param> List<Uri> listant les sites où l'on peut regarder ce contenu
+        /// <param name="audios"></param> List<Uri> listant les langues disponibles pour l'audio du contenu
+        /// <param name="sousTitres"></param> List<Uri> listant les langues disponibles pour les sous-titres du contenu
         /// <param name="image"></param>
-        public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, string image)
+        public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
+            string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
         {
             this.Titre = titre;
             this.Date = date;
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = studioProd;
-            this.Genres = genres;
+            this.Genres.AddRange(genres);
             this.Description = description;
-            this.OuRegarder = ouRegarder;
-            this.Audios = audios;
-            this.SousTitres = sousTitres;
+            this.OuRegarder.AddRange(ouRegarder);
+            this.Audios.AddRange(audios);
+            this.SousTitres.AddRange(sousTitres);
             this.Image = image;
         }
 

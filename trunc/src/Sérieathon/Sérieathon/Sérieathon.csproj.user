@@ -13,6 +13,9 @@
     <Compile Update="UC\basic_element\UC_TextBox_Form.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\basic_element\UC_TextBox_Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">

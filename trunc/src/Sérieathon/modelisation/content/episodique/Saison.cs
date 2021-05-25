@@ -31,9 +31,9 @@ namespace modelisation.content.episodique
         private int _numSaison;
 
         /// <summary>
-        /// LinkedList<Episode> ListEpisodes est une liste de tout les épisodes composant la saison, la liste ne peut etre null
+        /// List<Episode> ListEpisodes est une liste de tout les épisodes composant la saison, la liste ne peut etre null
         /// </summary>
-        public LinkedList<Episode> ListEpisodes
+        public List<Episode> ListEpisodes
         {
             get => _listEpisodes;
 
@@ -41,14 +41,14 @@ namespace modelisation.content.episodique
             {
                 if(value is null)
                 {
-                    _listEpisodes = new LinkedList<Episode>();
+                    _listEpisodes = new List<Episode>();
                 } else
                 {
                     _listEpisodes = value;
                 }
             }
         }
-        private LinkedList<Episode> _listEpisodes;
+        private List<Episode> _listEpisodes = new List<Episode>();
 
         /// <summary>
         /// int NbEpisodes est une propriété calculée retournant le nombre d'épisodes de la liste d'épisode
@@ -79,18 +79,18 @@ namespace modelisation.content.episodique
         public Saison(int numSaison)
         {
             this.NumSaison = numSaison;
-            this.ListEpisodes = new LinkedList<Episode>();
+            this.ListEpisodes = new List<Episode>();
         }
 
         /// <summary>
         /// Constructeur de la classe Saison, permet de passer en paramètre une LinkedList pour préenregistrer des épisodes
         /// </summary>
         /// <param name="numSaison"></param> int numéro de la saison dans la série
-        /// <param name="episodes"></param> LinkedList<Episode> liste préfaite d'épisodes à la nouvelle saison
-        public Saison(int numSaison, LinkedList<Episode> episodes)
+        /// <param name="episodes"></param> List<Episode> liste préfaite d'épisodes à la nouvelle saison
+        public Saison(int numSaison, IEnumerable<Episode> episodes)
         {
             this.NumSaison = numSaison;
-            this.ListEpisodes = episodes;
+            this.ListEpisodes.AddRange(episodes);
         }
 
         /// <summary>

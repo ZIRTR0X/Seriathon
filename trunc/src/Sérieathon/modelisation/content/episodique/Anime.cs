@@ -10,9 +10,9 @@ namespace modelisation.content.episodique
     public class Anime : Serie, IEquatable<Anime>
     {
         /// <summary>
-        /// LinkedList<GenreAnime> liste les genres de type animé de cet anime
+        /// List<GenreAnime> liste les genres de type animé de cet anime
         /// </summary>
-        public LinkedList<GenreAnime> GenreAnimes
+        public List<GenreAnime> GenreAnimes
         {
             get => _genreAnimes;
 
@@ -20,34 +20,34 @@ namespace modelisation.content.episodique
             {
                 if (value is null)
                 {
-                    _genreAnimes = new LinkedList<GenreAnime>();
+                    _genreAnimes = new List<GenreAnime>();
                 } else
                 {
                     _genreAnimes = value;
                 }
             }
         }
-        private LinkedList<GenreAnime> _genreAnimes;
+        private List<GenreAnime> _genreAnimes = new List<GenreAnime>();
 
-        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image)
+        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image)
             :base(titre, date, duree, realisateur, genres, image)
         {
-            this.GenreAnimes = new LinkedList<GenreAnime>();
+            this.GenreAnimes = new List<GenreAnime>();
         }
 
-        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image,
-            LinkedList<Saison> saisons, LinkedList<GenreAnime> genreAnimes)
+        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image,
+            IEnumerable<Saison> saisons, IEnumerable<GenreAnime> genreAnimes)
             :base(titre, date, duree, realisateur, genres, image, saisons)
         {
-            this.GenreAnimes = genreAnimes;
+            this.GenreAnimes.AddRange(genreAnimes);
         }
 
-        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres,
-            string image, LinkedList<Saison> saisons, LinkedList<GenreAnime> genreAnimes)
+        public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
+            string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres,
+            string image, IEnumerable<Saison> saisons, IEnumerable<GenreAnime> genreAnimes)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image, saisons)
         {
-            this.GenreAnimes = genreAnimes;
+            this.GenreAnimes.AddRange(genreAnimes);
         }
 
         public override bool Equals(object obj)

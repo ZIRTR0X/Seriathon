@@ -10,9 +10,9 @@ namespace modelisation.content.episodique
     public class Serie : ContenuVideoludique, IEquatable<Serie>
     {
         /// <summary>
-        /// LinkedList<Saison> liste des saisons de la série
+        /// List<Saison> liste des saisons de la série
         /// </summary>
-        public LinkedList<Saison> ListSaisons
+        public List<Saison> ListSaisons
         {
             get => _listSaisons;
 
@@ -20,14 +20,14 @@ namespace modelisation.content.episodique
             {
                 if(value is null)
                 {
-                    _listSaisons = new LinkedList<Saison>();
+                    _listSaisons = new List<Saison>();
                 } else
                 {
                     _listSaisons = value;
                 }
             }
         }
-        private LinkedList<Saison> _listSaisons;
+        private List<Saison> _listSaisons = new List<Saison>();
 
         /// <summary>
         /// int permet de connaitre le nombre de saisons dans la série
@@ -39,31 +39,31 @@ namespace modelisation.content.episodique
         /// </summary>
         public int NbEpisode => ListSaisons.Sum(s => s.NbEpisodes);
 
-        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image)
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)
         {
-            this.ListSaisons = new LinkedList<Saison>();
+            this.ListSaisons = new List<Saison>();
         }
 
-        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, LinkedList<GenreGlobal> genres, string image,
-            LinkedList<Saison> saisons) : base(titre, date, duree, realisateur, genres, image)
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image,
+            IEnumerable<Saison> saisons) : base(titre, date, duree, realisateur, genres, image)
         {
-            this.ListSaisons = saisons;
+            this.ListSaisons.AddRange(saisons);
         }
 
-        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, string image)
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
+            string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.ListSaisons = new LinkedList<Saison>();
+            this.ListSaisons = new List<Saison>();
         }
 
-        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres,
-            string image, LinkedList<Saison> saisons)
+        public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
+            string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres,
+            string image, IEnumerable<Saison> saisons)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.ListSaisons = saisons;
+            this.ListSaisons.AddRange(saisons);
         }
 
         /// <summary>

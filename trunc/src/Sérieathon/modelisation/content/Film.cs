@@ -12,7 +12,7 @@ namespace modelisation.content
         /// <summary>
         /// liste des acteurs ayant participé au film, ne pouvant etre null
         /// </summary>
-        public LinkedList<string> Acteurs
+        public List<string> Acteurs
         {
             get => _acteurs;
 
@@ -20,40 +20,40 @@ namespace modelisation.content
             {
                 if(value is null)
                 {
-                    _acteurs = new LinkedList<string>();
+                    _acteurs = new List<string>();
                 } else
                 {
                     _acteurs = value;
                 }
             }
         }
-        private LinkedList<string> _acteurs;
+        private List<string> _acteurs = new List<string>();
 
-        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, string image)
+        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, IEnumerable<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)
         {
-            this.Acteurs = new LinkedList<string>();
+            this.Acteurs = new List<string>();
         }
 
-        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, LinkedList<GenreGlobal> genres, string image,
-            LinkedList<string> acteurs) : base(titre, date, duree, realisateur, genres, image)
+        public Film(string titre, DateTime date, TimeSpan duree, String realisateur, IEnumerable<GenreGlobal> genres, string image,
+            IEnumerable<string> acteurs) : base(titre, date, duree, realisateur, genres, image)
         {
-            this.Acteurs = acteurs;
+            this.Acteurs.AddRange(acteurs);
         }
 
-        public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres, string image)
+        public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
+            string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.Acteurs = new LinkedList<string>();
+            this.Acteurs = new List<string>();
         }
 
-        public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, LinkedList<GenreGlobal> genres,
-            string description, LinkedList<Uri> ouRegarder, LinkedList<Langues> audios, LinkedList<Langues> sousTitres,
-            string image, LinkedList<string> acteurs)
+        public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
+            string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres,
+            string image, IEnumerable<string> acteurs)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.Acteurs = acteurs;
+            this.Acteurs.AddRange(acteurs);
         }
 
         public override bool Equals(object obj)
