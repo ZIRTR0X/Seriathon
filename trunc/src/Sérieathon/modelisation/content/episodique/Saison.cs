@@ -105,7 +105,7 @@ namespace modelisation.content.episodique
                 return false;
             } else
             {
-                ListEpisodes.AddLast(e);
+                ListEpisodes.Add(e);
                 return true;
             }
         }
