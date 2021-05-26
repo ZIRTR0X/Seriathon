@@ -27,7 +27,7 @@ namespace modelisation.content
                 }
             }
         }
-        private List<string> _acteurs = new List<string>();
+        private List<string> _acteurs;
 
         public Film(string titre, DateTime date, TimeSpan duree, String realisateur, IEnumerable<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)

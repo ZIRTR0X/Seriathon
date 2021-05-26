@@ -799,7 +799,7 @@
 												"$ref": "AAAAAAF5oCCEttCNfBs="
 											},
 											"edgePosition": 1,
-											"text": "5 : AddEpisode(timeSpan, got)"
+											"text": "5 : AddEpisode(30 min, got)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2070,7 +2070,7 @@
 							"target": {
 								"$ref": "AAAAAAF5n/nBeM4uz64="
 							},
-							"arguments": "timeSpan, got"
+							"arguments": "30 min, got"
 						},
 						{
 							"_type": "UMLMessage",
@@ -2255,7 +2255,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role1"
+					"name": "Role1",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2272,7 +2273,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2280,7 +2282,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2288,7 +2291,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2296,7 +2300,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role6"
+					"name": "Role6",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2304,7 +2309,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role7"
+					"name": "Role7",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -2312,7 +2318,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role8"
+					"name": "Role8",
+					"type": ""
 				}
 			]
 		}

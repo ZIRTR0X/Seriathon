@@ -48,7 +48,7 @@ namespace modelisation.content.episodique
                 }
             }
         }
-        private List<Episode> _listEpisodes = new List<Episode>();
+        private List<Episode> _listEpisodes;
 
         /// <summary>
         /// int NbEpisodes est une propriété calculée retournant le nombre d'épisodes de la liste d'épisode
@@ -93,6 +93,7 @@ namespace modelisation.content.episodique
             this.ListEpisodes.AddRange(episodes);
         }
 
+
         /// <summary>
         /// Ajoute un épisode à la liste de la saison
         /// </summary>
@@ -136,6 +137,26 @@ namespace modelisation.content.episodique
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Créé une liste d'épisode, dépassant de peu la durée indiqué en paramètres
+        /// </summary>
+        /// <param name="duree_restante"></param> durée restante a combler avec des épisodes, réduit à 0 ou négatif pour informer la fonction appelante
+        /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée restante (supérieure à la durée d'un épisode près)</returns>
+        internal List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
+        {
+            int nbEpisodeAjout = 0;
+            List<Episode> episodeAAjouter = new List<Episode>();
+
+            while(duree_restante.Ticks > 0 && nbEpisodeAjout < 4)
+            {
+                episodeAAjouter.Add(ListEpisodes[nbEpisodeAjout]);
+                duree_restante -= ListEpisodes[nbEpisodeAjout].DureeEpisode;
+                nbEpisodeAjout++;
+
+            }
+            return episodeAAjouter;
         }
 
         /// <summary>

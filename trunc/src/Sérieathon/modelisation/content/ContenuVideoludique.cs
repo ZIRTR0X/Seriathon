@@ -134,7 +134,7 @@ namespace modelisation.content
                 }
             }
         }
-        private List<GenreGlobal> _genre = new List<GenreGlobal>();
+        private List<GenreGlobal> _genre;
 
         /// <summary>
         /// string Description correspond à un résumé du contenu vidéoludique, ne pouvant etre null ou empty
@@ -159,7 +159,7 @@ namespace modelisation.content
                 }
             }
         }
-        private List<Uri> _ouRegarder = new List<Uri>();
+        private List<Uri> _ouRegarder;
 
         /// <summary>
         /// List<Langues> Audios référence toutes les langues disponibles en audio, ne pouvant etre null
@@ -180,7 +180,7 @@ namespace modelisation.content
                 }
             }
         }
-        private List<Langues> _audios = new List<Langues>();
+        private List<Langues> _audios;
 
         /// <summary>
         /// List<Langues> SousTitres référence toutes les langues disponibles en sous-titres, ne pouvant etre null
@@ -201,7 +201,7 @@ namespace modelisation.content
                 }
             }
         }
-        private List<Langues> _sousTitres = new List<Langues>();
+        private List<Langues> _sousTitres;
 
         /// <summary>
         /// Uri Image indique le chemin vers l'illustration du contenu

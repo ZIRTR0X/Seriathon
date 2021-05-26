@@ -15,7 +15,8 @@ namespace Sérieathon
     /// </summary>
     public partial class App : Application
     {
-        public Manager MonManager { get; set; } = new Manager();
+        // a modifer poru la version récente du manager
+        public ManagerOld MonManager { get; set; } = new ManagerOld();
         public NavNavBar NavNavBar { get; set; } = new NavNavBar();
         public NavProfil NavProfil { get; set; } = new NavProfil();
 
