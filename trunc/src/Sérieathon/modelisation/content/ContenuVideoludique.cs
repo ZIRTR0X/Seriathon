@@ -225,7 +225,7 @@ namespace modelisation.content
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = "";
-            this.Genres.AddRange(genres);
+            this.Genres = new List<GenreGlobal>(genres);
             this.Description = "";
             this.OuRegarder = new List<Uri>();
             this.Audios = new List<Langues>();
@@ -252,7 +252,7 @@ namespace modelisation.content
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = studioProd;
-            this.Genres.AddRange(genres);
+            this.Genres = new List<GenreGlobal>(genres);
             this.Description = description;
             this.OuRegarder = new List<Uri>();
             this.Audios = new List<Langues>();
@@ -282,11 +282,11 @@ namespace modelisation.content
             this.Duree = duree;
             this.Realisateur = realisateur;
             this.StudioProduction = studioProd;
-            this.Genres.AddRange(genres);
+            this.Genres = new List<GenreGlobal>(genres);
             this.Description = description;
-            this.OuRegarder.AddRange(ouRegarder);
-            this.Audios.AddRange(audios);
-            this.SousTitres.AddRange(sousTitres);
+            this.OuRegarder = new List<Uri>(ouRegarder);
+            this.Audios = new List<Langues>(audios);
+            this.SousTitres = new List<Langues>(sousTitres);
             this.Image = image;
         }
 

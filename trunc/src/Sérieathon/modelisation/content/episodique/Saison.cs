@@ -90,7 +90,7 @@ namespace modelisation.content.episodique
         public Saison(int numSaison, IEnumerable<Episode> episodes)
         {
             this.NumSaison = numSaison;
-            this.ListEpisodes.AddRange(episodes);
+            this.ListEpisodes = new List<Episode>(episodes);
         }
 
 
@@ -143,18 +143,25 @@ namespace modelisation.content.episodique
         /// Créé une liste d'épisode, dépassant de peu la durée indiqué en paramètres
         /// </summary>
         /// <param name="duree_restante"></param> durée restante a combler avec des épisodes, réduit à 0 ou négatif pour informer la fonction appelante
-        /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée restante (supérieure à la durée d'un épisode près)</returns>
-        internal List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
+        /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée restante (supérieure à la durée d'un épisode près), ou null si la saison n'a pas d'épisodes</returns>
+        public List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
         {
+            if (ListEpisodes.Count == 0 || ListEpisodes is null) return null;
+
             int nbEpisodeAjout = 0;
             List<Episode> episodeAAjouter = new List<Episode>();
 
+
             while(duree_restante.Ticks > 0 && nbEpisodeAjout < 4)
             {
+                // si jamais nbAjout équivaut au nombre d'éléments, alors on arrete et on retourne ce que l'on a build
+                if (nbEpisodeAjout >= ListEpisodes.Count) return episodeAAjouter;
+
                 episodeAAjouter.Add(ListEpisodes[nbEpisodeAjout]);
                 duree_restante -= ListEpisodes[nbEpisodeAjout].DureeEpisode;
-                nbEpisodeAjout++;
 
+                
+                ++nbEpisodeAjout;
             }
             return episodeAAjouter;
         }

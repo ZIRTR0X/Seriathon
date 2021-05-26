@@ -63,7 +63,7 @@ namespace modelisation.content.episodique
             string image, IEnumerable<Saison> saisons)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.ListSaisons.AddRange(saisons);
+            this.ListSaisons = new List<Saison>(saisons);
         }
 
         /// <summary>

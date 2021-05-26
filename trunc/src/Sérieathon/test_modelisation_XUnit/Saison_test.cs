@@ -113,5 +113,34 @@ namespace test_modelisation_XUnit
             Assert.True(s.RechercherEpisode(2).Equals(new Episode("episode2", 2, new DateTime(2008, 4, 24), new TimeSpan(1, 20, 2), "episode 2 est sympa")));
         }
 
+        [Fact]
+        public void RecupererListEpisode_Test()
+        {
+            LinkedList<Episode> episodes = new LinkedList<Episode>();
+            episodes.AddLast(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(0, 40, 5), "episode 1 est grave cool"));
+            episodes.AddLast(new Episode("episode2", 2, new DateTime(2008, 4, 24), new TimeSpan(0, 20, 2), "episode 2 est sympa"));
+            episodes.AddLast(new Episode("episode2", 2, new DateTime(2007, 4, 24), new TimeSpan(0, 20, 5), "episode 2 est sympa"));
+
+            TimeSpan duree_nulle = new TimeSpan(0);
+            List<Episode> listEpisode = new Saison(-5, episodes).RecupererListEpisode(ref duree_nulle);
+
+            Assert.True(duree_nulle.Ticks == 0 && listEpisode.Count == 0);
+
+            TimeSpan duree_courte = new TimeSpan(0, 20, 0);
+            listEpisode = new Saison(6).RecupererListEpisode(ref duree_courte);
+            Assert.True(duree_courte.Equals(new TimeSpan(0, 20, 0)) && listEpisode is null);
+
+            TimeSpan duree_courteCP = new TimeSpan(duree_courte.Ticks);
+            listEpisode = new Saison(5, episodes).RecupererListEpisode(ref duree_courteCP);
+            Assert.True(duree_courteCP.Ticks <= 0 && listEpisode.Count == 1);
+
+            TimeSpan duree_longue = new TimeSpan(20, 30, 0);
+
+            TimeSpan duree_longueCP = new TimeSpan(duree_longue.Ticks);
+
+            listEpisode = new Saison(5, episodes).RecupererListEpisode(ref duree_longueCP);
+            Assert.True(duree_longueCP.Ticks > 0 && listEpisode.Count == episodes.Count);
+        }
+
     }
 }

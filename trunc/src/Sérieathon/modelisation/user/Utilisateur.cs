@@ -81,23 +81,23 @@ namespace modelisation.user
         /// <summary>
         /// int représentant l'age de la personne
         /// </summary>
-        public int Age
+        public DateTime DateDeNaissance
         {
-            get => _age;
+            get => _dateDeNaissance;
 
             private set
             {
-                if (value > 130)
+                if (value.CompareTo(new DateTime(1900, 1, 1)) <= 0)
                 {
-                    _age = 20;
+                    _dateDeNaissance = DateTime.Today;
                 }
                 else
                 {
-                    _age = value;
+                    _dateDeNaissance = value;
                 }
             }
         }
-        private int _age;
+        private DateTime _dateDeNaissance;
 
         /// <summary>
         /// string spécifie le genre de l'utilisateur
@@ -163,6 +163,18 @@ namespace modelisation.user
         /// </summary>
         public int NbAnimeVu => ListCVvu.Count(c => c is Anime);
 
+        /// <summary>
+        /// Constructeur de la classe Utilisateur, sans paramètre
+        /// </summary>
+        public Utilisateur()
+        {
+            this.Pseudo = "";
+            this.Password = "";
+            this.Email = "";
+            this.DateDeNaissance = new DateTime(0);
+            this.Genre = null;
+            ListCVvu = new LinkedList<ContenuVideoludique>();
+        }
 
         /// <summary>
         /// Constructeur de la classe Utilisateur, avec une liste de contenu vu vide
@@ -172,12 +184,12 @@ namespace modelisation.user
         /// <param name="email"></param> string email du nouvel utilsateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="age"></param> int spécifiant l'age de l'utilisateur, ne pouvant etre supérieur à 130 ans
         /// <param name="genre"></param> string genre de l'utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
-        public Utilisateur(string pseudo, string password, string email, int age, string genre)
+        public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre)
         {
             this.Pseudo = pseudo;
             this.Password = password;
             this.Email = email;
-            this.Age = age;
+            this.DateDeNaissance = dateDeNaissance;
             this.Genre = genre;
             ListCVvu = new LinkedList<ContenuVideoludique>();
         }
@@ -191,12 +203,12 @@ namespace modelisation.user
         /// <param name="age"></param> int spécifiant l'age de l'utilisateur, ne pouvant etre supérieur à 130 ans
         /// <param name="genre"></param> string genre de l'utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="listCVvu"></param> LinkedList<ContenuVideoludique> listant tout le contenu déjà vu par l'utilisateur, ne pouvant etre null
-        public Utilisateur(string pseudo, string password, string email, int age, string genre, LinkedList<ContenuVideoludique> listCVvu)
+        public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre, LinkedList<ContenuVideoludique> listCVvu)
         {
             this.Pseudo = pseudo;
             this.Password = password;
             this.Email = email;
-            this.Age = age;
+            this.DateDeNaissance = dateDeNaissance;
             this.Genre = genre;
             this.ListCVvu = listCVvu;
         }

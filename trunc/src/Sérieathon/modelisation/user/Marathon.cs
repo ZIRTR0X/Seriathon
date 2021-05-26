@@ -165,6 +165,8 @@ namespace modelisation.user
                 // je suis sûr de ne pas avoir d'épisodes déjà présent, car je ne peux ajouter deux fois la même saison
                 List<Episode> episodePropose = s.RecepurerListEpisode(duree_restante);
                 episodeAAjouter.AddRange(episodePropose);
+                    
+
             }
             return true;
         }
@@ -181,7 +183,7 @@ namespace modelisation.user
 
                 if (random_courant == 0 && GenresGlobaux_possibles.Count != 0) // si ça vaut 0, j'ajoute un type Global a condition qu'il y en ai en theme de marathon
                 {
-                    // je peux ici avoir soir des séries (ou animes, mais ça ne change pas ), soit des films
+                    // je peux ici avoir soit des séries (ou animes, mais ça ne change pas ), soit des films
 
                     // je récupère ici une value random, d'abord une value du dictio, puis un élément de la liste
                     List<ContenuVideoludique> value_random = GenresGlobaux_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
@@ -208,8 +210,32 @@ namespace modelisation.user
 
                 } else
                 {
-                    // dans ce cas, rien n'est satisfais, on n'a ajouté aucun theme
-                    throw new InvalidOperationException("Créer une liste de lecture ets impossible sans ajouter au préalable des thèmes (genres) pour ce marathon");
+                    // dans ce cas, l'un des deux dictionnaire est vide, donc on essaye de lancer la selection depuis l'autre dictionnaire
+
+                    if (random_courant == 0 && GenresAnimes_possibles.Count != 0)
+                    {
+                        List<Anime> value_random = GenresAnimes_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
+                        AddEpisodeLecture(value_random[random.Next(value_random.Count)], ref duree_restante);
+
+                    } else if (random_courant == 1 && GenresGlobaux_possibles.Count != 0)
+                    {
+                        List<ContenuVideoludique> value_random = GenresGlobaux_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
+                        ContenuVideoludique selection_random = value_random[random.Next(value_random.Count)];
+
+                        if (selection_random is Film fi)
+                        {
+                            AddFilmLecture(fi, ref duree_restante);
+                        }
+                        else if (selection_random is Serie s)
+                        {
+                            AddEpisodeLecture(s, ref duree_restante);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    else throw new InvalidOperationException("Créer une liste de lecture est impossible sans ajouter au préalable des thèmes (genres) pour ce marathon");
                 }
 
             }

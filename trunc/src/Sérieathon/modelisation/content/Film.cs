@@ -53,7 +53,7 @@ namespace modelisation.content
             string image, IEnumerable<string> acteurs)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.Acteurs.AddRange(acteurs);
+            this.Acteurs = new List<string>(acteurs);
         }
 
         public override bool Equals(object obj)
