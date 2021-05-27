@@ -32,14 +32,14 @@ namespace modelisation.content.episodique
         public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image)
             :base(titre, date, duree, realisateur, genres, image)
         {
-            this.GenreAnimes = new List<GenreAnime>();
+            GenreAnimes = new List<GenreAnime>();
         }
 
         public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image,
             IEnumerable<Saison> saisons, IEnumerable<GenreAnime> genreAnimes)
             :base(titre, date, duree, realisateur, genres, image, saisons)
         {
-            this.GenreAnimes.AddRange(genreAnimes);
+            GenreAnimes.AddRange(genreAnimes);
         }
 
         public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
@@ -47,7 +47,7 @@ namespace modelisation.content.episodique
             string image, IEnumerable<Saison> saisons, IEnumerable<GenreAnime> genreAnimes)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image, saisons)
         {
-            this.GenreAnimes.AddRange(genreAnimes);
+            GenreAnimes.AddRange(genreAnimes);
         }
 
         public override bool Equals(object obj)

@@ -78,8 +78,8 @@ namespace modelisation.content.episodique
         /// <param name="numSaison"></param> int numéro de la saison dans la série
         public Saison(int numSaison)
         {
-            this.NumSaison = numSaison;
-            this.ListEpisodes = new List<Episode>();
+            NumSaison = numSaison;
+            ListEpisodes = new List<Episode>();
         }
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace modelisation.content.episodique
         /// <param name="episodes"></param> List<Episode> liste préfaite d'épisodes à la nouvelle saison
         public Saison(int numSaison, IEnumerable<Episode> episodes)
         {
-            this.NumSaison = numSaison;
-            this.ListEpisodes = new List<Episode>(episodes);
+            NumSaison = numSaison;
+            ListEpisodes = new List<Episode>(episodes);
         }
 
 
@@ -144,7 +144,7 @@ namespace modelisation.content.episodique
         /// </summary>
         /// <param name="duree_restante"></param> durée restante a combler avec des épisodes, réduit à 0 ou négatif pour informer la fonction appelante
         /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée restante (supérieure à la durée d'un épisode près), ou null si la saison n'a pas d'épisodes</returns>
-        public List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
+        public  List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
         {
             if (ListEpisodes.Count == 0 || ListEpisodes is null) return null;
 

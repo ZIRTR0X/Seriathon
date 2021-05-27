@@ -247,17 +247,17 @@ namespace modelisation.content
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd,
             IEnumerable<GenreGlobal> genres, string description, string image)
         {
-            this.Titre = titre;
-            this.Date = date;
-            this.Duree = duree;
-            this.Realisateur = realisateur;
-            this.StudioProduction = studioProd;
-            this.Genres = new List<GenreGlobal>(genres);
-            this.Description = description;
-            this.OuRegarder = new List<Uri>();
-            this.Audios = new List<Langues>();
-            this.SousTitres = new List<Langues>();
-            this.Image = image;
+            Titre = titre;
+            Date = date;
+            Duree = duree;
+            Realisateur = realisateur;
+            StudioProduction = studioProd;
+            Genres = new List<GenreGlobal>(genres);
+            Description = description;
+            OuRegarder = new List<Uri>();
+            Audios = new List<Langues>();
+            SousTitres = new List<Langues>();
+            Image = image;
         }
 
         /// <summary>
@@ -277,17 +277,17 @@ namespace modelisation.content
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
             string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
         {
-            this.Titre = titre;
-            this.Date = date;
-            this.Duree = duree;
-            this.Realisateur = realisateur;
-            this.StudioProduction = studioProd;
-            this.Genres = new List<GenreGlobal>(genres);
-            this.Description = description;
-            this.OuRegarder = new List<Uri>(ouRegarder);
-            this.Audios = new List<Langues>(audios);
-            this.SousTitres = new List<Langues>(sousTitres);
-            this.Image = image;
+            Titre = titre;
+            Date = date;
+            Duree = duree;
+            Realisateur = realisateur;
+            StudioProduction = studioProd;
+            Genres = new List<GenreGlobal>(genres);
+            Description = description;
+            OuRegarder = new List<Uri>(ouRegarder);
+            Audios = new List<Langues>(audios);
+            SousTitres = new List<Langues>(sousTitres);
+            Image = image;
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace modelisation.content
             LinkedList<GenreGlobal> genres_copies = new LinkedList<GenreGlobal>(other.Genres.OrderBy(g => g.GetHashCode()));
             foreach (GenreGlobal g in Genres.OrderBy(g => g.GetHashCode()))
             {
-                if (!g.Equals(genres_copies.First)) return false;
+                if (!g.Equals(genres_copies.First())) return false;
                 else genres_copies.RemoveFirst();
             }
 
@@ -335,7 +335,7 @@ namespace modelisation.content
             LinkedList<Uri> ouRegarder_copie = new LinkedList<Uri>(other.OuRegarder.OrderBy(u => u.GetHashCode()));
             foreach (Uri u in OuRegarder.OrderBy(u => u.GetHashCode()))
             {
-                if (!u.Equals(ouRegarder_copie.First)) return false;
+                if (!u.Equals(ouRegarder_copie.First())) return false;
                 else ouRegarder_copie.RemoveFirst();
             }
 
@@ -343,7 +343,7 @@ namespace modelisation.content
             LinkedList<Langues> audios_copie = new LinkedList<Langues>(other.Audios.OrderBy(a => a.GetHashCode()));
             foreach (Langues a in Audios.OrderBy(a => a.GetHashCode())) 
             {
-                if (a.Equals(audios_copie.First)) return false;
+                if (!a.Equals(audios_copie.First())) return false;
                 else audios_copie.RemoveFirst();
             }
 
@@ -351,7 +351,7 @@ namespace modelisation.content
             LinkedList<Langues> sousTitres_copie = new LinkedList<Langues>(other.SousTitres.OrderBy(s => s.GetHashCode()));
             foreach (Langues s in SousTitres.OrderBy(s => s.GetHashCode()))
             {
-                if (!s.Equals(sousTitres_copie.First)) return false;
+                if (!s.Equals(sousTitres_copie.First())) return false;
                 else sousTitres_copie.RemoveFirst();
             }
 

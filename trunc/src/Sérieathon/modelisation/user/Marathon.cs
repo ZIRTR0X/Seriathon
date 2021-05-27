@@ -89,18 +89,18 @@ namespace modelisation.user
 
         public Marathon(int nbJour, int nbHeureParJour)
         {
-            this.Duree = new TimeSpan((nbJour * nbHeureParJour), 0, 0);
-            this.ListContenu = new List<ContenuVideoludique>();
-            this.GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
-            this.GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
+            Duree = new TimeSpan((nbJour * nbHeureParJour), 0, 0);
+            ListContenu = new List<ContenuVideoludique>();
+            GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
+            GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
         }
 
         public Marathon(TimeSpan duree)
         {
-            this.Duree = duree;
-            this.ListContenu = new List<ContenuVideoludique>();
-            this.GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
-            this.GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
+            Duree = duree;
+            ListContenu = new List<ContenuVideoludique>();
+            GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
+            GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
         }
 
         public bool AjouterContenu(ContenuVideoludique c)
@@ -165,8 +165,7 @@ namespace modelisation.user
                 // je suis sûr de ne pas avoir d'épisodes déjà présent, car je ne peux ajouter deux fois la même saison
                 List<Episode> episodePropose = s.RecepurerListEpisode(duree_restante);
                 episodeAAjouter.AddRange(episodePropose);
-                    
-
+                
             }
             return true;
         }

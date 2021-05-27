@@ -168,11 +168,11 @@ namespace modelisation.user
         /// </summary>
         public Utilisateur()
         {
-            this.Pseudo = "";
-            this.Password = "";
-            this.Email = "";
-            this.DateDeNaissance = new DateTime(0);
-            this.Genre = null;
+            Pseudo = "";
+            Password = "";
+            Email = "";
+            DateDeNaissance = new DateTime(0);
+            Genre = null;
             ListCVvu = new LinkedList<ContenuVideoludique>();
         }
 
@@ -182,15 +182,15 @@ namespace modelisation.user
         /// <param name="pseudo"></param> string pseudo du nouvel utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="password"></param> string mot de passe du nouvel utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="email"></param> string email du nouvel utilsateur, ne pouvant etre null, ou uniquement fait d'espaces
-        /// <param name="age"></param> int spécifiant l'age de l'utilisateur, ne pouvant etre supérieur à 130 ans
+        /// <param name="dateDeNaissance"></param> spécifie la date de naissance de l'utilisateur, ne pouvant etre antérieure à 1900
         /// <param name="genre"></param> string genre de l'utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre)
         {
-            this.Pseudo = pseudo;
-            this.Password = password;
-            this.Email = email;
-            this.DateDeNaissance = dateDeNaissance;
-            this.Genre = genre;
+            Pseudo = pseudo;
+            Password = password;
+            Email = email;
+            DateDeNaissance = dateDeNaissance;
+            Genre = genre;
             ListCVvu = new LinkedList<ContenuVideoludique>();
         }
 
@@ -200,17 +200,17 @@ namespace modelisation.user
         /// <param name="pseudo"></param> string pseudo du nouvel utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="password"></param> string mot de passe du nouvel utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="email"></param> string email du nouvel utilsateur, ne pouvant etre null, ou uniquement fait d'espaces
-        /// <param name="age"></param> int spécifiant l'age de l'utilisateur, ne pouvant etre supérieur à 130 ans
+        /// <param name="dateDeNaissance"></param> spécifie la date de naissance de l'utilisateur, ne pouvant etre antérieure à 1900
         /// <param name="genre"></param> string genre de l'utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="listCVvu"></param> LinkedList<ContenuVideoludique> listant tout le contenu déjà vu par l'utilisateur, ne pouvant etre null
         public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre, LinkedList<ContenuVideoludique> listCVvu)
         {
-            this.Pseudo = pseudo;
-            this.Password = password;
-            this.Email = email;
-            this.DateDeNaissance = dateDeNaissance;
-            this.Genre = genre;
-            this.ListCVvu = listCVvu;
+            Pseudo = pseudo;
+            Password = password;
+            Email = email;
+            DateDeNaissance = dateDeNaissance;
+            Genre = genre;
+            ListCVvu = listCVvu;
         }
 
         /// <summary>

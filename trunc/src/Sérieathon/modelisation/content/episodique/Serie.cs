@@ -42,20 +42,20 @@ namespace modelisation.content.episodique
         public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)
         {
-            this.ListSaisons = new List<Saison>();
+            ListSaisons = new List<Saison>();
         }
 
         public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image,
             IEnumerable<Saison> saisons) : base(titre, date, duree, realisateur, genres, image)
         {
-            this.ListSaisons.AddRange(saisons);
+            ListSaisons = new List<Saison>(saisons);
         }
-
+        
         public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
             string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.ListSaisons = new List<Saison>();
+            ListSaisons = new List<Saison>();
         }
 
         public Serie(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
@@ -63,7 +63,7 @@ namespace modelisation.content.episodique
             string image, IEnumerable<Saison> saisons)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.ListSaisons = new List<Saison>(saisons);
+            ListSaisons = new List<Saison>(saisons);
         }
 
         /// <summary>

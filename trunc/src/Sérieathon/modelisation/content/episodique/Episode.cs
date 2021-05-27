@@ -105,11 +105,11 @@ namespace modelisation.content.episodique
         /// <param name="dureeEpisode"></param> Timespan durée de l'épisode (non négatif)
         public Episode(string nom, int numEpisode, DateTime date, TimeSpan dureeEpisode)
         {
-            this.Nom = nom;
-            this.NumEpisode = numEpisode;
-            this.Date = date;
-            this.DureeEpisode = dureeEpisode;
-            this.Description = "";
+            Nom = nom;
+            NumEpisode = numEpisode;
+            Date = date;
+            DureeEpisode = dureeEpisode;
+            Description = "";
         }
 
         /// <summary>
@@ -122,11 +122,11 @@ namespace modelisation.content.episodique
         /// <param name="description"></param> string résumé de l'épisode
         public Episode(string nom, int numEpisode, DateTime date, TimeSpan dureeEpisode, string description)
         {
-            this.Nom = nom;
-            this.NumEpisode = numEpisode;
-            this.Date = date;
-            this.DureeEpisode = dureeEpisode;
-            this.Description = description;
+            Nom = nom;
+            NumEpisode = numEpisode;
+            Date = date;
+            DureeEpisode = dureeEpisode;
+            Description = description;
         }
 
         /// <summary>

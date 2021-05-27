@@ -32,20 +32,20 @@ namespace modelisation.content
         public Film(string titre, DateTime date, TimeSpan duree, String realisateur, IEnumerable<GenreGlobal> genres, string image)
             : base(titre, date, duree, realisateur, genres, image)
         {
-            this.Acteurs = new List<string>();
+            Acteurs = new List<string>();
         }
 
         public Film(string titre, DateTime date, TimeSpan duree, String realisateur, IEnumerable<GenreGlobal> genres, string image,
             IEnumerable<string> acteurs) : base(titre, date, duree, realisateur, genres, image)
         {
-            this.Acteurs.AddRange(acteurs);
+            Acteurs = new List<string>(acteurs);
         }
 
         public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
             string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.Acteurs = new List<string>();
+            Acteurs = new List<string>();
         }
 
         public Film(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
@@ -53,7 +53,7 @@ namespace modelisation.content
             string image, IEnumerable<string> acteurs)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image)
         {
-            this.Acteurs = new List<string>(acteurs);
+            Acteurs = new List<string>(acteurs);
         }
 
         public override bool Equals(object obj)
