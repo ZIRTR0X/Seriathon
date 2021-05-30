@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace modelisation.user
 {
-    class Utilisateur
+    public class Utilisateur
     {
         /// <summary>
         /// static long permet d'identifier de manière unique un utilisateur, notamment utile pour le nom par défaut, mais permet un même pseudo 
@@ -142,6 +142,8 @@ namespace modelisation.user
         private LinkedList<ContenuVideoludique> _listCVvu;
 
         //propriétée calculée
+
+        public int Age => new DateTime((DateTime.Today - DateDeNaissance).Ticks).Year;
 
         /// <summary>
         /// int nombre de contenu vidéoludique vu par l'utilisateur

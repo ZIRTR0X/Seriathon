@@ -44,7 +44,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5n/iK884e+UU="
 							},
-							"name": "Vie_Marathon",
+							"name": "Marathon_Add_Playlist",
 							"ownedViews": [
 								{
 									"_type": "UMLFrameView",
@@ -65,9 +65,9 @@
 											"font": "Arial;13;0",
 											"left": 32.72998046875,
 											"top": 13,
-											"width": 81.7041015625,
+											"width": 134.68798828125,
 											"height": 13,
-											"text": "Vie_Marathon"
+											"text": "Marathon_Add_Playlist"
 										},
 										{
 											"_type": "LabelView",
@@ -3484,7 +3484,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF5n/iK8s4dOlA="
 					},
-					"name": "Role9"
+					"name": "Role9",
+					"type": ""
 				}
 			]
 		}
