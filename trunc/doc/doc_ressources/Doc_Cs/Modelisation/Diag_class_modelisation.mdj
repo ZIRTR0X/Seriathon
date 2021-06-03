@@ -9604,19 +9604,6 @@
 											}
 										},
 										{
-											"_type": "UMLInterfaceRealization",
-											"_id": "AAAAAAF5s3X5n89yj+s=",
-											"_parent": {
-												"$ref": "AAAAAAF5QhYZxGmYHAo="
-											},
-											"source": {
-												"$ref": "AAAAAAF5QhYZxGmYHAo="
-											},
-											"target": {
-												"$ref": "AAAAAAF5s3JBT5+xpsQ="
-											}
-										},
-										{
 											"_type": "UMLRealization",
 											"_id": "AAAAAAF5s5J21Nl+j+g=",
 											"_parent": {
@@ -10514,14 +10501,6 @@
 									]
 								}
 							]
-						},
-						{
-							"_type": "UMLInterface",
-							"_id": "AAAAAAF5s3JBT5+xpsQ=",
-							"_parent": {
-								"$ref": "AAAAAAF5dDkDEKvzVKQ="
-							},
-							"name": "IEstAjoutableAuMarathon"
 						},
 						{
 							"_type": "UMLClass",

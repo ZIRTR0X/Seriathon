@@ -63,8 +63,8 @@
 												"$ref": "AAAAAAF5n/iK884gDZQ="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
-											"top": 13,
+											"left": 24.72998046875,
+											"top": 5,
 											"width": 134.68798828125,
 											"height": 13,
 											"text": "Marathon_Add_Playlist"
@@ -76,16 +76,14 @@
 												"$ref": "AAAAAAF5n/iK884gDZQ="
 											},
 											"font": "Arial;13;1",
-											"left": 13,
-											"top": 13,
+											"left": 5,
+											"top": 5,
 											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 8,
-									"top": 8,
 									"width": 1641,
 									"height": 1361,
 									"nameLabel": {
@@ -241,7 +239,7 @@
 												"$ref": "AAAAAAF5n/tkxs5PpM8="
 											},
 											"edgePosition": 1,
-											"text": "1 : AddThemeGlobal(ContenuVideoludique cv, GenreGlobal g)"
+											"text": "1 : AddThemeGlobal(GenreGlobal g, Marathon m)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1242,17 +1240,17 @@
 												"$ref": "AAAAAAF5oB/y/tBmR7I="
 											},
 											"font": "Arial;13;0",
-											"left": 100,
-											"top": 432,
-											"width": 166,
+											"left": 83,
+											"top": 424,
+											"width": 223.97705078125,
 											"height": 13,
-											"alpha": 1.7273971835066444,
-											"distance": 76.94153624668537,
+											"alpha": 1.7967545193862882,
+											"distance": 89.26925562588724,
 											"hostEdge": {
 												"$ref": "AAAAAAF5oB/y/tBnUv4="
 											},
 											"edgePosition": 1,
-											"text": "8 : AddContenu(titanic)"
+											"text": "8 : AddFilmLecture(titanic, ref 225 min)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1712,7 +1710,7 @@
 												"$ref": "AAAAAAF5r9Uy0sFOnwU="
 											},
 											"edgePosition": 1,
-											"text": "11 : random.Next(3)"
+											"text": "11 : random.Next(5)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2158,7 +2156,7 @@
 												"$ref": "AAAAAAF5oCCEttCNfBs="
 											},
 											"edgePosition": 1,
-											"text": "15 : AddEpisodeLecture(got, 30 min)"
+											"text": "15 : AddEpisodeLecture(got, ref 30 min)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -2215,7 +2213,7 @@
 											"left": 71,
 											"top": 740,
 											"width": 14,
-											"height": 325
+											"height": 301
 										}
 									],
 									"font": "Arial;13;0",
@@ -2326,7 +2324,7 @@
 											"left": 893,
 											"top": 768,
 											"width": 14,
-											"height": 281
+											"height": 265
 										}
 									],
 									"font": "Arial;13;0",
@@ -2548,7 +2546,7 @@
 											"left": 1205,
 											"top": 848,
 											"width": 14,
-											"height": 177
+											"height": 169
 										}
 									],
 									"font": "Arial;13;0",
@@ -3035,7 +3033,7 @@
 							"target": {
 								"$ref": "AAAAAAF5n/nBeM4uz64="
 							},
-							"arguments": "ContenuVideoludique cv, GenreGlobal g"
+							"arguments": "GenreGlobal g, Marathon m"
 						},
 						{
 							"_type": "UMLMessage",
@@ -3131,14 +3129,14 @@
 							"_parent": {
 								"$ref": "AAAAAAF5n/iK884e+UU="
 							},
-							"name": "AddContenu",
+							"name": "AddFilmLecture",
 							"source": {
 								"$ref": "AAAAAAF5n/nBeM4uz64="
 							},
 							"target": {
 								"$ref": "AAAAAAF5n/nBeM4uz64="
 							},
-							"arguments": "titanic"
+							"arguments": "titanic, ref 225 min"
 						},
 						{
 							"_type": "UMLMessage",
@@ -3183,7 +3181,7 @@
 							"target": {
 								"$ref": "AAAAAAF5r71X/L/aOTw="
 							},
-							"arguments": "3"
+							"arguments": "5"
 						},
 						{
 							"_type": "UMLMessage",
@@ -3243,7 +3241,7 @@
 							"target": {
 								"$ref": "AAAAAAF5n/nBeM4uz64="
 							},
-							"arguments": "got, 30 min"
+							"arguments": "got, ref 30 min"
 						},
 						{
 							"_type": "UMLMessage",
