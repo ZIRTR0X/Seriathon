@@ -141,6 +141,11 @@ namespace modelisation.user
         }
         private LinkedList<ContenuVideoludique> _listCVvu;
 
+        /// <summary>
+        /// Marathon de l'utilisateur
+        /// </summary>
+        public Marathon MarathonPerso { get; private set; }
+
         //propriétée calculée
 
         public int Age => new DateTime((DateTime.Today - DateDeNaissance).Ticks).Year;
@@ -176,6 +181,7 @@ namespace modelisation.user
             DateDeNaissance = new DateTime(0);
             Genre = null;
             ListCVvu = new LinkedList<ContenuVideoludique>();
+            MarathonPerso = null;
         }
 
         /// <summary>
@@ -205,7 +211,8 @@ namespace modelisation.user
         /// <param name="dateDeNaissance"></param> spécifie la date de naissance de l'utilisateur, ne pouvant etre antérieure à 1900
         /// <param name="genre"></param> string genre de l'utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="listCVvu"></param> LinkedList<ContenuVideoludique> listant tout le contenu déjà vu par l'utilisateur, ne pouvant etre null
-        public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre, LinkedList<ContenuVideoludique> listCVvu)
+        public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre,
+            LinkedList<ContenuVideoludique> listCVvu, Marathon m)
         {
             Pseudo = pseudo;
             Password = password;
@@ -213,6 +220,7 @@ namespace modelisation.user
             DateDeNaissance = dateDeNaissance;
             Genre = genre;
             ListCVvu = listCVvu;
+            MarathonPerso = m;
         }
 
         /// <summary>
@@ -305,5 +313,7 @@ namespace modelisation.user
         {
             return ListCVvu.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>;
         }
+
+
     }
 }

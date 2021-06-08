@@ -11,7 +11,7 @@ namespace modelisation.content
     /// <summary>
     /// classe ContenuVideoludique est une classe abstraite représentant du contenu vidéoludique (Film, Série...)
     /// </summary>
-    public abstract class ContenuVideoludique : IEstDescriptible, IEquatable<ContenuVideoludique>
+    public abstract class ContenuVideoludique : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<ContenuVideoludique>
     {
         // pense a implement la focon de like (voir un film)
 

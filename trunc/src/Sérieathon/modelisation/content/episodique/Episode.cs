@@ -8,7 +8,7 @@ namespace modelisation.content.episodique
     /// <summary>
     /// Classe Episode, répertoriant tout ce qu'il y a a savoir sur un épisode d'une série.
     /// </summary>
-    public class Episode : IEstDescriptible, IEquatable<Episode>
+    public class Episode : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<Episode>
     {
         /// <summary>
         /// string Nom représente le nom de l'épisode, son intitulé, ne pouvant etre null ou vide

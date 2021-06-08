@@ -1,6 +1,7 @@
 ﻿using modelisation.content;
 using modelisation.content.episodique;
 using modelisation.genres;
+using modelisation.usefull_interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace modelisation.user
 {
-    class Marathon
+    public class Marathon
     {
         /// <summary>
         /// TimeSpan Duree du marathon
@@ -33,7 +34,7 @@ namespace modelisation.user
         /// <summary>
         /// LinkedList<ContenuVideoludique> liste des contenues composant la liste de lecture du marathon
         /// </summary>
-        public List<ContenuVideoludique> ListContenu
+        public List<IEstAjoutableAuMarathon> ListContenu
         {
             get => _listContenu;
 
@@ -41,14 +42,14 @@ namespace modelisation.user
             {
                 if(value is null)
                 {
-                    _listContenu = new List<ContenuVideoludique>();
+                    _listContenu = new List<IEstAjoutableAuMarathon>();
                 } else
                 {
                     _listContenu = value;
                 }
             }
         }
-        private List<ContenuVideoludique> _listContenu;
+        private List<IEstAjoutableAuMarathon> _listContenu;
 
         /// <summary>
         /// La liste de tous les types possibles et leur liste de contenu vidéoludique
@@ -90,7 +91,7 @@ namespace modelisation.user
         public Marathon(int nbJour, int nbHeureParJour)
         {
             Duree = new TimeSpan((nbJour * nbHeureParJour), 0, 0);
-            ListContenu = new List<ContenuVideoludique>();
+            ListContenu = new List<IEstAjoutableAuMarathon>();
             GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
             GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
         }
@@ -98,7 +99,7 @@ namespace modelisation.user
         public Marathon(TimeSpan duree)
         {
             Duree = duree;
-            ListContenu = new List<ContenuVideoludique>();
+            ListContenu = new List<IEstAjoutableAuMarathon>();
             GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
             GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
         }
@@ -157,16 +158,11 @@ namespace modelisation.user
 
         private bool AddEpisodeLecture(Serie s, ref TimeSpan duree_restante)
         {
-            List<Episode> episodeAAjouter = new List<Episode>();
             if (ListContenu.Contains(s)) return false;
+
             // je m'arrange pour dépasser un minimum la limite de temps
-            while( duree_restante.Ticks > 0)
-            {
-                // je suis sûr de ne pas avoir d'épisodes déjà présent, car je ne peux ajouter deux fois la même saison
-                List<Episode> episodePropose = s.RecepurerListEpisode(duree_restante);
-                episodeAAjouter.AddRange(episodePropose);
-                
-            }
+            ListContenu.AddRange(s.RecepurerListEpisode(ref duree_restante));
+
             return true;
         }
 
@@ -185,15 +181,33 @@ namespace modelisation.user
                     // je peux ici avoir soit des séries (ou animes, mais ça ne change pas ), soit des films
 
                     // je récupère ici une value random, d'abord une value du dictio, puis un élément de la liste
+
+
                     List<ContenuVideoludique> value_random = GenresGlobaux_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
                     ContenuVideoludique selection_random = value_random[random.Next(value_random.Count)];
 
-                    if(selection_random is Film fi)
+                    if(selection_random is Film fi && AddFilmLecture(fi, ref duree_restante))
                     {
-                        AddFilmLecture(fi, ref duree_restante);
-                    } else if(selection_random is Serie s)
+                        // dans ce cas, je veux supprimer toutes les références de ce film
+                        foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                        {
+                            l.Remove(selection_random);
+                        }
+
+                    } else if(selection_random is Serie s && AddEpisodeLecture(s, ref duree_restante))
                     {
-                        AddEpisodeLecture(s, ref duree_restante);
+                        foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                        {
+                            l.Remove(selection_random); // enlève de tout les gens globaux
+                        }
+                        if(s is Anime a) // ici, la série peut etre un anime
+                        {
+                            foreach(List<Anime> l in GenresAnimes_possibles.Values)
+                            {
+                                l.Remove(a);
+                            }
+                        }
+
                     } else
                     {
                         continue;
@@ -205,7 +219,19 @@ namespace modelisation.user
                     // je suis sûr d'avoir des animes ici, je choisie d'abord une paire aléatoire (ElementAt est une méthode de Linq)
 
                     List<Anime> value_random = GenresAnimes_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
-                    AddEpisodeLecture(value_random[random.Next(value_random.Count)], ref duree_restante); // choisit un épisode aléatoire dans la liste de valeur possible
+                    Anime selection_random = value_random[random.Next(value_random.Count)]; // choisit un épisode aléatoire dans la liste de valeur possible
+                    if(AddEpisodeLecture(selection_random, ref duree_restante))
+                    {
+                        foreach (List<Anime> l in GenresAnimes_possibles.Values)
+                        {
+                            l.Remove(selection_random);
+                        }
+
+                        foreach (List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                        {
+                            l.Remove(selection_random as ContenuVideoludique);
+                        }
+                    }
 
                 } else
                 {
@@ -214,20 +240,47 @@ namespace modelisation.user
                     if (random_courant == 0 && GenresAnimes_possibles.Count != 0)
                     {
                         List<Anime> value_random = GenresAnimes_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
-                        AddEpisodeLecture(value_random[random.Next(value_random.Count)], ref duree_restante);
+                        Anime selection_random = value_random[random.Next(value_random.Count)];
+                        if (AddEpisodeLecture(selection_random, ref duree_restante))
+                        {
+                            foreach(List<Anime> l in GenresAnimes_possibles.Values)
+                            {
+                                l.Remove(selection_random);
+                            }
+                            foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                            {
+                                l.Remove(selection_random as ContenuVideoludique);
+                            }
+                        }
+
+                        
 
                     } else if (random_courant == 1 && GenresGlobaux_possibles.Count != 0)
                     {
                         List<ContenuVideoludique> value_random = GenresGlobaux_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
                         ContenuVideoludique selection_random = value_random[random.Next(value_random.Count)];
 
-                        if (selection_random is Film fi)
+                        if (selection_random is Film fi && AddFilmLecture(fi, ref duree_restante))
                         {
-                            AddFilmLecture(fi, ref duree_restante);
+                            foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                            {
+                                l.Remove(selection_random);
+                            }
                         }
-                        else if (selection_random is Serie s)
+                        else if (selection_random is Serie s && AddEpisodeLecture(s, ref duree_restante))
                         {
-                            AddEpisodeLecture(s, ref duree_restante);
+                            foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                            {
+                                l.Remove(selection_random);
+                            }
+                            
+                            if(s is Anime a)
+                            {
+                                foreach(List<Anime> l in GenresAnimes_possibles.Values)
+                                {
+                                    l.Remove(a);
+                                }
+                            }
                         }
                         else
                         {

@@ -6808,7 +6808,7 @@
 											"top": 485,
 											"width": 319.05224609375,
 											"height": 13,
-											"text": "+AjouterContenu(c: ContenuVideoludique): bool",
+											"text": "+AjouterContenu(i: IEstAjoutableAuMarathon): bool",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6825,7 +6825,7 @@
 											"top": 500,
 											"width": 319.05224609375,
 											"height": 13,
-											"text": "+EnleverContenu(c: ContenuVideoludique): bool",
+											"text": "+EnleverContenu(i: IEstAjoutableAuMarathon): bool",
 											"horizontalAlignment": 0
 										},
 										{
@@ -8956,7 +8956,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 45,
-									"top": 536,
+									"top": 528,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -8976,8 +8976,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 43,
-									"top": 549,
+									"left": 42,
+									"top": 542,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -8997,8 +8997,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 48,
-									"top": 508,
+									"left": 49,
+									"top": 501,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -9104,7 +9104,7 @@
 								"$ref": "AAAAAAF5OFc5UTZj+aU="
 							},
 							"lineStyle": 1,
-							"points": "71:526;24:528;24:1280;1416:1280;1416:1112;1632:1112;1629:825",
+							"points": "71:520;16:520;16:1280;1416:1280;1416:1112;1632:1112;1629:825",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF5vfdBniqHfLs="
@@ -11112,9 +11112,9 @@
 											"_parent": {
 												"$ref": "AAAAAAF5r+q+fnY3e/M="
 											},
-											"name": "c",
+											"name": "i",
 											"type": {
-												"$ref": "AAAAAAF5OFdxtTaL3v4="
+												"$ref": "AAAAAAF5s5FMDtWMMc0="
 											}
 										},
 										{
@@ -11142,9 +11142,9 @@
 											"_parent": {
 												"$ref": "AAAAAAF5r+sWR3jhOzI="
 											},
-											"name": "c",
+											"name": "i",
 											"type": {
-												"$ref": "AAAAAAF5OFdxtTaL3v4="
+												"$ref": "AAAAAAF5s5FMDtWMMc0="
 											}
 										},
 										{

@@ -84,16 +84,15 @@ namespace modelisation.content.episodique
         /// Créé une liste d'épisode, dépassant de peu la durée indiqué en paramètres
         /// </summary>
         /// <param name="duree_max"></param> durée restante a combler avec des épisodes, convergant vers 0 pour savoir combien ajouter d'Episode
-        /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée max (supérieure à la durée d'un épisode près)</returns>
-        internal List<Episode> RecepurerListEpisode(TimeSpan duree_max)
+        /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée max (supérieure à la durée d'un épisode près), de max 3 épisodes</returns>
+        internal List<Episode> RecepurerListEpisode(ref TimeSpan duree_max)
         {
             int numSaison = 1;
             List<Episode> episodeAAjouter = new List<Episode>();
 
-            while (duree_max.Ticks > 0)
+            while (duree_max.Ticks > 0 && episodeAAjouter.Count < 4)
             {
-                Saison saison = RechercherSaison(numSaison);
-                episodeAAjouter.AddRange(saison.RecupererListEpisode(ref duree_max));
+                episodeAAjouter.AddRange(RechercherSaison(numSaison).RecupererListEpisode(ref duree_max));
                 ++numSaison;
             }
 

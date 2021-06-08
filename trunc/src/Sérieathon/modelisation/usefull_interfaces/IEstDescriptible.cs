@@ -9,6 +9,9 @@ namespace modelisation.usefull_interfaces
     /// </summary>
     public interface IEstDescriptible
     {
+        /// <summary>
+        /// Attribut décrivant la classe implémentant l'interface, en général un petit texte descriptif
+        /// </summary>
         string Description { get; set; }
 
         /// <summary>

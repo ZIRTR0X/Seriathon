@@ -6,7 +6,7 @@ using System.Text;
 
 namespace modelisation
 {
-    class Manager
+    public class Manager
     {
         public LinkedList<Utilisateur> ListUtilisateur { get; private set; }
 
