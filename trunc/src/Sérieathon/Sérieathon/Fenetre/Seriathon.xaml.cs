@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sérieathon.converter;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -8,19 +9,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.Fenetre
 {
     /// <summary>
-    /// Interaction logic for acceuil_UC.xaml
+    /// Interaction logic for Seriathon.xaml
     /// </summary>
-    public partial class UC_accueil: UserControl
+    public partial class Seriathon : Window
     {
-        public UC_accueil()
+
+        public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
+        public Seriathon()
         {
             InitializeComponent();
+            DataContext = NavNavBar;
         }
+
+
     }
 }

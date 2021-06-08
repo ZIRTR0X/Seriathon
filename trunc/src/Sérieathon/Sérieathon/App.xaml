@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Sérieathon" 
              xmlns:conv="clr-namespace:Sérieathon.converter"
-             StartupUri="Accueil.xaml">
+             StartupUri="Fenetre/Accueil.xaml">
     <Application.Resources>
         <conv:func2WindowPartConverter x:Key="Func2WindowPartConverter"/>
         <conv:func2WindowPartConverterProfil x:Key="Func2WindowPartConverterProfil"/>
@@ -58,22 +58,18 @@
             <Setter Property="Background" Value="#777c88"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
-        <Style TargetType="ComboBoxItem">
-            <Setter Property="Background" Value="#777c88"/>
-            <Setter Property="BorderBrush" Value="#777c88"/>
-        </Style>
-        <!--<Style TargetType="ComboBox">
+        <!--<Style TargetType="ComboBoxItem">
             <Setter Property="Background" Value="#777c88"/>
             <Setter Property="BorderBrush" Value="#777c88"/>
         </Style>-->
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="#777c88"/>
+            <Setter Property="TextBlock.Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#777c88"/>
+        </Style>
         <Style TargetType="TextBox">
             <Setter Property="Background" Value="#777c88"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
-        
-
-
-
-
     </Application.Resources>
 </Application>

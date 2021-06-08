@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Sérieathon.UC_accueil"
+﻿<UserControl x:Class="Sérieathon.UC.main_window.page_principale.UC_accueil"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Sérieathon"
+             xmlns:local="clr-namespace:Sérieathon.UC.main_window.page_principale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>

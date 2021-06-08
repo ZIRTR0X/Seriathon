@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sérieathon.converter;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,20 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using modelisation;
-using Sérieathon.UC.main_window.Marathon.marathon_windows;
-using Sérieathon.UC.main_window.Marathon.Profile;
-using Sérieathon.converter;
 
-namespace Sérieathon
+namespace Sérieathon.UC.main_window.page_principale
 {
     /// <summary>
-    /// Interaction logic for UC_Menu_Nav.xaml
+    /// Logique d'interaction pour UC_Menu_Nav.xaml
     /// </summary>
     public partial class UC_Menu_Nav : UserControl
     {
-
-
         public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
 
         public UC_Menu_Nav()

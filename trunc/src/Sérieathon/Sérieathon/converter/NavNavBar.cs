@@ -8,8 +8,9 @@ using System.Text;
 using System.Windows.Controls;
 using modelisation;
 using Sérieathon.UC.main_window.Marathon.marathon_windows;
-using Sérieathon.UC.main_window.Marathon.Profile;
+using Sérieathon.UC.main_window.Profile;
 using Sérieathon.UC.main_window.Marathon.Creation_marathon;
+using Sérieathon.UC.main_window.page_principale;
 
 namespace Sérieathon.converter
 {

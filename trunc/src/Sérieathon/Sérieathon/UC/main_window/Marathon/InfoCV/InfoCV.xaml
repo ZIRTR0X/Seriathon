@@ -16,15 +16,16 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Titre"/>
-        <TextBlock Grid.Row="1" Text="InfoChiffre"/>
-        <TextBlock Grid.Row="2" Text="NomEp"/>
+        <TextBlock Grid.Row="0" Text="Boruto" HorizontalAlignment="Center" Style="{StaticResource FontSize25}"/>
+        <TextBlock Grid.Row="1" Text="10 siason - 120 épisode - 2017" FontSize="10"/>
+        <TextBlock Grid.Row="2" Text="Ep 120 - L'épisode le plus incroyable!" HorizontalAlignment="Center"/>
         <ScrollViewer  Grid.Row="3">
-            <TextBlock Text="Description"/>
+            <TextBlock TextWrapping="Wrap" FontSize="10"  Margin="10" Text="À l'affiche de la nouvelle production Marvel Studios ''Falcon et le Soldat de l'Hiver'', retrouvez Anthony Mackie dans le rôle de Sam Wilson alias Falcon, et Sebastian Stan dans celui de Bucky Barnes alias le Soldat de l'Hiver.Né à la fin de ''Avengers : Endgame'', le duo se reforme pour une aventure planétaire qui va mettre à l'épreuve leurs aptitudes... et leur patience. Avec Kari Skogland à la réalisation et Malcolm Spellman comme scénariste principal, la série de six épisodes met également en scène Daniel Brühl dans le rôle du Baron Zemo, Emily VanCamp dans celui de Sharon Carter, et Wyatt Russell dans celui de John Walker.
+                "/>
         </ScrollViewer>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
@@ -52,5 +53,11 @@
         <Button Grid.Column="1" Grid.Row="3" Content="Streaming" Width="90" Height="40"/>
         <CheckBox Content="Pas vue" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Source="../../../../image/affiche/boruto.jpg"/>
+        <Button Grid.Column="0" Grid.Row="5" Style="{StaticResource ButtonRetour}" HorizontalAlignment="Left" Margin="40, 0, 0, 0">
+            <WrapPanel>
+                <Image Source="../../../../image/utile/back_arrow.png" Width="30" HorizontalAlignment="Left"/>
+                <TextBlock Text=" Retour" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </Button>
     </Grid>
 </UserControl>

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>../bin</OutputPath>
+    <OutputPath>D:\cours\1A\Csharp\trunc\src\Sérieathon\bin\</OutputPath>
     <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
@@ -20,12 +20,17 @@
     <None Remove="image\logo\logo_accueil_petit.png" />
     <None Remove="image\logo\seriathon.png" />
     <None Remove="image\right-arrow.png" />
+    <None Remove="image\user.png" />
     <None Remove="image\view.png" />
     <None Remove="image\visibility.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="image\back_arrow.png">
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.1-ci2558" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\utile\back_arrow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="image\logo\seriathon.png">
@@ -38,13 +43,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="image\cancel.png">
+    <Resource Include="image\utile\cancel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="image\confirm.png">
+    <Resource Include="image\utile\confirm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="image\left-arrow.png">
+    <Resource Include="image\utile\left-arrow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="image\logo\logo_accueil_grand.png">
@@ -53,13 +58,16 @@
     <Resource Include="image\logo\logo_accueil_petit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="image\right-arrow.png">
+    <Resource Include="image\utile\right-arrow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="image\view.png">
+    <Resource Include="image\utile\user.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="image\visibility.png">
+    <Resource Include="image\utile\view.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\visibility.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

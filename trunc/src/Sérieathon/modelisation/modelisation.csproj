@@ -5,7 +5,16 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>../bin</OutputPath>
+    <OutputPath>D:\cours\1A\Csharp\trunc\src\Sérieathon\bin\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Manager.cs.mine" />
+    <None Remove="Manager.cs.r55" />
+    <None Remove="Manager.cs.r56" />
+    <None Remove="user\Utilisateur.cs.mine" />
+    <None Remove="user\Utilisateur.cs.r56" />
+    <None Remove="user\Utilisateur.cs.r57" />
+  </ItemGroup>
 
 </Project>

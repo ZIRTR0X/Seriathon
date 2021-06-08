@@ -1,4 +1,6 @@
-﻿using Sérieathon.UC.main_window;
+﻿using modelisation;
+using Sérieathon.Fenetre;
+using Sérieathon.UC.main_window;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,19 +14,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.UC.login_window
 {
     /// <summary>
     /// Interaction logic for UC_connexion.xaml
     /// </summary>
     public partial class UC_connexion : UserControl
     {
-
+        public ManagerOld MonManager => (App.Current as App).MonManager;
         public bool Visibility_icon { get; private set; }
+
+
 
         public UC_connexion()
         {
             InitializeComponent();
+
+            DataContext = MonManager;
 
             Visibility_icon = false;
 

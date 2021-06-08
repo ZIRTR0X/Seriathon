@@ -38,7 +38,7 @@
         <Button Click="ScienceFiction_Button_Click" Grid.Column="4" Grid.Row="3" Height="40" Width="160" Content="Science Fiction"/>
         <Button Click="Genre_Global_Back_Button_Click" Grid.Column="0" Grid.Row="4" Style="{StaticResource ButtonRetour}">
             <WrapPanel>
-                <Image Source="../../../../image/back_arrow.png" Width="30" HorizontalAlignment="Left"/>
+                <Image Source="../../../../image/utile/back_arrow.png" Width="30" HorizontalAlignment="Left"/>
                 <TextBlock Text=" Retour" VerticalAlignment="Center"/>
             </WrapPanel>
         </Button>

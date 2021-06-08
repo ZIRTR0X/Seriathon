@@ -8,16 +8,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon
+namespace Sérieathon.UC.main_window.page_principale
 {
     /// <summary>
-    /// Interaction logic for Info.xaml
+    /// Interaction logic for acceuil_UC.xaml
     /// </summary>
-    public partial class Info : Window
+    public partial class UC_accueil: UserControl
     {
-        public Info()
+        public UC_accueil()
         {
             InitializeComponent();
         }

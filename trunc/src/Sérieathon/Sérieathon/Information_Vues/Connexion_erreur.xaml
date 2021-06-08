@@ -1,11 +1,11 @@
-﻿<Window x:Class="Sérieathon.Information_Vues.Suppression_confirmation"
+﻿<Window x:Class="Sérieathon.Information_Vues.Connexion_erreur"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sérieathon.Information_Vues"
         mc:Ignorable="d"
-        Title="Suppression_confirmation" Height="450" Width="800">
+        Title="Connexion_erreur" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -16,20 +16,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Suppression du marathon" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="30"/>
-        <TextBlock Text="Êtes-vous sûr de vouloir supprimer votre marathon en cours?" Grid.Row="1"
+        <TextBlock Text="Erreur de connexion" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="30"/>
+        <TextBlock Text="Votre adresse email ou votre mot de passe n'est pas correcte." Grid.Row="1"
                    Grid.ColumnSpan="2" VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource ButtonRetour}">
-            <WrapPanel>
-                <Image Source="../image/utile/cancel.png" Width="30" HorizontalAlignment="Left"/>
-                <TextBlock Text="  NON" VerticalAlignment="Center"/>
-            </WrapPanel>
-        </Button>
-        <Button Grid.Row="2" Style="{StaticResource ButtonValider}">
+        <Button Grid.Row="2" Grid.Column="1" Click="Continuer_bouton_click" Style="{StaticResource ButtonValider}">
             <WrapPanel>
                 <Image Source="../image/utile/confirm.png" Width="30" HorizontalAlignment="Left"/>
-                <TextBlock Text="  OUI" VerticalAlignment="Center"/>
+                <TextBlock Text="  Continuer" VerticalAlignment="Center"/>
             </WrapPanel>
         </Button>
 

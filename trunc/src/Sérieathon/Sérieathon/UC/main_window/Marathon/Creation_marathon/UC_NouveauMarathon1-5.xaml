@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:Sérieathon.UC.main_window.Marathon.Creation_marathon"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
 
-        <Grid.RowDefinitions>
+        <Grid>
+
+            <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -30,41 +31,111 @@
         <TextBox Grid.Column="1" Grid.Row="2" Height="25" Width="300" Margin="0" x:Name="NomMarathon" HorizontalAlignment="Left"/>
         <TextBlock Grid.Column="1" Grid.Row="3" Text="Temps passé par jour" VerticalAlignment="Bottom"/>
         <ComboBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  Width="130" HorizontalAlignment="Left" x:Name="TempsParJour">
-            <ComboBoxItem>1 heure</ComboBoxItem>
-            <ComboBoxItem>2 heures</ComboBoxItem>
-            <ComboBoxItem>3 heures</ComboBoxItem>
-            <ComboBoxItem>4 heures</ComboBoxItem>
-            <ComboBoxItem>5 heures</ComboBoxItem>
-            <ComboBoxItem>6 heures</ComboBoxItem>
-            <ComboBoxItem>7 heures</ComboBoxItem>
-            <ComboBoxItem>8 heures</ComboBoxItem>
-            <ComboBoxItem>9 heures</ComboBoxItem>
-            <ComboBoxItem>10 heures</ComboBoxItem>
-            <ComboBoxItem>11 heures</ComboBoxItem>
-            <ComboBoxItem>12 heures</ComboBoxItem>
+            <ComboBox.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+                </Style>
+            </ComboBox.Resources>
+            <ComboBoxItem>
+                <TextBlock Text="1 heure"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="2 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="3 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="4 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="5 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="6 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="7 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="8 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="9 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="10 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="11 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="12 heures"/>
+            </ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="1" Grid.Row="5" Text="Nombre de jour" VerticalAlignment="Bottom"/>
         <ComboBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="130" HorizontalAlignment="Left" x:Name="NombreDeJour">
-            <ComboBoxItem>1 jour</ComboBoxItem>
-            <ComboBoxItem>2 jours</ComboBoxItem>
-            <ComboBoxItem>3 jours</ComboBoxItem>
-            <ComboBoxItem>4 jours</ComboBoxItem>
-            <ComboBoxItem>5 jours</ComboBoxItem>
-            <ComboBoxItem>6 jours</ComboBoxItem>
-            <ComboBoxItem>7 jours</ComboBoxItem>
-            <ComboBoxItem>8 jours</ComboBoxItem>
-            <ComboBoxItem>9 jours</ComboBoxItem>
-            <ComboBoxItem>10 jours</ComboBoxItem>
-            <ComboBoxItem>11 jours</ComboBoxItem>
-            <ComboBoxItem>12 jours</ComboBoxItem>
-            <ComboBoxItem>13 jours</ComboBoxItem>
-            <ComboBoxItem>2 semaines</ComboBoxItem>
-            <ComboBoxItem>3 semaines</ComboBoxItem>
-            <ComboBoxItem>4 semaines</ComboBoxItem>
+            <ComboBox.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+                </Style>
+            </ComboBox.Resources>
+            <ComboBoxItem>
+                <TextBlock Text="1 jour"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="2 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="3 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="4 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="5 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="6 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="7 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="8 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="9 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="10 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="11 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="12 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="13 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="2 semaines"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="3 semaines"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="4 semaines"/>
+            </ComboBoxItem>
         </ComboBox>
         <Button Click="NM1_Next_Button_Click" Grid.Column="2" Grid.Row="7" Style="{StaticResource ButtonValider}">
             <WrapPanel>
-                <Image Source="../../../../image/confirm.png" Width="30" HorizontalAlignment="Left"/>
+                <Image Source="../../../../image/utile/confirm.png" Width="30" HorizontalAlignment="Left"/>
                 <TextBlock Text=" Suivant" VerticalAlignment="Center"/>
             </WrapPanel>
         </Button>

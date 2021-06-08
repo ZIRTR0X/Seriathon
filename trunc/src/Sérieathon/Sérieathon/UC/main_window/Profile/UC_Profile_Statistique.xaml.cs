@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sérieathon.UC.main_window.Marathon.Profile
+namespace Sérieathon.UC.main_window.Profile
 {
     /// <summary>
     /// Logique d'interaction pour UC_Profile_Statistique.xaml

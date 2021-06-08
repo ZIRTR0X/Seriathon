@@ -9,24 +9,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Sérieathon.UC.main_window.Marathon.marathon_windows;
-using Sérieathon.converter;
 
-namespace Sérieathon.UC.main_window
+namespace Sérieathon.Information_Vues
 {
     /// <summary>
-    /// Interaction logic for Seriathon.xaml
+    /// Logique d'interaction pour Connexion_erreur.xaml
     /// </summary>
-    public partial class Seriathon : Window
+    public partial class Connexion_erreur : Window
     {
-
-        public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
-        public Seriathon()
+        public Connexion_erreur()
         {
             InitializeComponent();
-            DataContext = NavNavBar;
         }
         
+
+        private void Continuer_bouton_click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
 
     }
 }

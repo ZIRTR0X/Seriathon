@@ -18,9 +18,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Marathon " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-                <Button Grid.Column="1" Height="40" Width="150" Style="{StaticResource ButtonRetour}">
+                <Button Grid.Column="1" Height="40" Width="150" Click="supprimer_buton_click" Style="{StaticResource ButtonRetour}">
                     <WrapPanel>
-                        <Image Source="../../../../image/cancel.png" Width="30" HorizontalAlignment="Left"/>
+                        <Image Source="../../../../image/utile/cancel.png" Width="30" HorizontalAlignment="Left"/>
                         <TextBlock Text=" Supprimer" VerticalAlignment="Center"/>
                     </WrapPanel>
                 </Button>
@@ -29,7 +29,7 @@
                 <local:UC_Marathon_Jour/>
                 <local:UC_Marathon_Jour/>
             </WrapPanel>
-            
+
         </DockPanel>
     </ScrollViewer>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sérieathon.Information_Vues;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,9 +24,9 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
             InitializeComponent();
         }
 
-        private void UC_Marathon_Jour_Loaded(object sender, RoutedEventArgs e)
+        private void supprimer_buton_click(object sender, RoutedEventArgs e)
         {
-
+            (new Suppression_confirmation()).ShowDialog();
         }
     }
 }

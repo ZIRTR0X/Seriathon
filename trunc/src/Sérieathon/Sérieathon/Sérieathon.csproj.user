@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
+    <Compile Update="Fenetre\Seriathon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC\basic_element\UC_TextBox_Form.xaml.cs">
+    <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml.cs">
@@ -22,16 +22,19 @@
     <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile.xaml.cs">
+    <Compile Update="UC\main_window\page_principale\UC_Menu_Nav.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile_Statistique.xaml.cs">
+    <Compile Update="UC\main_window\Profile\UC_Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile_Vue.xaml.cs">
+    <Compile Update="UC\main_window\Profile\UC_Profile_Statistique.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC\UC_accueil.xaml.cs">
+    <Compile Update="UC\main_window\Profile\UC_Profile_Vue.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\page_principale\UC_accueil.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UC\login_window\UC_connexion.xaml.cs">
@@ -40,15 +43,12 @@
     <Compile Update="UC\login_window\UC_inscription.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UC\main_window\UC_Menu_Nav.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Information_Vues\Suppression_confirmation.xaml">
+    <Page Update="Fenetre\Seriathon.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC\basic_element\UC_TextBox_Form.xaml">
+    <Page Update="Information_Vues\Suppression_confirmation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml">
@@ -60,25 +60,25 @@
     <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC\main_window\Marathon\Profile\UC_Profile.xaml">
+    <Page Update="UC\main_window\page_principale\UC_Menu_Nav.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC\main_window\Marathon\Profile\UC_Profile_Statistique.xaml">
+    <Page Update="UC\main_window\Profile\UC_Profile.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC\main_window\Marathon\Profile\UC_Profile_Vue.xaml">
+    <Page Update="UC\main_window\Profile\UC_Profile_Statistique.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UC\UC_accueil.xaml">
+    <Page Update="UC\main_window\Profile\UC_Profile_Vue.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\page_principale\UC_accueil.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\login_window\UC_connexion.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\login_window\UC_inscription.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UC\main_window\UC_Menu_Nav.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
