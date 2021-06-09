@@ -13,7 +13,6 @@ namespace modelisation.content
     /// </summary>
     public abstract class ContenuVideoludique : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<ContenuVideoludique>
     {
-        // pense a implement la focon de like (voir un film)
 
         /// <summary>
         /// string Titre correspond au titre de l'oeuvre, ne pouvant être vide

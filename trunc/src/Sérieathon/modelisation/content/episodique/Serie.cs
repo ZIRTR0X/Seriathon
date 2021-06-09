@@ -7,6 +7,9 @@ using System.Text;
 
 namespace modelisation.content.episodique
 {
+    /// <summary>
+    /// Serie est un ContenuVideoludique, possédant des saisons d'épisodes
+    /// </summary>
     public class Serie : ContenuVideoludique, IEquatable<Serie>
     {
         /// <summary>
@@ -114,6 +117,11 @@ namespace modelisation.content.episodique
             }
         }
 
+        /// <summary>
+        /// Enleve une saison a la liste de la série
+        /// </summary>
+        /// <param name="s"></param> saison a supprimer de la série
+        /// <returns> true si jamais la saison est supprimé, false sinon (souvent car la saison passée en paramètre n'existe pas)</returns>
         public bool SupprimerSaison(Saison s)
         {
             return ListSaisons.Remove(s);

@@ -7,6 +7,9 @@ using System.Text;
 
 namespace modelisation.content.episodique
 {
+    /// <summary>
+    /// Anime est une extension de Serie, intégrant une liste de GenreAnime en plus
+    /// </summary>
     public class Anime : Serie, IEquatable<Anime>
     {
         /// <summary>

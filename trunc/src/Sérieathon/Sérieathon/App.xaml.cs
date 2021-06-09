@@ -19,7 +19,7 @@ namespace Sérieathon
         public ManagerOld MonManager { get; set; } = new ManagerOld();
         public NavNavBar NavNavBar { get; set; } = new NavNavBar();
         public NavProfil NavProfil { get; set; } = new NavProfil();
-        public Manager TheManager { get; set; } = new Manager();
+        public Manager TheManager { get; set; } = Manager.GetInstance();
 
         
 

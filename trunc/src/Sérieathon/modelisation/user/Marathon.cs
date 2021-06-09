@@ -9,6 +9,9 @@ using System.Text;
 
 namespace modelisation.user
 {
+    /// <summary>
+    /// represente la liste de suggestions de contenus à voir, selon une duree maximale, et des genres voulus
+    /// </summary>
     public class Marathon
     {
         /// <summary>
@@ -52,7 +55,7 @@ namespace modelisation.user
         private List<IEstAjoutableAuMarathon> _listContenu;
 
         /// <summary>
-        /// La liste de tous les types possibles et leur liste de contenu vidéoludique
+        /// La liste de tous les types globaux ajoutables et leur liste de contenu vidéoludique
         /// </summary>
         public Dictionary<GenreGlobal, List<ContenuVideoludique>> GenresGlobaux_possibles
         {
@@ -71,6 +74,9 @@ namespace modelisation.user
         }
         private Dictionary<GenreGlobal, List<ContenuVideoludique>> _genresGlobaux_possibles;
 
+        /// <summary>
+        /// La liste de tous les types d'animes ajoutables et leur liste d'animes
+        /// </summary>
         public Dictionary<GenreAnime, List<Anime>> GenresAnimes_possibles
         {
             get => _genresAnimes_possibles;
@@ -104,6 +110,11 @@ namespace modelisation.user
             GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
         }
 
+        /// <summary>
+        /// tente d'ajouter le contenuVideoludique c à la liste des suggestions (méthode dépréciée dans notre contexte)
+        /// </summary>
+        /// <param name="c"></param> le contenu vidéoludique a ajouter a la liste de suggestions
+        /// <returns>false si le contenu est déjà présent, true si il a été ajouté</returns>
         public bool AjouterContenu(ContenuVideoludique c)
         {
             if(ListContenu.Contains(c))
@@ -116,6 +127,11 @@ namespace modelisation.user
             }
         }
 
+        /// <summary>
+        /// tente de supprimer un contenuVideoludique c de la liste des suggestions
+        /// </summary>
+        /// <param name="c"></param> le contenu vidéoludique a supprimer de la liste de suggestions
+        /// <returns>false si le contenu n'est pas présent dans la liste, true si il a été supprimé</returns>
         public bool EnleverContenu(ContenuVideoludique c)
         {
             return ListContenu.Remove(c);
@@ -124,18 +140,31 @@ namespace modelisation.user
 
         // module de génération d'un marathon pour l'application
 
+        /// <summary>
+        /// ajoute un thème global de marathon en clé du dictionnaire de themes globaux possibles, ainsi que la liste des contenu possédant
+        /// ce genre dans leur liste de genres globaux
+        /// </summary>
+        /// <param name="g"></param> genre global à tenter d'ajouter comme thème
+        /// <param name="m"></param> manager du systeme, répertoriant tout les contenus vidéoludique de l'application
+        /// <returns>false si jamais g est déjà présent dans le dictionnaire, true s'il a été ajouté</returns>
         public bool AddThemeGlobal(GenreGlobal g, Manager m)
         {
             //return GenresGlobaux_possibles.TryAdd(g, m.ListCV.Where(c => c.Genres.Contains(g)));
             // je préfère imédiatement tester la présence de la clé, pour éviter si déjà présente de faire l'attribution en mémoire de la listeEpisode
             if (GenresGlobaux_possibles.ContainsKey(g)) return false;
 
-            List<ContenuVideoludique> listeContenu = new List<ContenuVideoludique>(m.ListCV.Where(c => c.Genres.Contains(g)));
 
-            GenresGlobaux_possibles.Add(g, listeContenu);
+            GenresGlobaux_possibles.Add(g, new List<ContenuVideoludique>(m.ListCV.Where(c => c.Genres.Contains(g))));
             return true;
         }
 
+        /// <summary>
+        /// ajoute un thème d'anime de marathon en clé du dictionnaire de themes d'animes possibles, ainsi que la liste des animes possédant
+        /// ce genre dans leur liste de genres d'animes
+        /// </summary>
+        /// <param name="a"></param> genre d'anime à tenter d'ajouter comme thème
+        /// <param name="m"></param> manager du systeme, répertoriant tout les contenus vidéoludique de l'application
+        /// <returns>false si jamais a est déjà présent dans le dictionnaire, true s'il a été ajouté</returns>
         public bool AddThemeAnime(GenreAnime a, Manager m)
         {
             //return GenresAnimes_possibles.TryAdd(a, m.ListCV.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
@@ -147,18 +176,32 @@ namespace modelisation.user
             return true;
         }
 
+        /// <summary>
+        /// permet d'ajouter un film a la liste de suggestions
+        /// </summary>
+        /// <param name="f"></param> film à ajouter a la liste des suggestions
+        /// <param name="duree_restante"></param> la duree qui reste a combler, décrémentée dans la fonction
+        /// <returns>false si la durée restante est égale ou inférieur à 0, ou bien si f est déjà présent. Renvoit true sinon, f
+        /// est ajouté</returns>
         private bool AddFilmLecture(Film f, ref TimeSpan duree_restante)
         {
-            if (ListContenu.Contains(f)) return false;
+            if (ListContenu.Contains(f) || duree_restante.Ticks <= 0) return false;
 
             ListContenu.Add(f);
             duree_restante -= f.Duree;
             return true;
         }
 
+        /// <summary>
+        /// permet d'ajouter des épisodes d'une série (ou anime) a la liste de suggestions, au nombre max de 3
+        /// </summary>
+        /// <param name="s"></param> série dont les épisodes sont a ajouté
+        /// <param name="duree_restante"></param> la duree qui reste a combler, décrémentée dans la fonction
+        /// <returns>false si la durée restante est égale ou inférieur à 0, ou bien si s est déjà présent. Renvoit true sinon, s
+        /// est ajouté</returns>
         private bool AddEpisodeLecture(Serie s, ref TimeSpan duree_restante)
         {
-            if (ListContenu.Contains(s)) return false;
+            if (ListContenu.Contains(s) || duree_restante.Ticks <= 0) return false;
 
             // je m'arrange pour dépasser un minimum la limite de temps
             ListContenu.AddRange(s.RecepurerListEpisode(ref duree_restante));
@@ -166,6 +209,10 @@ namespace modelisation.user
             return true;
         }
 
+        /// <summary>
+        /// permet de créer de manière random la liste de suggestion, dans la limite de la Duree (au maximum majorée de la durée du
+        /// dernier film ou épisode ajouté, et aussi en respectant les themes globaux et d'animes possibles, dicté par les dictionnaires
+        /// </summary>
         public void CreerListeLecture()
         {
             // pour générer des nombres aléatoires, afin de choisir aléatoirement des themes et contenu à ajouter
@@ -287,7 +334,8 @@ namespace modelisation.user
                             continue;
                         }
                     }
-                    else throw new InvalidOperationException("Créer une liste de lecture est impossible sans ajouter au préalable des thèmes (genres) pour ce marathon");
+                    else throw new InvalidOperationException("Créer une liste de lecture est impossible sans ajouter au préalable" +
+                        "des thèmes (genres) pour ce marathon");
                 }
 
             }

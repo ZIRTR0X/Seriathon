@@ -8,6 +8,9 @@ using System.Linq;
 
 namespace modelisation.user
 {
+    /// <summary>
+    /// Utilisateur représente le compte d'une personne enregistrée sur l'application (de manière locale)
+    /// </summary>
     public class Utilisateur
     {
         /// <summary>
@@ -141,6 +144,7 @@ namespace modelisation.user
         }
         private LinkedList<ContenuVideoludique> _listCVvu;
 
+        
         /// <summary>
         /// Marathon de l'utilisateur
         /// </summary>
@@ -148,6 +152,9 @@ namespace modelisation.user
 
         //propriétée calculée
 
+        /// <summary>
+        /// Age de l'utilisateur, calculée depuis la différence entre la date d'aujourd'hui et celle de sa date de naissance
+        /// </summary>
         public int Age => new DateTime((DateTime.Today - DateDeNaissance).Ticks).Year;
 
         /// <summary>
@@ -211,6 +218,7 @@ namespace modelisation.user
         /// <param name="dateDeNaissance"></param> spécifie la date de naissance de l'utilisateur, ne pouvant etre antérieure à 1900
         /// <param name="genre"></param> string genre de l'utilisateur, ne pouvant etre null, ou uniquement fait d'espaces
         /// <param name="listCVvu"></param> LinkedList<ContenuVideoludique> listant tout le contenu déjà vu par l'utilisateur, ne pouvant etre null
+        /// <param name="m"></param> marathon lié à l'utilisateur
         public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre,
             LinkedList<ContenuVideoludique> listCVvu, Marathon m)
         {
@@ -314,6 +322,75 @@ namespace modelisation.user
             return ListCVvu.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>;
         }
 
+        /// <summary>
+        /// Permet de vérifier la correspondance entre le pseudo et le password, et ceux passés en paramètre
+        /// </summary>
+        /// <param name="pseudo">pseudo auquel doit correspondre le pseudo de l'utilisateur</param>
+        /// <param name="password">password auquel doit correspondre le pseudo de l'utilisateur</param>
+        /// <returns>true si jamais le couple pseudo-password passé en paramètre correspond à celui de l'utilisateur, false sinon</returns>
+        public bool IdentifiableA(string pseudo, string password)
+        {
+            return (Pseudo == pseudo && Password == password);
+        }
+
+        /// <summary>
+        /// permet de créer un marathon si ce n'est pas déjà fait
+        /// </summary>
+        /// <param name="nbJour"></param> nombre de jour que dure le marathon
+        /// <param name="nbHeuresParJour"></param> nombres d'heures par jour souhaité
+        /// <param name="listGenreGlobal"></param> liste des genres globaux qu'inclut le marathon en temps que theme
+        /// <param name="listGenreAnime"></param> liste des gens d'animes qu'inclut le marathon en temps que theme
+        /// <returns>false si le marathon existe déjà, true si le marathon est bel et bien créé</returns>
+        public bool CreerMarathon(int nbJour, int nbHeuresParJour, IEnumerable<GenreGlobal> listGenreGlobal,
+            IEnumerable<GenreAnime> listGenreAnime)
+        {
+            if(MarathonPerso is null) return false;
+
+            MarathonPerso = new Marathon(nbJour, nbHeuresParJour);
+
+            if (!(listGenreGlobal is null))
+            {
+                foreach (GenreGlobal g in listGenreGlobal)
+                {
+                    MarathonPerso.AddThemeGlobal(g, Manager.GetInstance());
+                }
+            }
+            
+            if (!(listGenreAnime is null))
+            {
+                foreach (GenreAnime a in listGenreAnime)
+                {
+                    MarathonPerso.AddThemeAnime(a, Manager.GetInstance());
+                }
+            }
+            
+            MarathonPerso.CreerListeLecture();
+
+            return true;
+        }
+
+        /// <summary>
+        /// Ajoute un ContenuVideoludique dans la liste des CV déjà vu par l'utilisateur
+        /// </summary>
+        /// <param name="cv"></param> contenu vidéoludique a ajouter comme vu
+        /// <returns>false si le CV passé en paramètre est déjà présent, true sinon, il a été ajouté</returns>
+        public bool AddCVvu(ContenuVideoludique cv)
+        {
+            if (ListCVvu.Contains(cv)) return false;
+
+            ListCVvu.AddLast(cv);
+            return true;
+        }
+
+        /// <summary>
+        /// Supprime un ContenuVideoludique de la liste des CV déjà vu par l'utilisateur
+        /// </summary>
+        /// <param name="cv"></param> contenu vidéoludique a supprimer de la liste de ceux dékà vu
+        /// <returns>false si le CV passé en paramètre n'existe pas dans la liste, true sinon, il a été supprimé</returns>
+        public bool RemoveCVvu(ContenuVideoludique cv)
+        {
+            return ListCVvu.Remove(cv);
+        }
 
     }
 }

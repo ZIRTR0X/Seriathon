@@ -7,6 +7,9 @@ using modelisation.langues;
 
 namespace modelisation.content
 {
+    /// <summary>
+    /// Film est un ContenuVideoludique, avec en plus une liste d'acteurs
+    /// </summary>
     public class Film : ContenuVideoludique, IEquatable<Film>
     {
         /// <summary>
