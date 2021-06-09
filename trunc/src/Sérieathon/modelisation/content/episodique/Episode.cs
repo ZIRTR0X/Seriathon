@@ -11,7 +11,7 @@ namespace modelisation.content.episodique
     public class Episode : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<Episode>
     {
         /// <summary>
-        /// string Nom représente le nom de l'épisode, son intitulé, ne pouvant etre null ou vide
+        /// représente le nom de l'épisode, son intitulé, ne pouvant etre null ou vide
         /// </summary>
         public string Nom
         {
@@ -31,7 +31,7 @@ namespace modelisation.content.episodique
         private string _nom;
 
         /// <summary>
-        /// int NumEpisode représente le numéro de l'épisode au sein de sa saison, ne pouvant être négatif
+        /// représente le numéro de l'épisode au sein de sa saison, ne pouvant être négatif
         /// </summary>
         public int NumEpisode
         {
@@ -51,7 +51,7 @@ namespace modelisation.content.episodique
         private int _numEpisode;
 
         /// <summary>
-        /// DateTime Date représente la date de parution de l'épisode, ne pouvant etre entérieur au 1 janvier 1895, année de l'invention du cinema
+        /// représente la date de parution de l'épisode, ne pouvant etre entérieur au 1 janvier 1895, année de l'invention du cinema
         /// </summary>
         public DateTime Date
         {
@@ -72,7 +72,7 @@ namespace modelisation.content.episodique
         private DateTime _date;
 
         /// <summary>
-        /// TimeSpan DureeEpisode représente la durée de l'épisode, et ne peut être une durée négative
+        /// représente la durée de l'épisode, et ne peut être une durée négative
         /// </summary>
         public TimeSpan DureeEpisode
         {
@@ -92,17 +92,17 @@ namespace modelisation.content.episodique
         private TimeSpan _dureeEpisode;
 
         /// <summary>
-        /// string Description présente un court résumé de l'épisode
+        /// présente un court résumé de l'épisode
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
         /// Constructeur de la classe Episode, sans description
         /// </summary>
-        /// <param name="nom"></param> string intitulé de l'épisode (non vide ou null)
-        /// <param name="numEpisode"></param> int numéro de l'épisode dans la série (non négatif)
-        /// <param name="date"></param> DateTime date de parution de l'épisode (non antérieur à 1895)
-        /// <param name="dureeEpisode"></param> Timespan durée de l'épisode (non négatif)
+        /// <param name="nom">intitulé de l'épisode (non vide ou null)</param>
+        /// <param name="numEpisode">numéro de l'épisode dans la série (non négatif)</param>
+        /// <param name="date">date de parution de l'épisode (non antérieur à 1895)</param>
+        /// <param name="dureeEpisode">durée de l'épisode (non négatif)</param>
         public Episode(string nom, int numEpisode, DateTime date, TimeSpan dureeEpisode)
         {
             Nom = nom;
@@ -115,11 +115,11 @@ namespace modelisation.content.episodique
         /// <summary>
         /// Constructeur de la classe Episode, avec description
         /// </summary>
-        /// <param name="nom"></param> string intitulé de l'épisode (non vide ou null)
-        /// <param name="numEpisode"></param> int numéro de l'épisode dans la série (non négatif)
-        /// <param name="date"></param> DateTime date de parution de l'épisode (non antérieur à 1895)
-        /// <param name="dureeEpisode"></param> Timespan durée de l'épisode (non négatif)
-        /// <param name="description"></param> string résumé de l'épisode
+        /// <param name="nom">intitulé de l'épisode (non vide ou null)</param>
+        /// <param name="numEpisode">numéro de l'épisode dans la série (non négatif)</param>
+        /// <param name="date">date de parution de l'épisode (non antérieur à 1895)</param>
+        /// <param name="dureeEpisode">durée de l'épisode (non négatif)</param>
+        /// <param name="description">résumé de l'épisode</param>
         public Episode(string nom, int numEpisode, DateTime date, TimeSpan dureeEpisode, string description)
         {
             Nom = nom;
@@ -151,7 +151,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// Détermine si l'instance passée en paramètre et celle de la méthode sont identiques
         /// </summary>
-        /// <param name="obj"></param>Une instance de la classe Objet, a comparer avec l'instance de l'objet
+        /// <param name="obj">Une instance de la classe Objet, a comparer avec l'instance de l'objet</param>
         /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
         public override bool Equals(object obj)
         {
@@ -164,7 +164,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// Détermine si l'instance de classe Episode passée en paramètre et celle de la méthode sont identiques
         /// </summary>
-        /// <param name="other"></param>Une instance de la classe Episode, a comparer avec l'instance de l'objet
+        /// <param name="other">Une instance de la classe Episode, a comparer avec l'instance de l'objet</param>
         /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
         public bool Equals(Episode other)
         {

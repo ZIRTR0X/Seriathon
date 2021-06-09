@@ -65,8 +65,8 @@ namespace modelisation
         /// méthode pour créer un manager avec arguments et retourner sa référence, ou bien si une instance existe déjà,
         /// il retourne la référence de cette instance
         /// </summary>
-        /// <param name="listUser"></param> liste des utilisateurs a ajouter au manager
-        /// <param name="listCV"></param> les des contenus vidéoludiques à ajouter au manager
+        /// <param name="listUser">liste des utilisateurs a ajouter au manager</param>
+        /// <param name="listCV">les des contenus vidéoludiques à ajouter au manager</param>
         /// <returns></returns>
         public static Manager GetInstanceArguments(List<Utilisateur> listUser, LinkedList<ContenuVideoludique> listCV)
         {
@@ -125,7 +125,17 @@ namespace modelisation
             return false;
         }
 
+        /// <summary>
+        /// tente la deconnexion du compte courant, stocké dans UtilisateurCourant
+        /// </summary>
+        /// <returns>false si UtilisateurCourant est null, donc que l'on est pas connecté, true sinon, UtilisateurCourant est mis à null</returns>
+        public bool SeDeconnecter()
+        {
+            if (UtilisateurCourant is null) return false;
 
+            UtilisateurCourant = null;
+            return true;
+        }
 
     }
 }

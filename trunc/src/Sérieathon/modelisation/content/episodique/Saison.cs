@@ -142,9 +142,9 @@ namespace modelisation.content.episodique
         /// <summary>
         /// Créé une liste d'épisode, dépassant de peu la durée indiqué en paramètres
         /// </summary>
-        /// <param name="duree_restante"></param> durée restante a combler avec des épisodes, réduit à 0 ou négatif pour informer la fonction appelante
+        /// <param name="duree_restante">durée restante a combler avec des épisodes, réduit à 0 ou négatif pour informer la fonction appelante</param>
         /// <returns>Une liste d'épisodes, de durée environ équivalente à la durée restante (supérieure à la durée d'un épisode près), ou null si la saison n'a pas d'épisodes</returns>
-        public  List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
+        public List<Episode> RecupererListEpisode(ref TimeSpan duree_restante)
         {
             if (ListEpisodes.Count == 0 || ListEpisodes is null) return null;
 
@@ -183,8 +183,8 @@ namespace modelisation.content.episodique
         /// <summary>
         /// Détermine si l'instance passée en paramètre et celle de la méthode sont identiques
         /// </summary>
-        /// <param name="obj"></param>Une instance de la classe Objet, a comparer avec l'instance de l'objet
-        /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
+        /// <param name="obj">Une instance de la classe Objet, a comparer avec l'instance de l'objet</param>
+        /// <returns>true si les deux instances sont égales, false sinon</returns>
         public override bool Equals(object obj)
         {
             if (obj is null) return false;
@@ -195,8 +195,8 @@ namespace modelisation.content.episodique
         /// <summary>
         /// Détermine si l'instance de classe Episode passée en paramètre et celle de la méthode sont identiques
         /// </summary>
-        /// <param name="other"></param>Une instance de la classe Saison, a comparer avec l'instance de l'objet
-        /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
+        /// <param name="other">Une instance de la classe Saison, a comparer avec l'instance de l'objet</param>
+        /// <returns>true si les deux instances sont égales, false sinon</returns>
         public bool Equals(Saison other)
         {
             if (NumSaison != other.NumSaison) return false;

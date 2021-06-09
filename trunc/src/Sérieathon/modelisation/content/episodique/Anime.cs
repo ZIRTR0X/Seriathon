@@ -13,7 +13,7 @@ namespace modelisation.content.episodique
     public class Anime : Serie, IEquatable<Anime>
     {
         /// <summary>
-        /// List<GenreAnime> liste les genres de type animé de cet anime
+        /// liste les genres de type animé de cet anime
         /// </summary>
         public List<GenreAnime> GenreAnimes
         {
