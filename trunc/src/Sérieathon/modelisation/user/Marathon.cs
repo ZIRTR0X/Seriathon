@@ -154,7 +154,7 @@ namespace modelisation.user
             if (GenresGlobaux_possibles.ContainsKey(g)) return false;
 
 
-            GenresGlobaux_possibles.Add(g, new List<ContenuVideoludique>(m.ListCV.Where(c => c.Genres.Contains(g))));
+            GenresGlobaux_possibles.Add(g, new List<ContenuVideoludique>(m.ListCVR.Where(c => c.Genres.Contains(g))));
             return true;
         }
 
@@ -170,7 +170,7 @@ namespace modelisation.user
             //return GenresAnimes_possibles.TryAdd(a, m.ListCV.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
             if (GenresAnimes_possibles.ContainsKey(a)) return false;
 
-            List<Anime> listeAnime = new List<Anime>(m.ListCV.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
+            List<Anime> listeAnime = new List<Anime>(m.ListCVR.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
 
             GenresAnimes_possibles.Add(a, listeAnime);
             return true;

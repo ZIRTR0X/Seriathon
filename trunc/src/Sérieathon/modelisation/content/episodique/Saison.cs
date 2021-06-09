@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace modelisation.content.episodique
@@ -13,6 +14,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// int NumSaison permet de connaitre en quelle position la saison se place dans la série, il ne peut etre négatif
         /// </summary>
+        [DataMember]
         public int NumSaison
         {
             get => _numSaison;
@@ -33,6 +35,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// List<Episode> ListEpisodes est une liste de tout les épisodes composant la saison, la liste ne peut etre null
         /// </summary>
+        [DataMember]
         public List<Episode> ListEpisodes
         {
             get => _listEpisodes;

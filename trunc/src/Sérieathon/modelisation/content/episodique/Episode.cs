@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 using modelisation.usefull_interfaces;
 
@@ -13,6 +14,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// représente le nom de l'épisode, son intitulé, ne pouvant etre null ou vide
         /// </summary>
+        [DataMember]
         public string Nom
         {
             get => _nom;
@@ -33,6 +35,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// représente le numéro de l'épisode au sein de sa saison, ne pouvant être négatif
         /// </summary>
+        [DataMember]
         public int NumEpisode
         {
             get => _numEpisode;
@@ -53,6 +56,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// représente la date de parution de l'épisode, ne pouvant etre entérieur au 1 janvier 1895, année de l'invention du cinema
         /// </summary>
+        [DataMember]
         public DateTime Date
         {
             get => _date;
@@ -74,6 +78,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// représente la durée de l'épisode, et ne peut être une durée négative
         /// </summary>
+        [DataMember]
         public TimeSpan DureeEpisode
         {
             get => _dureeEpisode;
@@ -94,6 +99,7 @@ namespace modelisation.content.episodique
         /// <summary>
         /// présente un court résumé de l'épisode
         /// </summary>
+        [DataMember]
         public string Description { get; set; }
 
         /// <summary>

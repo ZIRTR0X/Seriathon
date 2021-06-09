@@ -19,10 +19,13 @@ namespace modelisation
         private static Manager _singleton;
 
         /// <summary>
-        /// liste répertoriant tout les utilisateurs locaux
+        /// wrapper de ListUtilisateur
         /// </summary>
         public ReadOnlyCollection<Utilisateur> ListUtilisateurR { get; private set; }
-        public List<Utilisateur> ListUtilisateur { get; private set; } = new List<Utilisateur>();
+        /// <summary>
+        /// liste répertoriant tout les utilisateurs locaux
+        /// </summary>
+        private List<Utilisateur> ListUtilisateur { get; set; } = new List<Utilisateur>();
 
         /// <summary>
         /// répertorie l'utilisateur courant
@@ -30,18 +33,22 @@ namespace modelisation
         public Utilisateur UtilisateurCourant { get; private set; }
 
         /// <summary>
+        /// wrapper de ListCV
+        /// </summary>
+        public ReadOnlyCollection<ContenuVideoludique> ListCVR { get; private set; }
+        /// <summary>
         /// liste répertoriant tout les Contenus de l'application
         /// </summary>
-        public LinkedList<ContenuVideoludique> ListCV { get; private set; }
+        private List<ContenuVideoludique> ListCV { get; set; } = new List<ContenuVideoludique>();
 
         private Manager()
         {
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
             UtilisateurCourant = null;
-            ListCV = new LinkedList<ContenuVideoludique>();
+            ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
         }
 
-        private Manager(List<Utilisateur> listUser, LinkedList<ContenuVideoludique> listCV)
+        private Manager(List<Utilisateur> listUser, List<ContenuVideoludique> listCV)
         {
             ListUtilisateur = listUser;
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
@@ -68,7 +75,7 @@ namespace modelisation
         /// <param name="listUser">liste des utilisateurs a ajouter au manager</param>
         /// <param name="listCV">les des contenus vidéoludiques à ajouter au manager</param>
         /// <returns></returns>
-        public static Manager GetInstanceArguments(List<Utilisateur> listUser, LinkedList<ContenuVideoludique> listCV)
+        public static Manager GetInstanceArguments(List<Utilisateur> listUser, List<ContenuVideoludique> listCV)
         {
             if (_singleton is null) _singleton = new Manager(listUser, listCV);
 
