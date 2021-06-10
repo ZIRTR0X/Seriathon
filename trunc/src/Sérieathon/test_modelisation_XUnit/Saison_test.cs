@@ -20,7 +20,7 @@ namespace test_modelisation_XUnit
 
             Assert.True(0 == s.NumSaison);
             Assert.True(episodes.Count == s.NbEpisodes);
-            Assert.True(s2.NumSaison == 7 && s2.ListEpisodes.Count == 0);
+            Assert.True(s2.NumSaison == 7 && s2.ListEpisodesR.Count == 0);
         }
 
         [Fact]
@@ -84,12 +84,12 @@ namespace test_modelisation_XUnit
             Saison s = new Saison(-5, episodes);
 
             Assert.True(s.SupprimerEpisode(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool")));
-            Assert.DoesNotContain(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool"), s.ListEpisodes);
+            Assert.DoesNotContain(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool"), s.ListEpisodesR);
 
             Assert.False(s.SupprimerEpisode(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool")));
 
             Assert.True(s.AjouterEpisode(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool")));
-            Assert.Contains(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool"), s.ListEpisodes);
+            Assert.Contains(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool"), s.ListEpisodesR);
 
             Assert.False(s.AjouterEpisode(new Episode("episode1", 1, new DateTime(2000, 12, 23), new TimeSpan(2, 40, 5), "episode 1 est grave cool")));
         }

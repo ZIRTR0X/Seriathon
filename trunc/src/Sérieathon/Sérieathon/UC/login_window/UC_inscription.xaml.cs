@@ -64,10 +64,10 @@ namespace Sérieathon.UC.login_window
            Mdp2 = PasswordBox2.Text;
 
 
-            if (Mdp1.Equals(Mdp2) == true)
+            if (!string.IsNullOrWhiteSpace(Mdp1) && Mdp1.Equals(Mdp2))
             {
                 NouvelUtilisateur.Password = Mdp1;
-                if (TheManager.AjouterUtilisateur(NouvelUtilisateur) == true)
+                if (TheManager.AjouterUtilisateur(NouvelUtilisateur))
                 {
                     Seriathon main_window = new Seriathon();
                     main_window.Show();

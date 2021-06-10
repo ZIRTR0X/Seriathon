@@ -25,7 +25,7 @@ namespace test_modelisation_XUnit
             Assert.True(new DateTime(1994, 12, 3).Equals(a1.Date));
             Assert.True(new TimeSpan(6, 3, 3).Ticks == a1.DureeEpisode.Ticks);
             Assert.Equal("", a1.Description);
-            Assert.Equal("", a1.GetDescription());
+            Assert.Equal("", a1.Description);
         }
 
         [Fact]
