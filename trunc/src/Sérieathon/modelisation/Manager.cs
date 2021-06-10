@@ -116,14 +116,14 @@ namespace modelisation
         /// <summary>
         /// tente la connexion a chaque compte existant
         /// </summary>
-        /// <param name="pseudo">pseudo auquel doit correspondre le pseudo de l'un des utilisateurs</param>
+        /// <param name="email">email auquel doit correspondre le pseudo de l'un des utilisateurs</param>
         /// <param name="password">password auquel doit correspondre le pseudo de l'un des utilisateurs</param>
-        /// <returns>true si jamais le couple pseudo-password passé en paramètre correspond à celui de l'utilisateur, false sinon</returns>
-        public bool SeConnecter(string pseudo, string password)
+        /// <returns>true si jamais le couple email-password passé en paramètre correspond à celui de l'utilisateur, false sinon</returns>
+        public bool SeConnecter(string email, string password)
         {
             foreach(Utilisateur u in ListUtilisateur)
             {
-                if (u.IdentifiableA(pseudo, password))
+                if (u.IdentifiableA(email, password))
                 {
                     UtilisateurCourant = u;
                     return true;
