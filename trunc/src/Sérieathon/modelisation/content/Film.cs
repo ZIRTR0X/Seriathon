@@ -15,10 +15,15 @@ namespace modelisation.content
     [DataContract]
     public class Film : ContenuVideoludique, IEquatable<Film>
     {
+        [OnDeserialized]
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
+        {
+            ActeursR = new ReadOnlyCollection<string>(Acteurs);
+        }
+
         /// <summary>
         /// Wrapper de Acteurs
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<string> ActeursR { get; private set; }
         
         /// <summary>

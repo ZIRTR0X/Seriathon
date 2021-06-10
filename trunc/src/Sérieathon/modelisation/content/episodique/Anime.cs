@@ -16,9 +16,18 @@ namespace modelisation.content.episodique
     public class Anime : Serie, IEquatable<Anime>
     {
         /// <summary>
+        /// Permet d'instancier les wrapper
+        /// </summary>
+        /// <param name="sc"></param> décrit la source de la deserialization
+        [OnDeserialized]
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
+        {
+            GenreAnimesR = new ReadOnlyCollection<GenreAnime>(GenreAnimes);
+        }
+
+        /// <summary>
         /// wrapper de GenreAnimes
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<GenreAnime> GenreAnimesR { get; private set; }
 
         /// <summary>

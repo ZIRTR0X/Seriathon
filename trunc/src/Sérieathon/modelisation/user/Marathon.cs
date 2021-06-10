@@ -4,7 +4,9 @@ using modelisation.genres;
 using modelisation.usefull_interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace modelisation.user
@@ -12,11 +14,21 @@ namespace modelisation.user
     /// <summary>
     /// represente la liste de suggestions de contenus à voir, selon une duree maximale, et des genres voulus
     /// </summary>
+    [DataContract]
     public class Marathon
     {
+        [OnDeserialized]
+        void InitReadOnly()
+        {
+            ListContenuR = new ReadOnlyCollection<IEstAjoutableAuMarathon>(ListContenu);
+            GenresAnimes_possiblesR = new ReadOnlyDictionary<GenreAnime, List<Anime>>(GenresAnimes_possibles);
+            GenresGlobaux_possiblesR = new ReadOnlyDictionary<GenreGlobal, List<ContenuVideoludique>>(GenresGlobaux_possibles);
+        }
+
         /// <summary>
         /// Duree du marathon
         /// </summary>
+        [DataMember]
         public TimeSpan Duree
         {
             get => _duree;
@@ -35,13 +47,19 @@ namespace modelisation.user
         private TimeSpan _duree;
 
         /// <summary>
+        /// wrapper ListContenu
+        /// </summary>
+        public ReadOnlyCollection<IEstAjoutableAuMarathon> ListContenuR { get; set; }
+
+        /// <summary>
         /// liste des contenues composant la liste de lecture du marathon
         /// </summary>
-        public List<IEstAjoutableAuMarathon> ListContenu
+        [DataMember]
+        private List<IEstAjoutableAuMarathon> ListContenu
         {
             get => _listContenu;
 
-            private set
+            set
             {
                 if(value is null)
                 {
@@ -52,16 +70,22 @@ namespace modelisation.user
                 }
             }
         }
-        private List<IEstAjoutableAuMarathon> _listContenu;
+        private List<IEstAjoutableAuMarathon> _listContenu = new List<IEstAjoutableAuMarathon>();
+
+        /// <summary>
+        /// wrapper de GenresGlobaux_possibles
+        /// </summary>
+        public ReadOnlyDictionary<GenreGlobal, List<ContenuVideoludique>> GenresGlobaux_possiblesR { get; private set; }
 
         /// <summary>
         /// La liste de tous les types globaux ajoutables et leur liste de contenu vidéoludique
         /// </summary>
-        public Dictionary<GenreGlobal, List<ContenuVideoludique>> GenresGlobaux_possibles
+        [DataMember]
+        private Dictionary<GenreGlobal, List<ContenuVideoludique>> GenresGlobaux_possibles
         {
             get => _genresGlobaux_possibles;
 
-            private set
+            set
             {
                 if(value is null)
                 {
@@ -72,16 +96,22 @@ namespace modelisation.user
                 }
             }
         }
-        private Dictionary<GenreGlobal, List<ContenuVideoludique>> _genresGlobaux_possibles;
+        private Dictionary<GenreGlobal, List<ContenuVideoludique>> _genresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
+
+        /// <summary>
+        /// wrapper de GenresAnimes_possibles
+        /// </summary>
+        public ReadOnlyDictionary<GenreAnime, List<Anime>> GenresAnimes_possiblesR { get; private set; }
 
         /// <summary>
         /// La liste de tous les types d'animes ajoutables et leur liste d'animes
         /// </summary>
-        public Dictionary<GenreAnime, List<Anime>> GenresAnimes_possibles
+        [DataMember]
+        private Dictionary<GenreAnime, List<Anime>> GenresAnimes_possibles
         {
             get => _genresAnimes_possibles;
 
-            private set
+            set
             {
                 if(value is null)
                 {
@@ -92,14 +122,20 @@ namespace modelisation.user
                 }
             }
         }
-        private Dictionary<GenreAnime, List<Anime>> _genresAnimes_possibles;
+        private Dictionary<GenreAnime, List<Anime>> _genresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
 
         public Marathon(int nbJour, int nbHeureParJour)
         {
             Duree = new TimeSpan((nbJour * nbHeureParJour), 0, 0);
             ListContenu = new List<IEstAjoutableAuMarathon>();
+            ListContenuR = new ReadOnlyCollection<IEstAjoutableAuMarathon>(ListContenu);
+
             GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
+            GenresAnimes_possiblesR = new ReadOnlyDictionary<GenreAnime, List<Anime>>(GenresAnimes_possibles);
+
             GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
+            GenresGlobaux_possiblesR = new ReadOnlyDictionary<GenreGlobal, List<ContenuVideoludique>>(GenresGlobaux_possibles);
+
         }
 
         public Marathon(TimeSpan duree)

@@ -4,14 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.Runtime.Serialization;
 
 namespace modelisation
 {
     /// <summary>
     /// manager de l'application, répertoriant toutes les données de l'application, et responsable du lien avec la persistance
     /// </summary>
+    [DataContract]
     public class Manager
     {
+
+        [OnDeserialized]
+        void InitReadOnly()
+        {
+            ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
+            ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
+        }
 
         /// <summary>
         /// attribut donnant la référence vers le seul manager de l'application, pouvant etre null
@@ -25,6 +34,7 @@ namespace modelisation
         /// <summary>
         /// liste répertoriant tout les utilisateurs locaux
         /// </summary>
+        [DataMember]
         private List<Utilisateur> ListUtilisateur { get; set; } = new List<Utilisateur>();
 
         /// <summary>
@@ -39,6 +49,7 @@ namespace modelisation
         /// <summary>
         /// liste répertoriant tout les Contenus de l'application
         /// </summary>
+        [DataMember]
         private List<ContenuVideoludique> ListCV { get; set; } = new List<ContenuVideoludique>();
 
         private Manager()

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Security;
 
 namespace modelisation.user
@@ -12,16 +13,19 @@ namespace modelisation.user
     /// <summary>
     /// représente le compte d'une personne enregistrée sur l'application (de manière locale)
     /// </summary>
+    [DataContract]
     public class Utilisateur
     {
         /// <summary>
         /// permet d'identifier de manière unique un utilisateur, notamment utile pour le nom par défaut, mais permet un même pseudo 
         /// </summary>
+        [DataMember (Order=0)]
         private static long Identifiant { get; set; }
 
         /// <summary>
         /// pseudonyme de l'utilisateur
         /// </summary>
+        [DataMember(Order = 1)]
         public string Pseudo
         {
             get => _pseudo;
@@ -43,6 +47,7 @@ namespace modelisation.user
         /// <summary>
         /// mot de passe de l'utilisateur
         /// </summary>
+        [DataMember(Order = 3)]
         public string Password
         {
             get => _password;
@@ -66,6 +71,7 @@ namespace modelisation.user
         /// <summary>
         /// email de l'utilisateur
         /// </summary>
+        [DataMember(Order = 2)]
         public string Email
         {
             get => _email;
@@ -87,6 +93,7 @@ namespace modelisation.user
         /// <summary>
         /// représente la date de naissance de la personne
         /// </summary>
+        [DataMember(Order = 4)]
         public DateTime DateDeNaissance
         {
             get => _dateDeNaissance;
@@ -108,6 +115,7 @@ namespace modelisation.user
         /// <summary>
         /// spécifie le genre de l'utilisateur
         /// </summary>
+        [DataMember(Order = 5)]
         public string Genre
         {
             get => _genre;
@@ -134,6 +142,7 @@ namespace modelisation.user
         /// <summary>
         /// liste tout les contenus marqués comme déjà vu par l'utilisateur
         /// </summary>
+        [DataMember(Order = 7)]
         private LinkedList<ContenuVideoludique> ListCVvu
         {
             get => _listCVvu;
@@ -156,6 +165,7 @@ namespace modelisation.user
         /// <summary>
         /// Marathon de l'utilisateur
         /// </summary>
+        [DataMember(Order = 6)]
         public Marathon MarathonPerso { get; private set; }
 
         //propriétée calculée

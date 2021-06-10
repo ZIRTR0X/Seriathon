@@ -13,6 +13,12 @@ namespace modelisation.content.episodique
     [DataContract]
     public class Saison : IEquatable<Saison>
     {
+        [OnDeserialized]
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
+        {
+            ListEpisodesR = new ReadOnlyCollection<Episode>(ListEpisodes);
+        }
+
         /// <summary>
         /// permet de connaitre en quelle position la saison se place dans la série, il ne peut etre négatif
         /// </summary>
@@ -34,10 +40,10 @@ namespace modelisation.content.episodique
         }
         private int _numSaison;
 
+
         /// <summary>
         /// wrapper read only de la liste ListEpisodes
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<Episode> ListEpisodesR { get; private set; }
 
         /// <summary>

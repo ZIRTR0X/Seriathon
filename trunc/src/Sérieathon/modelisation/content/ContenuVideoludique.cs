@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using modelisation.content.episodique;
 using modelisation.genres;
 using modelisation.langues;
 using modelisation.usefull_interfaces;
@@ -13,9 +14,17 @@ namespace modelisation.content
     /// <summary>
     /// classe ContenuVideoludique est une classe abstraite représentant du contenu vidéoludique (Film, Série...)
     /// </summary>
-    [DataContract]
+    [DataContract, KnownType(typeof(Film)), KnownType(typeof(Serie))]
     public abstract class ContenuVideoludique : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<ContenuVideoludique>
     {
+        [OnDeserialized]
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
+        {
+            GenresR = new ReadOnlyCollection<GenreGlobal>(Genres);
+            OuRegarderR = new ReadOnlyCollection<Uri>(OuRegarder);
+            AudiosR = new ReadOnlyCollection<Langues>(Audios);
+            SousTitresR = new ReadOnlyCollection<Langues>(SousTitres);
+        }
 
         /// <summary>
         /// correspond au titre de l'oeuvre, ne pouvant être vide
@@ -126,7 +135,6 @@ namespace modelisation.content
         /// <summary>
         /// wrapper de Genres
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<GenreGlobal> GenresR { get; private set; }
 
         /// <summary>
@@ -159,7 +167,6 @@ namespace modelisation.content
         /// <summary>
         /// wrapper de OuRegarder
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<Uri> OuRegarderR { get; private set; }
 
         /// <summary>
@@ -186,7 +193,6 @@ namespace modelisation.content
         /// <summary>
         /// wrapper de Audios
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<Langues> AudiosR { get; set; }
 
         /// <summary>
@@ -214,7 +220,6 @@ namespace modelisation.content
         /// <summary>
         /// wrapper de SousTitre
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<Langues> SousTitresR { get; set; }
 
         /// <summary>

@@ -12,13 +12,18 @@ namespace modelisation.content.episodique
     /// <summary>
     /// Serie est un ContenuVideoludique, possédant des saisons d'épisodes
     /// </summary>
-    [DataContract]
+    [DataContract, KnownType(typeof(Anime))]
     public class Serie : ContenuVideoludique, IEquatable<Serie>
     {
+        [OnDeserialized]
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
+        {
+            ListSaisonsR = new ReadOnlyCollection<Saison>(ListSaisons);
+        }
+
         /// <summary>
         /// wrapper ReadOnly de ListSaisons
         /// </summary>
-        [DataMember]
         public ReadOnlyCollection<Saison> ListSaisonsR { get; private set; }
 
         /// <summary>
