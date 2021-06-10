@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-
+using System.Security;
 
 namespace modelisation.user
 {
@@ -26,7 +26,7 @@ namespace modelisation.user
         {
             get => _pseudo;
 
-            private set
+            set
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {
@@ -47,16 +47,18 @@ namespace modelisation.user
         {
             get => _password;
 
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    _password = "1234";
+                    _password = "motdepasse";
                 }
                 else
                 {
                     _password = value;
                 }
+
+                    
             }
         }
         private string _password;
@@ -68,7 +70,7 @@ namespace modelisation.user
         {
             get => _email;
 
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -89,7 +91,7 @@ namespace modelisation.user
         {
             get => _dateDeNaissance;
 
-            private set
+            set
             {
                 if (value.CompareTo(new DateTime(1900, 1, 1)) <= 0)
                 {
@@ -110,7 +112,7 @@ namespace modelisation.user
         {
             get => _genre;
 
-            private set
+            set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -189,7 +191,7 @@ namespace modelisation.user
         public Utilisateur()
         {
             Pseudo = "";
-            Password = "";
+            Password = null;
             Email = "";
             DateDeNaissance = new DateTime(0);
             Genre = null;
@@ -208,7 +210,7 @@ namespace modelisation.user
         public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre)
         {
             Pseudo = pseudo;
-            Password = password;
+            Password = null;
             Email = email;
             DateDeNaissance = dateDeNaissance;
             Genre = genre;
@@ -229,7 +231,7 @@ namespace modelisation.user
             LinkedList<ContenuVideoludique> listCVvu, Marathon m)
         {
             Pseudo = pseudo;
-            Password = password;
+            Password = null;
             Email = email;
             DateDeNaissance = dateDeNaissance;
             Genre = genre;

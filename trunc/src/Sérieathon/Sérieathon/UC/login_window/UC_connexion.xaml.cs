@@ -1,5 +1,7 @@
 ﻿using modelisation;
+using modelisation.user;
 using Sérieathon.Fenetre;
+using Sérieathon.Information_Vues;
 using Sérieathon.UC.main_window;
 using System;
 using System.Collections.Generic;
@@ -21,16 +23,21 @@ namespace Sérieathon.UC.login_window
     /// </summary>
     public partial class UC_connexion : UserControl
     {
-        public ManagerOld MonManager => (App.Current as App).MonManager;
+        Manager TheManager => (App.Current as App).TheManager;
         public bool Visibility_icon { get; private set; }
+         
+        public string ConMDP { get;  set; }
+
+       public  string ConEmail { get; set; }
 
 
+        //Utilisateur lutilisateur { get;  set; }
 
         public UC_connexion()
         {
             InitializeComponent();
 
-            DataContext = MonManager;
+            DataContext = this;
 
             Visibility_icon = false;
 
@@ -38,26 +45,30 @@ namespace Sérieathon.UC.login_window
 
         }
 
+
         /// <summary>
         /// Evenement de click du bouton Validation, ayant pour effet de fermer la page "Accueil.xaml", et d'ouvrir "Seriathon.xaml"
+        /// Appelle de SeConnecter pour voir si un utilisateur avec l'email et le mdp existe, si c'est le cas la page suivante s'ouvre (seriathon)
+        /// la page erreur connexion s'ouvre
         /// </summary>
         /// <param name="sender"></param> Objet envoyant l'évènement, normalement de classe Button, originellement x:Name Validation_button
         /// <param name="e"></param>
 
         private void Validation_connexion_click(object sender, RoutedEventArgs e)
         {
-            Seriathon main_window = new Seriathon();
-            main_window.Show();
 
-            (App.Current as App).MainWindow.Close();
+            if(TheManager.SeConnecter(ConEmail, ConMDP) == true){
+                Seriathon main_window = new Seriathon();
+                main_window.Show();
+
+                (App.Current as App).MainWindow.Close();
+            }
+            else
+            {
+                (new Connexion_erreur()).ShowDialog();
+            }
 
         }
-        
-        //private void View_Password_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Image_View_Password.Source = BitmapImage(new Uri(@"/image/visibility.png"));
-
-        //}
         
         /// <summary>
         /// Event de click permettant de changer l'icone de visibilitée d'un oeil visible à un barré

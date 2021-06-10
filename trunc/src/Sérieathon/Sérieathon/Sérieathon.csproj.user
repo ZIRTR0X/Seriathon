@@ -10,6 +10,9 @@
     <Compile Update="Fenetre\Seriathon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Fenetre\Seriathon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Information_Vues\Suppression_confirmation.xaml">

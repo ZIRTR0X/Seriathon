@@ -1,6 +1,7 @@
 ﻿using modelisation;
 using modelisation.user;
 using Sérieathon.Fenetre;
+using Sérieathon.Information_Vues;
 using Sérieathon.UC.main_window;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static modelisation.user.Utilisateur;
 
 namespace Sérieathon.UC.login_window
 {
@@ -23,10 +25,12 @@ namespace Sérieathon.UC.login_window
     /// </summary>
     public partial class UC_inscription : UserControl
     {
-
-        public Manager TheManager => (App.Current as App).TheManager;
+        Manager TheManager => (App.Current as App).TheManager;
 
         Utilisateur NouvelUtilisateur { get; set; }
+        string Mdp2 { get; set; }
+        string Mdp1 { get; set; }
+
 
         public UC_inscription()
         {
@@ -34,25 +38,54 @@ namespace Sérieathon.UC.login_window
 
             NouvelUtilisateur = new Utilisateur();
 
-            DataContext = TheManager;
+            DataContext = NouvelUtilisateur;
         }
 
- 
+        private void SelectedPasswordBox1(Object sender, RoutedEventArgs args)
+        {
+            Mdp1 = PasswordBox1.SelectedText;
+        }
+
+        private void SelectedPasswordBox2(Object sender, RoutedEventArgs args)
+        {
+            Mdp2 = PasswordBox1.SelectedText;
+        }
+
+
+        /// <summary>
+        /// Cette fonction permet de vérifier si le mdp1 est égale au mdp2, si c'est le cas le mdp1 est mit au Password de nouvelUtilisateur et
+        /// la page actuel se ferme et ouvre la page suivante. Sinon la page de erreur d'inscription s'ouvre.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Validation_inscription_click(object sender, RoutedEventArgs e)
         {
-            Seriathon main_window = new Seriathon();
-            main_window.Show();
+           Mdp1 = PasswordBox1.Text;
+           Mdp2 = PasswordBox2.Text;
 
-            (App.Current as App).MainWindow.Close();
-        }
 
-        private void PasswordChangedEvent1(Object sender, RoutedEventArgs args)
-        {
-            SecureString securePassword = PasswordBox1.SecurePassword;
-        }
-        private void PasswordChangedEvent2(Object sender, RoutedEventArgs args)
-        {
-            SecureString securePassword2 = PasswordBox2.SecurePassword;
+            if (Mdp1.Equals(Mdp2) == true)
+            {
+                NouvelUtilisateur.Password = Mdp1;
+                if (TheManager.AjouterUtilisateur(NouvelUtilisateur) == true)
+                {
+                    Seriathon main_window = new Seriathon();
+                    main_window.Show();
+
+                    (App.Current as App).MainWindow.Close();
+                }
+                else
+                {
+                    (new Inscription_erreur()).ShowDialog();
+                }
+                
+            }
+            else
+            {
+                (new Inscription_erreur()).ShowDialog();
+            }
+
+         
         }
 
     }

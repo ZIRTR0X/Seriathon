@@ -26,9 +26,9 @@
 
         <TextBlock Grid.Column="1" Text="Bonjour!"  FontSize="50" TextAlignment="Center" VerticalAlignment="Bottom"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Adresse e-mail" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Style="{StaticResource FontSize25}"/>
-        <TextBox x:Name="login_textbox" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="login_textbox" Grid.Row="2" Grid.Column="1" Text="{Binding ConEmail}"/>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Mot de passe" VerticalAlignment="Bottom" Style="{StaticResource FontSize25}"/>
-        <PasswordBox x:Name="password_textbox" Grid.Row="4" Grid.Column="1"/>
+        <TextBox x:Name="password_textbox" Grid.Row="4" Grid.Column="1" Text="{Binding ConMDP}"/>
         <Button Click="View_Password_Click" BorderBrush="Transparent" Grid.Row="4" Height="20" Width="30" Grid.Column="2" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Center">
             <Image x:Name="Image_View_Password" Width="15" Height="15" Grid.Column="0"/>
         </Button>

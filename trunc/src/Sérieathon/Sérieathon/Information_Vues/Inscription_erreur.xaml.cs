@@ -13,16 +13,16 @@ using System.Windows.Shapes;
 namespace Sérieathon.Information_Vues
 {
     /// <summary>
-    /// Interaction logic for Suppression_confirmation.xaml
+    /// Logique d'interaction pour Inscription_erreur.xaml
     /// </summary>
-    public partial class Suppression_confirmation : Window
+    public partial class Inscription_erreur : Window
     {
-        public Suppression_confirmation()
+        public Inscription_erreur()
         {
             InitializeComponent();
         }
 
-        private void Annule_Button_Click(object sender, RoutedEventArgs e)
+        private void Continuer_bouton_click(object sender, RoutedEventArgs e)
         {
             Close();
         }
