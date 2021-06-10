@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using modelisation.genres;
 using modelisation.langues;
@@ -11,12 +13,14 @@ namespace modelisation.content
     /// <summary>
     /// classe ContenuVideoludique est une classe abstraite représentant du contenu vidéoludique (Film, Série...)
     /// </summary>
+    [DataContract]
     public abstract class ContenuVideoludique : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<ContenuVideoludique>
     {
 
         /// <summary>
-        /// string Titre correspond au titre de l'oeuvre, ne pouvant être vide
+        /// correspond au titre de l'oeuvre, ne pouvant être vide
         /// </summary>
+        [DataMember]
         public string Titre
         {
             get => _titre;
@@ -36,8 +40,9 @@ namespace modelisation.content
         private string _titre;
         
         /// <summary>
-        /// DateTime Date représente la date de parution du contenu, ne pouvant etre entérieur au 1 janvier 1895, année de l'invention du cinema
+        /// représente la date de parution du contenu, ne pouvant etre entérieur au 1 janvier 1895, année de l'invention du cinema
         /// </summary>
+        [DataMember]
         public DateTime Date {
             get => _date;
 
@@ -56,8 +61,9 @@ namespace modelisation.content
         private DateTime _date;
 
         /// <summary>
-        /// TimeSpan Duree représente la durée du contenu, et ne peut être une durée négative
+        /// représente la durée du contenu, et ne peut être une durée négative
         /// </summary>
+        [DataMember]
         public TimeSpan Duree
         {
             get => _duree;
@@ -76,8 +82,9 @@ namespace modelisation.content
         private TimeSpan _duree;
 
         /// <summary>
-        /// string Réalisateur donne le nom du réalisateur du film, ne pouvant etre null ou vide
+        /// donne le nom du réalisateur du film, ne pouvant etre null ou vide
         /// </summary>
+        [DataMember]
         public string Realisateur
         {
             get => _realisateur;
@@ -96,8 +103,9 @@ namespace modelisation.content
         private string _realisateur;
 
         /// <summary>
-        /// string StudioProduction permet de connaitre le nom du studio de production, ne pouvant etre null
+        /// permet de connaitre le nom du studio de production, ne pouvant etre null
         /// </summary>
+        [DataMember]
         public string StudioProduction
         {
             get => _studioProduction;
@@ -116,13 +124,20 @@ namespace modelisation.content
         private string _studioProduction;
 
         /// <summary>
-        /// List<GenreGlobal> Genre liste tout les genres auquel appartient l'instance
+        /// wrapper de Genres
         /// </summary>
-        public List<GenreGlobal> Genres
+        [DataMember]
+        public ReadOnlyCollection<GenreGlobal> GenresR { get; private set; }
+
+        /// <summary>
+        /// liste tout les genres auquel appartient l'instance
+        /// </summary>
+        [DataMember]
+        private List<GenreGlobal> Genres
         {
             get => _genre;
 
-            private set
+            set
             {
                 if(value is null)
                 {
@@ -133,21 +148,29 @@ namespace modelisation.content
                 }
             }
         }
-        private List<GenreGlobal> _genre;
+        private List<GenreGlobal> _genre = new List<GenreGlobal>();
 
         /// <summary>
-        /// string Description correspond à un résumé du contenu vidéoludique, ne pouvant etre null ou empty
+        /// correspond à un résumé du contenu vidéoludique, ne pouvant etre null ou empty
         /// </summary>
+        [DataMember]
         public string Description { get; set; }
 
         /// <summary>
-        /// List<Uri> OuRegarder répertorie tout les liens pour aller voir le contenu, ne pouvant être null
+        /// wrapper de OuRegarder
         /// </summary>
-        public List<Uri> OuRegarder
+        [DataMember]
+        public ReadOnlyCollection<Uri> OuRegarderR { get; private set; }
+
+        /// <summary>
+        /// répertorie tout les liens pour aller voir le contenu, ne pouvant être null
+        /// </summary>
+        [DataMember]
+        private List<Uri> OuRegarder
         {
             get => _ouRegarder;
 
-            private set
+            set
             {
                 if(value is null)
                 {
@@ -158,16 +181,23 @@ namespace modelisation.content
                 }
             }
         }
-        private List<Uri> _ouRegarder;
+        private List<Uri> _ouRegarder = new List<Uri>();
+
+        /// <summary>
+        /// wrapper de Audios
+        /// </summary>
+        [DataMember]
+        public ReadOnlyCollection<Langues> AudiosR { get; set; }
 
         /// <summary>
         /// List<Langues> Audios référence toutes les langues disponibles en audio, ne pouvant etre null
         /// </summary>
-        public List<Langues> Audios
+        [DataMember]
+        private List<Langues> Audios
         {
             get => _audios;
 
-            private set
+            set
             {
                 if (value is null)
                 {
@@ -179,11 +209,18 @@ namespace modelisation.content
                 }
             }
         }
-        private List<Langues> _audios;
+        private List<Langues> _audios = new List<Langues>();
+
+        /// <summary>
+        /// wrapper de SousTitre
+        /// </summary>
+        [DataMember]
+        public ReadOnlyCollection<Langues> SousTitresR { get; set; }
 
         /// <summary>
         /// List<Langues> SousTitres référence toutes les langues disponibles en sous-titres, ne pouvant etre null
         /// </summary>
+        [DataMember]
         public List<Langues> SousTitres
         {
             get => _sousTitres;
@@ -200,49 +237,58 @@ namespace modelisation.content
                 }
             }
         }
-        private List<Langues> _sousTitres;
+        private List<Langues> _sousTitres = new List<Langues>();
 
         /// <summary>
         /// Uri Image indique le chemin vers l'illustration du contenu
         /// </summary>
+        [DataMember]
         public string Image { get; set; }
 
         /// <summary>
         /// Constructeur de la classe ContenuVideoludique
         /// </summary>
-        /// <param name="titre"></param> string Intitulé du Contenu
-        /// <param name="date"></param> DateTime date de sortie du contenu vidéoludique
-        /// <param name="duree"></param> TimeSpan durée du contenu
-        /// <param name="realisateur"></param> string Réalisateur du contenu
-        /// <param name="genres"></param> List<GenreGlobal> représentant la liste des genres auquel appartient le contenur
-        /// <param name="image"></param> string image d'illustration du contenu
+        /// <param name="titre">Intitulé du Contenu</param>
+        /// <param name="date">date de sortie du contenu vidéoludique</param>
+        /// <param name="duree">durée du contenu</param>
+        /// <param name="realisateur">Réalisateur du contenu</param>
+        /// <param name="genres">représentant la liste des genres auquel appartient le contenur</param>
+        /// <param name="image">image d'illustration du contenu</param>
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur,
             IEnumerable<GenreGlobal> genres, string image)
         {
-            this.Titre = titre;
-            this.Date = date;
-            this.Duree = duree;
-            this.Realisateur = realisateur;
-            this.StudioProduction = "";
-            this.Genres = new List<GenreGlobal>(genres);
-            this.Description = "";
-            this.OuRegarder = new List<Uri>();
-            this.Audios = new List<Langues>();
-            this.SousTitres = new List<Langues>();
-            this.Image = image;
+            Titre = titre;
+            Date = date;
+            Duree = duree;
+            Realisateur = realisateur;
+            StudioProduction = "";
+            Genres = new List<GenreGlobal>(genres);
+            GenresR = new ReadOnlyCollection<GenreGlobal>(Genres);
+
+            Description = "";
+            OuRegarder = new List<Uri>();
+            OuRegarderR = new ReadOnlyCollection<Uri>(OuRegarder);
+
+            Audios = new List<Langues>();
+            AudiosR = new ReadOnlyCollection<Langues>(Audios);
+
+            SousTitres = new List<Langues>();
+            SousTitresR = new ReadOnlyCollection<Langues>(SousTitres);
+
+            Image = image;
         }
 
         /// <summary>
         /// Constructeur de la classe ContenuVideoludique
         /// </summary>
-        /// <param name="titre"></param> string Intitulé du Contenu
-        /// <param name="date"></param> DateTime date de sortie du contenu vidéoludique
-        /// <param name="duree"></param> TimeSpan durée du contenu
-        /// <param name="realisateur"></param> string Réalisateur du contenu
-        /// <param name="studioProd"></param> string Studio ayant produit le contenu
-        /// <param name="genres"></param> List<GenreGlobal> représentant la liste des genres auquel appartient le contenur
-        /// <param name="description"></param> string présentant un résumé du contenu
-        /// <param name="image"></param> string image d'illustration du contenu
+        /// <param name="titre">Intitulé du Contenu</param>
+        /// <param name="date">date de sortie du contenu vidéoludique</param>
+        /// <param name="duree">durée du contenu</param>
+        /// <param name="realisateur">Réalisateur du contenu</param>
+        /// <param name="studioProd">Studio ayant produit le contenu</param>
+        /// <param name="genres">représente la liste des genres auquel appartient le contenur</param>
+        /// <param name="description">présente un résumé du contenu</param>
+        /// <param name="image">image d'illustration du contenu</param>
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd,
             IEnumerable<GenreGlobal> genres, string description, string image)
         {
@@ -252,27 +298,35 @@ namespace modelisation.content
             Realisateur = realisateur;
             StudioProduction = studioProd;
             Genres = new List<GenreGlobal>(genres);
+            GenresR = new ReadOnlyCollection<GenreGlobal>(Genres);
+
             Description = description;
             OuRegarder = new List<Uri>();
+            OuRegarderR = new ReadOnlyCollection<Uri>(OuRegarder);
+
             Audios = new List<Langues>();
+            AudiosR = new ReadOnlyCollection<Langues>(Audios);
+
             SousTitres = new List<Langues>();
+            SousTitresR = new ReadOnlyCollection<Langues>(SousTitres);
+
             Image = image;
         }
 
         /// <summary>
         /// Constructeur de la classe ContenuVideoludique
         /// </summary>
-        /// <param name="titre"></param> string Intitulé du Contenu
-        /// <param name="date"></param> DateTime date de sortie du contenu vidéoludique
-        /// <param name="duree"></param> TimeSpan durée du contenu
-        /// <param name="realisateur"></param> string Réalisateur du contenu
-        /// <param name="studioProd"></param> string Studio ayant produit le contenu
-        /// <param name="genres"></param> List<GenreGlobal> représentant la liste des genres auquel appartient le contenur
-        /// <param name="description"></param> string présentant un résumé du contenu
-        /// <param name="ouRegarder"></param> List<Uri> listant les sites où l'on peut regarder ce contenu
-        /// <param name="audios"></param> List<Uri> listant les langues disponibles pour l'audio du contenu
-        /// <param name="sousTitres"></param> List<Uri> listant les langues disponibles pour les sous-titres du contenu
-        /// <param name="image"></param>
+        /// <param name="titre">Intitulé du Contenu</param>
+        /// <param name="date">date de sortie du contenu vidéoludique</param
+        /// <param name="duree">durée du contenu</param>
+        /// <param name="realisateur">Réalisateur du contenu</param>
+        /// <param name="studioProd">Studio ayant produit le contenu</param>
+        /// <param name="genres">représente la liste des genres auquel appartient le contenur</param>
+        /// <param name="description">présente un résumé du contenu</param>
+        /// <param name="ouRegarder">liste les sites où l'on peut regarder ce contenu</param>
+        /// <param name="audios">listd les langues disponibles pour l'audio du contenu</param>
+        /// <param name="sousTitres">liste les langues disponibles pour les sous-titres du contenu</param>
+        /// <param name="image">image d'illustration du contenu</param>
         public ContenuVideoludique(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
             string description, IEnumerable<Uri> ouRegarder, IEnumerable<Langues> audios, IEnumerable<Langues> sousTitres, string image)
         {
@@ -282,27 +336,26 @@ namespace modelisation.content
             Realisateur = realisateur;
             StudioProduction = studioProd;
             Genres = new List<GenreGlobal>(genres);
+            GenresR = new ReadOnlyCollection<GenreGlobal>(Genres);
+
             Description = description;
             OuRegarder = new List<Uri>(ouRegarder);
-            Audios = new List<Langues>(audios);
-            SousTitres = new List<Langues>(sousTitres);
-            Image = image;
-        }
+            OuRegarderR = new ReadOnlyCollection<Uri>(OuRegarder);
 
-        /// <summary>
-        /// Retourne la propriété Description
-        /// </summary>
-        /// <returns>la description, au format string</returns>
-        public string GetDescription()
-        {
-            return Description;
+            Audios = new List<Langues>(audios);
+            AudiosR = new ReadOnlyCollection<Langues>(Audios);
+
+            SousTitres = new List<Langues>(sousTitres);
+            SousTitresR = new ReadOnlyCollection<Langues>(SousTitres);
+
+            Image = image;
         }
 
         /// <summary>
         /// Détermine si l'instance passée en paramètre et celle de la méthode sont identiques
         /// </summary>
-        /// <param name="obj"></param>Une instance de la classe Objet, a comparer avec l'instance de l'objet
-        /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
+        /// <param name="obj">Une instance a comparer avec l'instance de l'objet</param>
+        /// <returns>true si les deux instances sont égales, false sinon</returns>
         public override bool Equals(object obj)
         {
             if (obj is null) return false;
@@ -312,8 +365,8 @@ namespace modelisation.content
         /// <summary>
         /// Détermine si l'instance de classe ContenuVideoludique passée en paramètre et celle de la méthode sont identiques
         /// </summary>
-        /// <param name="other"></param>Une instance de la classe ContenuVideoludique, a comparer avec l'instance de l'objet
-        /// <returns>un bool, true si les deux instances sont égales, false sinon</returns>
+        /// <param name="other">Une instance de la classe ContenuVideoludique, a comparer avec l'instance de l'objet</param>
+        /// <returns>true si les deux instances sont égales, false sinon</returns>
         public bool Equals(ContenuVideoludique other)
         {
             if (!Titre.Equals(other.Titre)) return false;
@@ -361,7 +414,7 @@ namespace modelisation.content
         /// <summary>
         /// Fonction de hashage associant à l'instance de la classe une valeur numérique unique
         /// </summary>
-        /// <returns>un int représentant l'instance sous une représentation numérique</returns>
+        /// <returns>un intreprésentant l'instance sous une représentation numérique</returns>
         public override int GetHashCode()
         {
             return ((Titre.GetHashCode() * 7) + (Date.GetHashCode() * 3) + (Duree.GetHashCode() * 21)

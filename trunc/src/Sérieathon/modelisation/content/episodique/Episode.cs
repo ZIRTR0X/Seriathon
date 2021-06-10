@@ -9,6 +9,7 @@ namespace modelisation.content.episodique
     /// <summary>
     /// Classe Episode, répertoriant tout ce qu'il y a a savoir sur un épisode d'une série.
     /// </summary>
+    [DataContract]
     public class Episode : IEstAjoutableAuMarathon, IEstDescriptible, IEquatable<Episode>
     {
         /// <summary>
@@ -133,15 +134,6 @@ namespace modelisation.content.episodique
             Date = date;
             DureeEpisode = dureeEpisode;
             Description = description;
-        }
-
-        /// <summary>
-        /// Retourne la propriété Description
-        /// </summary>
-        /// <returns>la description, au format string</returns>
-        public string GetDescription()
-        {
-            return Description;
         }
 
         /// <summary>

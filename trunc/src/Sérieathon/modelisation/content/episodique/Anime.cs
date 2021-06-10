@@ -2,7 +2,9 @@
 using modelisation.langues;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace modelisation.content.episodique
@@ -10,16 +12,24 @@ namespace modelisation.content.episodique
     /// <summary>
     /// Anime est une extension de Serie, intégrant une liste de GenreAnime en plus
     /// </summary>
+    [DataContract]
     public class Anime : Serie, IEquatable<Anime>
     {
         /// <summary>
+        /// wrapper de GenreAnimes
+        /// </summary>
+        [DataMember]
+        public ReadOnlyCollection<GenreAnime> GenreAnimesR { get; private set; }
+
+        /// <summary>
         /// liste les genres de type animé de cet anime
         /// </summary>
-        public List<GenreAnime> GenreAnimes
+        [DataMember]
+        private List<GenreAnime> GenreAnimes
         {
             get => _genreAnimes;
 
-            private set
+            set
             {
                 if (value is null)
                 {
@@ -36,13 +46,15 @@ namespace modelisation.content.episodique
             :base(titre, date, duree, realisateur, genres, image)
         {
             GenreAnimes = new List<GenreAnime>();
+            GenreAnimesR = new ReadOnlyCollection<GenreAnime>(GenreAnimes);
         }
 
         public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, IEnumerable<GenreGlobal> genres, string image,
             IEnumerable<Saison> saisons, IEnumerable<GenreAnime> genreAnimes)
             :base(titre, date, duree, realisateur, genres, image, saisons)
         {
-            GenreAnimes.AddRange(genreAnimes);
+            GenreAnimes = new List<GenreAnime>(genreAnimes);
+            GenreAnimesR = new ReadOnlyCollection<GenreAnime>(GenreAnimes);
         }
 
         public Anime(string titre, DateTime date, TimeSpan duree, string realisateur, string studioProd, IEnumerable<GenreGlobal> genres,
@@ -50,7 +62,8 @@ namespace modelisation.content.episodique
             string image, IEnumerable<Saison> saisons, IEnumerable<GenreAnime> genreAnimes)
             : base(titre, date, duree, realisateur, studioProd, genres, description, ouRegarder, audios, sousTitres, image, saisons)
         {
-            GenreAnimes.AddRange(genreAnimes);
+            GenreAnimes = new List<GenreAnime>(genreAnimes);
+            GenreAnimesR = new ReadOnlyCollection<GenreAnime>(GenreAnimes);
         }
 
         public override bool Equals(object obj)

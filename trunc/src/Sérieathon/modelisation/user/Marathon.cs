@@ -15,7 +15,7 @@ namespace modelisation.user
     public class Marathon
     {
         /// <summary>
-        /// TimeSpan Duree du marathon
+        /// Duree du marathon
         /// </summary>
         public TimeSpan Duree
         {
@@ -35,7 +35,7 @@ namespace modelisation.user
         private TimeSpan _duree;
 
         /// <summary>
-        /// LinkedList<ContenuVideoludique> liste des contenues composant la liste de lecture du marathon
+        /// liste des contenues composant la liste de lecture du marathon
         /// </summary>
         public List<IEstAjoutableAuMarathon> ListContenu
         {
@@ -113,7 +113,7 @@ namespace modelisation.user
         /// <summary>
         /// tente d'ajouter le contenuVideoludique c à la liste des suggestions (méthode dépréciée dans notre contexte)
         /// </summary>
-        /// <param name="c"></param> le contenu vidéoludique a ajouter a la liste de suggestions
+        /// <param name="c">le contenu vidéoludique a ajouter a la liste de suggestions</param>
         /// <returns>false si le contenu est déjà présent, true si il a été ajouté</returns>
         public bool AjouterContenu(ContenuVideoludique c)
         {
@@ -130,7 +130,7 @@ namespace modelisation.user
         /// <summary>
         /// tente de supprimer un contenuVideoludique c de la liste des suggestions
         /// </summary>
-        /// <param name="c"></param> le contenu vidéoludique a supprimer de la liste de suggestions
+        /// <param name="c">le contenu vidéoludique a supprimer de la liste de suggestions</param>
         /// <returns>false si le contenu n'est pas présent dans la liste, true si il a été supprimé</returns>
         public bool EnleverContenu(ContenuVideoludique c)
         {
@@ -144,8 +144,8 @@ namespace modelisation.user
         /// ajoute un thème global de marathon en clé du dictionnaire de themes globaux possibles, ainsi que la liste des contenu possédant
         /// ce genre dans leur liste de genres globaux
         /// </summary>
-        /// <param name="g"></param> genre global à tenter d'ajouter comme thème
-        /// <param name="m"></param> manager du systeme, répertoriant tout les contenus vidéoludique de l'application
+        /// <param name="g">genre global à tenter d'ajouter comme thème</param
+        /// <param name="m">manager du systeme, répertoriant tout les contenus vidéoludique de l'application</param>
         /// <returns>false si jamais g est déjà présent dans le dictionnaire, true s'il a été ajouté</returns>
         public bool AddThemeGlobal(GenreGlobal g, Manager m)
         {
@@ -154,7 +154,7 @@ namespace modelisation.user
             if (GenresGlobaux_possibles.ContainsKey(g)) return false;
 
 
-            GenresGlobaux_possibles.Add(g, new List<ContenuVideoludique>(m.ListCVR.Where(c => c.Genres.Contains(g))));
+            GenresGlobaux_possibles.Add(g, new List<ContenuVideoludique>(m.ListCVR.Where(c => c.GenresR.Contains(g))));
             return true;
         }
 
@@ -162,15 +162,15 @@ namespace modelisation.user
         /// ajoute un thème d'anime de marathon en clé du dictionnaire de themes d'animes possibles, ainsi que la liste des animes possédant
         /// ce genre dans leur liste de genres d'animes
         /// </summary>
-        /// <param name="a"></param> genre d'anime à tenter d'ajouter comme thème
-        /// <param name="m"></param> manager du systeme, répertoriant tout les contenus vidéoludique de l'application
+        /// <param name="a">genre d'anime à tenter d'ajouter comme thème</param>
+        /// <param name="m">manager du systeme, répertoriant tout les contenus vidéoludique de l'application</param>
         /// <returns>false si jamais a est déjà présent dans le dictionnaire, true s'il a été ajouté</returns>
         public bool AddThemeAnime(GenreAnime a, Manager m)
         {
             //return GenresAnimes_possibles.TryAdd(a, m.ListCV.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
             if (GenresAnimes_possibles.ContainsKey(a)) return false;
 
-            List<Anime> listeAnime = new List<Anime>(m.ListCVR.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
+            List<Anime> listeAnime = new List<Anime>(m.ListCVR.Where(c => c is Anime an && an.GenreAnimesR.Contains(a)) as IEnumerable<Anime>);
 
             GenresAnimes_possibles.Add(a, listeAnime);
             return true;
@@ -179,8 +179,8 @@ namespace modelisation.user
         /// <summary>
         /// permet d'ajouter un film a la liste de suggestions
         /// </summary>
-        /// <param name="f"></param> film à ajouter a la liste des suggestions
-        /// <param name="duree_restante"></param> la duree qui reste a combler, décrémentée dans la fonction
+        /// <param name="f">film à ajouter a la liste des suggestions</param>
+        /// <param name="duree_restante">la duree qui reste a combler, décrémentée dans la fonction</param>
         /// <returns>false si la durée restante est égale ou inférieur à 0, ou bien si f est déjà présent. Renvoit true sinon, f
         /// est ajouté</returns>
         private bool AddFilmLecture(Film f, ref TimeSpan duree_restante)
@@ -195,8 +195,8 @@ namespace modelisation.user
         /// <summary>
         /// permet d'ajouter des épisodes d'une série (ou anime) a la liste de suggestions, au nombre max de 3
         /// </summary>
-        /// <param name="s"></param> série dont les épisodes sont a ajouté
-        /// <param name="duree_restante"></param> la duree qui reste a combler, décrémentée dans la fonction
+        /// <param name="s">série dont les épisodes sont a ajouté</param>
+        /// <param name="duree_restante">la duree qui reste a combler, décrémentée dans la fonction</param>
         /// <returns>false si la durée restante est égale ou inférieur à 0, ou bien si s est déjà présent. Renvoit true sinon, s
         /// est ajouté</returns>
         private bool AddEpisodeLecture(Serie s, ref TimeSpan duree_restante)

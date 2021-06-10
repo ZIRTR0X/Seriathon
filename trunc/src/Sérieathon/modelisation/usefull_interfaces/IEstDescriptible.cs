@@ -13,11 +13,5 @@ namespace modelisation.usefull_interfaces
         /// Attribut décrivant la classe implémentant l'interface, en général un petit texte descriptif
         /// </summary>
         string Description { get; set; }
-
-        /// <summary>
-        /// Retourne la propriété Description
-        /// </summary>
-        /// <returns>La description, au format string</returns>
-        string GetDescription();
     }
 }
