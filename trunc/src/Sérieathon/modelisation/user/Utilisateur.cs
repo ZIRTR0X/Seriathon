@@ -34,7 +34,7 @@ namespace modelisation.user
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    _pseudo = $"Utilisateur{Identifiant}";
+                    _pseudo = null;
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace modelisation.user
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    _password = "motdepasse";
+                    _password = null;
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace modelisation.user
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    _email = "email inconnu";
+                    _email = null;
                 }
                 else
                 {

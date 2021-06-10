@@ -34,9 +34,9 @@
         <TextBox FontSize="20" Grid.Row="6" Width="300" Height="30" x:Name="PasswordBox2" SelectionChanged="SelectedPasswordBox2"/>
         <!--<PasswordBox FontSize="20" Grid.Row="4" Width="300" Height="30" x:Name="PasswordBox1" PasswordChanged="PasswordChangedEvent1"/>
         <PasswordBox FontSize="20" Grid.Row="6" Width="300" Height="30" x:Name="PasswordBox2" PasswordChanged="PasswordChangedEvent2"/>-->
-        <TextBox Grid.Row="2" Width="300" Height="30" Text="{Binding Pseudo}"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Width="300" Height="30" Text="{Binding Email}"/>
-        <ComboBox Grid.Row="6" Grid.Column="1" Width="300" Height="30" SelectedItem="{Binding Genre}">
+        <TextBox x:Name="textbox_pseudo" Grid.Row="2" Width="300" Height="30" Text="{Binding Pseudo}"/>
+        <TextBox x:Name="textbox_email" Grid.Row="2" Grid.Column="1" Width="300" Height="30" Text="{Binding Email}"/>
+        <ComboBox x:Name="combobox_genre" Grid.Row="6" Grid.Column="1" Width="300" Height="30" SelectedItem="{Binding Genre}">
             <ComboBox.Resources>
                 <Style TargetType="TextBlock">
                     <Setter Property="Foreground" Value="Black"/>
@@ -54,7 +54,12 @@
                 <TextBlock Text="Autre"/>
             </ComboBoxItem>
         </ComboBox>
-        <DatePicker Grid.Row="4" Grid.Column="1" Width="300" Height="35" SelectedDate="{Binding DateDeNaissance}" VerticalAlignment="Center" FontSize="20"/>
+        <DatePicker x:Name="DatedeNaissanceDataPicker" Grid.Row="4" Grid.Column="1" Width="300" Height="35" SelectedDate="{Binding DateDeNaissance}" VerticalAlignment="Center" FontSize="20">
+            <!--<DatePicker.BlackoutDates>
+                <CalendarDateRange Start="1900-01-01" End="0001-01-01"/>
+                <CalendarDateRange Start="2100-01-01" End="9999-12-31"/>
+            </DatePicker.BlackoutDates>-->
+        </DatePicker>
         <Button Grid.Row="7" Grid.Column="1" Click="Validation_inscription_click" Style="{StaticResource ButtonValider}">
             <WrapPanel>
                 <Image Source="../../image/utile/confirm.png" Width="30" HorizontalAlignment="Left"/>

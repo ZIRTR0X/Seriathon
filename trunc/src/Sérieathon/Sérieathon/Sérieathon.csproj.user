@@ -13,6 +13,21 @@
     <Compile Update="Information_Vues\Inscription_erreur.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur6.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +67,21 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Information_Vues\Inscription_erreur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur6.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Information_Vues\Suppression_confirmation.xaml">

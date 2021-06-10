@@ -39,6 +39,11 @@ namespace Sérieathon.UC.login_window
             NouvelUtilisateur = new Utilisateur();
 
             DataContext = NouvelUtilisateur;
+
+            DateTime Date2 = DateTime.Today.AddYears(-10);
+            DatedeNaissanceDataPicker.DisplayDateStart = new DateTime(1900, 1, 1);
+            //DatedeNaissanceDataPicker.DisplayDate = new DateTime(2009, 1, 1);
+            DatedeNaissanceDataPicker.DisplayDateEnd = Date2;
         }
 
         private void SelectedPasswordBox1(Object sender, RoutedEventArgs args)
@@ -62,28 +67,73 @@ namespace Sérieathon.UC.login_window
         {
            Mdp1 = PasswordBox1.Text;
            Mdp2 = PasswordBox2.Text;
+            string emailtextbox = textbox_email.Text;
+            string pseudotextbox = textbox_pseudo.Text;
+            string comboboxgenre = combobox_genre.Text;
+            
+            //DateTime DatedeNaissance = DatedeNaissanceDataPicker.SelectedDate;
+            //DateTime Date1 = new DateTime(1900, 1, 1);
+            //DateTime Date2 = DateTime.Today.AddYears(-10);
+            ////DateTime Date2 = new DateTime(10, 0, 0);
+            ////TimeSpan Date3 = DateTime.Today.Subtract(Date2);
+            ////DateTime Date4 = new DateTime(0, 0, 0);
+            ////DateTime Date5 = new DateTime(0, 0, 0);
+            //DatedeNaissanceDataPicker.BlackoutDates.Add(new CalendarDateRange(Date2, DateTime.Today));
+            //DatedeNaissanceDataPicker.DisplayDateStart = new DateTime(1900, 1, 1);
+            //DatedeNaissanceDataPicker.DisplayDateEnd = Date2;
 
-
-            if (!string.IsNullOrWhiteSpace(Mdp1) && Mdp1.Equals(Mdp2))
+            if (!string.IsNullOrWhiteSpace(pseudotextbox))
             {
-                NouvelUtilisateur.Password = Mdp1;
-                if (TheManager.AjouterUtilisateur(NouvelUtilisateur))
+                if (!string.IsNullOrWhiteSpace(emailtextbox))
                 {
-                    Seriathon main_window = new Seriathon();
-                    main_window.Show();
+                    if (!string.IsNullOrWhiteSpace(comboboxgenre))
+                    {
+                        if (!string.IsNullOrWhiteSpace(Mdp1) && !string.IsNullOrWhiteSpace(Mdp2))
+                        {
+                            if (Mdp1.Equals(Mdp2))
+                            {
+                                NouvelUtilisateur.Password = Mdp1;
+                                if (TheManager.AjouterUtilisateur(NouvelUtilisateur))
+                                {
+                                    Seriathon main_window = new Seriathon();
+                                    main_window.Show();
 
-                    (App.Current as App).MainWindow.Close();
+                                    (App.Current as App).MainWindow.Close();
+                                }
+                                else
+                                {
+                                    (new Inscription_erreur2()).ShowDialog();
+                                }
+                            }
+                            else
+                            {
+                                (new Inscription_erreur()).ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            (new Inscription_erreur3()).ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        (new Inscription_erreur5()).ShowDialog();
+                    }
                 }
                 else
                 {
-                    (new Inscription_erreur()).ShowDialog();
+                    (new Inscription_erreur4()).ShowDialog();
                 }
-                
             }
             else
             {
-                (new Inscription_erreur()).ShowDialog();
+                (new Inscription_erreur6()).ShowDialog();
             }
+
+            
+
+            
+            
 
          
         }
