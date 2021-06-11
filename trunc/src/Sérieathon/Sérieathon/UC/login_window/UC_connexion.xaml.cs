@@ -28,7 +28,7 @@ namespace Sérieathon.UC.login_window
          
         public string ConMDP { get;  set; }
 
-       public  string ConEmail { get; set; }
+        public  string ConEmail { get; set; }
 
 
         //Utilisateur lutilisateur { get;  set; }
@@ -57,7 +57,7 @@ namespace Sérieathon.UC.login_window
         private void Validation_connexion_click(object sender, RoutedEventArgs e)
         {
 
-            if(TheManager.SeConnecter(ConEmail, ConMDP) == true){
+            if(TheManager.SeConnecter(ConEmail, ConMDP)){
                 Seriathon main_window = new Seriathon();
                 main_window.Show();
 

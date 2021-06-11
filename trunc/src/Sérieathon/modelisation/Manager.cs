@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
+using static modelisation.genres.GenreAnime;
+using static modelisation.genres.GenreGlobal;
 
 namespace modelisation
 {
@@ -14,6 +16,8 @@ namespace modelisation
     [DataContract]
     public class Manager
     {
+
+        public Marathon NouveauMarathon { get; set; }
 
         [OnDeserialized]
         void InitReadOnly()
@@ -38,6 +42,16 @@ namespace modelisation
         private List<Utilisateur> ListUtilisateur { get; set; } = new List<Utilisateur>();
 
         /// <summary>
+        /// wrapper de ListMarathon
+        /// </summary>
+        public ReadOnlyCollection<Marathon> ListMarathonR { get; private set; }
+
+        /// <summary>
+        /// liste de Marathon
+        /// </summary>
+        private List<Marathon> ListMarathon { get; set; } = new List<Marathon>();
+
+        /// <summary>
         /// répertorie l'utilisateur courant
         /// </summary>
         public Utilisateur UtilisateurCourant { get; private set; }
@@ -57,6 +71,9 @@ namespace modelisation
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
             UtilisateurCourant = null;
             ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
+            ListMarathonR = new ReadOnlyCollection<Marathon>(ListMarathon);
+
+            Initialisation();
         }
 
         private Manager(List<Utilisateur> listUser, List<ContenuVideoludique> listCV)
@@ -155,5 +172,28 @@ namespace modelisation
             return true;
         }
 
+        public void Initialisation()
+        {
+            Utilisateur Admin = new Utilisateur("a","admin","admin", new DateTime(1990, 10, 10),"Homme");
+            ListUtilisateur.Add(Admin);
+        }
+
+        /// <summary>
+        /// Permet de creer un nouveau marathon contenant le nombre de jour ainsi que le nombre d'heure par jour et des genres null
+        /// </summary>
+        /// <param name="nbJour"></param>
+        /// <param name="nbHeureParJour"></param>
+        public void CreerMarathon1(int nbJour, int nbHeureParJour)
+        {
+            UtilisateurCourant.CreerMarathon(nbJour, nbHeureParJour);
+            //NouveauMarathon = new Marathon(nbJour, nbHeureParJour);
+            //ListMarathon.Add(NouveauMarathon);
+        }
+
+        public void CreerMarathon2()
+        {
+
+        }
     }
+
 }

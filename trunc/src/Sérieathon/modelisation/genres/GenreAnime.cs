@@ -12,6 +12,8 @@ namespace modelisation.genres
     public enum GenreAnime : byte
     {
         [EnumMember]
+        None,
+        [EnumMember]
         Shojo,
         [EnumMember]
         Josei,

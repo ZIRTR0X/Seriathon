@@ -220,7 +220,7 @@ namespace modelisation.user
         public Utilisateur(string pseudo, string password, string email, DateTime dateDeNaissance, string genre)
         {
             Pseudo = pseudo;
-            Password = null;
+            Password = password;
             Email = email;
             DateDeNaissance = dateDeNaissance;
             Genre = genre;
@@ -241,7 +241,7 @@ namespace modelisation.user
             LinkedList<ContenuVideoludique> listCVvu, Marathon m)
         {
             Pseudo = pseudo;
-            Password = null;
+            Password = password;
             Email = email;
             DateDeNaissance = dateDeNaissance;
             Genre = genre;
@@ -383,6 +383,15 @@ namespace modelisation.user
             }
             
             MarathonPerso.CreerListeLecture();
+
+            return true;
+        }
+
+        public bool CreerMarathon(int nbJour, int nbHeuresParJour)
+        {
+            if (!(MarathonPerso is null)) return false;
+
+            MarathonPerso = new Marathon(nbJour, nbHeuresParJour);
 
             return true;
         }
