@@ -40,6 +40,9 @@
     <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Information_Vues\Suppression_confirmation_utilisateur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +106,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Information_Vues\Suppression_confirmation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Suppression_confirmation_utilisateur.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml">

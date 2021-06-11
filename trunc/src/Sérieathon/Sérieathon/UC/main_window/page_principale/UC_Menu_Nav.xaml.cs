@@ -1,4 +1,5 @@
-﻿using Sérieathon.converter;
+﻿using modelisation;
+using Sérieathon.converter;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Sérieathon.UC.main_window.page_principale
     public partial class UC_Menu_Nav : UserControl
     {
         public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
+        Manager TheManager => (App.Current as App).TheManager;
 
         public UC_Menu_Nav()
         {
@@ -33,7 +35,16 @@ namespace Sérieathon.UC.main_window.page_principale
 
         private void marathon_button_Click(object sender, RoutedEventArgs e)
         {
-            NavNavBar.EtatCourant = NavNavBar.Etat.MARATHON;
+            if (TheManager.UtilisateurCourant.MarathonPerso == null)
+            {
+                NavNavBar.EtatCourant = NavNavBar.Etat.MARATHON;
+            }
+            else
+            {
+                NavNavBar.EtatCourant = NavNavBar.Etat.LEMARATHON;
+            }
+            
+            
         }
 
         private void profil_button_Click(object sender, RoutedEventArgs e)

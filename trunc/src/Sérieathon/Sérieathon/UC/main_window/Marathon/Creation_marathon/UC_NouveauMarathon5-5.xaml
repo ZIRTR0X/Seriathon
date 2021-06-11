@@ -13,8 +13,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -27,13 +26,11 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Nombre de jour : " HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Temps passé par jour : " HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Les catégories : " HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="Les genres : " HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="2" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="NombreDeJourCR"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TempsParJourCR"/>
-        <TextBlock Grid.Row="3" Grid.Column="2" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="CategoriesCR"/>
-        <TextBlock Grid.Row="4" Grid.Column="2" Text="1" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="GenresCR"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Nb_jour}" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="NombreDeJourCR"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Nb_heure}" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TempsParJourCR"/>
+
 
         <Button Click="NM5_Continuer_Button_Click" Grid.Column="3" Grid.Row="5" Style="{StaticResource ButtonValider}">
             <WrapPanel>

@@ -66,10 +66,6 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
             TheManager.UtilisateurCourant.MarathonPerso.AddThemeGlobal(GenreGlobal.Aventure, TheManager);
             NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON4;
         }
-        private void Tout_Button_Click(object sender, RoutedEventArgs e)
-        {
-            NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON4;
-        }
         private void Genre_Global_Back_Button_Click(object sender, RoutedEventArgs e)
         {
             NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON2;

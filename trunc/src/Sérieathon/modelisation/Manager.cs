@@ -16,6 +16,9 @@ namespace modelisation
     /// </summary>
     public class Manager
     {
+        public int Nb_jour { get; set; }
+        public int Nb_heure { get; set; }
+
         [OnDeserialized]
         void InitReadOnly()
         {
@@ -141,6 +144,12 @@ namespace modelisation
             return true;
         }
 
+        public void SupprimerUtilisateur()
+        {
+            ListUtilisateur.Remove(UtilisateurCourant);
+        }
+
+
         /// <summary>
         /// tente la connexion a chaque compte existant
         /// </summary>
@@ -186,13 +195,11 @@ namespace modelisation
         public void CreerMarathon1(int nbJour, int nbHeureParJour)
         {
             UtilisateurCourant.CreerMarathon(nbJour, nbHeureParJour);
+
+            Nb_jour = nbJour;
+            Nb_heure = nbHeureParJour;
             //NouveauMarathon = new Marathon(nbJour, nbHeureParJour);
             //ListMarathon.Add(NouveauMarathon);
-        }
-
-        public void CreerMarathon2()
-        {
-
         }
 
 
@@ -224,6 +231,7 @@ namespace modelisation
             Persistance.SauvegarderDonnees(ListCVR, ListUtilisateurR);
 
         }
+
     }
 
 }

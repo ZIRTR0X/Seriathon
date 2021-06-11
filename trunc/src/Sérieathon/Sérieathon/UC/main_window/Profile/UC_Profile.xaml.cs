@@ -1,4 +1,5 @@
 ﻿using Sérieathon.converter;
+using Sérieathon.Information_Vues;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Sérieathon.UC.main_window.Profile
     public partial class UC_Profile : UserControl
     {
         public NavProfil NavProfil => (App.Current as App).NavProfil;
+
         public UC_Profile()
         {
             InitializeComponent();
@@ -34,6 +36,11 @@ namespace Sérieathon.UC.main_window.Profile
         private void Profil_Statistiques_Button_Click(object sender, RoutedEventArgs e)
         {
             NavProfil.EtatCourant = NavProfil.Etat.STATISTIQUE;
+        }
+
+            private void Supprimer_Button_Click(object sender, RoutedEventArgs e)
+        {
+            (new Suppression_confirmation_utilisateur()).ShowDialog();
         }
     }
 }

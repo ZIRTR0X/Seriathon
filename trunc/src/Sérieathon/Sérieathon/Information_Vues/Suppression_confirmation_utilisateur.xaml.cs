@@ -1,5 +1,6 @@
 ﻿using modelisation;
-using Sérieathon.converter;
+using Sérieathon.Fenetre;
+using Sérieathon.UC.main_window.Profile;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,17 +16,16 @@ using System.Windows.Shapes;
 namespace Sérieathon.Information_Vues
 {
     /// <summary>
-    /// Interaction logic for Suppression_confirmation.xaml
+    /// Logique d'interaction pour Suppression_confirmation_utilisateur.xaml
     /// </summary>
-    public partial class Suppression_confirmation : Window
+    public partial class Suppression_confirmation_utilisateur : Window
     {
-        public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
         Manager TheManager => (App.Current as App).TheManager;
-        public Suppression_confirmation()
+
+        public Suppression_confirmation_utilisateur()
         {
             InitializeComponent();
         }
-
         private void Annule_Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -33,9 +33,16 @@ namespace Sérieathon.Information_Vues
 
         private void Supprimer_Button_Click(object sender, RoutedEventArgs e)
         {
-            NavNavBar.EtatCourant = NavNavBar.Etat.ACCUEIL;
-            TheManager.SupprimerUtilisateur();
+            //(App.Current as App).MainWindow.Close();
+            //Seriathon.Close();
+            Accueil main_window = new Accueil();
+            main_window.Show();
+
             Close();
+            TheManager.SupprimerUtilisateur();
+            (App.Current as App).MainWindow.Close();
         }
     }
+
+
 }

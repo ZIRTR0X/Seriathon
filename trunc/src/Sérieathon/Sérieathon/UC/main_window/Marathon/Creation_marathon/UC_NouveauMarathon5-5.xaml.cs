@@ -1,4 +1,5 @@
-﻿using Sérieathon.converter;
+﻿using modelisation;
+using Sérieathon.converter;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,9 +21,11 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
     public partial class UC_NouveauMarathon5_5 : UserControl
     {
         public NavNavBar NavNavBar => (App.Current as App).NavNavBar;
+        Manager TheManager => (App.Current as App).TheManager;
         public UC_NouveauMarathon5_5()
         {
             InitializeComponent();
+            DataContext = TheManager;
         }
 
         private void NM5_Continuer_Button_Click(object sender, RoutedEventArgs e)
