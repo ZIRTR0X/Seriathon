@@ -70,7 +70,7 @@ namespace Sérieathon.UC.login_window
             string emailtextbox = textbox_email.Text;
             string pseudotextbox = textbox_pseudo.Text;
             string comboboxgenre = combobox_genre.Text;
-            
+
             //DateTime DatedeNaissance = DatedeNaissanceDataPicker.SelectedDate;
             //DateTime Date1 = new DateTime(1900, 1, 1);
             //DateTime Date2 = DateTime.Today.AddYears(-10);
@@ -82,7 +82,32 @@ namespace Sérieathon.UC.login_window
             //DatedeNaissanceDataPicker.DisplayDateStart = new DateTime(1900, 1, 1);
             //DatedeNaissanceDataPicker.DisplayDateEnd = Date2;
 
-            if (!string.IsNullOrWhiteSpace(pseudotextbox))
+            if (string.IsNullOrWhiteSpace(pseudotextbox)) { (new Inscription_erreur6()).ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(emailtextbox)) { (new Inscription_erreur4()).ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(comboboxgenre)) { (new Inscription_erreur5()).ShowDialog(); return; }
+            if(string.IsNullOrWhiteSpace(Mdp1) || string.IsNullOrWhiteSpace(Mdp2)) { (new Inscription_erreur3()).ShowDialog(); return; }
+
+            if (Mdp1.Equals(Mdp2))
+            {
+                NouvelUtilisateur.Password = Mdp1;
+                if (TheManager.AjouterUtilisateur(NouvelUtilisateur))
+                {
+                    Seriathon main_window = new Seriathon();
+                    main_window.Show();
+
+                    (App.Current as App).MainWindow.Close();
+                }
+                else
+                {
+                    (new Inscription_erreur2()).ShowDialog();
+                }
+            }
+            else
+            {
+                (new Inscription_erreur()).ShowDialog();
+            }
+
+            /*if (!string.IsNullOrWhiteSpace(pseudotextbox))
             {
                 if (!string.IsNullOrWhiteSpace(emailtextbox))
                 {
@@ -128,7 +153,7 @@ namespace Sérieathon.UC.login_window
             else
             {
                 (new Inscription_erreur6()).ShowDialog();
-            }
+            }*/
 
             
 

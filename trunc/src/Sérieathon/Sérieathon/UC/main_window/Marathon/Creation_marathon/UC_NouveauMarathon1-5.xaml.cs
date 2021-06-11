@@ -43,7 +43,54 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
             Nbjours = NombreDeJour.Text;
             NBheures = TempsParJour.Text;
 
-            if (!string.IsNullOrWhiteSpace(NomMarathon.Text))
+            if (string.IsNullOrWhiteSpace(NomMarathon.Text)) { (new CreationMarathon_erreur1()).ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(Nbjours)) { (new CreationMarathon_erreur2()).ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(NBheures)) { (new CreationMarathon_erreur3()).ShowDialog(); return; }
+
+            switch (Nbjours)
+            {
+                case "1 jour": NombreJour = 1; break;
+                case "2 jours": NombreJour = 2; break;
+                case "3 jours": NombreJour = 3; break;
+                case "4 jours": NombreJour = 4; break;
+                case "5 jours": NombreJour = 5; break;
+                case "6 jours": NombreJour = 6; break;
+                case "7 jours": NombreJour = 7; break;
+                case "8 jours": NombreJour = 8; break;
+                case "9 jours": NombreJour = 9; break;
+                case "10 jours": NombreJour = 10; break;
+                case "11 jours": NombreJour = 11; break;
+                case "12 jours": NombreJour = 12; break;
+                case "13 jours": NombreJour = 13; break;
+                case "2 semaines": NombreJour = 14; break;
+                case "3 semaines": NombreJour = 21; break;
+                case "4 semaines": NombreJour = 28; break;
+                default: NombreJour = 1; break;
+            }
+
+            
+
+            switch (NBheures)
+            {
+                case "1 heure": NombreHeure = 1; break;
+                case "2 heures": NombreHeure = 2; break;
+                case "3 heures": NombreHeure = 3; break;
+                case "4 heures": NombreHeure = 4; break;
+                case "5 heures": NombreHeure = 5; break;
+                case "6 heures": NombreHeure = 6; break;
+                case "7 heures": NombreHeure = 7; break;
+                case "8 heures": NombreHeure = 8; break;
+                case "9 heures": NombreHeure = 9; break;
+                case "10 heures": NombreHeure = 10; break;
+                case "11 heures": NombreHeure = 11; break;
+                case "12 heures": NombreHeure = 12; break;
+                default: NombreHeure = 1; break;
+            }
+
+            TheManager.CreerMarathon1(NombreJour, NombreHeure);
+            NavNavBar.EtatCourant = NavNavBar.Etat.NEWMARATHON2;
+
+            /*if (!string.IsNullOrWhiteSpace(NomMarathon.Text))
             {
                 if (!string.IsNullOrWhiteSpace(Nbjours))
                 {
@@ -157,6 +204,8 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
                         }
                     }
 
+
+
                     if (!string.IsNullOrWhiteSpace(NBheures))
                     {
                         if (NBheures == "1 heure")
@@ -257,7 +306,7 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
             {
                 (new CreationMarathon_erreur1()).ShowDialog();
             }
-            
+            */
             
             
         }
