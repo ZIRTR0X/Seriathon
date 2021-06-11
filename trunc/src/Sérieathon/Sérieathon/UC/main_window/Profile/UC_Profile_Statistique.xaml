@@ -6,78 +6,97 @@
              xmlns:local="clr-namespace:Sérieathon.UC.main_window.Profile"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Temps de visionnage" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" />
-        <TextBlock Text="Genres Favoris" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
-        <TextBlock Text="Réalisateurs Favoris" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
-        <TextBlock Text="Nombre de film/ série/ anime regardé" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
-        <ListBox x:Name="GenreFavorie" Grid.Row="1" Grid.Column="1"/>
-        <ListBox x:Name="RealisateurFavorie" Grid.Row="1" Grid.Column="2"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Temps de visionnage" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" />
+            <TextBlock Text="Genres Favoris" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock Text="Réalisateurs Favoris" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
+            <TextBlock Text="Nombre de film/ série/ anime regardé" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <ListBox x:Name="GenreFavorie" Grid.Row="1" Grid.Column="1"/>
+            <ListBox x:Name="RealisateurFavorie" Grid.Row="1" Grid.Column="2"/>
 
-        <Canvas Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
-            <Rectangle Height="88" Stroke="Gray" Fill="Gray" RadiusX="30" RadiusY="30" Width="210" Canvas.Left="5" Canvas.Top="0"/>
-            <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="151" Canvas.Top="8"/>
-            <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="42" Canvas.Top="8"/>
-            <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="91" Canvas.Top="8"/>
-            <Grid Background="Transparent" Height="83" Width="205" Canvas.Left="8" Canvas.Top="10">
-                <Grid.Resources>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="FontSize" Value="14"/>
-                    </Style>
-                </Grid.Resources>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="Mois" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-                <TextBlock Text="Jours" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="Heures" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
-                <TextBlock Text="Minutes" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1"/>
-                <TextBlock Text="1" x:Name="StatMois" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
-                <TextBlock Text="2" x:Name="StatJours" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
-                <TextBlock Text="3" x:Name="StatHeures" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
-                <TextBlock Text="4" x:Name="StatMinutes" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="0"/>
-            </Grid>
-        </Canvas>
-        <Canvas Grid.Column="0" Grid.Row="3">
-            <Rectangle Height="110" Stroke="Black" Fill="Gray" Width="150" Canvas.Left="98"/>
-            <Grid Background="Transparent" Canvas.Left="102" Canvas.Top="6" Width="150" Height="100">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="4*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="1" x:Name="StatNbSerie" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
-                <TextBlock Text="1" x:Name="StatNbFilm" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-                <TextBlock Text="3" x:Name="StatNbAnime" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
-                <TextBlock Text="séries" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
-                <TextBlock Text="films" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="animes" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+            <Canvas Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
+                <Rectangle Height="88" Stroke="Gray" Fill="Gray" RadiusX="30" RadiusY="30" Width="210" Canvas.Left="5" Canvas.Top="0"/>
+                <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="151" Canvas.Top="8"/>
+                <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="42" Canvas.Top="8"/>
+                <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="91" Canvas.Top="8"/>
+                <Grid Background="Transparent" Height="83" Width="205" Canvas.Left="8" Canvas.Top="10">
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="14"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Mois" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <TextBlock Text="Jours" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="Heures" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock Text="Minutes" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1"/>
+                    <TextBlock Text="1" x:Name="StatMois" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                    <TextBlock Text="2" x:Name="StatJours" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                    <TextBlock Text="3" x:Name="StatHeures" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
+                    <TextBlock Text="4" x:Name="StatMinutes" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="0"/>
+                </Grid>
+            </Canvas>
 
-            </Grid>
-        </Canvas>
+        <Grid Grid.Column="0" Grid.Row="3" Height="80" Width="120">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="1" x:Name="StatNbSerie" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock Text="1" x:Name="StatNbFilm" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="3" x:Name="StatNbAnime" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Text="séries" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock Text="films" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock Text="animes" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
 
-    </Grid>
+        </Grid>
+
+        <!--<Canvas Grid.Column="0" Grid.Row="3">
+                <Rectangle Height="110" Stroke="Black" Fill="Gray" Width="150" Canvas.Left="98"/>
+                <Grid Background="Transparent" Canvas.Left="102" Canvas.Top="6" Width="150" Height="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="1" x:Name="StatNbSerie" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                    <TextBlock Text="1" x:Name="StatNbFilm" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                    <TextBlock Text="3" x:Name="StatNbAnime" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+                    <TextBlock Text="séries" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                    <TextBlock Text="films" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="animes" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+
+                </Grid>
+            </Canvas>-->
+
+        </Grid>
 </UserControl>

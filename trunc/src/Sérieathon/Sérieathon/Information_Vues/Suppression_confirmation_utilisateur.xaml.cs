@@ -40,7 +40,14 @@ namespace Sérieathon.Information_Vues
 
             Close();
             TheManager.SupprimerUtilisateur();
-            (App.Current as App).MainWindow.Close();
+
+            foreach (Window w in (App.Current as App).Windows)
+            {
+                if (w is Seriathon s)
+                {
+                    s.Close();
+                }
+            }
         }
     }
 
