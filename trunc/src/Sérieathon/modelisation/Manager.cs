@@ -13,12 +13,8 @@ namespace modelisation
     /// <summary>
     /// manager de l'application, répertoriant toutes les données de l'application, et responsable du lien avec la persistance
     /// </summary>
-    [DataContract]
     public class Manager
     {
-
-        public Marathon NouveauMarathon { get; set; }
-
         [OnDeserialized]
         void InitReadOnly()
         {
@@ -38,18 +34,7 @@ namespace modelisation
         /// <summary>
         /// liste répertoriant tout les utilisateurs locaux
         /// </summary>
-        [DataMember]
         private List<Utilisateur> ListUtilisateur { get; set; } = new List<Utilisateur>();
-
-        /// <summary>
-        /// wrapper de ListMarathon
-        /// </summary>
-        public ReadOnlyCollection<Marathon> ListMarathonR { get; private set; }
-
-        /// <summary>
-        /// liste de Marathon
-        /// </summary>
-        private List<Marathon> ListMarathon { get; set; } = new List<Marathon>();
 
         /// <summary>
         /// répertorie l'utilisateur courant
@@ -63,17 +48,31 @@ namespace modelisation
         /// <summary>
         /// liste répertoriant tout les Contenus de l'application
         /// </summary>
-        [DataMember]
         private List<ContenuVideoludique> ListCV { get; set; } = new List<ContenuVideoludique>();
 
+        private IPersistanceManager Persistance { get; set; }
+
+        /// <summary>
+        /// déprécié car rends impossible la persistance
+        /// </summary>
         private Manager()
         {
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
             UtilisateurCourant = null;
             ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
-            ListMarathonR = new ReadOnlyCollection<Marathon>(ListMarathon);
 
-            Initialisation();
+
+            AdminAdd();
+        }
+
+        private Manager(IPersistanceManager pm)
+        {
+            ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
+            UtilisateurCourant = null;
+            ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
+            Persistance = pm;
+
+            AdminAdd();
         }
 
         private Manager(List<Utilisateur> listUser, List<ContenuVideoludique> listCV)
@@ -172,7 +171,7 @@ namespace modelisation
             return true;
         }
 
-        public void Initialisation()
+        public void AdminAdd()
         {
             Utilisateur Admin = new Utilisateur("a","admin","admin", new DateTime(1990, 10, 10),"Homme");
             ListUtilisateur.Add(Admin);
@@ -192,6 +191,30 @@ namespace modelisation
 
         public void CreerMarathon2()
         {
+
+        }
+
+
+        public void ChargerDonnees()
+        {
+            if (ReferenceEquals(Persistance, null))
+            {
+                throw new InvalidOperationException("Le moyen de persistance est null, on ne peux appeler la fonction de sauvegarde");
+            }
+
+            (var listCV_temp, var listUtilisateur_temp) = Persistance.ChargeDonnees();
+            ListCV.AddRange(listCV_temp);
+            ListUtilisateur.AddRange(listUtilisateur_temp);
+        }
+
+        public void SauvegarderDonnees()
+        {
+            if (ReferenceEquals(Persistance, null))
+            {
+                throw new InvalidOperationException("Le moyen de persistance est null, on ne peux appeler la fonction de sauvegarde");
+            }
+
+            Persistance.SauvegarderDonnees(ListCVR, ListUtilisateurR);
 
         }
     }

@@ -286,6 +286,10 @@ namespace modelisation.user
             return (IEnumerable<Film>)ListCVvu.Where(c => c is Film);
         }
 
+        /// <summary>
+        /// Peremt de récuperer la liste des films déjà vu par l'utilisateur
+        /// </summary>
+        /// <returns>une liste des séries déjà vu par cet utilisateur</returns>
         public IEnumerable<Serie> GetListSeriesVu()
         {
             return ListCVvu.Where(c => c is Serie && !(c is Anime)) as IEnumerable<Serie>;

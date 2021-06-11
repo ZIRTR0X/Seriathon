@@ -96,10 +96,10 @@ namespace persistance.DataContract
             throw new NotImplementedException();
         }
 
-        public void SauvegarderDonnees(IEnumerable<ContenuVideoludique> ListCV, IEnumerable<Utilisateur> listUtilisateur)
+        public void SauvegarderDonnees(IEnumerable<ContenuVideoludique> listCV, IEnumerable<Utilisateur> listUtilisateur)
         {
-            // permet de récupérer les données à sauvegarder
-            Manager m = Manager.GetInstance();
+
+            DataToPersist d = new DataToPersist(listUtilisateur, listCV);
 
             // si jamais le directory n'existe pas, il le créé
             if (!Directory.Exists(FilePath))
@@ -109,7 +109,7 @@ namespace persistance.DataContract
 
 
             // on enregistre d'abord la liste de ContenuVideoludique
-            var serializer = new DataContractSerializer(typeof(IEnumerable<ContenuVideoludique>),
+            var serializer = new DataContractSerializer(typeof(DataToPersist),
                 new DataContractSerializerSettings() { PreserveObjectReferences = true }) ; // permet de garder les références identiques
 
             var options = new XmlWriterSettings() { Indent = true };
@@ -118,7 +118,7 @@ namespace persistance.DataContract
             {
                 using (XmlWriter writer = XmlWriter.Create(tw, options))
                 {
-                    serializer.WriteObject(writer, m.ListCVR);
+                    serializer.WriteObject(writer, d);
                 }
             }
         }

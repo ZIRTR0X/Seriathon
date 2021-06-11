@@ -206,7 +206,7 @@ namespace modelisation.user
             //return GenresAnimes_possibles.TryAdd(a, m.ListCV.Where(c => c is Anime an && an.GenreAnimes.Contains(a)) as IEnumerable<Anime>);
             if (GenresAnimes_possibles.ContainsKey(a)) return false;
 
-            List<Anime> listeAnime = new List<Anime>(m.ListCVR.Where(c => c is Anime an && an.GenreAnimesR.Contains(a)) as IEnumerable<Anime>);
+            List<Anime> listeAnime = new List<Anime>(m.ListCVR.Where(c => c is Anime an && an.GenreAnimesR.Contains(a)).Cast<Anime>());
 
             GenresAnimes_possibles.Add(a, listeAnime);
             return true;
