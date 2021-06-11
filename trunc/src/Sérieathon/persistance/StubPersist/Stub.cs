@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace persistance.Stub
+namespace persistance.StubPersist
 {
     /// <summary>
     /// Chargement en dur des données

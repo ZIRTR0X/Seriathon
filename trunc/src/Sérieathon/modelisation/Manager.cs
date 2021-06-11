@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using static modelisation.genres.GenreAnime;
 using static modelisation.genres.GenreGlobal;
+using System.IO;
 
 namespace modelisation
 {
@@ -202,9 +203,15 @@ namespace modelisation
                 throw new InvalidOperationException("Le moyen de persistance est null, on ne peux appeler la fonction de sauvegarde");
             }
 
-            (var listCV_temp, var listUtilisateur_temp) = Persistance.ChargeDonnees();
-            ListCV.AddRange(listCV_temp);
-            ListUtilisateur.AddRange(listUtilisateur_temp);
+            try {
+                (var listCV_temp, var listUtilisateur_temp) = Persistance.ChargeDonnees();
+                ListCV.AddRange(listCV_temp);
+                ListUtilisateur.AddRange(listUtilisateur_temp);
+            }
+            catch(FileNotFoundException e)
+            {
+                System.Console.WriteLine(e);
+            }
         }
 
         public void SauvegarderDonnees()

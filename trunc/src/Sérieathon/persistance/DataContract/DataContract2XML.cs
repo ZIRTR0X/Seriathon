@@ -2,6 +2,7 @@
 using modelisation.content;
 using modelisation.usefull_interfaces;
 using modelisation.user;
+using persistance.StubPersist;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,45 +45,32 @@ namespace persistance.DataContract
         /// <summary>
         /// indique le nom du fichier de persistance pour les files
         /// </summary>
-        public string FileName_utilisateur
+        public string FileName
         {
-            get => _fileName_utilisateur;
+            get => _fileName;
 
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    _fileName_utilisateur = "utilisateur.xml";
+                    _fileName = "utilisateur.xml";
                 } else
                 {
-                    _fileName_utilisateur = value;
+                    _fileName = value;
                 }
             }
         }
-        private string _fileName_utilisateur = "utilisateur.xml";
-
+        private string _fileName = "utilisateur.xml";
         /// <summary>
-        /// indique le nom du fichier de persistance pour les ContenuVideoludique
+        /// chemin complet vers le fichier ml répertoriant les utilisateurs
         /// </summary>
-        public string FileName_CV
+        private string PersFile => Path.Combine(FilePath, FileName);
+
+        private DataContract2XML()
         {
-            get => _fileName_CV;
-
-            set
-            {
-                if(string.IsNullOrWhiteSpace(value))
-                {
-                    _fileName_CV = "contenu_videoludique.xml";
-                } else
-                {
-                    _fileName_CV = value;
-                }
-            }
+            FilePath = "..//XML";
+            FileName = "utilisateur.xml";
         }
-        private string _fileName_CV = "contenu_videoludique.xml";
-
-
-        private DataContract2XML() { }
 
         public static DataContract2XML GetInstance()
         {
@@ -93,13 +81,28 @@ namespace persistance.DataContract
 
         public (IEnumerable<ContenuVideoludique>, IEnumerable<Utilisateur>) ChargeDonnees()
         {
-            throw new NotImplementedException();
+            if (!File.Exists(PersFile))
+            {
+                // dans ce cas, la file n'existe pas, on charge alors depuis le stub
+                return Stub.GetInstance().ChargeDonnees();
+            }
+
+            DataToPersist data = new DataToPersist();
+
+            var serializer = new DataContractSerializer(typeof(DataToPersist));
+
+            using(Stream s = File.OpenRead(PersFile))
+            {
+                data = serializer.ReadObject(s) as DataToPersist;
+            }
+
+            return (data.ListCVR, data.ListUtilisateurR);
         }
 
         public void SauvegarderDonnees(IEnumerable<ContenuVideoludique> listCV, IEnumerable<Utilisateur> listUtilisateur)
         {
 
-            DataToPersist d = new DataToPersist(listUtilisateur, listCV);
+            DataToPersist data = new DataToPersist(listUtilisateur, listCV);
 
             // si jamais le directory n'existe pas, il le créé
             if (!Directory.Exists(FilePath))
@@ -114,11 +117,11 @@ namespace persistance.DataContract
 
             var options = new XmlWriterSettings() { Indent = true };
 
-            using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName_CV)))
+            using (TextWriter tw = File.CreateText(PersFile))
             {
                 using (XmlWriter writer = XmlWriter.Create(tw, options))
                 {
-                    serializer.WriteObject(writer, d);
+                    serializer.WriteObject(writer, data);
                 }
             }
         }
