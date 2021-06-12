@@ -259,6 +259,26 @@ namespace modelisation.user
             {
                 int random_courant = random.Next(2); // génère un semblant de booléen aléatoire, un int de 0 ou 1, a récupérer car on veut la même valeur pour le choix
 
+                // a chaque itération, je supprime les clé-valeur dont la liste en valeur ne possède plus rien, pour éviter les indexOutOfRange
+
+                foreach (KeyValuePair<GenreGlobal, List<ContenuVideoludique>> kp in GenresGlobaux_possibles)
+                {
+                    // si jamais l'une des listes vaut 0, on supprime direct la paire, pour éviter une exception sur le random au prochain
+                    // passage
+                    if (kp.Value.Count == 0)
+                    {
+                        GenresGlobaux_possibles.Remove(kp.Key);
+                    }
+                }
+
+                foreach(KeyValuePair<GenreAnime, List<Anime>> kp in GenresAnimes_possibles)
+                {
+                    if(kp.Value.Count == 0)
+                    {
+                        GenresAnimes_possibles.Remove(kp.Key);
+                    }
+                }
+
                 if (random_courant == 0 && GenresGlobaux_possibles.Count != 0) // si ça vaut 0, j'ajoute un type Global a condition qu'il y en ai en theme de marathon
                 {
                     // je peux ici avoir soit des séries (ou animes, mais ça ne change pas ), soit des films
@@ -326,40 +346,41 @@ namespace modelisation.user
                         Anime selection_random = value_random[random.Next(value_random.Count)];
                         if (AddEpisodeLecture(selection_random, ref duree_restante))
                         {
-                            foreach(List<Anime> l in GenresAnimes_possibles.Values)
+                            foreach (List<Anime> l in GenresAnimes_possibles.Values)
                             {
                                 l.Remove(selection_random);
                             }
-                            foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                            foreach (List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
                             {
                                 l.Remove(selection_random as ContenuVideoludique);
                             }
                         }
 
-                        
 
-                    } else if (random_courant == 1 && GenresGlobaux_possibles.Count != 0)
+
+                    }
+                    else if (random_courant == 1 && GenresGlobaux_possibles.Count != 0)
                     {
                         List<ContenuVideoludique> value_random = GenresGlobaux_possibles.ElementAt(random.Next(GenresAnimes_possibles.Count)).Value;
                         ContenuVideoludique selection_random = value_random[random.Next(value_random.Count)];
 
                         if (selection_random is Film fi && AddFilmLecture(fi, ref duree_restante))
                         {
-                            foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                            foreach (List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
                             {
                                 l.Remove(selection_random);
                             }
                         }
                         else if (selection_random is Serie s && AddEpisodeLecture(s, ref duree_restante))
                         {
-                            foreach(List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
+                            foreach (List<ContenuVideoludique> l in GenresGlobaux_possibles.Values)
                             {
                                 l.Remove(selection_random);
                             }
-                            
-                            if(s is Anime a)
+
+                            if (s is Anime a)
                             {
-                                foreach(List<Anime> l in GenresAnimes_possibles.Values)
+                                foreach (List<Anime> l in GenresAnimes_possibles.Values)
                                 {
                                     l.Remove(a);
                                 }
@@ -370,8 +391,7 @@ namespace modelisation.user
                             continue;
                         }
                     }
-                    else throw new InvalidOperationException("Créer une liste de lecture est impossible sans ajouter au préalable" +
-                        "des thèmes (genres) pour ce marathon");
+                    else return;
                 }
 
             }

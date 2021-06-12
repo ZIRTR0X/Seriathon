@@ -56,15 +56,6 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
                 "5 jours" => 5,
                 "6 jours" => 6,
                 "7 jours" => 7,
-                "8 jours" => 8,
-                "9 jours" => 9,
-                "10 jours" => 10,
-                "11 jours" => 11,
-                "12 jours" => 12,
-                "13 jours" => 13,
-                "2 semaines" => 14,
-                "3 semaines" => 21,
-                "4 semaines" => 28,
                 _ => 1,
             };
 
@@ -98,13 +89,6 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
                 "3 heures" => 3,
                 "4 heures" => 4,
                 "5 heures" => 5,
-                "6 heures" => 6,
-                "7 heures" => 7,
-                "8 heures" => 8,
-                "9 heures" => 9,
-                "10 heures" => 10,
-                "11 heures" => 11,
-                "12 heures" => 12,
                 _ => 1,
             };
             TheManager.CreerMarathon1(NombreJour, NombreHeure);

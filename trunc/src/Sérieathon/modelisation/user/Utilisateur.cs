@@ -409,6 +409,12 @@ namespace modelisation.user
             return true;
         }
 
+        /// <summary>
+        /// tente de créer un marathon
+        /// </summary>
+        /// <param name="nbJour">nombre de jours que dure le marathon</param>
+        /// <param name="nbHeuresParJour">nombre d'heures par jour que dure le marathon</param>
+        /// <returns>false si le marathon de l'utilisateur existe déjà, true sinon, il est ajouté</returns>
         public bool CreerMarathon(int nbJour, int nbHeuresParJour)
         {
             if (!(MarathonPerso is null)) return false;
@@ -418,6 +424,10 @@ namespace modelisation.user
             return true;
         }
 
+        /// <summary>
+        /// tente de supprimer le marathon de l'utilisateur
+        /// </summary>
+        /// <returns>false si le marathon n'existe pas, true sinon, il est supprimé</returns>
         public bool SupprimerMarathon()
         {
             if (MarathonPerso is null) return false;

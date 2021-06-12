@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>D:\cours\1A\Csharp\trunc\src\Sérieathon\bin\</OutputPath>
+    <OutputPath>C:\Baptiste\1A_IUT\P4\IHM_CSharp\ProjetP4\trunc\src\Sérieathon\bin\</OutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 

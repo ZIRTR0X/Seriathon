@@ -53,27 +53,6 @@
             <ComboBoxItem>
                 <TextBlock Text="5 heures"/>
             </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="6 heures"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="7 heures"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="8 heures"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="9 heures"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="10 heures"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="11 heures"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="12 heures"/>
-            </ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="1" Grid.Row="5" Text="Nombre de jour" VerticalAlignment="Bottom"/>
         <ComboBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="130" HorizontalAlignment="Left" x:Name="NombreDeJour">
@@ -104,33 +83,6 @@
             </ComboBoxItem>
             <ComboBoxItem>
                 <TextBlock Text="7 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="8 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="9 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="10 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="11 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="12 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="13 jours"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="2 semaines"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="3 semaines"/>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock Text="4 semaines"/>
             </ComboBoxItem>
         </ComboBox>
         <Button Click="NM1_Next_Button_Click" Grid.Column="2" Grid.Row="7" Style="{StaticResource ButtonValider}">
