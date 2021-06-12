@@ -204,6 +204,5 @@ namespace modelisation.content.episodique
             return ((Nom.GetHashCode() * 29) + NumEpisode * 7 + (Date.GetHashCode() * 3)
                 + (DureeEpisode.GetHashCode() * 31) + (Description.GetHashCode() * 11)) * 2;
         }
-
     }
 }

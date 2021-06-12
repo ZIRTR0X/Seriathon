@@ -30,6 +30,7 @@ namespace Sérieathon.UC.main_window.Marathon.Creation_marathon
 
         private void NM5_Continuer_Button_Click(object sender, RoutedEventArgs e)
         {
+            TheManager.UtilisateurCourant.MarathonPerso.CreerListeLecture();
             NavNavBar.EtatCourant = NavNavBar.Etat.LEMARATHON;
         }
 

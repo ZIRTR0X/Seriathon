@@ -22,5 +22,19 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
         {
             InitializeComponent();
         }
+
+        private void Vue_CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckVuText.Text == "Pas vu")
+            {
+                CheckVu.Content = "Vu";
+            }
+
+            if (CheckVuText.Text == "Vu")
+            {
+                CheckVu.Content = "Pas vu";
+            }
+
+        }
     }
 }

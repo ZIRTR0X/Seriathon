@@ -418,6 +418,13 @@ namespace modelisation.user
             return true;
         }
 
+        public bool SupprimerMarathon()
+        {
+            if (MarathonPerso is null) return false;
+            MarathonPerso = null;
+            return true;
+        }
+
         /// <summary>
         /// Ajoute un ContenuVideoludique dans la liste des CV déjà vu par l'utilisateur
         /// </summary>

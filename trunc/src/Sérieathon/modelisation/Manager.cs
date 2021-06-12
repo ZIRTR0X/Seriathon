@@ -159,7 +159,6 @@ namespace modelisation
             ListUtilisateur.Remove(UtilisateurCourant);
         }
 
-
         /// <summary>
         /// tente la connexion a chaque compte existant
         /// </summary>

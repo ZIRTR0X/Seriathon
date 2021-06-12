@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using modelisation.user;
 
 namespace Sérieathon.Information_Vues
 {
@@ -34,7 +35,7 @@ namespace Sérieathon.Information_Vues
         private void Supprimer_Button_Click(object sender, RoutedEventArgs e)
         {
             NavNavBar.EtatCourant = NavNavBar.Etat.ACCUEIL;
-            TheManager.SupprimerUtilisateur();
+            TheManager.UtilisateurCourant.SupprimerMarathon();
             Close();
         }
     }
