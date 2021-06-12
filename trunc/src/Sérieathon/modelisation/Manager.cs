@@ -235,6 +235,18 @@ namespace modelisation
 
         }
 
+        public void test()
+        {
+            foreach (ContenuVideoludique c in ListCV)
+            {
+                if(c.Titre == "Avengers")
+                {
+                    UtilisateurCourant.AddCVvu(c);
+                }
+            }
+            
+            
+        }
     }
 
 }

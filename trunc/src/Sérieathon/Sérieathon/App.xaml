@@ -26,6 +26,9 @@
         <Style TargetType="Grid">
             <Setter Property="Background" Value="#36393F"/>
         </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="#36393F"/>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#2F3136"/>
             <Setter Property="Foreground" Value="White"/>

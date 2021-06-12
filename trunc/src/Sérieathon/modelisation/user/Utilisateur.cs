@@ -353,6 +353,155 @@ namespace modelisation.user
         }
 
         /// <summary>
+        /// Retourne la durée total des conteneus vidéoludiques visioné en TimeSpan
+        /// </summary>
+        /// <returns></returns>
+        public TimeSpan DureeTotalCVVu()
+        {
+            TimeSpan heure = new TimeSpan();
+            foreach (ContenuVideoludique l in ListCVvu)
+            {
+                heure = +l.Duree;
+            }
+            return heure;
+        }
+
+        /// <summary>
+        /// Retourne le nombre de minute passé au total à visionné des conteneus vidéoludiques
+        /// </summary>
+        /// <returns></returns>
+        public int DureeMinuteCVVuBrute()
+        {
+            TimeSpan duree = DureeTotalCVVu();
+            int nbminute = duree.Minutes;
+            return nbminute;
+        }
+
+        /// <summary>
+        /// Retourne le nombre d'heure passé au total à visionné des conteneus vidéoludiques
+        /// </summary>
+        /// <returns></returns>
+        public int DureeHeureCVVuBrute()
+        {
+            TimeSpan duree = DureeTotalCVVu();
+            int nbmheure = duree.Hours;
+            return nbmheure;
+        }
+
+        /// <summary>
+        /// Retourne le nombre de jour passé au total à visionné des conteneus vidéoludiques
+        /// </summary>
+        /// <returns></returns>
+        public int DureeJourCVVuBrute()
+        {
+            TimeSpan duree = DureeTotalCVVu();
+            int nbjour = duree.Days;
+            return nbjour;
+        }
+
+        /// <summary>
+        /// Retourne le nombre de minutes passé à visionné des conteneus vidéoludiques, inferieur à 60 jours(une heure)
+        /// </summary>
+        /// <returns></returns>
+        public int DureeMinuteCVVu()
+        {
+            int nbminute = DureeMinuteCVVuBrute();
+
+            if (nbminute > 59)
+            {
+                while (nbminute > 59)
+                {
+                    nbminute -= 60;
+                }
+            }
+            return nbminute;
+        }
+
+        /// <summary>
+        /// Retourne le nombre d'heure passé à visionné des conteneus vidéoludiques, inferieur à 24 heure(un jour)
+        /// </summary>
+        /// <returns></returns>
+        public int DureeHeureCVVu()
+        {
+            int nbheure = DureeHeureCVVuBrute();
+
+            if (nbheure > 23)
+            {
+                while(nbheure > 23)
+                {
+                    nbheure -= 24;
+                }
+            }
+            return nbheure;
+        }
+
+        /// <summary>
+        /// Retourne le nombre de jour passé à visionné des conteneus vidéoludiques, inferieur à 30 jours(un mois)
+        /// </summary>
+        /// <returns></returns>
+        public int DureeJourCVVu()
+        {
+            int nbjour = DureeJourCVVuBrute();
+            if (nbjour > 29)
+            {
+                while (nbjour > 29)
+                {
+                    nbjour -= 30;
+                }
+            }
+            return nbjour;
+        }
+
+        /// <summary>
+        /// Retourne le nombre de mois passé au total à visionné des conteneus vidéoludiques
+        /// </summary>
+        /// <returns></returns>
+        public int DureeMoisCVVu()
+        {
+            int nbjour = DureeJourCVVuBrute();
+            int nbmois = 0 ;
+            if (nbjour > 29)
+            {
+                while (nbjour > 29)
+                {
+                    nbjour -= 30;
+                    nbmois++;
+                }
+            }
+            return nbmois;
+        }
+
+
+        /// <summary>
+        /// Retourne le nombre de film vu
+        /// </summary>
+        /// <returns></returns>
+        public int GetNbFilmVu()
+        {
+            return ListCVvu.Count(c => c is Film);
+        }
+
+        /// <summary>
+        /// Retourne le nombre de serie vu
+        /// </summary>
+        /// <returns></returns>
+        public int GetNbSerieVu()
+        {
+            return ListCVvu.Count(c => c is Serie);
+        }
+
+        /// <summary>
+        /// Retourne le nombre de anime vu
+        /// </summary>
+        /// <returns></returns>
+        public int GetNbAnimeVu()
+        {
+            return ListCVvu.Count(c => c is Anime);
+        }
+
+
+
+        /// <summary>
         /// Permet de récupérer une liste d'anime contenant le genre d'anime demandé
         /// </summary>
         /// <param name="a">GenreAnime commun à tout les éléments de la liste</param>
