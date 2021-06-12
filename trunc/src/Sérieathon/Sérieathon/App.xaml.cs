@@ -21,17 +21,20 @@ namespace Sérieathon
         public ManagerOld MonManager { get; set; } = new ManagerOld();
         public NavNavBar NavNavBar { get; set; } = new NavNavBar();
         public NavProfil NavProfil { get; set; } = new NavProfil();
-        public Manager TheManager { get; set; } = Manager.GetInstance();
+        public Manager TheManager { get; set; }
 
         
 
         public App()
         {
-            // TheManager = Manager.GetInstanceWithPersist(Stub.GetInstance());
-            // TheManager.ChargerDonnees();
+            TheManager = Manager.GetInstanceWithPersist(DataContract2XML.GetInstance());
+            TheManager.ChargerDonnees();
         }
 
-        
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            TheManager.SauvegarderDonnees();
+        }
     }
 }
 

@@ -66,7 +66,6 @@ namespace modelisation
             ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
             Persistance = null;
 
-            AdminAdd();
         }
 
         private Manager(IPersistanceManager pm)
@@ -76,7 +75,6 @@ namespace modelisation
             ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
             Persistance = pm;
 
-            AdminAdd();
         }
 
         /// <summary>
@@ -191,12 +189,6 @@ namespace modelisation
 
             UtilisateurCourant = null;
             return true;
-        }
-
-        public void AdminAdd()
-        {
-            Utilisateur Admin = new Utilisateur("admin", "admin", "admin", new DateTime(1990, 1, 1), "Autre");
-            ListUtilisateur.Add(Admin);
         }
 
         /// <summary>

@@ -36,13 +36,6 @@ namespace persistance.StubPersist
             LinkedList<ContenuVideoludique> listCV = new LinkedList<ContenuVideoludique>();
             LinkedList<Utilisateur> listUtilisateur = new LinkedList<Utilisateur>();
 
-
-            // crééer des contenus videoludiques et ajouter a liste
-
-            //listUtilisateur.AddLast(new Utilisateur()); // a suppress
-            //listCV.AddLast(new Film("t", new DateTime(0), new TimeSpan(0), "toto", new LinkedList<GenreGlobal>(), "toto.jpg"); // a suppress
-
-
             Uri TransformersStream = new Uri("https://www.netflix.com/search?q=transformers&jbv=70058026");
 
             Film Transformers = new Film(
@@ -111,6 +104,11 @@ namespace persistance.StubPersist
             listCV.AddLast(Transformers);
             listCV.AddLast(Avengers);
             listCV.AddLast(Falcon_Et_Le_Soldat_De_Lhiver);
+
+            listUtilisateur.AddLast(new Utilisateur("admin", "admin", "admin", new DateTime(1990, 1, 1), "Indefini"));
+            listUtilisateur.AddLast(new Utilisateur("Baptiste F.", "bafoucras", "Baptiste.FOUCRAS@etu.uca.fr",
+                new DateTime(2002, 10, 27), "Homme"));
+            listUtilisateur.AddLast(new Utilisateur("Julien T.", "jutheme", "Julien.THEME@etu.uca.fr", new DateTime(2002, 07, 21), "Homme"));
 
 
             return (listCV, listUtilisateur);

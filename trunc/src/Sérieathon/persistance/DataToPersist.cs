@@ -8,10 +8,11 @@ using System.Text;
 
 namespace persistance
 {
+    [DataContract]
     class DataToPersist
     {
         [OnDeserialized]
-        void InitReadOnly()
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
         {
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
             ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);

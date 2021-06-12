@@ -112,10 +112,10 @@ namespace persistance.DataContract
 
 
             // on enregistre d'abord la liste de ContenuVideoludique
-            var serializer = new DataContractSerializer(typeof(DataToPersist),
+            DataContractSerializer serializer = new DataContractSerializer(typeof(DataToPersist),
                 new DataContractSerializerSettings() { PreserveObjectReferences = true }) ; // permet de garder les références identiques
 
-            var options = new XmlWriterSettings() { Indent = true };
+            XmlWriterSettings options = new XmlWriterSettings() { Indent = true };
 
             using (TextWriter tw = File.CreateText(PersFile))
             {
