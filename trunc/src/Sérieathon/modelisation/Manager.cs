@@ -88,6 +88,7 @@ namespace modelisation
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
             UtilisateurCourant = null;
             ListCV = listCV;
+            Persistance = null;
         }
 
         /// <summary>

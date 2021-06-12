@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using modelisation;
+using persistance.StubPersist;
+using persistance.DataContract;
 using Sérieathon.converter;
 
 namespace Sérieathon
@@ -25,7 +27,8 @@ namespace Sérieathon
 
         public App()
         {
-           
+            // TheManager = Manager.GetInstanceWithPersist(Stub.GetInstance());
+            // TheManager.ChargerDonnees();
         }
 
         

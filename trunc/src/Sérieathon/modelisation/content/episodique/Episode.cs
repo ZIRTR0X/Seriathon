@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using modelisation.usefull_interfaces;
@@ -134,6 +135,27 @@ namespace modelisation.content.episodique
             Date = date;
             DureeEpisode = dureeEpisode;
             Description = description;
+        }
+
+        /// <summary>
+        /// permet de récuperer les infos d'affichage d'un épisode
+        /// </summary>
+        /// <param name="e">episode dont il faut retrouver les infos</param>
+        /// <returns>un tuple d'image et du numéro de saison auquel adhère l'épisode, égal a null et 0 si jamais trouvé</returns>
+        public (string image, int numSaison) RecupInfo(Episode e)
+        {
+            foreach(Serie s in Manager.GetInstance().ListCVR.Where(c => c is Serie))
+            {
+                foreach(Saison sa in s.ListSaisonsR)
+                {
+                    if (sa.ListEpisodesR.Contains(e))
+                    {
+                        return (s.Image, sa.NumSaison);
+                    }
+                }
+            }
+
+            return (null, -1);
         }
 
         /// <summary>

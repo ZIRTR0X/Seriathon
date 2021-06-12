@@ -41,6 +41,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\modelisation\modelisation.csproj" />
+    <ProjectReference Include="..\persistance\persistance.csproj" />
   </ItemGroup>
 
   <ItemGroup>

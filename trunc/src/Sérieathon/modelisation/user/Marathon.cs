@@ -18,7 +18,7 @@ namespace modelisation.user
     public class Marathon
     {
         [OnDeserialized]
-        void InitReadOnly()
+        void InitReadOnly(StreamingContext sc = new StreamingContext())
         {
             ListContenuR = new ReadOnlyCollection<IEstAjoutableAuMarathon>(ListContenu);
             GenresAnimes_possiblesR = new ReadOnlyDictionary<GenreAnime, List<Anime>>(GenresAnimes_possibles);
