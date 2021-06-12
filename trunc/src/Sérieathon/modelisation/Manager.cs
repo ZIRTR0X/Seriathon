@@ -64,7 +64,7 @@ namespace modelisation
             ListUtilisateurR = new ReadOnlyCollection<Utilisateur>(ListUtilisateur);
             UtilisateurCourant = null;
             ListCVR = new ReadOnlyCollection<ContenuVideoludique>(ListCV);
-
+            Persistance = null;
 
             AdminAdd();
         }
@@ -79,6 +79,9 @@ namespace modelisation
             AdminAdd();
         }
 
+        /// <summary>
+        /// déprécié car rends impossible la persistance
+        /// </summary>
         private Manager(List<Utilisateur> listUser, List<ContenuVideoludique> listCV)
         {
             ListUtilisateur = listUser;
@@ -88,7 +91,7 @@ namespace modelisation
         }
 
         /// <summary>
-        /// méthode pour créer un manager et retourner sa référence, ou bien si une instance existe déjà,
+        /// (déprécié car rends impossible la persistance) iméthode pour créer un manager et retourner sa référence, ou bien si une instance existe déjà,
         /// il retourne la référence de cette instance
         /// </summary>
         /// <returns></returns>
@@ -99,8 +102,16 @@ namespace modelisation
             return _singleton;
         }
 
+        public static Manager GetInstanceWithPersist(IPersistanceManager pm)
+        {
+            if (_singleton is null) _singleton = new Manager(pm);
+            // if (Persistance is null && !(pm is null)) Persistance = pm;
+
+            return _singleton;
+        }
+
         /// <summary>
-        /// méthode pour créer un manager avec arguments et retourner sa référence, ou bien si une instance existe déjà,
+        /// (déprécié car rends impossible la persistance) méthode pour créer un manager avec arguments et retourner sa référence, ou bien si une instance existe déjà,
         /// il retourne la référence de cette instance
         /// </summary>
         /// <param name="listUser">liste des utilisateurs a ajouter au manager</param>
@@ -183,7 +194,7 @@ namespace modelisation
 
         public void AdminAdd()
         {
-            Utilisateur Admin = new Utilisateur("a","admin","admin", new DateTime(1990, 10, 10),"Homme");
+            Utilisateur Admin = new Utilisateur("admin", "admin", "admin", new DateTime(1990, 1, 1), "Autre");
             ListUtilisateur.Add(Admin);
         }
 

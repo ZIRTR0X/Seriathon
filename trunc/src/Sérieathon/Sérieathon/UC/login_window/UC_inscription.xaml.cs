@@ -82,85 +82,34 @@ namespace Sérieathon.UC.login_window
             //DatedeNaissanceDataPicker.DisplayDateStart = new DateTime(1900, 1, 1);
             //DatedeNaissanceDataPicker.DisplayDateEnd = Date2;
 
-            if (string.IsNullOrWhiteSpace(pseudotextbox)) { (new Inscription_erreur6()).ShowDialog(); return; }
-            if (string.IsNullOrWhiteSpace(emailtextbox)) { (new Inscription_erreur4()).ShowDialog(); return; }
-            if (string.IsNullOrWhiteSpace(comboboxgenre)) { (new Inscription_erreur5()).ShowDialog(); return; }
-            if(string.IsNullOrWhiteSpace(Mdp1) || string.IsNullOrWhiteSpace(Mdp2)) { (new Inscription_erreur3()).ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(pseudotextbox)) { new Inscription_erreur6().ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(emailtextbox)) { new Inscription_erreur4().ShowDialog(); return; }
+            if (string.IsNullOrWhiteSpace(comboboxgenre)) { new Inscription_erreur5().ShowDialog(); return; }
+            if(string.IsNullOrWhiteSpace(Mdp1) || string.IsNullOrWhiteSpace(Mdp2)) { new Inscription_erreur3().ShowDialog(); return; }
 
             if (Mdp1.Equals(Mdp2))
             {
                 NouvelUtilisateur.Password = Mdp1;
                 if (TheManager.AjouterUtilisateur(NouvelUtilisateur))
                 {
-                    Seriathon main_window = new Seriathon();
-                    main_window.Show();
+                    foreach(Window w in (App.Current as App).Windows)
+                    {
+                        if(w is Accueil a)
+                        {
+                            a.accueil_content_control.Content = new UC_connexion();
+                        }
+                    }
 
-                    (App.Current as App).MainWindow.Close();
                 }
                 else
                 {
-                    (new Inscription_erreur2()).ShowDialog();
+                    new Inscription_erreur2().ShowDialog();
                 }
             }
             else
             {
-                (new Inscription_erreur()).ShowDialog();
+                new Inscription_erreur().ShowDialog();
             }
-
-            /*if (!string.IsNullOrWhiteSpace(pseudotextbox))
-            {
-                if (!string.IsNullOrWhiteSpace(emailtextbox))
-                {
-                    if (!string.IsNullOrWhiteSpace(comboboxgenre))
-                    {
-                        if (!string.IsNullOrWhiteSpace(Mdp1) && !string.IsNullOrWhiteSpace(Mdp2))
-                        {
-                            if (Mdp1.Equals(Mdp2))
-                            {
-                                NouvelUtilisateur.Password = Mdp1;
-                                if (TheManager.AjouterUtilisateur(NouvelUtilisateur))
-                                {
-                                    Seriathon main_window = new Seriathon();
-                                    main_window.Show();
-
-                                    (App.Current as App).MainWindow.Close();
-                                }
-                                else
-                                {
-                                    (new Inscription_erreur2()).ShowDialog();
-                                }
-                            }
-                            else
-                            {
-                                (new Inscription_erreur()).ShowDialog();
-                            }
-                        }
-                        else
-                        {
-                            (new Inscription_erreur3()).ShowDialog();
-                        }
-                    }
-                    else
-                    {
-                        (new Inscription_erreur5()).ShowDialog();
-                    }
-                }
-                else
-                {
-                    (new Inscription_erreur4()).ShowDialog();
-                }
-            }
-            else
-            {
-                (new Inscription_erreur6()).ShowDialog();
-            }*/
-
-            
-
-            
-            
-
-         
         }
 
     }

@@ -171,9 +171,9 @@ namespace modelisation.user
         //propriétée calculée
 
         /// <summary>
-        /// Age de l'utilisateur, calculée depuis la différence entre la date d'aujourd'hui et celle de sa date de naissance
+        /// age précis de l'utilisateur
         /// </summary>
-        public int Age => new DateTime((DateTime.Today - DateDeNaissance).Ticks).Year;
+        public int Age => getAge();
 
         /// <summary>
         /// nombre de contenu vidéoludique vu par l'utilisateur
@@ -247,6 +247,24 @@ namespace modelisation.user
             Genre = genre;
             ListCVvu = listCVvu;
             MarathonPerso = m;
+        }
+
+
+        /// <summary>
+        /// calcule et retourne l'age précis de l'utilisateur a partir de sa date de naissance et de la date d'auourd'hui
+        /// </summary>
+        /// <returns>age de l'utilisateur</returns>
+        private int getAge()
+        {
+            int age = new DateTime((DateTime.Today - DateDeNaissance).Ticks).Year;
+
+            // problème -> si la personne est né vers fin d'année, alors fort risque d'une année de trop, pour pallier à ça on verifie que à la date d'aoujourd'hui moins l'age, l'anniv est passé
+            if (DateDeNaissance > DateTime.Today.AddYears(-age))
+            {
+                --age;
+            }
+
+            return age;
         }
 
         /// <summary>

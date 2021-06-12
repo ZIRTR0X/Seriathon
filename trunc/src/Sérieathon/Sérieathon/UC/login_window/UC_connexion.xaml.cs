@@ -65,7 +65,7 @@ namespace Sérieathon.UC.login_window
             }
             else
             {
-                (new Connexion_erreur()).ShowDialog();
+                new Connexion_erreur().ShowDialog();
             }
 
         }
