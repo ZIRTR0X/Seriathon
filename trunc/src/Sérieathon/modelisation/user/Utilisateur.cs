@@ -301,7 +301,7 @@ namespace modelisation.user
         /// <returns>une liste des films déjà vu par cet utilisateur</returns>
         public IEnumerable<Film> GetListFilmsVu()
         {
-            return (IEnumerable<Film>)ListCVvu.Where(c => c is Film);
+            return ListCVvu.Where(c => c is Film).Cast<Film>();
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace modelisation.user
         /// <returns>une liste des séries déjà vu par cet utilisateur</returns>
         public IEnumerable<Serie> GetListSeriesVu()
         {
-            return ListCVvu.Where(c => c is Serie && !(c is Anime)) as IEnumerable<Serie>;
+            return ListCVvu.Where(c => c is Serie && !(c is Anime)).Cast<Serie>();
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace modelisation.user
         /// <returns>une liste des animes déjà vu par cet utilisateur</returns>
         public IEnumerable<Anime> GetListAnimeVu()
         {
-            return ListCVvu.Where(c => c is Anime) as IEnumerable<Anime>;
+            return ListCVvu.Where(c => c is Anime).Cast<Anime>();
         }
 
         /// <summary>
@@ -361,7 +361,7 @@ namespace modelisation.user
             TimeSpan heure = new TimeSpan();
             foreach (ContenuVideoludique l in ListCVvu)
             {
-                heure = +l.Duree;
+                heure += l.Duree;
             }
             return heure;
         }
@@ -470,36 +470,6 @@ namespace modelisation.user
             }
             return nbmois;
         }
-
-
-        /// <summary>
-        /// Retourne le nombre de film vu
-        /// </summary>
-        /// <returns></returns>
-        public int GetNbFilmVu()
-        {
-            return ListCVvu.Count(c => c is Film);
-        }
-
-        /// <summary>
-        /// Retourne le nombre de serie vu
-        /// </summary>
-        /// <returns></returns>
-        public int GetNbSerieVu()
-        {
-            return ListCVvu.Count(c => c is Serie);
-        }
-
-        /// <summary>
-        /// Retourne le nombre de anime vu
-        /// </summary>
-        /// <returns></returns>
-        public int GetNbAnimeVu()
-        {
-            return ListCVvu.Count(c => c is Anime);
-        }
-
-
 
         /// <summary>
         /// Permet de récupérer une liste d'anime contenant le genre d'anime demandé

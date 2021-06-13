@@ -11,6 +11,7 @@ using Sérieathon.UC.main_window.Marathon.marathon_windows;
 using Sérieathon.UC.main_window.Profile;
 using Sérieathon.UC.main_window.Marathon.Creation_marathon;
 using Sérieathon.UC.main_window.page_principale;
+using Sérieathon.UC.main_window.Marathon.InfoCV;
 
 namespace Sérieathon.converter
 {
@@ -27,7 +28,8 @@ namespace Sérieathon.converter
             NEWMARATHON5,
             GENREANIME,
             GENREGLOBAL,
-            LEMARATHON
+            LEMARATHON,
+            INFOCV
         }
 
         public static Dictionary<Etat, Func<UserControl>> FactoryUC = new Dictionary<Etat, Func<UserControl>>
@@ -42,6 +44,7 @@ namespace Sérieathon.converter
             [Etat.GENREANIME] = () => new UC_NouveauMarathon3_5_Anime(),
             [Etat.GENREGLOBAL] = () => new UC_NouveauMarathon3_5_FilmEtSerie(),
             [Etat.LEMARATHON] = () => new UC_Marathon(),
+            [Etat.INFOCV] = () => new InfoCV(),
         };
 
         public event PropertyChangedEventHandler PropertyChanged;

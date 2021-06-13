@@ -34,9 +34,9 @@ namespace Sérieathon.UC.main_window.Profile
             InitializeComponent();
             TheManager.test();
             NombreCVVue();
-            StatsTempsPasse();
             StatsGenresFavori();
             StatsRealisateursFavori();
+            StatsTempsPasse();
         }
 
         /// <summary>
@@ -44,11 +44,11 @@ namespace Sérieathon.UC.main_window.Profile
         /// </summary>
         public void NombreCVVue()
         {
-            int nBAnime = TheManager.UtilisateurCourant.GetNbAnimeVu();
+            int nBAnime = TheManager.UtilisateurCourant.NbAnimeVu;
             NBAnime = nBAnime.ToString();
-            int nBFilm = TheManager.UtilisateurCourant.GetNbFilmVu();
+            int nBFilm = TheManager.UtilisateurCourant.NbFilmVu;
             NBFilm = nBFilm.ToString();
-            int nBSerie = TheManager.UtilisateurCourant.GetNbSerieVu();
+            int nBSerie = TheManager.UtilisateurCourant.NbSerieVu;
             NBSerie = nBSerie.ToString();
             StatNbSerie.Text = NBSerie;
             StatNbFilm.Text = NBFilm;

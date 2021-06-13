@@ -28,6 +28,7 @@
         </Style>
         <Style TargetType="ListBox">
             <Setter Property="Background" Value="#36393F"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#2F3136"/>
@@ -74,6 +75,10 @@
         <Style TargetType="TextBox">
             <Setter Property="Background" Value="#777c88"/>
             <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="#5A6069"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
     </Application.Resources>
 </Application>

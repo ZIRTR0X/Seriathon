@@ -22,14 +22,10 @@
         <TextBlock Text="Genres Favoris" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
         <TextBlock Text="Réalisateurs Favoris" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
         <TextBlock Text="Nombre de film/ série/ anime regardé" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
-        <ScrollViewer  Grid.Row="1" Grid.Column="1">
-            <ListBox x:Name="GenreFavorie"/>
-        </ScrollViewer>
-        <ScrollViewer  Grid.Row="1" Grid.Column="2">
-            <ListBox x:Name="RealisateurFavorie"/>
-        </ScrollViewer>
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="GenreFavorie" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <ListBox Grid.Row="1" Grid.Column="2" x:Name="RealisateurFavorie" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
 
-        <Canvas Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
+            <Canvas Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
             <Rectangle Height="88" Stroke="Gray" Fill="Gray" RadiusX="30" RadiusY="30" Width="210" Canvas.Left="5" Canvas.Top="0"/>
             <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="151" Canvas.Top="8"/>
             <Rectangle Height="69" Stroke="Black" Fill="Black" RadiusX="30" RadiusY="30" Width="4" Canvas.Left="42" Canvas.Top="8"/>

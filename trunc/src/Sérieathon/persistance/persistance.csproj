@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Baptiste\1A_IUT\P4\IHM_CSharp\ProjetP4\trunc\src\Sérieathon\bin\</OutputPath>
+    <OutputPath>D:\cours\1A\Csharp\trunc\src\Sérieathon\bin\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.902-prerelease" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\modelisation\modelisation.csproj" />

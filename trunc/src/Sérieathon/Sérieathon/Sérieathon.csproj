@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Baptiste\1A_IUT\P4\IHM_CSharp\ProjetP4\trunc\src\Sérieathon\bin\</OutputPath>
+    <OutputPath>D:\cours\1A\Csharp\trunc\src\Sérieathon\bin\</OutputPath>
     <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.1.1-ci2558" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.902-prerelease" />
   </ItemGroup>
 
   <ItemGroup>

@@ -173,7 +173,7 @@ namespace modelisation.content
         /// répertorie tout les liens pour aller voir le contenu, ne pouvant être null
         /// </summary>
         [DataMember]
-        private List<Uri> OuRegarder
+        public List<Uri> OuRegarder
         {
             get => _ouRegarder;
 

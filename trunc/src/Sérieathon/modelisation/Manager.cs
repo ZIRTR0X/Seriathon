@@ -8,6 +8,7 @@ using System.Runtime.Serialization;
 using static modelisation.genres.GenreAnime;
 using static modelisation.genres.GenreGlobal;
 using System.IO;
+using modelisation.content.episodique;
 
 namespace modelisation
 {
@@ -18,6 +19,9 @@ namespace modelisation
     {
         public int Nb_jour { get; set; }
         public int Nb_heure { get; set; }
+        public Film FilmCourant { get; set; }
+        public Serie SerieCourant { get; set; }
+        public Anime AnimeCourant { get; set; }
 
         [OnDeserialized]
         void InitReadOnly()
@@ -236,11 +240,36 @@ namespace modelisation
 
         }
 
+        public void FilmCourants(Film f)
+        {
+            FilmCourant = f;
+        }
+        public void SerieCourants(Serie s)
+        {
+            SerieCourant = s;
+        }
+        public void AnimeCourants(Anime a)
+        {
+            AnimeCourant = a;
+        }
+
         public void test()
         {
             foreach (ContenuVideoludique c in ListCV)
             {
-                if(c.Titre == "Avengers")
+                if (c.Titre == "Le Hobbit")
+                {
+                    UtilisateurCourant.AddCVvu(c);
+                }
+                if (c.Titre == "Avengers")
+                {
+                    UtilisateurCourant.AddCVvu(c);
+                }
+                if (c.Titre == "CaptainAmerica")
+                {
+                    UtilisateurCourant.AddCVvu(c);
+                }
+                if (c.Titre == "The Irishman")
                 {
                     UtilisateurCourant.AddCVvu(c);
                 }
