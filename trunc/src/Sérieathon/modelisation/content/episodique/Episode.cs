@@ -106,6 +106,12 @@ namespace modelisation.content.episodique
 
         public (string titre, string image, int numSaison) Infos => Episode.RecupInfo(this);
 
+        public string TitreSerie => Infos.titre;
+
+        public string ImageSerie => Infos.image;
+
+        public int NumSaison => Infos.numSaison;
+
         /// <summary>
         /// Constructeur de la classe Episode, sans description
         /// </summary>

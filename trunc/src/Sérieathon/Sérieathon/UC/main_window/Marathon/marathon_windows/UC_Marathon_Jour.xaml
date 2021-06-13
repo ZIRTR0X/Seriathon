@@ -13,10 +13,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Jour 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Jour 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-        <ListBox Background="Transparent" x:Name="listBoxEpisode" ItemsSource="{Binding ListEpisode}">
+        <ListBox Background="Transparent" x:Name="listBoxEpisode" ItemsSource="{Binding ListEpisode}" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal"/>
@@ -25,12 +26,11 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <parts:UC_Marathon_Episode/>
-                    <!--<TextBlock Text="Coucou"/>-->
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox Background="Transparent" x:Name="listBoxFilm" ItemsSource="{Binding ListFilm}">
+        <ListBox Background="Transparent" x:Name="listBoxFilm" ItemsSource="{Binding ListFilm}" Grid.Row="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal"/>

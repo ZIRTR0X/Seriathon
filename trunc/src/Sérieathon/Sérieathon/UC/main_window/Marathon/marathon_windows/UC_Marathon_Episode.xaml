@@ -18,11 +18,11 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Infos.titre}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding TitreSerie}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="S 1 Ep 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <CheckBox Click="Vue_CheckBox_Click" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="CheckVu">
             <TextBlock Text="Pas vu" x:Name="CheckVuText" />
         </CheckBox>
-        <Image Source="{Binding Infos.image, Converter={StaticResource converterString2Image}}" Grid.RowSpan="3" Grid.Column="0" Grid.Row="0"/>
+        <Image Source="{Binding ImageSerie, Converter={StaticResource converterString2Image}}" Grid.RowSpan="3" Grid.Column="0" Grid.Row="0" MaxWidth="100"/>
     </Grid>
 </UserControl>
