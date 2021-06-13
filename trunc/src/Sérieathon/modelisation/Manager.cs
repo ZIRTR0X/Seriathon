@@ -45,6 +45,7 @@ namespace modelisation
         /// </summary>
         public Utilisateur UtilisateurCourant { get; private set; }
 
+
         /// <summary>
         /// wrapper de ListCV
         /// </summary>

@@ -18,17 +18,34 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Marathon " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-                <Button Grid.Column="1" Height="40" Width="150" Click="supprimer_buton_click" Style="{StaticResource ButtonRetour}">
+                <Button Grid.Column="1" Height="40" Width="150" Click="Supprimer_button_click" Style="{StaticResource ButtonRetour}">
                     <WrapPanel>
                         <Image Source="../../../../image/utile/cancel.png" Width="30" HorizontalAlignment="Left"/>
                         <TextBlock Text=" Supprimer" VerticalAlignment="Center"/>
                     </WrapPanel>
                 </Button>
             </Grid>
-            <WrapPanel Orientation="Vertical">
+
+
+            <ScrollViewer x:Name="defileur"
+                      HorizontalAlignment="Stretch"
+                      CanContentScroll="true">
+                <WrapPanel x:Name="content_marathon_wp" Orientation="Vertical">
+                </WrapPanel>
+            </ScrollViewer>
+
+            <!--<ListBox Background="Transparent" ItemsSource="{Binding ListJournalifie}" x:Name="listBox_affichage">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <local:UC_Marathon_Jour/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>-->
+
+            <!--<WrapPanel Orientation="Vertical">
                 <local:UC_Marathon_Jour/>
                 <local:UC_Marathon_Jour/>
-            </WrapPanel>
+            </WrapPanel>-->
 
         </DockPanel>
     </ScrollViewer>

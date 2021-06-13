@@ -1,4 +1,6 @@
-﻿using Sérieathon.Information_Vues;
+﻿using modelisation;
+using modelisation.usefull_interfaces;
+using Sérieathon.Information_Vues;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,12 +21,27 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
     /// </summary>
     public partial class UC_Marathon : UserControl
     {
+        Manager TheManager { get; set; } = (App.Current as App).TheManager;
+        public List<List<IEstAjoutableAuMarathon>> ListJournalifie { get; private set; }
+
+
         public UC_Marathon()
         {
             InitializeComponent();
+            //DataContext = TheManager.UtilisateurCourant.MarathonPerso;
+            ListJournalifie = TheManager.UtilisateurCourant.MarathonPerso.getListJournalifie();
+            DataContext = this;
+
+            // au cas où il y a des éléments déjà présent
+            content_marathon_wp.Children.Clear();
+
+            foreach (List<IEstAjoutableAuMarathon> l in ListJournalifie) {
+                content_marathon_wp.Children.Add(new UC_Marathon_Jour(l));
+            }
+
         }
 
-        private void supprimer_buton_click(object sender, RoutedEventArgs e)
+        private void Supprimer_button_click(object sender, RoutedEventArgs e)
         {
             (new Suppression_confirmation()).ShowDialog();
         }

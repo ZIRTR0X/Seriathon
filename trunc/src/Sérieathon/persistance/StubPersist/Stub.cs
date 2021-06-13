@@ -49,7 +49,7 @@ namespace persistance.StubPersist
                 new List<Uri> { TransformersStream },
                 new List<Langues> { Français },
                 new List<Langues> { Français },
-                "Transformers.jpeg",
+                "Transformers.jpg",
                 new List<string> { "Shia LaBeouf" }
 
             );

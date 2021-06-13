@@ -104,6 +104,8 @@ namespace modelisation.content.episodique
         [DataMember]
         public string Description { get; set; }
 
+        public (string titre, string image, int numSaison) Infos => Episode.RecupInfo(this);
+
         /// <summary>
         /// Constructeur de la classe Episode, sans description
         /// </summary>
@@ -142,7 +144,7 @@ namespace modelisation.content.episodique
         /// </summary>
         /// <param name="e">episode dont il faut retrouver les infos</param>
         /// <returns>un tuple d'image et du numéro de saison auquel adhère l'épisode, égal a null et 0 si jamais trouvé</returns>
-        public (string image, int numSaison) RecupInfo(Episode e)
+        public static (string titre, string image, int numSaison) RecupInfo(Episode e)
         {
             foreach(Serie s in Manager.GetInstance().ListCVR.Where(c => c is Serie))
             {
@@ -150,12 +152,12 @@ namespace modelisation.content.episodique
                 {
                     if (sa.ListEpisodesR.Contains(e))
                     {
-                        return (s.Image, sa.NumSaison);
+                        return (s.Titre, s.Image, sa.NumSaison);
                     }
                 }
             }
 
-            return (null, -1);
+            return (null, null, -1);
         }
 
         /// <summary>

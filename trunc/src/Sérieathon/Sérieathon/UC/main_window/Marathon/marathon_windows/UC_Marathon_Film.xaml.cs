@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Sérieathon.UC.main_window.Marathon.marathon_windows
+{
+    /// <summary>
+    /// Interaction logic for UC_Marathon_Film.xaml
+    /// </summary>
+    public partial class UC_Marathon_Film : UserControl
+    {
+        public UC_Marathon_Film()
+        {
+            InitializeComponent();
+        }
+
+        private void Vue_CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckVuText.Text == "Pas vu")
+            {
+                CheckVu.Content = "Vu";
+            }
+
+            if (CheckVuText.Text == "Vu")
+            {
+                CheckVu.Content = "Pas vu";
+            }
+
+        }
+    }
+}

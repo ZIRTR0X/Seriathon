@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Sérieathon.UC.main_window.Marathon.marathon_windows"
+             xmlns:parts="clr-namespace:Sérieathon.UC.main_window.Marathon.marathon_windows"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -15,11 +15,39 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Jour 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <WrapPanel Grid.Row="1">
+
+        <ListBox Background="Transparent" x:Name="listBoxEpisode" ItemsSource="{Binding ListEpisode}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <parts:UC_Marathon_Episode/>
+                    <!--<TextBlock Text="Coucou"/>-->
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox Background="Transparent" x:Name="listBoxFilm" ItemsSource="{Binding ListFilm}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <parts:UC_Marathon_Film/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--<WrapPanel Grid.Row="1">
             <local:UC_Marathon_Episode/>
             <local:UC_Marathon_Episode Height="100" Width="200" Margin="20"/>
             <local:UC_Marathon_Episode Height="100" Width="200" Margin="20"/>
-        </WrapPanel>
+        </WrapPanel>-->
 
     </Grid>
 </UserControl>

@@ -46,6 +46,44 @@ namespace modelisation.user
         }
         private TimeSpan _duree;
 
+        [DataMember]
+        public int NbJour
+        {
+            get => _nbJour;
+
+            private set
+            {
+                if(value <= 0)
+                {
+                    _nbJour = 1;
+                }
+                else
+                {
+                    _nbJour = value;
+                }
+            }
+        }
+        private int _nbJour;
+
+        [DataMember]
+        public int NbHeureParJour
+        {
+            get => _nbHeureParJour;
+
+            private set
+            {
+                if (value <= 0)
+                {
+                    _nbHeureParJour = 1;
+                }
+                else
+                {
+                    _nbHeureParJour = value;
+                }
+            }
+        }
+        private int _nbHeureParJour;
+
         /// <summary>
         /// wrapper ListContenu
         /// </summary>
@@ -126,6 +164,8 @@ namespace modelisation.user
 
         public Marathon(int nbJour, int nbHeureParJour)
         {
+            NbJour = nbJour;
+            NbHeureParJour = nbHeureParJour;
             Duree = new TimeSpan((nbJour * nbHeureParJour), 0, 0);
             ListContenu = new List<IEstAjoutableAuMarathon>();
             ListContenuR = new ReadOnlyCollection<IEstAjoutableAuMarathon>(ListContenu);
@@ -138,12 +178,32 @@ namespace modelisation.user
 
         }
 
-        public Marathon(TimeSpan duree)
+        /// <summary>
+        /// permet de récuperer une liste de liste, chaque sous liste représentant les contenus a voir sur une journée
+        /// </summary>
+        /// <returns>une liste de liste de IEstAjoutableAuMarathon</returns>
+        public List<List<IEstAjoutableAuMarathon>> getListJournalifie()
         {
-            Duree = duree;
-            ListContenu = new List<IEstAjoutableAuMarathon>();
-            GenresAnimes_possibles = new Dictionary<GenreAnime, List<Anime>>();
-            GenresGlobaux_possibles = new Dictionary<GenreGlobal, List<ContenuVideoludique>>();
+            List<List<IEstAjoutableAuMarathon>> rendu = new List<List<IEstAjoutableAuMarathon>>();
+            List<IEstAjoutableAuMarathon> copie = new List<IEstAjoutableAuMarathon>(ListContenu);
+            TimeSpan dureeMaxJour = new TimeSpan(NbHeureParJour, 0, 0);
+
+            while (copie.Count != 0)
+            {
+                List<IEstAjoutableAuMarathon> list_jour = new List<IEstAjoutableAuMarathon>();
+                TimeSpan duree_jour = new TimeSpan(0);
+
+                while(duree_jour < dureeMaxJour && copie.Count > 0)
+                {
+                    list_jour.Add(copie[0]);
+                    if(copie[0] is Film f) { duree_jour = duree_jour.Add(f.Duree); }
+                    if(copie[0] is Episode e) { duree_jour = duree_jour.Add(e.DureeEpisode); }
+                    copie.RemoveAt(0);
+                }
+                rendu.Add(list_jour);
+            }
+
+            return rendu;
         }
 
         /// <summary>
