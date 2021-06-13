@@ -36,7 +36,7 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
             content_marathon_wp.Children.Clear();
 
             foreach (List<IEstAjoutableAuMarathon> l in ListJournalifie) {
-                content_marathon_wp.Children.Add(new UC_Marathon_Jour(l));
+                content_marathon_wp.Children.Add(new UC_Marathon_Jour(l, this));
             }
 
         }

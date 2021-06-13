@@ -353,6 +353,18 @@ namespace modelisation.user
         }
 
         /// <summary>
+        /// permet de savoir si un utilisateur a vu un contenu
+        /// </summary>
+        /// <param name="cv">contenu dont on veut savoir s'il a été vu</param>
+        /// <returns>true s'il a été vu, donc s'il est présent dans la list ListCVvu, sinon false</returns>
+        public bool AVu(ContenuVideoludique cv)
+        {
+            if (cv is null) throw new Exception("ref null");
+
+            return ListCVvu.Contains(cv);
+        }
+
+        /// <summary>
         /// Retourne la durée total des conteneus vidéoludiques visioné en TimeSpan
         /// </summary>
         /// <returns></returns>

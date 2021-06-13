@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Fenetre\Streaming.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Information_Vues\CreationMarathon_erreur1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,9 +75,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Fenetre\Streaming.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Information_Vues\CreationMarathon_erreur1.xaml">
       <SubType>Designer</SubType>
     </Page>

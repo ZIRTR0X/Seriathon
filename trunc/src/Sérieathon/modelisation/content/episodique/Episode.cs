@@ -167,6 +167,27 @@ namespace modelisation.content.episodique
         }
 
         /// <summary>
+        /// recupère la référence de la série auquel appartient l'épisode
+        /// </summary>
+        /// <param name="e">episode dont on cherche la série</param>
+        /// <returns>la référence sur la série, null si non trouvée</returns>
+        public static Serie RecupRefSerie(Episode e)
+        {
+            foreach (Serie s in Manager.GetInstance().ListCVR.Where(c => c is Serie))
+            {
+                foreach (Saison sa in s.ListSaisonsR)
+                {
+                    if (sa.ListEpisodesR.Contains(e))
+                    {
+                        return s;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Retourne la description détaillée (Nom, durée et descriptif de l'épisode) sous la forme d'un string
         /// </summary>
         /// <returns>un string contenant toutes les informations décrivant l'instance</returns>
@@ -209,8 +230,8 @@ namespace modelisation.content.episodique
         /// <returns>un int représentant l'instance sous une représentation numérique</returns>
         public override int GetHashCode()
         {
-            return ((Nom.GetHashCode() * 29) + NumEpisode * 7 + (Date.GetHashCode() * 3)
-                + (DureeEpisode.GetHashCode() * 31) + (Description.GetHashCode() * 11)) * 2;
+            return ((Nom.GetHashCode() * 2) + NumEpisode * 2 + (Date.GetHashCode() * 3)
+                + (DureeEpisode.GetHashCode() * 3) + (Description.GetHashCode() * 2));
         }
     }
 }

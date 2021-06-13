@@ -9,6 +9,7 @@ using static modelisation.genres.GenreAnime;
 using static modelisation.genres.GenreGlobal;
 using System.IO;
 using modelisation.content.episodique;
+using modelisation.genres;
 
 namespace modelisation
 {
@@ -274,6 +275,7 @@ namespace modelisation
                     UtilisateurCourant.AddCVvu(c);
                 }
             }
+            UtilisateurCourant.AddCVvu(new Film("t", new DateTime(0), new TimeSpan(0), "t", new List<GenreGlobal> { GenreGlobal.Aventure}, "void.jpg", new List<string> { "toto" }));
             
             
         }

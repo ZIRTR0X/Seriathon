@@ -27,6 +27,8 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
         public List<Film> ListFilm { get; private set; }
         public List<Episode> ListEpisode { get; private set; }
 
+        public UC_Marathon Uc { get; private set; }
+
         public UC_Marathon_Jour()
         {
 
@@ -36,9 +38,11 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
             DataContext = this;
         }
 
-        public UC_Marathon_Jour(IEnumerable<IEstAjoutableAuMarathon> l)
+        public UC_Marathon_Jour(IEnumerable<IEstAjoutableAuMarathon> l, UC_Marathon uc)
         {
             InitializeComponent();
+            Uc = uc;
+
             TriListes(l);
 
             DataContext = this;

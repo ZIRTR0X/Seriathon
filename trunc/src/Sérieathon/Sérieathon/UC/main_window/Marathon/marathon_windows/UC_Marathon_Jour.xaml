@@ -25,7 +25,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <parts:UC_Marathon_Episode/>
+                    <parts:UC_Marathon_Episode Episode_Affiche="{Binding}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -38,7 +38,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <parts:UC_Marathon_Film/>
+                    <parts:UC_Marathon_Film Film_affiche="{Binding}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

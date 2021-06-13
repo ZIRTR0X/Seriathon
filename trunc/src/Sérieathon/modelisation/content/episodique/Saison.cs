@@ -246,7 +246,13 @@ namespace modelisation.content.episodique
         public override int GetHashCode()
         {
             int hashCode = NumSaison * 3;
-            return (hashCode + ListEpisodes.Sum(e => e.GetHashCode())) * 2;
+            foreach(Episode e in ListEpisodes)
+            {
+                hashCode += e.GetHashCode();
+                // fort risque de débordement de int, donc si il s'en approche on remet a 0
+                if(hashCode > 2147482000) { hashCode = NumSaison * 3; }
+            }
+            return hashCode;
         }
     }
 }
