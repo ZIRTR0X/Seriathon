@@ -46,7 +46,7 @@
                             <ColumnDefinition Width="270"/>
                             <ColumnDefinition Width="90"/>
                         </Grid.ColumnDefinitions>
-                        <Button Background="Transparent" BorderBrush="Transparent">
+                        <Button Background="Transparent" BorderBrush="#928F19">
                             <TextBlock Text="{Binding Titre}" Width="250" HorizontalAlignment="Left"/>
                         </Button>
                         <TextBlock Grid.Column="2" Text="{Binding Duree}" Width="90"/>

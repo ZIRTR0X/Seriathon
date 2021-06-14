@@ -521,7 +521,7 @@ namespace persistance.StubPersist
                 new List<Uri> { TheIrishmanStream },
                 new List<Langues> { Français },
                 new List<Langues> { Français },
-                "TheIrishman.jpg",
+                "TheIrishman.png",
                 new List<string> { "Robert de Niro" }
             );
 

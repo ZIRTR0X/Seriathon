@@ -275,7 +275,6 @@ namespace modelisation
                     UtilisateurCourant.AddCVvu(c);
                 }
             }
-            UtilisateurCourant.AddCVvu(new Film("t", new DateTime(0), new TimeSpan(0), "t", new List<GenreGlobal> { GenreGlobal.Aventure}, "void.jpg", new List<string> { "toto" }));
             
             
         }

@@ -21,7 +21,7 @@
 
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{Binding Titre}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource FontSize25}"/>
-        <TextBlock Grid.Row="1" x:Name="TextBlockDate" FontSize="10"/>
+        <TextBlock Grid.Row="1" x:Name="TextBlockDate" Text="{Binding Date}" FontSize="10"/>
         <TextBlock Grid.Row="2" Text="" HorizontalAlignment="Center"/>
         <ScrollViewer  Grid.Row="3" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <TextBlock TextWrapping="Wrap" Margin="10" Text="{Binding Description}"/>
@@ -44,10 +44,10 @@
             <TextBlock Grid.Row="3" Text="Audio"/>
             <TextBlock Grid.Row="4" Text="Sous-titres"/>
             <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Realisateur}"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Acteurs}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ActeursR}"/>
             <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding StudioProduction}"/>
             <TextBlock Grid.Row="3" Grid.Column="1" x:Name="TextBlockAudio"/>
-            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding SousTitres}"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding SousTitresR}"/>
         </Grid>
         <Button Grid.Column="1" Grid.Row="4" Click="Streaming_Button_Click" Content="Streaming" Width="110" Height="40"/>
         <CheckBox Content="Pas vue" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
