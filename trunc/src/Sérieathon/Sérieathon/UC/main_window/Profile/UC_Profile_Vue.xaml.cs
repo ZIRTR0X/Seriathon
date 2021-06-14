@@ -30,7 +30,6 @@ namespace Sérieathon.UC.main_window.Profile
         public UC_Profile_Vue()
         {
             InitializeComponent();
-            //AjouterListVu();
             ListFilmsVues = new List<Film>(TheManager.UtilisateurCourant.GetListFilmsVu());
             ListSeriesVues = new List<Serie>(TheManager.UtilisateurCourant.GetListSeriesVu());
             ListAnimesVues = new List<Anime>(TheManager.UtilisateurCourant.GetListAnimeVu());
@@ -49,6 +48,34 @@ namespace Sérieathon.UC.main_window.Profile
                 {
                     TheManager.FilmCourants(f);
                     NavNavBar.EtatCourant = NavNavBar.Etat.INFOCV;
+                }
+            }
+        }
+
+        private void ListBoxSerie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string b = (ListBoxSerie.SelectedItem as Serie).Titre;
+
+            foreach (Serie s in ListSeriesVues)
+            {
+                if (s.Titre == b)
+                {
+                    TheManager.SerieCourants(s);
+                    NavNavBar.EtatCourant = NavNavBar.Etat.INFOCVSERIE;
+                }
+            }
+        }
+
+        private void ListBoxAnime_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string b = (ListBoxAnime.SelectedItem as Anime).Titre;
+
+            foreach (Anime a in ListAnimesVues)
+            {
+                if (a.Titre == b)
+                {
+                    TheManager.SerieCourants(a);
+                    NavNavBar.EtatCourant = NavNavBar.Etat.INFOCVSERIE;
                 }
             }
         }

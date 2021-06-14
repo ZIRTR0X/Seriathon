@@ -253,31 +253,7 @@ namespace modelisation
         {
             AnimeCourant = a;
         }
-
-        public void test()
-        {
-            foreach (ContenuVideoludique c in ListCV)
-            {
-                if (c.Titre == "Le Hobbit")
-                {
-                    UtilisateurCourant.AddCVvu(c);
-                }
-                if (c.Titre == "Avengers")
-                {
-                    UtilisateurCourant.AddCVvu(c);
-                }
-                if (c.Titre == "CaptainAmerica")
-                {
-                    UtilisateurCourant.AddCVvu(c);
-                }
-                if (c.Titre == "The Irishman")
-                {
-                    UtilisateurCourant.AddCVvu(c);
-                }
-            }
-            
-            
-        }
+   
+        
     }
-
 }

@@ -16,9 +16,9 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Film" Grid.Row="0"/>
-        <TextBlock Text="Série" Grid.Row="2"/>
-        <TextBlock Text="Anime" Grid.Row="4"/>
+        <TextBlock Text="Film" Grid.Row="0" Margin="30, 0, 0, 0" VerticalAlignment="Center" FontSize="25" TextDecorations="Underline"/>
+        <TextBlock Text="Série" Grid.Row="2" Margin="30, 0, 0, 0" VerticalAlignment="Center" FontSize="25" TextDecorations="Underline"/>
+        <TextBlock Text="Anime" Grid.Row="4" Margin="30, 0, 0, 0" VerticalAlignment="Center" FontSize="25" TextDecorations="Underline"/>
 
         <ListBox Grid.Row="1" x:Name="ListBoxFilm" ItemsSource="{Binding}" SelectionChanged="ListBoxFilm_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
@@ -37,26 +37,22 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox Grid.Row="3" x:Name="ListBoxSerie" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListBox Grid.Row="3" x:Name="ListBoxSerie" ItemsSource="{Binding}" SelectionChanged="ListBoxSerie_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="270"/>
-                            <ColumnDefinition Width="270"/>
-                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="400"/>
                         </Grid.ColumnDefinitions>
-                        <Button Background="Transparent" BorderBrush="#928F19">
-                            <TextBlock Text="{Binding Titre}" Width="250" HorizontalAlignment="Left"/>
-                        </Button>
-                        <TextBlock Grid.Column="2" Text="{Binding Duree}" Width="90"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Realisateur}" Width="250" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Titre}" Width="400" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Realisateur}" Width="250" HorizontalAlignment="Left"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox Grid.Row="5" x:Name="ListBoxAnime" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListBox Grid.Row="5" x:Name="ListBoxAnime" ItemsSource="{Binding}" SelectionChanged="ListBoxAnime_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -65,11 +61,8 @@
                             <ColumnDefinition Width="270"/>
                             <ColumnDefinition Width="90"/>
                         </Grid.ColumnDefinitions>
-                        <Button Background="Transparent" BorderBrush="Transparent">
-                            <TextBlock Text="{Binding Titre}" Width="250" HorizontalAlignment="Left"/>
-                        </Button>
-                        <TextBlock Grid.Column="2" Text="{Binding Duree}" Width="90"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Realisateur}" Width="250" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Titre}" Width="250" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="1" Text="{Binding StudioProduction}" Width="250" HorizontalAlignment="Left"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -1,5 +1,6 @@
 ﻿using modelisation;
 using modelisation.content;
+using modelisation.content.episodique;
 using modelisation.genres;
 using System;
 using System.Collections.Generic;

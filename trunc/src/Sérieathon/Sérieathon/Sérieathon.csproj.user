@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Fenetre\Streaming_Serie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Information_Vues\CreationMarathon_erreur1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +46,9 @@
     <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV_Serie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Fenetre\Streaming_Serie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Information_Vues\CreationMarathon_erreur1.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -109,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\InfoCV\InfoCV_Serie.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">

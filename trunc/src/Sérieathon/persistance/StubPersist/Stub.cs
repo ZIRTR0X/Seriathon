@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using static modelisation.genres.GenreGlobal;
+using static modelisation.genres.GenreAnime;
 using static modelisation.langues.Langues;
 
 namespace persistance.StubPersist
@@ -40,7 +41,7 @@ namespace persistance.StubPersist
 
             Film Transformers = new Film(
                 "Transformers",
-                new DateTime(2007),
+                new DateTime(2007, 1, 1),
                 new TimeSpan(2, 24, 0),
                 "Michael Bay",
                 "HollyWood",
@@ -59,7 +60,7 @@ namespace persistance.StubPersist
 
             Film Avengers = new Film(
                 "Avengers",
-                new DateTime(2012),
+                new DateTime(2012, 1, 1),
                 new TimeSpan(2, 24, 0),
                 "Joss Whedon",
                 "Marvel",
@@ -75,18 +76,18 @@ namespace persistance.StubPersist
 
             Uri Falcon_Et_Le_Soldat_De_LhiverStream = new Uri("https://www.disneyplus.com/fr-fr/series/falcon-et-le-soldat-de-lhiver/4gglDBMx8icA");
 
-            Episode Ep1FELSDL = new Episode("Un nouvel ordre", 1, new DateTime(2021), new TimeSpan(0, 50, 0), "Sam Wilson et Bucky Barnes comprennent que leur avenir sera tout sauf normal.");
-            Episode Ep2FELSDL = new Episode("L'homme à la Bannière étoilée", 2, new DateTime(2021), new TimeSpan(0, 50, 0), "John Walker devient Captain America. Sam et Bucky s'associent pour lutter contre des rebelles.");
-            Episode Ep3FELSDL = new Episode("Trafic d'influence", 3, new DateTime(2021), new TimeSpan(0, 54, 0), "Dans un refuge pour criminels, Sam et Bucky cherchent des informations sur le sérum du super-soldat.");
-            Episode Ep4FELSDL = new Episode("Le monde nous regarde", 4, new DateTime(2021), new TimeSpan(0, 54, 0), "John Walker perd patience avec Sam et Bucky, qui en apprennent davantage sur Karli Morgenthau.");
-            Episode Ep5FELSDL = new Episode("La vérité", 5, new DateTime(2021), new TimeSpan(1, 1, 0), "John Walker doit assumer les conséquences de ses actes. Sam et Bucky rentrent aux États-Unis.");
-            Episode Ep6FELSDL = new Episode("Un seul monde, un seul peuple", 6, new DateTime(2021), new TimeSpan(0, 52, 0), "Face à la montée en violence des Flag Smashers, Sam et Bucky passent à l'action.");
+            Episode Ep1FELSDL = new Episode("Un nouvel ordre", 1, new DateTime(2021, 1, 1), new TimeSpan(0, 50, 0), "Sam Wilson et Bucky Barnes comprennent que leur avenir sera tout sauf normal.");
+            Episode Ep2FELSDL = new Episode("L'homme à la Bannière étoilée", 2, new DateTime(2021, 1, 1), new TimeSpan(0, 50, 0), "John Walker devient Captain America. Sam et Bucky s'associent pour lutter contre des rebelles.");
+            Episode Ep3FELSDL = new Episode("Trafic d'influence", 3, new DateTime(2021, 1, 1), new TimeSpan(0, 54, 0), "Dans un refuge pour criminels, Sam et Bucky cherchent des informations sur le sérum du super-soldat.");
+            Episode Ep4FELSDL = new Episode("Le monde nous regarde", 4, new DateTime(2021, 1, 1), new TimeSpan(0, 54, 0), "John Walker perd patience avec Sam et Bucky, qui en apprennent davantage sur Karli Morgenthau.");
+            Episode Ep5FELSDL = new Episode("La vérité", 5, new DateTime(2021, 1, 1), new TimeSpan(1, 1, 0), "John Walker doit assumer les conséquences de ses actes. Sam et Bucky rentrent aux États-Unis.");
+            Episode Ep6FELSDL = new Episode("Un seul monde, un seul peuple", 6, new DateTime(2021, 1, 1), new TimeSpan(0, 52, 0), "Face à la montée en violence des Flag Smashers, Sam et Bucky passent à l'action.");
 
             Saison S1_Falcon_Et_Le_Soldat_De_Lhiver = new Saison(1, new List<Episode> { Ep1FELSDL, Ep2FELSDL, Ep3FELSDL, Ep4FELSDL, Ep5FELSDL, Ep6FELSDL });
 
             Serie Falcon_Et_Le_Soldat_De_Lhiver = new Serie(
                 "Falcon et le Soldat de l'hiver",
-                new DateTime(2021),
+                new DateTime(2021, 1, 1),
                 new TimeSpan(0, 0, 0),
                 "Joss Whedon",
                 "Marvel",
@@ -103,7 +104,7 @@ namespace persistance.StubPersist
 
             Film Thor = new Film(
                 "Thor",
-                new DateTime(2011),
+                new DateTime(2011, 1, 1),
                 new TimeSpan(1, 56, 0),
                 "Kenneth Branagh",
                 "Marvel",
@@ -121,7 +122,7 @@ namespace persistance.StubPersist
 
             Film BlackPanther = new Film(
                 "BlackPanther",
-                new DateTime(2018),
+                new DateTime(2018, 1, 1),
                 new TimeSpan(2, 17, 0),
                 "Ryan Coogler",
                 "Marvel",
@@ -138,7 +139,7 @@ namespace persistance.StubPersist
 
             Film CaptainAmerica = new Film(
                 "CaptainAmerica",
-                new DateTime(2011),
+                new DateTime(2011, 1, 1),
                 new TimeSpan(2, 6, 0),
                 "Joe Johnston",
                 "Marvel",
@@ -155,7 +156,7 @@ namespace persistance.StubPersist
 
             Film LesGardiensDeLaGalaxie = new Film(
                 "LesGardiensDeLaGalaxie",
-                new DateTime(2014),
+                new DateTime(2014, 1, 1),
                 new TimeSpan(2, 2, 0),
                 "James Gunn",
                 "Marvel",
@@ -172,7 +173,7 @@ namespace persistance.StubPersist
 
             Film AntMan = new Film(
                 "AntMan",
-                new DateTime(2015),
+                new DateTime(2015, 1, 1),
                 new TimeSpan(2, 0, 0),
                 "Peyton Reed",
                 "Marvel",
@@ -189,7 +190,7 @@ namespace persistance.StubPersist
 
             Film DoctorStrange = new Film(
                 "DoctorStrange",
-                new DateTime(2016),
+                new DateTime(2016, 1, 1),
                 new TimeSpan(1, 56, 0),
                 "Scott Derrickson",
                 "Marvel",
@@ -206,7 +207,7 @@ namespace persistance.StubPersist
 
             Film Deadpool = new Film(
                 "Deadpool",
-                new DateTime(2016),
+                new DateTime(2016, 1, 1),
                 new TimeSpan(1, 49, 0),
                 "Tim Miller",
                 "Marvel",
@@ -223,7 +224,7 @@ namespace persistance.StubPersist
 
             Film Logan = new Film(
                 "Logan",
-                new DateTime(2017),
+                new DateTime(2017, 1, 1),
                 new TimeSpan(2, 18, 0),
                 "James Mangold",
                 "Marvel",
@@ -240,7 +241,7 @@ namespace persistance.StubPersist
 
             Film XMen = new Film(
                 "XMen",
-                new DateTime(2000),
+                new DateTime(2000, 1, 1),
                 new TimeSpan(1, 44, 0),
                 "Bryan Singer",
                 "Marvel",
@@ -257,7 +258,7 @@ namespace persistance.StubPersist
 
             Film Alien = new Film(
                 "Alien",
-                new DateTime(1979),
+                new DateTime(1979, 1, 1),
                 new TimeSpan(1, 57, 0),
                 "Ridley Scott",
                 "20th Century Studios",
@@ -274,7 +275,7 @@ namespace persistance.StubPersist
 
             Film LeRituel = new Film(
                 "LeRituel",
-                new DateTime(2018),
+                new DateTime(2018, 1, 1),
                 new TimeSpan(1, 34, 0),
                 "David Bruckner",
                 "Inconnu",
@@ -291,7 +292,7 @@ namespace persistance.StubPersist
 
             Film Vendredi13 = new Film(
                 "Vendredi 13",
-                new DateTime(2009),
+                new DateTime(2009, 1, 1),
                 new TimeSpan(1, 37, 0),
                 "Marcus Nispel",
                 "Inconnu",
@@ -308,7 +309,7 @@ namespace persistance.StubPersist
 
             Film Ouija = new Film(
                 "Ouija",
-                new DateTime(2014),
+                new DateTime(2014, 1, 1),
                 new TimeSpan(1, 29, 0),
                 "Stiles White",
                 "Inconnu",
@@ -325,7 +326,7 @@ namespace persistance.StubPersist
 
             Film Annabelle = new Film(
                 "Annabelle",
-                new DateTime(2014),
+                new DateTime(2014, 1, 1),
                 new TimeSpan(1, 39, 0),
                 "John R. Leonetti",
                 "Inconnu",
@@ -342,7 +343,7 @@ namespace persistance.StubPersist
 
             Film LeHobbit = new Film(
                 "Le Hobbit",
-                new DateTime(2012),
+                new DateTime(2012, 1, 1),
                 new TimeSpan(2, 49, 0),
                 "Peter Jackson",
                 "Inconnu",
@@ -359,7 +360,7 @@ namespace persistance.StubPersist
 
             Film HarryPotter = new Film(
                 "Harry Potter",
-                new DateTime(2001),
+                new DateTime(2001, 1, 1),
                 new TimeSpan(2, 32, 0),
                 "Chris Columbus",
                 "Inconnu",
@@ -376,7 +377,7 @@ namespace persistance.StubPersist
 
             Film LeDernierMaitreDeLAir = new Film(
                 "Le Dernier Maitre De L'Air",
-                new DateTime(2010),
+                new DateTime(2010, 1, 1),
                 new TimeSpan(1, 44, 0),
                 "M. Night Shyamalan",
                 "Inconnu",
@@ -393,7 +394,7 @@ namespace persistance.StubPersist
 
             Film CinquanteNuancesDeGrey = new Film(
                 "Cinquante Nuances De Grey",
-                new DateTime(2015),
+                new DateTime(2015, 1, 1),
                 new TimeSpan(2, 5, 0),
                 "Sam Taylor-Johnson",
                 "Inconnu",
@@ -410,7 +411,7 @@ namespace persistance.StubPersist
 
             Film TroisCentsSoixanteCinqJours = new Film(
                 "365 Jours",
-                new DateTime(2020),
+                new DateTime(2020, 1, 1),
                 new TimeSpan(1, 54, 0),
                 "Barbara Bialowas",
                 "Inconnu",
@@ -427,7 +428,7 @@ namespace persistance.StubPersist
 
             Film SexeEntreAmis = new Film(
                 "Sexe Entre Amis",
-                new DateTime(2011),
+                new DateTime(2011, 1, 1),
                 new TimeSpan(1, 49, 0),
                 "Will Gluck",
                 "Inconnu",
@@ -444,7 +445,7 @@ namespace persistance.StubPersist
 
             Film Milf = new Film(
                 "Milf",
-                new DateTime(2018),
+                new DateTime(2018, 1, 1),
                 new TimeSpan(1, 41, 0),
                 "Axelle Laffont",
                 "Inconnu",
@@ -461,7 +462,7 @@ namespace persistance.StubPersist
 
             Film Zodiac = new Film(
                 "Zodiac",
-                new DateTime(2007),
+                new DateTime(2007, 1, 1),
                 new TimeSpan(2, 37, 0),
                 "David Fincher",
                 "Inconnu",
@@ -478,7 +479,7 @@ namespace persistance.StubPersist
 
             Film OceansEleven = new Film(
                 "Ocean's Eleven",
-                new DateTime(2001),
+                new DateTime(2001, 1, 1),
                 new TimeSpan(1, 57, 0),
                 "Steven Soderbergh",
                 "Inconnu",
@@ -495,7 +496,7 @@ namespace persistance.StubPersist
 
             Film LostGirls = new Film(
                 "Lost Girls",
-                new DateTime(2020),
+                new DateTime(2020, 1, 1),
                 new TimeSpan(1, 35, 0),
                 "Liz Garbus",
                 "Inconnu",
@@ -512,7 +513,7 @@ namespace persistance.StubPersist
 
             Film TheIrishman = new Film(
                 "The Irishman",
-                new DateTime(2019),
+                new DateTime(2019, 1, 1),
                 new TimeSpan(3, 29, 0),
                 "Martin Scorsese",
                 "Inconnu",
@@ -523,6 +524,131 @@ namespace persistance.StubPersist
                 new List<Langues> { Français },
                 "TheIrishman.png",
                 new List<string> { "Robert de Niro" }
+            );
+
+
+            Uri JujutsuKaisenStream = new Uri("https://www.crunchyroll.com/fr/jujutsu-kaisen");
+
+            Episode Ep1JK = new Episode("Ryomen Sukuna", 1, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep2JK = new Episode("Pour moi-même", 2, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep3JK = new Episode("La bâtisseuse", 3, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep4JK = new Episode("Naissance de la matrice", 4, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep5JK = new Episode("Naissance de la matrice (2)", 5, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep6JK = new Episode("Après la pluie", 6, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep7JK = new Episode("Attaque surprise", 7, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep8JK = new Episode("Ennui", 8, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep9JK = new Episode("Petit poisson et retour de bâton", 9, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep10JK = new Episode("Altération absolue",10, new DateTime(2020, 1, 1), new TimeSpan(0, 20, 0), "");
+
+            Saison S1_JujutsuKaisen = new Saison(1, new List<Episode> { Ep1JK, Ep2JK, Ep3JK, Ep4JK, Ep5JK, Ep6JK, Ep7JK, Ep8JK, Ep9JK, Ep10JK });
+
+            Anime JujutsuKaisen = new Anime(
+                "Jujutsu Kaisen",
+                new DateTime(2020, 1, 1),
+                new TimeSpan(0, 0, 0),
+                "Sunghoo Park",
+                "Mappa",
+                new List<GenreGlobal> { GenreGlobal.None },
+                "Souffrance, regrets, humiliations... les sentiments négatifs que ressentent les humains se transforment peu à peu en fléaux se cachant dans notre existence. Sévissant dans le monde entier, ils sont capables d'entraîner les gens dans de terribles malheurs et, parfois même, jusqu'à la mort. De plus, ces créatures ne peuvent être exorcisées que par un autre fléau. Lycéen ordinaire, Yuji Itadori est toutefois doté d'une force physique hors du commun. Un jour, pour sauver un ami attaqué par un fléau, il mange un des doigts du démon à deux visages, devenant à son tour un fléau. Dès lors, il partage son corps avec le démon...",
+                new List<Uri> { JujutsuKaisenStream },
+                new List<Langues> { Japonais },
+                new List<Langues> { Français },
+                "JujutsuKaisen.png",
+                new List<Saison> { S1_JujutsuKaisen },
+                new List<GenreAnime> { Shonen }
+            );
+
+            Uri FruitsBasketStream = new Uri("https://animedigitalnetwork.fr/video/fruits-basket");
+
+            Episode Ep1FB = new Episode("À ce soir !", 1, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep2FB = new Episode("Ce sont tous des animaux ! ", 2, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep3FB = new Episode("Jouons au président et au clochard ", 3, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep4FB = new Episode("De quel signe est-elle ? ", 4, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep5FB = new Episode("Je me trompais ", 5, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep6FB = new Episode("Ça te gênerait qu'on vienne chez toi? ", 6, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep7FB = new Episode("Elle devient le printemps", 7, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep8FB = new Episode("Amusez-vous bien ", 8, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep9FB = new Episode("Yuki est mon premier amour ", 9, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep10FB = new Episode("C'est la Saint-Valentin, après tout", 10, new DateTime(2019, 1, 1), new TimeSpan(0, 20, 0), "");
+
+            Saison S1_FruitsBasket = new Saison(1, new List<Episode> { Ep1FB, Ep2FB, Ep3FB, Ep4FB, Ep5FB, Ep6FB, Ep7FB, Ep8FB, Ep9FB, Ep10FB });
+
+            Anime FruitsBasket = new Anime(
+                "Fruits Basket ",
+                new DateTime(2019, 1, 1),
+                new TimeSpan(0, 0, 0),
+                "Yoshihide Ibata",
+                "TMS Entertainment",
+                new List<GenreGlobal> { GenreGlobal.None },
+                "Tohru Honda pensait sa vie vouée au malheur après qu’une tragédie familiale lui impose de vivre seule dans une tente. Lorsque son modeste logis est découvert par le mystérieux clan Soma, elle se retrouve soudain à vivre avec Yuki, Kyo et Shigure Soma. Mais elle découvre rapidement que la famille cache un secret des plus étranges : lors d’une étreinte avec une personne du sexe opposé, ils se transforment en créatures du Zodiaque ! ",
+                new List<Uri> { FruitsBasketStream },
+                new List<Langues> { Japonais },
+                new List<Langues> { Français },
+                "FruitsBasket.jpeg",
+                new List<Saison> { S1_FruitsBasket },
+                new List<GenreAnime> { Shojo }
+            );
+
+            Uri TokyoGhoulStream = new Uri("https://www.netflix.com/title/80023687");
+
+            Episode Ep1TG = new Episode("Tragédie", 1, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep2TG = new Episode("Solitude", 2, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep3TG = new Episode("Colombes", 3, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep4TG = new Episode("Dîner", 4, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep5TG = new Episode("Cicatrice", 5, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep6TG = new Episode("Ondée", 6, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep7TG = new Episode("Emprisonnement", 7, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep8TG = new Episode("Cercle", 8, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep9TG = new Episode("Cage", 9, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep10TG = new Episode("L'Arbre Aogiri", 10, new DateTime(2014, 1, 1), new TimeSpan(0, 20, 0), "");
+
+            Saison S1_TokyoGhoul = new Saison(1, new List<Episode> { Ep1TG, Ep2TG, Ep3TG, Ep4TG, Ep5TG, Ep6TG, Ep7TG, Ep8TG, Ep9TG, Ep10TG });
+
+            Anime TokyoGhoul = new Anime(
+                "Tokyo Ghoul",
+                new DateTime(2014, 1, 1),
+                new TimeSpan(0, 0, 0),
+                "Shuhei Morita",
+                "Pierrot",
+                new List<GenreGlobal> { GenreGlobal.None },
+                "Alors que Tokyo est envahie par des créatures amatrices de chair fraîche à l'apparence humaine, Ken, mi-homme mi-goule se retrouve coincé entre deux mondes.",
+                new List<Uri> { TokyoGhoulStream },
+                new List<Langues> { Français },
+                new List<Langues> { Français },
+                "TokyoGhoul.jpg",
+                new List<Saison> { S1_TokyoGhoul },
+                new List<GenreAnime> { Seinen }
+            );
+
+            Uri YuriStream = new Uri("https://www.crunchyroll.com/fr/yuri-on-ice");
+
+            Episode Ep1Yuri = new Episode("Tout ça pour un pirojki ! Le Grand Prix des larmes", 1, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep2Yuri = new Episode("Deux Yuri ? Panique au Yutopia ", 2, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep3Yuri = new Episode("Si Éros est pour moi, Éros est-il moi ? Onsen on Ice ! ", 3, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep4Yuri = new Episode("Apprendre à s’aimer… Programme libre terminé ! ", 4, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep5Yuri = new Episode("Tout rouge ! Premiers Championnats ! Le Championnat des Régions du sud ! ", 5, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep6Yuri = new Episode("Ouverture du Grand Prix ! C'est parti pour la Coupe de Chine ! ", 6, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep7Yuri = new Episode("Ouverture du Grand Prix ! Coupe de Chine, programme libre ! ", 7, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep8Yuri = new Episode("Yuri contre Yuri ! Programme court de la terrible Coupe de Russie ! ", 8, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep9Yuri = new Episode("Yuri contre Yuri ! Programme libre de la terrible Coupe de Russie ! ", 9, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+            Episode Ep10Yuri = new Episode("Donne tout ce que t'as ! Épisode spécial avant la finale ! ", 10, new DateTime(2016, 1, 1), new TimeSpan(0, 20, 0), "");
+
+            Saison S1_Yuri = new Saison(1, new List<Episode> { Ep1Yuri, Ep2Yuri, Ep3Yuri, Ep4Yuri, Ep5Yuri, Ep6Yuri, Ep7Yuri, Ep8Yuri, Ep9Yuri, Ep10Yuri });
+
+            Anime Yuri = new Anime(
+                "Yuri !!! on Ice",
+                new DateTime(2016, 1, 1),
+                new TimeSpan(0, 0, 0),
+                "Sayo Yamamoto",
+                "MAPPA",
+                new List<GenreGlobal> { GenreGlobal.None },
+                "Yuri Katsuki portait sur ses épaules tous les espoirs du Japon pour remporter le Grand Prix de patinage artistique, mais il y a subi une écrasante défaite. Il retourne dans sa ville natale et songe alors à prendre sa retraite, malgré une persistante envie de patiner. Un jour, le quintuple champion du monde Viktor Nikiforov, accompagné d’un jeune russe, Yuri Plisetsky, vient le trouver pour qu’il reprenne la compétition…",
+                new List<Uri> { YuriStream },
+                new List<Langues> { Japonais },
+                new List<Langues> { Français },
+                "Yuri!!!onIce.jpeg",
+                new List<Saison> { S1_Yuri },
+                new List<GenreAnime> { Josei }
             );
 
             listCV.AddLast(Transformers);
@@ -553,6 +679,10 @@ namespace persistance.StubPersist
             listCV.AddLast(OceansEleven);
             listCV.AddLast(TheIrishman);
             listCV.AddLast(LostGirls);
+            listCV.AddLast(JujutsuKaisen); 
+            listCV.AddLast(FruitsBasket);
+            listCV.AddLast(Yuri);
+            listCV.AddLast(TokyoGhoul);
 
 
             listUtilisateur.AddLast(new Utilisateur("admin", "admin", "admin", new DateTime(1990, 1, 1), "Indefini"));

@@ -5,7 +5,6 @@ using modelisation.langues;
 using Sérieathon.Fenetre;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,27 +19,25 @@ using System.Windows.Shapes;
 namespace Sérieathon.UC.main_window.Marathon.InfoCV
 {
     /// <summary>
-    /// Logique d'interaction pour InfoCV.xaml
+    /// Logique d'interaction pour InfoCV_Serie.xaml
     /// </summary>
-    public partial class InfoCV : UserControl
+    public partial class InfoCV_Serie : UserControl
     {
         Manager TheManager => (App.Current as App).TheManager;
-        Film Film_Courant { get; set; }
-        public InfoCV()
+        Serie Serie_Courant { get; set; }
+        public InfoCV_Serie()
         {
             InitializeComponent();
-            Film_Courant = TheManager.FilmCourant;
-            DataContext = Film_Courant;
+            Serie_Courant = TheManager.SerieCourant;
+            DataContext = Serie_Courant;
             TextBlockDate.Text = Date();
             TextBlockAudio.Text = Audio();
-            TextBlockActeur.Text = Acteur();
             TextBlockSousTitre.Text = SousTitres();
-
         }
         private string Date()
         {
             string date = null;
-            int a = Film_Courant.Date.Year;
+            int a = Serie_Courant.Date.Year;
             date = "Sortie en ";
             date += a.ToString();
             return date;
@@ -49,7 +46,7 @@ namespace Sérieathon.UC.main_window.Marathon.InfoCV
         private string SousTitres()
         {
             string sousTitres = null;
-            foreach (Langues a in Film_Courant.SousTitresR)
+            foreach (Langues a in Serie_Courant.SousTitresR)
             {
                 sousTitres += a;
             }
@@ -59,41 +56,33 @@ namespace Sérieathon.UC.main_window.Marathon.InfoCV
         private string Audio()
         {
             string audio = null;
-            foreach (Langues a in Film_Courant.AudiosR)
+            foreach (Langues a in Serie_Courant.AudiosR)
             {
                 audio += a;
             }
             return audio;
         }
 
-        private string Acteur()
-        {
-            string acteur = null;
-            foreach (string a in Film_Courant.ActeursR)
-            {
-                acteur += a;
-            }
-            return acteur;
-        }
-
         private void Streaming_Button_Click(object sender, RoutedEventArgs e)
         {
-            new Streaming().ShowDialog();
+            new Streaming_Serie().ShowDialog();
         }
         private void Vue_CheckBox_Click(object sender, RoutedEventArgs e)
         {
             if (CheckVu.IsChecked == true)
             {
                 CheckVu.Content = "Vu";
-                TheManager.UtilisateurCourant.AddCVvu(TheManager.FilmCourant);
+
+                if (Serie_Courant is Anime a) { TheManager.UtilisateurCourant.AddCVvu(a); }
+
+                else { TheManager.UtilisateurCourant.AddCVvu(Serie_Courant); }
             }
 
             else
             {
                 CheckVu.Content = "Pas vu";
-                TheManager.UtilisateurCourant.RemoveCVvu(TheManager.FilmCourant);
+                TheManager.UtilisateurCourant.RemoveCVvu(Serie_Courant);
             }
-
         }
     }
 }

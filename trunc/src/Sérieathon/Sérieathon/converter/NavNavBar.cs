@@ -29,7 +29,8 @@ namespace Sérieathon.converter
             GENREANIME,
             GENREGLOBAL,
             LEMARATHON,
-            INFOCV
+            INFOCV,
+            INFOCVSERIE
         }
 
         public static Dictionary<Etat, Func<UserControl>> FactoryUC = new Dictionary<Etat, Func<UserControl>>
@@ -45,6 +46,7 @@ namespace Sérieathon.converter
             [Etat.GENREGLOBAL] = () => new UC_NouveauMarathon3_5_FilmEtSerie(),
             [Etat.LEMARATHON] = () => new UC_Marathon(),
             [Etat.INFOCV] = () => new InfoCV(),
+            [Etat.INFOCVSERIE] = () => new InfoCV_Serie(),
         };
 
         public event PropertyChangedEventHandler PropertyChanged;

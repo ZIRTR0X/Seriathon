@@ -25,9 +25,9 @@ namespace Sérieathon.UC.main_window.Profile
     {
         Manager TheManager => (App.Current as App).TheManager;
 
-        string NBFilm { get; set; }
-        string NBSerie { get; set; }
-        string NBAnime { get; set; }
+        public string NBFilm { get; set; }
+        public string NBSerie { get; set; }
+        public string NBAnime { get; set; }
 
         public UC_Profile_Statistique()
         {
@@ -52,7 +52,7 @@ namespace Sérieathon.UC.main_window.Profile
             NBSerie = nBSerie.ToString();
             StatNbSerie.Text = NBSerie;
             StatNbFilm.Text = NBFilm;
-            StatNbAnime.Text = NBSerie;
+            StatNbAnime.Text = NBAnime;
         }
 
         /// <summary>

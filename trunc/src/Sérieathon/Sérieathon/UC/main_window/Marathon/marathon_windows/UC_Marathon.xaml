@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:Sérieathon.UC.main_window.Marathon.marathon_windows"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ScrollViewer>
-        <DockPanel>
+    <DockPanel>
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
@@ -17,7 +16,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Marathon " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                <TextBlock Text="Marathon " HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="30"/>
                 <Button Grid.Column="1" Height="40" Width="150" Click="Supprimer_button_click" Style="{StaticResource ButtonRetour}">
                     <WrapPanel>
                         <Image Source="../../../../image/utile/cancel.png" Width="30" HorizontalAlignment="Left"/>
@@ -27,26 +26,12 @@
             </Grid>
 
 
-            <ScrollViewer x:Name="defileur"
+        <ScrollViewer x:Name="defileur"
                       HorizontalAlignment="Stretch"
                       CanContentScroll="true">
-                <WrapPanel x:Name="content_marathon_wp" Orientation="Vertical">
-                </WrapPanel>
-            </ScrollViewer>
+            <WrapPanel x:Name="content_marathon_wp" Orientation="Vertical">
+            </WrapPanel>
+        </ScrollViewer>
 
-            <!--<ListBox Background="Transparent" ItemsSource="{Binding ListJournalifie}" x:Name="listBox_affichage">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <local:UC_Marathon_Jour/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>-->
-
-            <!--<WrapPanel Orientation="Vertical">
-                <local:UC_Marathon_Jour/>
-                <local:UC_Marathon_Jour/>
-            </WrapPanel>-->
-
-        </DockPanel>
-    </ScrollViewer>
+    </DockPanel>
 </UserControl>

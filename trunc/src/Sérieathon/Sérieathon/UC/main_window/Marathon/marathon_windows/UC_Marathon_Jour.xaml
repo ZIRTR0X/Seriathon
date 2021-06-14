@@ -15,7 +15,7 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Jour, StringFormat=Jour \{0\}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="{Binding Jour, StringFormat=Jour \{0\}}" VerticalAlignment="Center" HorizontalAlignment="Center" TextDecorations="Underline"/>
 
         <ListBox Background="Transparent" x:Name="listBoxEpisode" ItemsSource="{Binding ListEpisode}" Grid.Row="1">
             <ListBox.ItemsPanel>
