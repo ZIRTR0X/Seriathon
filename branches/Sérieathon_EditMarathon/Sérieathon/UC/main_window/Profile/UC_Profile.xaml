@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Sérieathon.UC.main_window.Profile.UC_Profile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sérieathon.UC.main_window.Profile"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <Grid Background="#555555" DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="../../../image/utile/user.png" Height="50" Width="50" Margin="5"/>
+            <Button Click="Profil_Vue_Button_Click" Grid.Column="1" Content="Vue" Height="40" Width="50"/>
+            <Button Click="Profil_Statistiques_Button_Click" Grid.Column="2" Content="Statistiques" HorizontalAlignment="Left" Height="40" Width="130"/>
+
+            <Button Grid.Column="3" Click="Supprimer_Button_Click" Width="230" Style="{StaticResource ButtonRetour}">
+                <WrapPanel>
+                    <Image Source="../../../image/utile/cancel.png" Width="30" HorizontalAlignment="Left"/>
+                    <TextBlock Text=" Sup. Utilisateur" VerticalAlignment="Center"/>
+                </WrapPanel>
+            </Button>
+        </Grid>
+        <ContentControl Content="{Binding EtatCourant, Converter={StaticResource Func2WindowPartConverterProfil}}">
+            <!--<local:UC_Profile_Vue/>-->
+        </ContentControl>
+    </DockPanel>
+</UserControl>

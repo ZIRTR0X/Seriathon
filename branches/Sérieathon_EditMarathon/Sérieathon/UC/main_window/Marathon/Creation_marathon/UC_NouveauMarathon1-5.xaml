@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Sérieathon.UC.main_window.Marathon.Creation_marathon.UC_NouveauMarathon1_5"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sérieathon.UC.main_window.Marathon.Creation_marathon"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Nouveau marathon" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Nom du marathon" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Height="25" Width="300" Margin="0" x:Name="NomMarathon" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Temps passé par jour" VerticalAlignment="Bottom"/>
+        <ComboBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  Width="130" HorizontalAlignment="Left" x:Name="TempsParJour">
+            <ComboBox.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+                </Style>
+            </ComboBox.Resources>
+            <ComboBoxItem>
+                <TextBlock Text="1 heure"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="2 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="3 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="4 heures"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="5 heures"/>
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Nombre de jour" VerticalAlignment="Bottom"/>
+        <ComboBox Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Width="130" HorizontalAlignment="Left" x:Name="NombreDeJour">
+            <ComboBox.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+                </Style>
+            </ComboBox.Resources>
+            <ComboBoxItem>
+                <TextBlock Text="1 jour"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="2 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="3 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="4 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="5 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="6 jours"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Text="7 jours"/>
+            </ComboBoxItem>
+        </ComboBox>
+        <Button Click="NM1_Next_Button_Click" Grid.Column="2" Grid.Row="7" Style="{StaticResource ButtonValider}">
+            <WrapPanel>
+                <Image Source="../../../../image/utile/confirm.png" Width="30" HorizontalAlignment="Left"/>
+                <TextBlock Text=" Suivant" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </Button>
+
+    </Grid>
+</UserControl>

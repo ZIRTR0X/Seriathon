@@ -13,16 +13,18 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{Binding Film_affiche.Titre, ElementName=root, FallbackValue=Titre}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="{Binding Realisateur, FallbackValue=Realisateur}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+        
         <CheckBox Click="Vue_CheckBox_Click" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="CheckVu">
-            <TextBlock Text="Pas vu" x:Name="CheckVuText" />
+                <TextBlock Text="Pas vu" x:Name="CheckVuText" />
         </CheckBox>
+        <CheckBox Click="Remplacer_CheckBox_Click" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="CheckRemplacer" Content="Remplacer"/>
 
         <Image Source="{Binding Image, Converter={StaticResource converterString2Image}}" Grid.RowSpan="4" Grid.Column="0" Grid.Row="0" MaxWidth="100"/>
     </Grid>

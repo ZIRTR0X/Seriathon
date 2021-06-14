@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Baptiste\1A_IUT\P4\IHM_CSharp\ProjetP4\branches\Sérieathon_EditMarathon\bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Manager.cs.mine" />
+    <None Remove="Manager.cs.r55" />
+    <None Remove="Manager.cs.r56" />
+    <None Remove="user\Utilisateur.cs.mine" />
+    <None Remove="user\Utilisateur.cs.r56" />
+    <None Remove="user\Utilisateur.cs.r57" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.902-prerelease" />
+  </ItemGroup>
+
+</Project>

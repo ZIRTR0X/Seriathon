@@ -21,22 +21,20 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
     /// </summary>
     public partial class UC_Marathon : UserControl
     {
-        Manager TheManager { get; set; } = (App.Current as App).TheManager;
-        public List<List<IEstAjoutableAuMarathon>> ListJournalifie { get; private set; }
+        private Manager TheManager { get; set; } = (App.Current as App).TheManager;
 
 
         public UC_Marathon()
         {
             InitializeComponent();
             //DataContext = TheManager.UtilisateurCourant.MarathonPerso;
-            ListJournalifie = TheManager.UtilisateurCourant.MarathonPerso.getListJournalifie();
+            //ListJournalifie = TheManager.UtilisateurCourant.MarathonPerso.ListContenuJournalifieR;
             DataContext = this;
 
             // au cas où il y a des éléments déjà présent
             content_marathon_wp.Children.Clear();
-
             int i = 1;
-            foreach (List<IEstAjoutableAuMarathon> l in ListJournalifie) {
+            foreach (List<IEstAjoutableAuMarathon> l in TheManager.UtilisateurCourant.MarathonPerso.ListContenuJournalifieR) {
                 content_marathon_wp.Children.Add(new UC_Marathon_Jour(l, i));
                 ++i;
             }

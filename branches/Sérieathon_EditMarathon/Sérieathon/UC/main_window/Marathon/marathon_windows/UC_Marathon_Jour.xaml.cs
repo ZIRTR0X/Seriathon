@@ -27,7 +27,7 @@ namespace Sérieathon.UC.main_window.Marathon.marathon_windows
         public List<Film> ListFilm { get; private set; }
         public List<Episode> ListEpisode { get; private set; }
 
-        public int Jour { get; set; }
+        public int Jour { get; private set; }
 
         public UC_Marathon_Jour()
         {
