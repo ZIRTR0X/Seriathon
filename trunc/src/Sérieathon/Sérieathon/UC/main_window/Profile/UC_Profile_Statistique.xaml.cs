@@ -32,7 +32,6 @@ namespace Sérieathon.UC.main_window.Profile
         public UC_Profile_Statistique()
         {
             InitializeComponent();
-            TheManager.test();
             NombreCVVue();
             StatsGenresFavori();
             StatsRealisateursFavori();

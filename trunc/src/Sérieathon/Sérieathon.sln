@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "modelisation", "modelisatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test_modelisation_XUnit", "test_modelisation_XUnit\test_modelisation_XUnit.csproj", "{275CA887-D96A-455F-931E-F1CC74CE0494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "persistance", "persistance\persistance.csproj", "{28461DDC-88B3-4138-98FC-06EC6E9289F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "persistance", "persistance\persistance.csproj", "{28461DDC-88B3-4138-98FC-06EC6E9289F9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Seriathon_setup", "Seriathon_setup\Seriathon_setup.vdproj", "{75083A7F-36EE-4EDB-A037-B4449202072A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,8 @@ Global
 		{28461DDC-88B3-4138-98FC-06EC6E9289F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28461DDC-88B3-4138-98FC-06EC6E9289F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28461DDC-88B3-4138-98FC-06EC6E9289F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75083A7F-36EE-4EDB-A037-B4449202072A}.Debug|Any CPU.ActiveCfg = Debug
+		{75083A7F-36EE-4EDB-A037-B4449202072A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

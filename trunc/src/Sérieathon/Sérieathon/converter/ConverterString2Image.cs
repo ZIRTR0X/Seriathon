@@ -18,7 +18,7 @@ namespace Sérieathon.converter
                 nomImage = "void.jpg";
             }
 
-            string dossierImage = Path.Combine(Directory.GetCurrentDirectory(), "..\\image\\affiche\\");
+            string dossierImage = Path.Combine(Directory.GetCurrentDirectory(), "image\\affiche\\");
             string cheminImage = Path.Combine(dossierImage, nomImage);
 
             return new Uri(cheminImage, UriKind.RelativeOrAbsolute);
