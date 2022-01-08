@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>logo_bar.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Baptiste\1A_IUT\P4\IHM_CSharp\ProjetP4\trunc\src\Sérieathon\bin\</OutputPath>
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image\back_arrow.png" />
+    <None Remove="image\cancel.png" />
+    <None Remove="image\confirm.png" />
+    <None Remove="image\left-arrow.png" />
+    <None Remove="image\logo\logo_accueil_grand.png" />
+    <None Remove="image\logo\logo_accueil_petit.png" />
+    <None Remove="image\logo\seriathon.png" />
+    <None Remove="image\right-arrow.png" />
+    <None Remove="image\user.png" />
+    <None Remove="image\view.png" />
+    <None Remove="image\visibility.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.1-ci2558" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.902-prerelease" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\utile\back_arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\logo\seriathon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\modelisation\modelisation.csproj" />
+    <ProjectReference Include="..\persistance\persistance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\utile\cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\confirm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\left-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\logo\logo_accueil_grand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\logo\logo_accueil_petit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\right-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\user.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\view.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\utile\visibility.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+</Project>

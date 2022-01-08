@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "SZ6/vNIzHSK3JRk2O2SaEhRMCkYQ7zPtlryQTgL1hxPgSFoU9K6KVl1PRVKbjO4oZgaj7CKgR0bfcUr6Flbl1g==",
+  "success": true,
+  "projectFilePath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\persistance.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.netcore.app\\2.1.0\\microsoft.netcore.app.2.1.0.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.1.0\\microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.1.0\\microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.1.0\\microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.netcore.targets\\2.1.0\\microsoft.netcore.targets.2.1.0.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\microsoft.web.webview2\\1.0.902-prerelease\\microsoft.web.webview2.1.0.902-prerelease.nupkg.sha512",
+    "C:\\Users\\bapti\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

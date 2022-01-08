@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataToPersist xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/persistance">
+  <ListCV xmlns:d2p1="http://schemas.datacontract.org/2004/07/modelisation.content" z:Id="2" z:Size="28">
+    <d2p1:ContenuVideoludique z:Id="3" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="4" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="5">C'est un film d'action, avec des robots</d2p1:Description>
+      <d2p1:Duree>PT2H24M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="6" z:Size="2">
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Policier</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="7">Transformers.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="8" z:Size="1">
+        <d4p1:anyURI z:Id="9">https://www.netflix.com/search?q=transformers&amp;jbv=70058026</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="10">Michael Bay</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="11" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Id="12">HollyWood</d2p1:StudioProduction>
+      <d2p1:Titre z:Id="13">Transformers</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="14" z:Size="1">
+        <d4p1:string z:Id="15">Shia LaBeouf</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="16" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="17" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="18">Lorsque Nick Fury, le directeur du S.H.I.E.L.D., l'organisation qui préserve la paix au plan mondial, cherche à former une équipe de choc pour empêcher la destruction du monde, Iron Man, Hulk, Thor, Captain America, Hawkeye et Black Widow répondent présents.Les Avengers ont beau constituer la plus fantastique des équipes, il leur reste encore à apprendre à travailler ensemble, et non les uns contre les autres, d'autant que le redoutable Loki a réussi à accéder au Cube Cosmique et à son pouvoir illimité... </d2p1:Description>
+      <d2p1:Duree>PT2H24M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="19" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="20">Avengers.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="21" z:Size="1">
+        <d4p1:anyURI z:Id="22">https://www.disneyplus.com/fr-fr/movies/marvel-studios-avengers/2h6PcHFDbsPy</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="23">Joss Whedon</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="24" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Id="25">Marvel</d2p1:StudioProduction>
+      <d2p1:Titre z:Id="26">Avengers</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="27" z:Size="1">
+        <d4p1:string z:Id="28">Robert Downey Jr.</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="29" xmlns:d3p1="http://schemas.datacontract.org/2004/07/modelisation.content.episodique" i:type="d3p1:Serie">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="30" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="31">À l'affiche de la nouvelle production Marvel Studios ''Falcon et le Soldat de l'Hiver'', retrouvez Anthony Mackie dans le rôle de Sam Wilson alias Falcon, et Sebastian Stan dans celui de Bucky Barnes alias le Soldat de l'Hiver.Né à la fin de ''Avengers : Endgame'', le duo se reforme pour une aventure planétaire qui va mettre à l'épreuve leurs aptitudes... et leur patience. Avec Kari Skogland à la réalisation et Malcolm Spellman comme scénariste principal, la série de six épisodes met également en scène Daniel Brühl dans le rôle du Baron Zemo, Emily VanCamp dans celui de Sharon Carter, et Wyatt Russell dans celui de John Walker.</d2p1:Description>
+      <d2p1:Duree>PT0S</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="32" z:Size="2">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="33">FalconAndTheWinterSoldier.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="34" z:Size="1">
+        <d4p1:anyURI z:Id="35">https://www.disneyplus.com/fr-fr/series/falcon-et-le-soldat-de-lhiver/4gglDBMx8icA</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Ref="23" i:nil="true" />
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="36" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="37">Falcon et le Soldat de l'hiver</d2p1:Titre>
+      <d3p1:ListSaisons z:Id="38" z:Size="1">
+        <d3p1:Saison z:Id="39">
+          <d3p1:ListEpisodes z:Id="40" z:Size="6">
+            <d3p1:Episode z:Id="41">
+              <d3p1:Date>1895-01-01T00:00:00</d3p1:Date>
+              <d3p1:Description z:Id="42">Sam Wilson et Bucky Barnes comprennent que leur avenir sera tout sauf normal.</d3p1:Description>
+              <d3p1:DureeEpisode>PT50M</d3p1:DureeEpisode>
+              <d3p1:Nom z:Id="43">Un nouvel ordre</d3p1:Nom>
+              <d3p1:NumEpisode>1</d3p1:NumEpisode>
+            </d3p1:Episode>
+            <d3p1:Episode z:Id="44">
+              <d3p1:Date>1895-01-01T00:00:00</d3p1:Date>
+              <d3p1:Description z:Id="45">John Walker devient Captain America. Sam et Bucky s'associent pour lutter contre des rebelles.</d3p1:Description>
+              <d3p1:DureeEpisode>PT50M</d3p1:DureeEpisode>
+              <d3p1:Nom z:Id="46">L'homme à la Bannière étoilée</d3p1:Nom>
+              <d3p1:NumEpisode>2</d3p1:NumEpisode>
+            </d3p1:Episode>
+            <d3p1:Episode z:Id="47">
+              <d3p1:Date>1895-01-01T00:00:00</d3p1:Date>
+              <d3p1:Description z:Id="48">Dans un refuge pour criminels, Sam et Bucky cherchent des informations sur le sérum du super-soldat.</d3p1:Description>
+              <d3p1:DureeEpisode>PT54M</d3p1:DureeEpisode>
+              <d3p1:Nom z:Id="49">Trafic d'influence</d3p1:Nom>
+              <d3p1:NumEpisode>3</d3p1:NumEpisode>
+            </d3p1:Episode>
+            <d3p1:Episode z:Id="50">
+              <d3p1:Date>1895-01-01T00:00:00</d3p1:Date>
+              <d3p1:Description z:Id="51">John Walker perd patience avec Sam et Bucky, qui en apprennent davantage sur Karli Morgenthau.</d3p1:Description>
+              <d3p1:DureeEpisode>PT54M</d3p1:DureeEpisode>
+              <d3p1:Nom z:Id="52">Le monde nous regarde</d3p1:Nom>
+              <d3p1:NumEpisode>4</d3p1:NumEpisode>
+            </d3p1:Episode>
+            <d3p1:Episode z:Id="53">
+              <d3p1:Date>1895-01-01T00:00:00</d3p1:Date>
+              <d3p1:Description z:Id="54">John Walker doit assumer les conséquences de ses actes. Sam et Bucky rentrent aux États-Unis.</d3p1:Description>
+              <d3p1:DureeEpisode>PT1H1M</d3p1:DureeEpisode>
+              <d3p1:Nom z:Id="55">La vérité</d3p1:Nom>
+              <d3p1:NumEpisode>5</d3p1:NumEpisode>
+            </d3p1:Episode>
+            <d3p1:Episode z:Id="56">
+              <d3p1:Date>1895-01-01T00:00:00</d3p1:Date>
+              <d3p1:Description z:Id="57">Face à la montée en violence des Flag Smashers, Sam et Bucky passent à l'action.</d3p1:Description>
+              <d3p1:DureeEpisode>PT52M</d3p1:DureeEpisode>
+              <d3p1:Nom z:Id="58">Un seul monde, un seul peuple</d3p1:Nom>
+              <d3p1:NumEpisode>6</d3p1:NumEpisode>
+            </d3p1:Episode>
+          </d3p1:ListEpisodes>
+          <d3p1:NumSaison>1</d3p1:NumSaison>
+        </d3p1:Saison>
+      </d3p1:ListSaisons>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="59" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="60" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="61">Cette aventure étend l'univers Marvel jusqu'au royaume cosmique d'Asgard. Au centre de l'histoire, Thor, guerrier puissant mais arrogant, relance une ancienne guerre. Odin, son père, le bannit alors et l'envoie sur Terre. De là, Thor doit empêcher son frère Loki de détrôner Odin et de prendre le pouvoir. Lorsque les forces les plus obscures sont envoyées sur Terre, Thor découvre ce qu'être un héros implique.</d2p1:Description>
+      <d2p1:Duree>PT1H56M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="62" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="63">Thor.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="64" z:Size="1">
+        <d4p1:anyURI z:Id="65">https://www.disneyplus.com/fr-fr/movies/marvel-studios-thor/1p4vdKzTuhzr</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="66">Kenneth Branagh</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="67" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="68">Thor</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="69" z:Size="1">
+        <d4p1:string z:Id="70">Chris Hemsworth</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="71" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="72" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="73">Après la mort de son père, le roi de Wakanda, le jeune T'Challa rentre chez lui, un lointain pays futuriste africain, afin de prendre sa place comme souverain. Lorsque le destin de Wakanda et du monde entier est mis en péril par l'arrivée d'un redoutable ennemi, le jeune roi T'Challa doit faire appel à ses pouvoirs de Black Panther pour vaincre son adversaire et défendre son peuple. Certaines séquences ou certains motifs lumineux clignotants sont susceptibles d'affecter les téléspectateurs photosensibles.</d2p1:Description>
+      <d2p1:Duree>PT2H17M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="74" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="75">BlackPanther.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="76" z:Size="1">
+        <d4p1:anyURI z:Id="77">https://www.disneyplus.com/fr-fr/movies/marvel-studios-black-panther/1GuXuYPj99Ke</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="78">Ryan Coogler</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="79" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="80">BlackPanther</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="81" z:Size="1">
+        <d4p1:string z:Id="82">Chadwick Boseman</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="83" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="84" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="85">Réformé du service militaire, Steve Rogers participe à un projet de recherche top secret qui le transforme en Captain America, un superhéros voué à la défense des valeurs de l'Amérique, combattant de la liberté et ultime rempart contre le mal. Alors qu'une force terrifiante menace la planète, le meilleur soldat du monde part en mission contre HYDRA, l'organisation du cruel Crâne rouge.</d2p1:Description>
+      <d2p1:Duree>PT2H6M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="86" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="87">CaptainAmerica.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="88" z:Size="1">
+        <d4p1:anyURI z:Id="89">https://www.disneyplus.com/fr-fr/movies/marvel-studios-captain-america-first-avenger/6xvB6xZ4r95O</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="90">Joe Johnston</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="91" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="92">CaptainAmerica</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="93" z:Size="1">
+        <d4p1:string z:Id="94">Chris Evans</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="95" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="96" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="97">Une aventure dans l'espace épique et pleine d'action. Les Gardiens de la Galaxie propulsent l'univers Marvel dans le cosmos où l'aventurier Peter Quill se retrouve pourchassé après avoir volé un mystérieux orbe convoité par Ronan, un puissant ennemi dont les pouvoirs menacent l'univers tout entier. Il devra s'allier aux quatre héros marginaux que sont Rocket, Groot, Gamora et Drax. Mais lorsque Quill découvre le véritable pouvoir de l'orbe, il doit faire ce qu'il faut pour sauver la galaxie. Certaines séquences ou certains motifs lumineux clignotants sont susceptibles d'affecter les téléspectateurs photosensibles.</d2p1:Description>
+      <d2p1:Duree>PT2H2M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="98" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="99">LesGardiensDeLaGalaxie.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="100" z:Size="1">
+        <d4p1:anyURI z:Id="101">https://www.disneyplus.com/fr-fr/movies/marvel-studios-les-gardiens-de-la-galaxie/1S4WM9h3KRR6</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="102">James Gunn</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="103" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="104">LesGardiensDeLaGalaxie</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="105" z:Size="1">
+        <d4p1:string z:Id="106">Chris Pratt</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="107" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="108" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="109">Marvel introduit un membre fondateur des Avengers pour la première fois sur grand écran dans Ant-Man des Studios Marvel. Scott Lang, voleur professionnel qui peut rétrécir sa taille et multiplier sa force, doit aider son mentor, Dr Hank Pym, à protéger les secrets technologiques de son costume. Ils doivent planifier et réussir un cambriolage qui sauvera le monde. Certaines séquences ou certains motifs lumineux clignotants sont susceptibles d'affecter les téléspectateurs photosensibles.</d2p1:Description>
+      <d2p1:Duree>PT2H</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="110" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="111">AntMan.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="112" z:Size="1">
+        <d4p1:anyURI z:Id="113">https://www.disneyplus.com/fr-fr/movies/marvel-studios-ant-man/5c92KVf1zgUX</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="114">Peyton Reed</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="115" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="116">AntMan</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="117" z:Size="1">
+        <d4p1:string z:Id="118">Paul Reed</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="119" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="120" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="121">Les Studios Marvel présentent l’histoire d’un neurochirurgien célèbre, Dr Stephen Strange, dont la vie change après un accident de voiture. Lorsque la médecine traditionnelle lui fait défaut, il découvre Kamar-Taj. Il apprend vite que des forces du mal sont déterminées à détruire la réalité. Strange, armé de pouvoirs magiques, doit choisir entre retrouver sa vie d’avant et défendre le monde. Certaines séquences ou certains motifs lumineux clignotants sont susceptibles d'affecter les téléspectateurs photosensibles.</d2p1:Description>
+      <d2p1:Duree>PT1H56M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="122" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Fantastique</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="123">DoctorStrange.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="124" z:Size="1">
+        <d4p1:anyURI z:Id="125">https://www.disneyplus.com/fr-fr/movies/marvel-studios-doctor-strange/4GgMJ1aHKHA2</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="126">Scott Derrickson</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="127" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="128">DoctorStrange</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="129" z:Size="1">
+        <d4p1:string z:Id="130">Benedict Cumberbatch</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="131" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="132" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="133">Deadpool est l’antihéros le plus atypique de l’univers Marvel. À l’origine, il s’appelle Wade Wilson : un ancien militaire des Forces Spéciales devenu mercenaire. Après avoir subi une expérience hors norme qui accélère ses pouvoirs de guérison, il devient Deadpool. Armé de ses nouvelles capacités et d’un humour noir survolté, il va traquer l’homme qui a bien failli anéantir sa vie.</d2p1:Description>
+      <d2p1:Duree>PT1H49M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="134" z:Size="2">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="135">Deadpool.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="136" z:Size="1">
+        <d4p1:anyURI z:Id="137">https://www.disneyplus.com/fr-fr/movies/deadpool/3Kh13Lrb0Pnv</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="138">Tim Miller</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="139" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="140">Deadpool</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="141" z:Size="1">
+        <d4p1:string z:Id="142">Ryan Reynolds</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="143" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="144" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="145">Dans un futur proche, un Logan épuisé s’occupe d’un Professeur Xavier souffrant et affaibli, qu’il garde caché dans un lieu désolé à la frontière Mexicaine. Mais les tentatives de Logan pour se retrancher du monde et rompre avec son passé vont être réduites à néant, lorsqu’une jeune mutante traquée par de sombres individus va se retrouver soudainement face à lui…</d2p1:Description>
+      <d2p1:Duree>PT2H18M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="146" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="147">Logan.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="148" z:Size="1">
+        <d4p1:anyURI z:Id="149">https://www.disneyplus.com/fr-fr/movies/logan/4BPdGjuoQAvT</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="150">James Mangold</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="151" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="152">Logan</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="153" z:Size="1">
+        <d4p1:string z:Id="154">Hugh Jackman</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="155" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="156" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="157">Les X-Men, un groupe de mutants aux pouvoirs extraordinaires, mènent un combat à la fois contre l'intolérance et contre une autre bande de mutants radicaux ayant l'intention d'éradiquer l'espèce humaine.</d2p1:Description>
+      <d2p1:Duree>PT1H44M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="158" z:Size="3">
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="159">XMen.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="160" z:Size="1">
+        <d4p1:anyURI z:Id="161">https://www.disneyplus.com/fr-fr/movies/x-men/4QoNe0ea49nP</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="162">Bryan Singer</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="163" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="25" i:nil="true" />
+      <d2p1:Titre z:Id="164">XMen</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="165" z:Size="1">
+        <d4p1:string z:Ref="154" i:nil="true" />
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="166" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="167" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="168">Quand les membres de l'équipage du vaisseau spatial Nostromo captent un signal de détresse provenant d'une planète isolée, ils découvrent qu'une redoutable forme de vie se reproduit en se développant dans le corps des humains. Ils vont devoir lutter pour rester en vie et empêcher ces créatures d'atteindre la Terre. Réalisé par Ridley Scott, avec Sigourney Weaver dans le rôle qui l'a révélée au grand public, ce premier film légendaire de la saga Alien vous coupera le souffle.</d2p1:Description>
+      <d2p1:Duree>PT1H57M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="169" z:Size="2">
+        <d4p1:GenreGlobal>Horreur</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>ScienceFiction</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="170">Alien.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="171" z:Size="1">
+        <d4p1:anyURI z:Id="172">https://www.disneyplus.com/fr-fr/movies/x-men/4QoNe0ea49nP</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="173">Ridley Scott</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="174" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Id="175">20th Century Studios</d2p1:StudioProduction>
+      <d2p1:Titre z:Id="176">Alien</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="177" z:Size="1">
+        <d4p1:string z:Id="178">Tom Skerritt</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="179" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="180" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="181">Quatre amis de longue date dont les relations se sont peu à peu tendues s'aventurent dans la nature sauvage de Suède au risque de ne jamais en revenir.</d2p1:Description>
+      <d2p1:Duree>PT1H34M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="182" z:Size="1">
+        <d4p1:GenreGlobal>Horreur</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="183">LeRituel.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="184" z:Size="1">
+        <d4p1:anyURI z:Id="185">https://www.netflix.com/title/80217312</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="186">David Bruckner</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="187" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Id="188">Inconnu</d2p1:StudioProduction>
+      <d2p1:Titre z:Id="189">LeRituel</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="190" z:Size="1">
+        <d4p1:string z:Id="191">Arsher Ali</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="192" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="193" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="194">Dans un camp de vacances, un groupe d'ados provoquent la colère de Jason Voorhees, un maniaque sanguinaire masqué, pour un remake du grand classique de l'épouvante.</d2p1:Description>
+      <d2p1:Duree>PT1H37M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="195" z:Size="1">
+        <d4p1:GenreGlobal>Horreur</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="196">Vendredi13.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="197" z:Size="1">
+        <d4p1:anyURI z:Id="198">https://www.netflix.com/title/70104894</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="199">Marcus Nispel</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="200" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="201">Vendredi 13</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="202" z:Size="1">
+        <d4p1:string z:Id="203">Jared Padalecki</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="204" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="205" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="206">Après la mort mystérieuse de leur amie, une bande d'ados tente de communiquer avec elle à l'aide d'une planche Ouija, réveillant par la même occasion un esprit du mal.</d2p1:Description>
+      <d2p1:Duree>PT1H29M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="207" z:Size="1">
+        <d4p1:GenreGlobal>Horreur</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="208">Ouija.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="209" z:Size="1">
+        <d4p1:anyURI z:Id="210">https://www.netflix.com/title/70305901</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="211">Stiles White</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="212" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="213">Ouija</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="214" z:Size="1">
+        <d4p1:string z:Id="215">Olivia Cooke</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="216" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="217" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="218">Un mari offre à sa femme le cadeau idéal, une magnifique poupée de collection, mais la joie apportée par le sinistre objet dans le foyer est de courte durée.</d2p1:Description>
+      <d2p1:Duree>PT1H39M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="219" z:Size="1">
+        <d4p1:GenreGlobal>Horreur</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="220">Annabelle.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="221" z:Size="1">
+        <d4p1:anyURI z:Id="222">https://www.netflix.com/title/80013775</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="223">John R. Leonetti</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="224" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="225">Annabelle</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="226" z:Size="1">
+        <d4p1:string z:Id="227">Annabelle Wallis</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="228" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="229" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="230">Dans UN VOYAGE INATTENDU, Bilbon Sacquet cherche à reprendre le Royaume perdu des Nains d'Erebor, conquis par le redoutable dragon Smaug. Alors qu'il croise par hasard la route du magicien Gandalf le Gris, Bilbon rejoint une bande de 13 nains dont le chef n'est autre que le légendaire guerrier Thorin Écu-de-Chêne. Leur périple les conduit au cœur du Pays Sauvage, où ils devront affronter des Gobelins, des Orques, des Ouargues meurtriers, des Araignées géantes, des Métamorphes et des Sorciers… Bien qu'ils se destinent à mettre le cap sur l'Est et les terres désertiques du Mont Solitaire, ils doivent d'abord échapper aux tunnels des Gobelins, où Bilbon rencontre la créature qui changera à jamais le cours de sa vie : Gollum. C'est là qu'avec Gollum, sur les rives d'un lac souterrain, le modeste Bilbon Sacquet non seulement se surprend à faire preuve d'un courage et d'une intelligence inattendus, mais parvient à mettre la main sur le ''précieux'' anneau de Gollum qui recèle des pouvoirs cachés… Ce simple anneau d'or est lié au sort de la Terre du Milieu, sans que Bilbon s'en doute encore… </d2p1:Description>
+      <d2p1:Duree>PT2H49M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="231" z:Size="3">
+        <d4p1:GenreGlobal>Fantastique</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="232">LeHobbit.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="233" z:Size="1">
+        <d4p1:anyURI z:Id="234">https://www.netflix.com/title/80013775</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="235">Peter Jackson</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="236" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="237">Le Hobbit</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="238" z:Size="1">
+        <d4p1:string z:Id="239">Ian McKellen</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="240" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="241" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="242">Orphelin, Harry Potter a été recueilli à contrecœur par son oncle Vernon et sa tante Pétunia, aussi cruels que mesquins, qui n'hésitent pas à le faire dormir dans le placard sous l'escalier. Constamment maltraité, il doit en outre supporter les jérémiades de son cousin Dudley, garçon cupide et archi-gâté par ses parents. De leur côté, Vernon et Pétunia détestent leur neveu dont la présence leur rappelle sans cesse le tempérament ''imprévisible'' des parents du garçon et leur mort mystérieuse.À l'approche de ses 11 ans, Harry ne s'attend à rien de particulier – ni carte, ni cadeau, ni même un goûter d'anniversaire. Et pourtant, c'est à cette occasion qu'il découvre qu'il est le fils de deux puissants magiciens et qu'il possède lui aussi d'extraordinaires pouvoirs.Quand on lui propose d'intégrer Poudlard, la prestigieuse école de sorcellerie, il trouve enfin le foyer et la famille qui lui ont toujours manqué… et s'engage dans l'aventure de sa vie.</d2p1:Description>
+      <d2p1:Duree>PT2H32M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="243" z:Size="3">
+        <d4p1:GenreGlobal>Fantastique</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="244">HarryPotter.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="245" z:Size="1">
+        <d4p1:anyURI z:Id="246">https://www.primevideo.com/detail/0JXM9K5QSXG0X1O6M4CHGIYACB/ref=atv_sr_def_c_unkc__70_1_16?sr=1-70&amp;qid=1623518347&amp;pageTypeIdSource=ASIN&amp;pageTypeId=B07Q6JY91M&amp;language=fr_FR</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="247">Chris Columbus</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="248" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="249">Harry Potter</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="250" z:Size="1">
+        <d4p1:string z:Id="251">Daniel Radcliffe</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="252" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="253" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="254">Dans un monde ravagé par la guerre engagée par la Nation du Feu contre les Nations de l'Air, de l'Eau et de la Terre, un garçon est le seul à pouvoir rétablir la paix.</d2p1:Description>
+      <d2p1:Duree>PT1H44M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="255" z:Size="3">
+        <d4p1:GenreGlobal>Fantastique</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Action</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="256">LeDernierMaitreDeLAir.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="257" z:Size="1">
+        <d4p1:anyURI z:Id="258">https://www.netflix.com/title/70119441</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="259">M. Night Shyamalan</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="260" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="261">Le Dernier Maitre De L'Air</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="262" z:Size="1">
+        <d4p1:string z:Id="263">Noah Ringer</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="264" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="265" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="266">Une étudiante candide et un homme riche se risquent dans une relation passionnelle dont ils poussent l’érotisme à son paroxysme.</d2p1:Description>
+      <d2p1:Duree>PT2H5M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="267" z:Size="1">
+        <d4p1:GenreGlobal>Romance</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="268">CinquanteNuancesDeGrey.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="269" z:Size="1">
+        <d4p1:anyURI z:Id="270">https://www.netflix.com/title/80013872</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="271">Sam Taylor-Johnson</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="272" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="273">Cinquante Nuances De Grey</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="274" z:Size="1">
+        <d4p1:string z:Id="275">Dakota Johnson</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="276" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="277" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="278">Une femme tombe entre les mains d'un chef mafieux dominateur qui la séquestre et lui laisse un an pour tomber amoureuse de lui.</d2p1:Description>
+      <d2p1:Duree>PT1H54M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="279" z:Size="1">
+        <d4p1:GenreGlobal>Romance</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="280">365Jours.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="281" z:Size="1">
+        <d4p1:anyURI z:Id="282">https://www.netflix.com/title/81245964</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="283">Barbara Bialowas</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="284" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="285">365 Jours</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="286" z:Size="1">
+        <d4p1:string z:Id="287">Anna-Maria Sieklucka</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="288" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="289" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="290">Une recruteuse et un directeur artistique se lient d'amitié et décident d'entamer une relation sexuelle sans engagement, uniquement basée sur leur complicité.</d2p1:Description>
+      <d2p1:Duree>PT1H49M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="291" z:Size="1">
+        <d4p1:GenreGlobal>Romance</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="292">SexeEntreAmis.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="293" z:Size="1">
+        <d4p1:anyURI z:Id="294">https://www.netflix.com/title/70167075</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="295">Will Gluck</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="296" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="297">Sexe Entre Amis</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="298" z:Size="1">
+        <d4p1:string z:Id="299">Justin Timberlake</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="300" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="301" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="302">Trois copines quadragénaires partent en virée dans le Sud pour oublier leurs chagrins... et redécouvrir leur pouvoir de séduction auprès de jeunes hommes charmants.</d2p1:Description>
+      <d2p1:Duree>PT1H41M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="303" z:Size="1">
+        <d4p1:GenreGlobal>Romance</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="304">Milf.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="305" z:Size="1">
+        <d4p1:anyURI z:Id="306">https://www.netflix.com/title/81248072</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="307">Axelle Laffont</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="308" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="309">Milf</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="310" z:Size="1">
+        <d4p1:string z:Id="311">Virginie Ledoyen</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="312" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="313" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="314">Dans ce thriller inspiré de faits réels, un dessinateur, un journaliste et des policiers enquêtent sur l'insaisissable tueur en série de San Francisco, Zodiac.</d2p1:Description>
+      <d2p1:Duree>PT2H37M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="315" z:Size="1">
+        <d4p1:GenreGlobal>Policier</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="316">Zodiac.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="317" z:Size="1">
+        <d4p1:anyURI z:Id="318">https://www.netflix.com/title/70044686</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="319">David Fincher</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="320" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="321">Zodiac</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="322" z:Size="1">
+        <d4p1:string z:Id="323">Jake Gyllenhaal</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="324" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="325" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="326">À peine sorti de prison, le gentleman cambrioleur Danny Ocean réunit une équipe d'experts pour réussir un braquage élaboré visant trois casinos de Las Vegas.</d2p1:Description>
+      <d2p1:Duree>PT1H57M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="327" z:Size="2">
+        <d4p1:GenreGlobal>Policier</d4p1:GenreGlobal>
+        <d4p1:GenreGlobal>Aventure</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="328">OceansEleven.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="329" z:Size="1">
+        <d4p1:anyURI z:Id="330">https://www.netflix.com/title/60021783</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="331">Steven Soderbergh</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="332" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="333">Ocean's Eleven</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="334" z:Size="1">
+        <d4p1:string z:Id="335">Brad Pitt</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="336" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="337" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="338">Dans ce film plébiscité de Martin Scorsese, le tueur à gages Frank Sheeran évoque des secrets qui remontent à l'époque où il était l'homme de confiance d'un clan mafieux.</d2p1:Description>
+      <d2p1:Duree>PT3H29M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="339" z:Size="1">
+        <d4p1:GenreGlobal>Policier</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="340">TheIrishman.png</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="341" z:Size="1">
+        <d4p1:anyURI z:Id="342">https://www.netflix.com/title/80175798</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="343">Martin Scorsese</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="344" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="345">The Irishman</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="346" z:Size="1">
+        <d4p1:string z:Id="347">Robert de Niro</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+    <d2p1:ContenuVideoludique z:Id="348" i:type="d2p1:Film">
+      <d2p1:Audios xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="349" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:Audios>
+      <d2p1:Date>1895-01-01T00:00:00</d2p1:Date>
+      <d2p1:Description z:Id="350">Dans ce film inspiré de faits réels, une mère en quête de vérité se retrouve sur la piste d'une série de meurtres inexpliqués alors qu'elle recherche sa fille disparue.</d2p1:Description>
+      <d2p1:Duree>PT1H35M</d2p1:Duree>
+      <d2p1:Genres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.genres" z:Id="351" z:Size="1">
+        <d4p1:GenreGlobal>Policier</d4p1:GenreGlobal>
+      </d2p1:Genres>
+      <d2p1:Image z:Id="352">LostGirls.jpg</d2p1:Image>
+      <d2p1:OuRegarder xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="353" z:Size="1">
+        <d4p1:anyURI z:Id="354">https://www.netflix.com/title/80223927</d4p1:anyURI>
+      </d2p1:OuRegarder>
+      <d2p1:Realisateur z:Id="355">Liz Garbus</d2p1:Realisateur>
+      <d2p1:SousTitres xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.langues" z:Id="356" z:Size="1">
+        <d4p1:Langues>Français</d4p1:Langues>
+      </d2p1:SousTitres>
+      <d2p1:StudioProduction z:Ref="188" i:nil="true" />
+      <d2p1:Titre z:Id="357">Lost Girls</d2p1:Titre>
+      <d2p1:Acteurs xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="358" z:Size="1">
+        <d4p1:string z:Id="359">Amy Ryan</d4p1:string>
+      </d2p1:Acteurs>
+    </d2p1:ContenuVideoludique>
+  </ListCV>
+  <ListUtilisateur xmlns:d2p1="http://schemas.datacontract.org/2004/07/modelisation.user" z:Id="360" z:Size="3">
+    <d2p1:Utilisateur z:Id="361">
+      <d2p1:Pseudo z:Id="362">admin</d2p1:Pseudo>
+      <d2p1:Email z:Ref="362" i:nil="true" />
+      <d2p1:Password z:Ref="362" i:nil="true" />
+      <d2p1:DateDeNaissance>1990-01-01T00:00:00</d2p1:DateDeNaissance>
+      <d2p1:Genre z:Id="363">Indefini</d2p1:Genre>
+      <d2p1:MarathonPerso z:Id="364">
+        <d2p1:Duree>P1DT11H</d2p1:Duree>
+        <d2p1:GenresAnimes_possibles xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="365" z:Size="0" />
+        <d2p1:GenresGlobaux_possibles xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="366" z:Size="0" />
+        <d2p1:ListContenu xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="367" z:Size="13">
+          <d5p1:anyType z:Ref="83" i:nil="true" />
+          <d5p1:anyType z:Ref="155" i:nil="true" />
+          <d5p1:anyType z:Ref="71" i:nil="true" />
+          <d5p1:anyType z:Ref="143" i:nil="true" />
+          <d5p1:anyType z:Ref="166" i:nil="true" />
+          <d5p1:anyType z:Ref="95" i:nil="true" />
+          <d5p1:anyType z:Ref="59" i:nil="true" />
+          <d5p1:anyType z:Ref="107" i:nil="true" />
+          <d5p1:anyType z:Ref="16" i:nil="true" />
+          <d5p1:anyType z:Ref="41" i:nil="true" />
+          <d5p1:anyType z:Ref="44" i:nil="true" />
+          <d5p1:anyType z:Ref="47" i:nil="true" />
+          <d5p1:anyType z:Ref="50" i:nil="true" />
+        </d2p1:ListContenu>
+        <d2p1:ListContenuJournalifie xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="368" z:Size="4">
+          <d5p1:ArrayOfanyType z:Id="369" z:Size="3">
+            <d5p1:anyType z:Ref="83" i:nil="true" />
+            <d5p1:anyType z:Ref="155" i:nil="true" />
+            <d5p1:anyType z:Ref="71" i:nil="true" />
+          </d5p1:ArrayOfanyType>
+          <d5p1:ArrayOfanyType z:Id="370" z:Size="3">
+            <d5p1:anyType z:Ref="143" i:nil="true" />
+            <d5p1:anyType z:Ref="166" i:nil="true" />
+            <d5p1:anyType z:Ref="95" i:nil="true" />
+          </d5p1:ArrayOfanyType>
+          <d5p1:ArrayOfanyType z:Id="371" z:Size="3">
+            <d5p1:anyType z:Ref="59" i:nil="true" />
+            <d5p1:anyType z:Ref="107" i:nil="true" />
+            <d5p1:anyType z:Ref="16" i:nil="true" />
+          </d5p1:ArrayOfanyType>
+          <d5p1:ArrayOfanyType z:Id="372" z:Size="4">
+            <d5p1:anyType z:Ref="41" i:nil="true" />
+            <d5p1:anyType z:Ref="44" i:nil="true" />
+            <d5p1:anyType z:Ref="47" i:nil="true" />
+            <d5p1:anyType z:Ref="50" i:nil="true" />
+          </d5p1:ArrayOfanyType>
+        </d2p1:ListContenuJournalifie>
+        <d2p1:NbHeureParJour>5</d2p1:NbHeureParJour>
+        <d2p1:NbJour>7</d2p1:NbJour>
+      </d2p1:MarathonPerso>
+      <d2p1:ListCVvu xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.content" z:Id="373" z:Size="0" />
+    </d2p1:Utilisateur>
+    <d2p1:Utilisateur z:Id="374">
+      <d2p1:Pseudo z:Id="375">Baptiste F.</d2p1:Pseudo>
+      <d2p1:Email z:Id="376">Baptiste.FOUCRAS@etu.uca.fr</d2p1:Email>
+      <d2p1:Password z:Id="377">bafoucras</d2p1:Password>
+      <d2p1:DateDeNaissance>2002-10-27T00:00:00</d2p1:DateDeNaissance>
+      <d2p1:Genre z:Id="378">Homme</d2p1:Genre>
+      <d2p1:MarathonPerso i:nil="true" />
+      <d2p1:ListCVvu xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.content" z:Id="379" z:Size="0" />
+    </d2p1:Utilisateur>
+    <d2p1:Utilisateur z:Id="380">
+      <d2p1:Pseudo z:Id="381">Julien T.</d2p1:Pseudo>
+      <d2p1:Email z:Id="382">Julien.THEME@etu.uca.fr</d2p1:Email>
+      <d2p1:Password z:Id="383">jutheme</d2p1:Password>
+      <d2p1:DateDeNaissance>2002-07-21T00:00:00</d2p1:DateDeNaissance>
+      <d2p1:Genre z:Ref="378" i:nil="true" />
+      <d2p1:MarathonPerso i:nil="true" />
+      <d2p1:ListCVvu xmlns:d4p1="http://schemas.datacontract.org/2004/07/modelisation.content" z:Id="384" z:Size="0" />
+    </d2p1:Utilisateur>
+  </ListUtilisateur>
+</DataToPersist>

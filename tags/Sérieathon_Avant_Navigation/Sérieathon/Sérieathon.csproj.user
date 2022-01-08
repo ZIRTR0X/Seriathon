@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\basic_element\UC_TextBox_Form.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile_Statistique.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\Profile\UC_Profile_Vue.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\UC_accueil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\login_window\UC_connexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\login_window\UC_inscription.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\UC_Menu_Nav.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Information_Vues\Suppression_confirmation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\basic_element\UC_TextBox_Form.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\Profile\UC_Profile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\Profile\UC_Profile_Statistique.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\Profile\UC_Profile_Vue.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\UC_accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\login_window\UC_connexion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\login_window\UC_inscription.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\UC_Menu_Nav.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

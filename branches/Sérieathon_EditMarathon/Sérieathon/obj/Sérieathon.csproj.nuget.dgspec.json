@@ -1,0 +1,208 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\Sérieathon\\Sérieathon.csproj": {}
+  },
+  "projects": {
+    "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj",
+        "projectName": "modelisation",
+        "projectPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj",
+        "packagesPath": "C:\\Users\\bapti\\.nuget\\packages\\",
+        "outputPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\bapti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.902-prerelease, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\persistance.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\persistance.csproj",
+        "projectName": "persistance",
+        "projectPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\persistance.csproj",
+        "packagesPath": "C:\\Users\\bapti\\.nuget\\packages\\",
+        "outputPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\bapti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj": {
+                "projectPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.902-prerelease, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\Sérieathon\\Sérieathon.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\Sérieathon\\Sérieathon.csproj",
+        "projectName": "Sérieathon",
+        "projectPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\Sérieathon\\Sérieathon.csproj",
+        "packagesPath": "C:\\Users\\bapti\\.nuget\\packages\\",
+        "outputPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\Sérieathon\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\bapti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj": {
+                "projectPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\modelisation\\modelisation.csproj"
+              },
+              "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\persistance.csproj": {
+                "projectPath": "C:\\Baptiste\\1A_IUT\\P4\\IHM_CSharp\\ProjetP4\\branches\\Sérieathon_EditMarathon\\persistance\\persistance.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.1.1-ci2558, )"
+            },
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.902-prerelease, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

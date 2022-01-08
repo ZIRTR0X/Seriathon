@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Baptiste\1A_IUT\P4\IHM_CSharp\ProjetP4\trunc\src\Sérieathon\Sérieathon\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Fenetre\Streaming_Serie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\CreationMarathon_erreur1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\CreationMarathon_erreur2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\CreationMarathon_erreur3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Inscription_erreur6.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Suppression_confirmation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Information_Vues\Suppression_confirmation_utilisateur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\InfoCV\InfoCV_Serie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Film.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\page_principale\UC_Menu_Nav.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Profile\UC_Profile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Profile\UC_Profile_Statistique.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\Profile\UC_Profile_Vue.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\main_window\page_principale\UC_accueil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\login_window\UC_connexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UC\login_window\UC_inscription.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Fenetre\Streaming_Serie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\CreationMarathon_erreur1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\CreationMarathon_erreur2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\CreationMarathon_erreur3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Inscription_erreur6.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Suppression_confirmation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Information_Vues\Suppression_confirmation_utilisateur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\InfoCV\InfoCV.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\InfoCV\InfoCV_Serie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Episode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Film.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Marathon\marathon_windows\UC_Marathon_Jour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\page_principale\UC_Menu_Nav.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Profile\UC_Profile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Profile\UC_Profile_Statistique.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\Profile\UC_Profile_Vue.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\main_window\page_principale\UC_accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\login_window\UC_connexion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UC\login_window\UC_inscription.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

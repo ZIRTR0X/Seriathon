@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "persistance/1.0.0": {
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.902-prerelease",
+          "modelisation": "1.0.0"
+        },
+        "runtime": {
+          "persistance.dll": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.902-prerelease": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.0.902.0"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.902.0"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.902.0"
+          }
+        }
+      },
+      "modelisation/1.0.0": {
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.902-prerelease"
+        },
+        "runtime": {
+          "modelisation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "persistance/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Web.WebView2/1.0.902-prerelease": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wBMe722U7QeY3yOgeCyg/ms1I9Eop1E0Ssa4vCEwRThVVO6fX5yQkd2y56VVLOKqHwBh/QqQw5xea1YZlwlnig==",
+      "path": "microsoft.web.webview2/1.0.902-prerelease",
+      "hashPath": "microsoft.web.webview2.1.0.902-prerelease.nupkg.sha512"
+    },
+    "modelisation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

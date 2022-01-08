@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Sérieathon/1.0.0": {
+        "dependencies": {
+          "modelisation": "1.0.0"
+        },
+        "runtime": {
+          "Sérieathon.dll": {}
+        }
+      },
+      "modelisation/1.0.0": {
+        "runtime": {
+          "modelisation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sérieathon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "modelisation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

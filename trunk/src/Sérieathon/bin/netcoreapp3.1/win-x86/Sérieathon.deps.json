@@ -1,0 +1,118 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1/win-x86",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {},
+    ".NETCoreApp,Version=v3.1/win-x86": {
+      "Sérieathon/1.0.0": {
+        "dependencies": {
+          "MaterialDesignThemes": "4.1.1-ci2558",
+          "Microsoft.Web.WebView2": "1.0.902-prerelease",
+          "modelisation": "1.0.0",
+          "persistance": "1.0.0"
+        },
+        "runtime": {
+          "Sérieathon.dll": {}
+        }
+      },
+      "MaterialDesignColors/2.0.2-ci2558": {
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.0.2.2558",
+            "fileVersion": "2.0.2.2558"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.1.1-ci2558": {
+        "dependencies": {
+          "MaterialDesignColors": "2.0.2-ci2558"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.1.1.2558",
+            "fileVersion": "4.1.1.2558"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.902-prerelease": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.902.0",
+            "fileVersion": "1.0.902.0"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.902.0",
+            "fileVersion": "1.0.902.0"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.902.0",
+            "fileVersion": "1.0.902.0"
+          }
+        },
+        "native": {
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "fileVersion": "1.0.902.0"
+          }
+        }
+      },
+      "modelisation/1.0.0": {
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.902-prerelease"
+        },
+        "runtime": {
+          "modelisation.dll": {}
+        }
+      },
+      "persistance/1.0.0": {
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.902-prerelease",
+          "modelisation": "1.0.0"
+        },
+        "runtime": {
+          "persistance.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sérieathon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MaterialDesignColors/2.0.2-ci2558": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1HPLiXDH/7caatSB8RCzLPS7M7fGiUfn+9vJZjSHAwzIlr6PF8TDx5VsNGOaTFVv39GEdDQJKdLwsv+gT8uKng==",
+      "path": "materialdesigncolors/2.0.2-ci2558",
+      "hashPath": "materialdesigncolors.2.0.2-ci2558.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.1.1-ci2558": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mvmSAhPRprWyWmtvg3j02090APyPhYAgSRaroAzkLmZN50J0dgi2jarzeDfeHxKKt9mdJUbeVfAsFBtbLhSiOQ==",
+      "path": "materialdesignthemes/4.1.1-ci2558",
+      "hashPath": "materialdesignthemes.4.1.1-ci2558.nupkg.sha512"
+    },
+    "Microsoft.Web.WebView2/1.0.902-prerelease": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wBMe722U7QeY3yOgeCyg/ms1I9Eop1E0Ssa4vCEwRThVVO6fX5yQkd2y56VVLOKqHwBh/QqQw5xea1YZlwlnig==",
+      "path": "microsoft.web.webview2/1.0.902-prerelease",
+      "hashPath": "microsoft.web.webview2.1.0.902-prerelease.nupkg.sha512"
+    },
+    "modelisation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "persistance/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
